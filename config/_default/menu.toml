@@ -5,4 +5,18 @@
     newtab = true
     [social.params]
         icon = "whatsapp"
-
+[[social]]
+    identifier = "LinkedIn"
+    name       = "LinkedIn"
+    url        = "https://linkedin.com/in/geraldohomero"
+    newtab = true
+    [social.params]
+        icon = "linkedin"
+[[social]]
+    identifier = "github"
+    name       = "github"
+    url        = "https://github/geraldohomero"
+    newtab = true
+    [social.params]
+        icon = "brand-github"
+        

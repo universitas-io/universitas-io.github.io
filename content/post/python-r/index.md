@@ -21,6 +21,9 @@ Conseguimos coletar dados de diversas fontes, como YouTube, Instagram, Facebook,
 
 - Análise multivariada de dados textuais e quantitativos.
 - Visualização de dados para insights claros e impactantes.
+- Análise de sentimentos e tendências em redes sociais.
+- Modelagem estatística e machine learning para prever comportamentos e padrões.
+- Clusterização e segmentação de dados para identificar grupos e tendências emergentes.
 - Suporte na interpretação dos resultados e na redação de artigos científicos.
 - Estruturação de bancos de dados para facilitar a gestão e análise dos dados coletados.
 - Estatísticas descritivas e inferenciais para fundamentar suas conclusões.
@@ -32,3 +35,9 @@ Conseguimos coletar dados de diversas fontes, como YouTube, Instagram, Facebook,
 > Fazemos a coleta de dados de forma ética e em conformidade com as políticas das plataformas, garantindo a privacidade e a segurança dos dados coletados. Elaboramos relatórios de conformidade às normas de pesquisa e ética, assegurando que sua pesquisa esteja alinhada com os padrões acadêmicos e legais.
 
 ---
+
+### Exemplos de Projetos
+
+- Coleta e Análise de Dados do YouTube: Coletamos dados de vídeos, comentários, transcrições e canais para analisar tendências, engajamento e padrões de comportamento a partir de modelagem de tópicos com BERTopic. 
+
+[Veja o projeto completo](https://github.com/geraldohomero/dh-youtube-database).

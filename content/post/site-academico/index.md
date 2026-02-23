@@ -18,7 +18,7 @@ weight: 1
 
 Serviço de criação de sites acadêmicos personalizados para pesquisadores, professores e estudantes. O serviço inclui design responsivo, otimização para motores de busca (SEO) e integração com plataformas acadêmicas. Ideal para destacar publicações, projetos e currículo de forma profissional e acessível. 
 
-[Entre em contato](https://wa.me/551992400792) para mais informações e orçamento personalizado. 
+[Entre em contato](https://wa.me/551992400792) para mais informações, orçamento personalizado e casos específicos. 
 
 Inicialmente oferecemos três categorias de serviços com base na facilidade de manutenção do site, para que você possa escolher a opção que melhor se adequa às suas necessidades e preferências de gestão:
 
@@ -31,9 +31,8 @@ Ideal para quem busca praticidade. Você atualiza o conteúdo de forma independe
 - **Tecnologias:** WordPress, Wix ou Squarespace.
 - **Hospedagem:** À escolha do cliente ou mediante nossa recomendação.
 - **Inclusos:** Criação do design, configuração inicial e treinamento de gestão.
-- **Suporte Técnico:** R$ 50,00/mês (opcional).
+- **Suporte Técnico (Opcional):** Preço a combinar.
 
-**Preço Único: R$ 250,00**
 
 ---
 
@@ -43,9 +42,8 @@ Para quem tem familiaridade com tecnologia. Sites ultra-rápidos usando Markdown
 - **Tecnologias Modernas:** Hugo, Astro ou Jekyll.
 - **Hospedagem:** Altamente flexível (GitHub Pages, Netlify, Vercel, etc.).
 - **Inclusos:** Configuração do repositório e tutorial completo para atualizações via Markdown.
-- **Suporte Técnico:** R$ 65,00/mês (opcional para auxílio nas atualizações).
+- **Suporte Técnico (Opcional):** Preço a combinar.
 
-**Preço Único: R$ 350,00**
 
 ---
 
@@ -54,9 +52,8 @@ Soluções web complexas e sob medida para projetos de pesquisa que exigem funci
 
 - **Tecnologias de Ponta:** JavaScript (React, Next.js) ou C# (ASP.NET).
 - **Inclusos:** Desenvolvimento Full-stack e 6 meses de suporte garantido após implementação.
-- **Suporte Adicional:** R$ 200,00/mês (após o 6º mês).
+- **Suporte Adicional (6 meses grátis):** restante preço a combinar.
 
-**A partir de R$ 2.500,00** *(Até R$ 3.500,00 para projetos com banco de dados robusto)*
 
 ---
 
