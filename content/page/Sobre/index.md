@@ -8,7 +8,7 @@ menu:
             icon: info-circle
 ---
 
-Doutorando em Ciência Política pela Unicamp, Mestre, Bacharel e Licenciado em História pela UFJF. Também possuo graduação em Análise e Desenvolvimento de Software pela PUC Minas.
+Doutorando em Ciência Política pela Unicamp, Mestre, Bacharel e Licenciado em História pela UFJF. Também possui graduação em Análise e Desenvolvimento de Software pela PUC Minas.
 
 Pesquiso principalmente movimentos sociais digitais, humanidades digitais, estudos críticos da internet, interfaces entre tecnologia e política, plataformas digitais e suas implicações na esfera pública.
 

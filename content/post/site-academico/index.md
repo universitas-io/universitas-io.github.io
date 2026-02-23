@@ -66,7 +66,16 @@ Soluções web complexas e sob medida para projetos de pesquisa que exigem funci
 
 ![](image.png)
 
+### [Site de Análise de processos seletivos](https://processo-seletivo-2024-2025.vercel.app/)
+
+![](image-4.png)
+
 ### [Site acadêmico profissional](https://geraldohomero.github.io/)
 
 ![](image-3.png)
+
+### [Texto em Voz](https://app-masters-elevenlabs-project.vercel.app/)
+
+![alt text](image-5.png)
+
 

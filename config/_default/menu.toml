@@ -15,7 +15,7 @@
 [[social]]
     identifier = "Email"
     name       = "Email"
-    url        = "mailto:geraldohomero@pm.me"
+    url        = "mailto:geraldohomero+universitas@pm.me"
     newtab = true
     [social.params]
         icon = "email"
