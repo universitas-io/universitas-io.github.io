@@ -38,6 +38,11 @@ Conseguimos coletar dados de diversas fontes, como YouTube, Instagram, Facebook,
 
 ### Exemplos de Projetos
 
-- Coleta e Análise de Dados do YouTube: Coletamos dados de vídeos, comentários, transcrições e canais para analisar tendências, engajamento e padrões de comportamento a partir de modelagem de tópicos com BERTopic. 
+
+Coleta e Análise de Dados do YouTube: Coletamos dados de vídeos, comentários, transcrições e canais para analisar tendências, engajamento e padrões de comportamento a partir de modelagem de tópicos com BERTopic. 
 
 [Veja o projeto completo](https://github.com/geraldohomero/dh-youtube-database).
+
+Base de dados com mais de 100 mil vídeos, 50 milhões de comentários de 49 canais do YouTube, incluindo transcrições e metadados, para análise quantitativa e qualitativa de tendências, engajamento e padrões de comportamento.
+
+---
