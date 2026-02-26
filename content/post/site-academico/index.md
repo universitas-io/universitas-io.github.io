@@ -11,7 +11,7 @@ categories:
     - Serviço
 tags:
 
-weight: 1 
+weight: 2
 ---
 
 Serviço de criação de sites acadêmicos personalizados para pesquisadores, professores e estudantes. O serviço inclui design responsivo, otimização para motores de busca (SEO) e integração com plataformas acadêmicas. Ideal para destacar publicações, projetos e currículo de forma profissional e acessível. 

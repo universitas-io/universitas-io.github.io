@@ -12,7 +12,7 @@ menu:
 Equipe multidisciplinar com experiência em ciência política, história, ciência ambiental, análise de dados e desenvolvimento web. Nosso objetivo é fornecer serviços de alta qualidade para pesquisadores, estudantes e profissionais que buscam aprimorar seus trabalhos acadêmicos e projetos de pesquisa.
 
 
-[Entre em contato](mailto:geraldohomero+universitas@pm.me) para discutir colaborações ou contratação de serviços.
+[Entre em contato](https://wa.me/551992400792) ou mande uma mensagem pelo Instagram [@universitas.solutions](https://www.instagram.com/universitas.solutions/)para discutir colaborações ou contratação de serviços.
 
 ### Stack de Tecnologias
 

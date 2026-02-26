@@ -1,6 +1,6 @@
 ---
 title: Quantitative Research (R and Python)
-description: Webscraping and database creation for your research
+description: Web scraping and database creation for your research
 slug: quantitative-research
 date: 
 image: cover.png
@@ -8,7 +8,9 @@ categories:
     - Python
     - R
     - Database
+    - Web Scraping
     - Service
+tags:
 weight: 1
 ---
 

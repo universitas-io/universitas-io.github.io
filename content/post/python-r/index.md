@@ -1,6 +1,6 @@
 ---
 title: Pesquisa Quantitativa (R e Python)
-description: Webscraping e criação de banco de dados para sua pesquisa
+description: Web scraping e criação de banco de dados para sua pesquisa
 slug: python-r
 date: 
 image: cover.png
@@ -8,9 +8,9 @@ categories:
     - Python
     - R
     - Banco de Dados
+    - Web Scraping
     - Serviço
 tags:
-
 weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 

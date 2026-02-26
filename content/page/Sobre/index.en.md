@@ -8,11 +8,9 @@ menu:
             icon: info-circle
 ---
 
-PhD student in Political Science at Unicamp, Master, Bachelor, and Licensed in History from UFJF. I also hold a degree in Software Analysis and Development from PUC Minas.
+A multidisciplinary team with experience in political science, history, environmental science, data analysis, and web development. Our goal is to provide high-quality services for researchers, students, and professionals seeking to enhance their academic work and research projects.
 
-My research focuses mainly on digital social movements, digital humanities, critical internet studies, the interfaces between technology and politics, digital platforms, and their implications in the public sphere.
-
-If you are interested in collaborating or hiring my services, [contact me](mailto:geraldohomero+universitas@pm.me).
+If you are interested in collaborating or hiring our services, [contact us via email](mailto:geraldohomero+universitas@pm.me) or dm us on Instagram [@universitas.solutions](https://www.instagram.com/universitas.solutions/).
 
 ### Technology Stack
 

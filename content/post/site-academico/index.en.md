@@ -9,7 +9,7 @@ categories:
   - Curriculum
   - Publication
   - Service
-weight: 1
+weight: 2
 ---
 
 Custom academic website creation service for researchers, professors, and students. The service includes responsive design, search engine optimization (SEO), and integration with academic platforms. It is ideal for showcasing publications, projects, and your CV in a professional and accessible way.
