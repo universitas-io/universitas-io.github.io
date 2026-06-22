@@ -62,6 +62,14 @@ Soluções web complexas e sob medida para projetos de pesquisa que exigem funci
 
 ## Exemplos de Sites Acadêmicos Criados
 
+### [Observatório da Extrema Direita Latino-Americana | OEDLA](https://geraldohomero.github.io/oedla/)
+
+![](image-6.png)
+
+### [Laboratório Interdisciplinas em Inteligência Artificial | LABIIA](https://geraldohomero.github.io/labiia/)
+
+![](image-7.png)
+
 ### [II Seminário Discente do Programa de Pós-graduação em Ciência Política da Unicamp (2025)](https://seminariodiscenteppgcp.wordpress.com/)
 
 ![](image.png)

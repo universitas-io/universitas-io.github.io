@@ -53,7 +53,16 @@ Complex, tailored web solutions for research projects that require specific feat
 
 ---
 
+
 ## Examples of Academic Websites Created
+
+### [Latin American Far-Right Observatory | OEDLA](https://geraldohomero.github.io/oedla/)
+
+![](image-6.png)
+
+### [Interdisciplinary Laboratory on Artificial Intelligence | LABIIA](https://geraldohomero.github.io/labiia/)
+
+![](image-7.png)
 
 ### [II Graduate Student Seminar of the Unicamp Political Science Program (2025)](https://seminariodiscenteppgcp.wordpress.com/)
 
