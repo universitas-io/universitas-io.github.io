@@ -25,3 +25,10 @@ Oferecemos soluções personalizadas para transformar seus dados em insights vis
 - Suporte na interpretação dos dados e na tomada de decisões estratégicas.
 
 [Entre em contato](https://wa.me/551992400792) para discutir suas necessidades específicas e como podemos ajudar você da melhor maneira possível.
+
+---
+
+## Exemplos de Dashboards Criados
+
+![LR Instalações Especiais](image.png)
+

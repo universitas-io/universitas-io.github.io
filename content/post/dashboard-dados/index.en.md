@@ -25,3 +25,9 @@ We offer tailored solutions to transform your data into clear and impactful visu
 - Support in data interpretation and strategic decision-making.
 
 [Get in touch](mailto:geraldohomero+universitas@pm.me) to discuss your specific needs and how we can help you in the best possible way.
+
+---
+
+## Examples of Dashboards Created
+
+![LR Special Installations](image.png)
