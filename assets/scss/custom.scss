@@ -1,3 +1,27 @@
 /*
     You can add your own custom styles here.
 */
+
+@media (min-width: 768px) {
+    .article-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--section-separation);
+    }
+}
+
+.article-list {
+    --article-image-height: 130px;
+
+    @media (min-width: 768px) {
+        --article-image-height: 180px;
+    }
+}
+
+.article-category,
+.article-tags {
+    a {
+        padding: 5px 12px;
+        font-size: 1.1rem;
+    }
+}
