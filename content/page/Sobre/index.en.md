@@ -33,3 +33,10 @@ If you are interested in collaborating or hiring our services, [contact us via e
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 ![Google Data Studio](https://img.shields.io/badge/Google%20Data%20Studio-4285F4?style=for-the-badge&logo=googleanalytics&logoColor=white)
+
+#### Qualitative Research
+![NVivo](https://img.shields.io/badge/NVivo-003B57?style=for-the-badge&logo=nvivo&logoColor=white)
+![Atlas.ti](https://img.shields.io/badge/Atlas.ti-002B57?style=for-the-badge&logo=atlasti&logoColor=white)
+![MAXQDA](https://img.shields.io/badge/MAXQDA-001B57?style=for-the-badge&logo=maxqda&logoColor=white)
+![QCAmap](https://img.shields.io/badge/QCAmap-003B59?style=for-the-badge&logo=qcamape&logoColor=white)
+![Gephi](https://img.shields.io/badge/Gephi-003B17?style=for-the-badge&logo=gephi&logoColor=white)

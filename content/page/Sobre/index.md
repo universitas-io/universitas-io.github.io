@@ -12,7 +12,7 @@ menu:
 Equipe multidisciplinar com experiência em ciência política, história, ciência ambiental, análise de dados e desenvolvimento web. Nosso objetivo é fornecer serviços de alta qualidade para pesquisadores, estudantes e profissionais que buscam aprimorar seus trabalhos acadêmicos e projetos de pesquisa.
 
 
-[Entre em contato](https://wa.me/551992400792) ou mande uma mensagem pelo Instagram [@universitas.solutions](https://www.instagram.com/universitas.solutions/)para discutir colaborações ou contratação de serviços.
+[Entre em contato](https://wa.me/551992400792) ou mande uma mensagem pelo Instagram [@universitas.solutions](https://www.instagram.com/universitas.solutions/) para discutir colaborações ou contratação de serviços.
 
 ### Stack de Tecnologias
 
@@ -37,3 +37,10 @@ Equipe multidisciplinar com experiência em ciência política, história, ciên
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 ![Google Data Studio](https://img.shields.io/badge/Google%20Data%20Studio-4285F4?style=for-the-badge&logo=googleanalytics&logoColor=white)
+
+#### Pesquisa qualitativa
+![NVivo](https://img.shields.io/badge/NVivo-003B57?style=for-the-badge&logo=nvivo&logoColor=white)
+![Atlas.ti](https://img.shields.io/badge/Atlas.ti-002B57?style=for-the-badge&logo=atlasti&logoColor=white)
+![MAXQDA](https://img.shields.io/badge/MAXQDA-001B57?style=for-the-badge&logo=maxqda&logoColor=white)
+![QCAmap](https://img.shields.io/badge/QCAmap-003B59?style=for-the-badge&logo=qcamape&logoColor=white)
+![Gephi](https://img.shields.io/badge/Gephi-003B17?style=for-the-badge&logo=gephi&logoColor=white)
