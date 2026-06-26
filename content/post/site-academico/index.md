@@ -64,7 +64,7 @@ Soluções web complexas e sob medida para projetos de pesquisa que exigem funci
 
 ### [Observatório da Extrema Direita Latino-Americana | OEDLA](https://geraldohomero.github.io/oedla/)
 
-![](image-6.png)
+![](image-2.png)
 
 ### [Laboratório Interdisciplinas em Inteligência Artificial | LABIIA](https://geraldohomero.github.io/labiia/)
 

@@ -58,7 +58,7 @@ Complex, tailored web solutions for research projects that require specific feat
 
 ### [Latin American Far-Right Observatory | OEDLA](https://geraldohomero.github.io/oedla/)
 
-![](image-6.png)
+![](image-2.png)
 
 ### [Interdisciplinary Laboratory on Artificial Intelligence | LABIIA](https://geraldohomero.github.io/labiia/)
 
