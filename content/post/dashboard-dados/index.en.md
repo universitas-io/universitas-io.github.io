@@ -30,4 +30,12 @@ We offer tailored solutions to transform your data into clear and impactful visu
 
 ## Examples of Dashboards Created
 
+
+
+- Python e D3.js
+
+![Dashboard for quantitative and qualitative research for visualization of clusters and nodes](image-1.png)
+
+- PowerBI
+
 ![LR Special Installations](image.png)

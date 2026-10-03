@@ -37,8 +37,18 @@ We can collect data from various sources, such as YouTube, Instagram, Facebook, 
 
 ### Project Examples
 
+#### PhD Thesis
+
 **YouTube Data Collection and Analysis:** We collect data from videos, comments, transcripts, and channels to analyze trends, engagement, and behavior patterns using topic modeling with BERTopic.
 
 [View the full project](https://github.com/geraldohomero/dh-youtube-database).
 
 Database with over 100,000 videos, 50 million comments from 49 YouTube channels, including transcripts and metadata, for quantitative and qualitative analysis of trends, engagement, and behavior patterns.
+
+#### Network Analysis and Clustering
+
+![](image.png)
+![](image-1.png)
+![](image-2.png)
+
+---
