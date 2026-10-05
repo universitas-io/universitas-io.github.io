@@ -1,27 +1,27 @@
 ---
-title: "Diagramação e Padronização Editorial de Dissertação e Anais de Evento Científico"
-description: "Editoração eletrônica, normalização de referências bibliográficas e padronização ABNT de manuscritos e publicações científicas."
-translationKey: "formatting-works"
+title: 'Diagramação e Padronização Editorial de Dissertação e Anais de Evento Científico'
+description: 'Editoração eletrônica, normalização de referências bibliográficas e padronização ABNT de manuscritos e publicações científicas.'
+translationKey: 'formatting-works'
 order: 5
-sector: "academia"
+sector: 'academia'
 services:
-  - "document-formatting"
+  - 'document-formatting'
 tools:
-  - "LaTeX"
-  - "InDesign"
-  - "Zotero"
-  - "BibTeX"
+  - 'LaTeX'
+  - 'InDesign'
+  - 'Zotero'
+  - 'BibTeX'
 cover:
-  src: "../../../assets/images/cases/formatting-works/cover.png"
-  alt: "Capa e páginas de texto acadêmico diagramado segundo normas técnicas"
+  src: '../../../assets/images/cases/formatting-works/cover.png'
+  alt: 'Capa e páginas de texto acadêmico diagramado segundo normas técnicas'
 gallery:
-  - src: "../../../assets/images/cases/formatting-works/image.png"
-    alt: "Páginas diagramadas com notas de rodapé e referências padronizadas"
+  - src: '../../../assets/images/cases/formatting-works/image.png'
+    alt: 'Páginas diagramadas com notas de rodapé e referências padronizadas'
 links:
-  - label: "Dissertação de Mestrado (Academia.edu)"
-    url: "https://www.academia.edu/88065978"
-  - label: "Anais Eletrônicos da XXXIV Semana de História da UFJF (Academia.edu)"
-    url: "https://www.academia.edu/124845124/"
+  - label: 'Dissertação de Mestrado (Academia.edu)'
+    url: 'https://www.academia.edu/88065978'
+  - label: 'Anais Eletrônicos da XXXIV Semana de História da UFJF (Academia.edu)'
+    url: 'https://www.academia.edu/124845124/'
 featured: false
 date: 2024-08-01
 ---

@@ -1,36 +1,36 @@
 ---
-title: "Dashboards & Data Visualization"
-description: "Interactive dashboards in Power BI, Tableau, and Python/D3.js connected to live databases for strategic monitoring and decisive intelligence."
-translationKey: "dashboards"
-tier: "complementary"
+title: 'Dashboards & Data Visualization'
+description: 'Interactive dashboards in Power BI, Tableau, and Python/D3.js connected to live databases for strategic monitoring and decisive intelligence.'
+translationKey: 'dashboards'
+tier: 'complementary'
 order: 4
-icon: "lucide:layout-dashboard"
-summary: "Engineering intuitive, responsive data dashboards that turn complex datasets into clear, actionable visual intelligence for decision-makers."
+icon: 'lucide:layout-dashboard'
+summary: 'Engineering intuitive, responsive data dashboards that turn complex datasets into clear, actionable visual intelligence for decision-makers.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "Power BI"
-  - "Tableau"
-  - "Python"
-  - "D3.js"
-  - "Looker Studio"
-  - "Streamlit"
+  - 'Power BI'
+  - 'Tableau'
+  - 'Python'
+  - 'D3.js'
+  - 'Looker Studio'
+  - 'Streamlit'
 deliverables:
-  - "Interactive dashboard published to corporate tenant or public web application"
-  - "Automated data pipeline connecting directly to operational databases or APIs"
-  - "Technical reference manual and KPI dictionary"
-  - "Hands-on team training and operational handover session"
+  - 'Interactive dashboard published to corporate tenant or public web application'
+  - 'Automated data pipeline connecting directly to operational databases or APIs'
+  - 'Technical reference manual and KPI dictionary'
+  - 'Hands-on team training and operational handover session'
 faq:
-  - q: "Do you issue official invoices?"
-    a: "Yes. We issue official tax invoices (nota fiscal) for individuals, companies, and public institutions."
-  - q: "Which dashboard platforms do you support?"
-    a: "We support major enterprise BI tools (Power BI, Tableau, Looker Studio) as well as custom open-source web visualization stacks (Python, D3.js, Streamlit)."
-  - q: "Can dashboards automatically update as new data arrives?"
-    a: "Yes. We set up automated ingestion schedules and direct queries connecting to SQL databases, REST APIs, or cloud spreadsheets."
-  - q: "How do you ensure visual clarity and user adoption?"
-    a: "We follow core information design principles, prioritizing clean visual hierarchy, low cognitive load, and iterative user testing."
+  - q: 'Do you issue official invoices?'
+    a: 'Yes. We issue official tax invoices (nota fiscal) for individuals, companies, and public institutions.'
+  - q: 'Which dashboard platforms do you support?'
+    a: 'We support major enterprise BI tools (Power BI, Tableau, Looker Studio) as well as custom open-source web visualization stacks (Python, D3.js, Streamlit).'
+  - q: 'Can dashboards automatically update as new data arrives?'
+    a: 'Yes. We set up automated ingestion schedules and direct queries connecting to SQL databases, REST APIs, or cloud spreadsheets.'
+  - q: 'How do you ensure visual clarity and user adoption?'
+    a: 'We follow core information design principles, prioritizing clean visual hierarchy, low cognitive load, and iterative user testing.'
 ---
 
 ## Overview

@@ -1,37 +1,37 @@
 ---
-title: "Coleta de Dados Digitais"
-description: "Web scraping ético, consumo de APIs e estruturação de bases em grande escala para redes sociais e portais públicos, com respeito à LGPD."
-translationKey: "digital-data"
-tier: "core"
+title: 'Coleta de Dados Digitais'
+description: 'Web scraping ético, consumo de APIs e estruturação de bases em grande escala para redes sociais e portais públicos, com respeito à LGPD.'
+translationKey: 'digital-data'
+tier: 'core'
 order: 3
-icon: "lucide:database"
-summary: "Extração automatizada, estruturação e enriquecimento de dados da web e redes sociais com rigor metodológico e conformidade legal."
+icon: 'lucide:database'
+summary: 'Extração automatizada, estruturação e enriquecimento de dados da web e redes sociais com rigor metodológico e conformidade legal.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "Python"
-  - "Scrapy"
-  - "BeautifulSoup"
-  - "Playwright"
-  - "APIs REST"
-  - "PostgreSQL"
-  - "SQLite"
+  - 'Python'
+  - 'Scrapy'
+  - 'BeautifulSoup'
+  - 'Playwright'
+  - 'APIs REST'
+  - 'PostgreSQL'
+  - 'SQLite'
 deliverables:
-  - "Base de dados estruturada em formatos relacionais (SQL/PostgreSQL) ou tabulares (CSV/Parquet)"
-  - "Dicionário de dados completo com metadados e tipagem de campos"
-  - "Relatório de conformidade metodológica, legal (LGPD) e respeito aos termos de uso"
-  - "Scripts de coleta e rotinas de atualização automatizadas"
+  - 'Base de dados estruturada em formatos relacionais (SQL/PostgreSQL) ou tabulares (CSV/Parquet)'
+  - 'Dicionário de dados completo com metadados e tipagem de campos'
+  - 'Relatório de conformidade metodológica, legal (LGPD) e respeito aos termos de uso'
+  - 'Scripts de coleta e rotinas de atualização automatizadas'
 faq:
-  - q: "Vocês emitem nota fiscal?"
-    a: "Sim. Emitimos nota fiscal para pessoas físicas e jurídicas para qualquer volume de projeto."
-  - q: "A raspagem de dados digitais é legal e compatível com a LGPD?"
-    a: "Sim. Coletamos apenas dados públicos ou autorizados por APIs oficiais, aplicando práticas imediatas de anonimização e minimização para dados pessoais, com relatório de conformidade dedicado."
-  - q: "Quais plataformas vocês conseguem coletar?"
-    a: "Extraímos dados de YouTube, portais governamentais de transparência, redes sociais, diários oficiais, bases jurídicas e acervos acadêmicos abertos."
-  - q: "Vocês conseguem lidar com grandes volumes de dados?"
-    a: "Sim. Já estruturamos projetos com mais de 100 mil vídeos e 50 milhões de comentários, utilizando arquiteturas otimizadas e bancos de dados relacionais robustos."
+  - q: 'Vocês emitem nota fiscal?'
+    a: 'Sim. Emitimos nota fiscal para pessoas físicas e jurídicas para qualquer volume de projeto.'
+  - q: 'A raspagem de dados digitais é legal e compatível com a LGPD?'
+    a: 'Sim. Coletamos apenas dados públicos ou autorizados por APIs oficiais, aplicando práticas imediatas de anonimização e minimização para dados pessoais, com relatório de conformidade dedicado.'
+  - q: 'Quais plataformas vocês conseguem coletar?'
+    a: 'Extraímos dados de YouTube, portais governamentais de transparência, redes sociais, diários oficiais, bases jurídicas e acervos acadêmicos abertos.'
+  - q: 'Vocês conseguem lidar com grandes volumes de dados?'
+    a: 'Sim. Já estruturamos projetos com mais de 100 mil vídeos e 50 milhões de comentários, utilizando arquiteturas otimizadas e bancos de dados relacionais robustos.'
 ---
 
 ## O que é

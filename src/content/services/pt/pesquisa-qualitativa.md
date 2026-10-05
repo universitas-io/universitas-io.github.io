@@ -1,35 +1,35 @@
 ---
-title: "Pesquisa Qualitativa"
-description: "Análise de conteúdo, análise de discurso, codificação sistemática em NVivo e ATLAS.ti e análise de redes qualitativas com método e ética."
-translationKey: "qualitative"
-tier: "core"
+title: 'Pesquisa Qualitativa'
+description: 'Análise de conteúdo, análise de discurso, codificação sistemática em NVivo e ATLAS.ti e análise de redes qualitativas com método e ética.'
+translationKey: 'qualitative'
+tier: 'core'
 order: 2
-icon: "lucide:messages-square"
-summary: "Investigação qualitativa aprofundada, análise temática e de discurso com suporte computacional para compreensão de significados e dinâmicas sociais."
+icon: 'lucide:messages-square'
+summary: 'Investigação qualitativa aprofundada, análise temática e de discurso com suporte computacional para compreensão de significados e dinâmicas sociais.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "NVivo"
-  - "ATLAS.ti"
-  - "MAXQDA"
-  - "QCAmap"
-  - "Gephi"
+  - 'NVivo'
+  - 'ATLAS.ti'
+  - 'MAXQDA'
+  - 'QCAmap'
+  - 'Gephi'
 deliverables:
-  - "Livro de códigos (codebook) detalhado com critérios explícitos de categorização"
-  - "Relatório temático com citações indexadas e mapas conceituais"
-  - "Matriz analítica de relações e síntese interpretativa"
-  - "Projetos de software (NVivo/ATLAS.ti) organizados para auditoria"
+  - 'Livro de códigos (codebook) detalhado com critérios explícitos de categorização'
+  - 'Relatório temático com citações indexadas e mapas conceituais'
+  - 'Matriz analítica de relações e síntese interpretativa'
+  - 'Projetos de software (NVivo/ATLAS.ti) organizados para auditoria'
 faq:
-  - q: "Vocês emitem nota fiscal?"
-    a: "Sim. Emitimos nota fiscal para pessoas físicas e jurídicas para todos os serviços prestados."
-  - q: "Como garantem a confiabilidade e rigor da codificação?"
-    a: "Adotamos procedimentos sistemáticos de validação intercodificadores, formulação explícita de livros de códigos e critérios de saturação teórica."
-  - q: "Como tratam a confidencialidade e consentimento na pesquisa qualitativa?"
-    a: "Garantimos o sigilo integral dos participantes por meio de pseudonimização, termo de consentimento livre e esclarecido (TCLE) e armazenamento criptografado de áudios e transcrições."
-  - q: "Vocês realizam as entrevistas ou apenas a análise?"
-    a: "Podemos apoiar tanto na elaboração dos roteiros e condução de entrevistas/grupos focais quanto na transcrição, estruturação e análise interpretativa dos dados já coletados."
+  - q: 'Vocês emitem nota fiscal?'
+    a: 'Sim. Emitimos nota fiscal para pessoas físicas e jurídicas para todos os serviços prestados.'
+  - q: 'Como garantem a confiabilidade e rigor da codificação?'
+    a: 'Adotamos procedimentos sistemáticos de validação intercodificadores, formulação explícita de livros de códigos e critérios de saturação teórica.'
+  - q: 'Como tratam a confidencialidade e consentimento na pesquisa qualitativa?'
+    a: 'Garantimos o sigilo integral dos participantes por meio de pseudonimização, termo de consentimento livre e esclarecido (TCLE) e armazenamento criptografado de áudios e transcrições.'
+  - q: 'Vocês realizam as entrevistas ou apenas a análise?'
+    a: 'Podemos apoiar tanto na elaboração dos roteiros e condução de entrevistas/grupos focais quanto na transcrição, estruturação e análise interpretativa dos dados já coletados.'
 ---
 
 ## O que é

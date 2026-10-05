@@ -1,36 +1,36 @@
 ---
-title: "Academic & Research Websites"
-description: "Developing fast, accessible web portals for research labs, conferences, and scholars, optimized for Google Scholar, ORCID, and academic impact."
-translationKey: "academic-websites"
-tier: "complementary"
+title: 'Academic & Research Websites'
+description: 'Developing fast, accessible web portals for research labs, conferences, and scholars, optimized for Google Scholar, ORCID, and academic impact.'
+translationKey: 'academic-websites'
+tier: 'complementary'
 order: 5
-icon: "lucide:globe"
-summary: "Modern, accessible web portals for research labs, scientific conferences, and faculty, featuring lightweight content management and academic SEO."
+icon: 'lucide:globe'
+summary: 'Modern, accessible web portals for research labs, scientific conferences, and faculty, featuring lightweight content management and academic SEO.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "Astro"
-  - "Next.js"
-  - "Hugo"
-  - "Tailwind CSS"
-  - "Markdown"
-  - "WordPress"
+  - 'Astro'
+  - 'Next.js'
+  - 'Hugo'
+  - 'Tailwind CSS'
+  - 'Markdown'
+  - 'WordPress'
 deliverables:
-  - "Fully responsive website deployed on custom or institutional university domains"
-  - "Academic integrations (ORCID, Google Scholar, publication feeds)"
-  - "Academic SEO metadata optimization (Highwire Press and Dublin Core tags)"
-  - "Step-by-step content updating manual and editorial tutorials"
+  - 'Fully responsive website deployed on custom or institutional university domains'
+  - 'Academic integrations (ORCID, Google Scholar, publication feeds)'
+  - 'Academic SEO metadata optimization (Highwire Press and Dublin Core tags)'
+  - 'Step-by-step content updating manual and editorial tutorials'
 faq:
-  - q: "Do you issue official invoices?"
-    a: "Yes. We issue official tax invoices (nota fiscal) for university departments, research foundations, and individuals."
-  - q: "What website maintenance models do you offer?"
-    a: "We offer three tiers: 1) Easy maintenance via visual CMS (WordPress); 2) Ultra-fast static sites via Markdown and GitHub (Astro/Hugo); 3) Bespoke full-stack web applications (Next.js/React)."
-  - q: "Can the website be hosted on university servers?"
-    a: "Yes. We can deploy to institutional university infrastructure, free GitHub Pages setups, or global serverless clouds (Netlify, Vercel)."
-  - q: "How do you guarantee long-term site sustainability?"
-    a: "Modern static architectures like Astro avoid bulky databases and vulnerable plugins, running reliably for years with near-zero maintenance overhead."
+  - q: 'Do you issue official invoices?'
+    a: 'Yes. We issue official tax invoices (nota fiscal) for university departments, research foundations, and individuals.'
+  - q: 'What website maintenance models do you offer?'
+    a: 'We offer three tiers: 1) Easy maintenance via visual CMS (WordPress); 2) Ultra-fast static sites via Markdown and GitHub (Astro/Hugo); 3) Bespoke full-stack web applications (Next.js/React).'
+  - q: 'Can the website be hosted on university servers?'
+    a: 'Yes. We can deploy to institutional university infrastructure, free GitHub Pages setups, or global serverless clouds (Netlify, Vercel).'
+  - q: 'How do you guarantee long-term site sustainability?'
+    a: 'Modern static architectures like Astro avoid bulky databases and vulnerable plugins, running reliably for years with near-zero maintenance overhead.'
 ---
 
 ## Overview

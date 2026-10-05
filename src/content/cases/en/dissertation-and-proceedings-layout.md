@@ -1,27 +1,27 @@
 ---
 title: "Typesetting and Editorial Standardization of Master's Thesis and Conference Proceedings"
-description: "Desktop publishing, bibliographic citation normalization, and formatting compliance for scholarly monographs and conference proceedings."
-translationKey: "formatting-works"
+description: 'Desktop publishing, bibliographic citation normalization, and formatting compliance for scholarly monographs and conference proceedings.'
+translationKey: 'formatting-works'
 order: 5
-sector: "academia"
+sector: 'academia'
 services:
-  - "document-formatting"
+  - 'document-formatting'
 tools:
-  - "LaTeX"
-  - "InDesign"
-  - "Zotero"
-  - "BibTeX"
+  - 'LaTeX'
+  - 'InDesign'
+  - 'Zotero'
+  - 'BibTeX'
 cover:
-  src: "../../../assets/images/cases/formatting-works/cover.png"
-  alt: "Cover page and interior typesetting of academic publications following formatting norms"
+  src: '../../../assets/images/cases/formatting-works/cover.png'
+  alt: 'Cover page and interior typesetting of academic publications following formatting norms'
 gallery:
-  - src: "../../../assets/images/cases/formatting-works/image.png"
-    alt: "Typeset interior pages with standardized footnotes and bibliography"
+  - src: '../../../assets/images/cases/formatting-works/image.png'
+    alt: 'Typeset interior pages with standardized footnotes and bibliography'
 links:
   - label: "Master's Thesis (Academia.edu)"
-    url: "https://www.academia.edu/88065978"
-  - label: "XXXIV UFJF History Conference Proceedings (Academia.edu)"
-    url: "https://www.academia.edu/124845124/"
+    url: 'https://www.academia.edu/88065978'
+  - label: 'XXXIV UFJF History Conference Proceedings (Academia.edu)'
+    url: 'https://www.academia.edu/124845124/'
 featured: false
 date: 2024-08-01
 ---

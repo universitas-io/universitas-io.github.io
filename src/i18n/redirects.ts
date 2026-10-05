@@ -10,6 +10,7 @@ export const redirects: Record<string, string> = {
   '/en/p/quantitative-research/': '/en/services/quantitative-research/',
   '/en/p/academic-website/': '/en/services/academic-websites/',
   '/en/p/dashboard-dados/': '/en/services/dashboards-and-data-visualization/',
-  '/en/p/diagramacao-formatacao/': '/en/services/document-layout-and-formatting/',
+  '/en/p/diagramacao-formatacao/':
+    '/en/services/document-layout-and-formatting/',
   '/en/archives/': '/en/insights/'
 };

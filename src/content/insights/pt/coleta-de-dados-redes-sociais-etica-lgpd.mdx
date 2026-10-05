@@ -1,8 +1,8 @@
 ---
-title: "Coleta de Dados em Redes Sociais: Boas Práticas, Ética e Conformidade com a LGPD"
-description: "Fundamentos legais, anonimização e conformidade com a LGPD e resoluções do CNS para raspagem e análise de dados em plataformas digitais."
-translationKey: "social-data-ethics"
-author: "exemplo-pesquisadora"
+title: 'Coleta de Dados em Redes Sociais: Boas Práticas, Ética e Conformidade com a LGPD'
+description: 'Fundamentos legais, anonimização e conformidade com a LGPD e resoluções do CNS para raspagem e análise de dados em plataformas digitais.'
+translationKey: 'social-data-ethics'
+author: 'exemplo-pesquisadora'
 pubDate: 2026-03-20
 featured: false
 draft: true
@@ -21,14 +21,18 @@ Um equívoco recorrente entre pesquisadores é supor que dados postados em praç
 Além disso, a identificação nominal de indivíduos em bases analíticas acadêmicas ou comerciais pode configurar violação da privacidade caso os dados sejam expostos fora do contexto original ou utilizados para fins discriminatórios.
 
 <Callout type="warning" title="Atenção à Legislação">
-A base legal para tratamento de dados pessoais em pesquisas científicas está expressamente prevista no artigo 7º, inciso IV da LGPD ("para a realização de estudos por órgão de pesquisa, garantida, sempre que possível, a anonimização"). Note a ressalva mandatória: a anonimização deve ser priorizada em todas as etapas da cadeia de custódia.
+  A base legal para tratamento de dados pessoais em pesquisas científicas está
+  expressamente prevista no artigo 7º, inciso IV da LGPD ("para a realização de
+  estudos por órgão de pesquisa, garantida, sempre que possível, a
+  anonimização"). Note a ressalva mandatória: a anonimização deve ser priorizada
+  em todas as etapas da cadeia de custódia.
 </Callout>
 
 ## 2. Pseudonimização vs. Anonimização Efetiva
 
 A gestão técnica do banco de dados coletado deve distinguir claramente dois procedimentos metodológicos:
 
-- **Pseudonimização (Art. 13, § 4º da LGPD):** Procedimento no qual dados perdem a associação direta com o indivíduo, substituindo nomes ou identificadores únicos de usuário (como `user_id`) por chaves criptográficas hash unidirecionais (ex.: SHA-256 com *salt*). Os dados mantêm a integridade relacional para análises de rede, mas impedem a identificação direta de terceiros sem a chave mestre, que deve ser armazenada em ambiente estritamente isolado.
+- **Pseudonimização (Art. 13, § 4º da LGPD):** Procedimento no qual dados perdem a associação direta com o indivíduo, substituindo nomes ou identificadores únicos de usuário (como `user_id`) por chaves criptográficas hash unidirecionais (ex.: SHA-256 com _salt_). Os dados mantêm a integridade relacional para análises de rede, mas impedem a identificação direta de terceiros sem a chave mestre, que deve ser armazenada em ambiente estritamente isolado.
 - **Anonimização (Art. 12 da LGPD):** Dados relativos a um titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis no momento do tratamento. Dados verdadeiramente anonimizados deixam de ser considerados dados pessoais sob a égide da lei.
 
 ## 3. Diretrizes CNS para Pesquisas em Ciências Humanas e Sociais
@@ -42,10 +46,14 @@ Para investigações acadêmicas submetidas ao sistema CEP/Conep, a Resolução 
 No entanto, quando a raspagem envolve a criação de novos perfis individuais, rastreamento de comportamentos privados em grupos restritos ou análise de dados sensíveis (crenças religiosas, opiniões políticas, dados de saúde ou orientação sexual — Art. 5º, II da LGPD), o parecer prévio do Comitê de Ética em Pesquisa é obrigatório.
 
 <Callout type="tip" title="Checklist de Conformidade Técnica">
-1. **Controle de Taxa (Rate Limiting):** Configure seus raspadores com atrasos intencionais (*politeness delays*) para evitar sobrecarga na infraestrutura dos servidores de origem.
-2. **Respeito a Termos de Uso:** Priorize a utilização de APIs oficiais e documentadas sempre que disponíveis.
-3. **Descarte Seguro:** Estabeleça uma política documental de retenção e descarte seguro de dados brutos não agregados ao término do projeto.
-4. **Relatório de Impacto (RIPD):** Em projetos corporativos ou governamentais, elabore um memorial de riscos à privacidade detalhando as salvaguardas implementadas.
+  1. **Controle de Taxa (Rate Limiting):** Configure seus raspadores com atrasos
+  intencionais (*politeness delays*) para evitar sobrecarga na infraestrutura
+  dos servidores de origem. 2. **Respeito a Termos de Uso:** Priorize a
+  utilização de APIs oficiais e documentadas sempre que disponíveis. 3.
+  **Descarte Seguro:** Estabeleça uma política documental de retenção e descarte
+  seguro de dados brutos não agregados ao término do projeto. 4. **Relatório de
+  Impacto (RIPD):** Em projetos corporativos ou governamentais, elabore um
+  memorial de riscos à privacidade detalhando as salvaguardas implementadas.
 </Callout>
 
 ## Conclusão

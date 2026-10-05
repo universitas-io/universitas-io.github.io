@@ -1,37 +1,37 @@
 ---
-title: "Quantitative Research"
-description: "Statistical modeling, hypothesis testing, and reproducible data analysis in R and Python for universities, businesses, and government."
-translationKey: "quantitative"
-tier: "core"
+title: 'Quantitative Research'
+description: 'Statistical modeling, hypothesis testing, and reproducible data analysis in R and Python for universities, businesses, and government.'
+translationKey: 'quantitative'
+tier: 'core'
 order: 1
-icon: "lucide:bar-chart-3"
-summary: "Advanced statistical modeling, predictive analysis, and structured hypothesis testing for data-informed decision-making."
+icon: 'lucide:bar-chart-3'
+summary: 'Advanced statistical modeling, predictive analysis, and structured hypothesis testing for data-informed decision-making.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "R"
-  - "Python"
-  - "RStudio"
-  - "Jupyter"
-  - "Tidyverse"
-  - "Statsmodels"
-  - "Scikit-Learn"
+  - 'R'
+  - 'Python'
+  - 'RStudio'
+  - 'Jupyter'
+  - 'Tidyverse'
+  - 'Statsmodels'
+  - 'Scikit-Learn'
 deliverables:
-  - "Documented, reproducible scripts in R or Python"
-  - "Comprehensive analytical report with publication-ready charts and tables"
-  - "Cleaned, structured dataset with variable codebook"
-  - "Technical briefing and findings presentation session"
+  - 'Documented, reproducible scripts in R or Python'
+  - 'Comprehensive analytical report with publication-ready charts and tables'
+  - 'Cleaned, structured dataset with variable codebook'
+  - 'Technical briefing and findings presentation session'
 faq:
-  - q: "Do you issue official invoices?"
-    a: "Yes. We issue official tax invoices (nota fiscal) for individual researchers and corporate or public institutions."
-  - q: "How do you ensure research reproducibility?"
-    a: "All workflows are fully scripted and version-controlled with explicit dependency environments, deterministic seeds, and transparent step-by-step documentation."
-  - q: "Does your research comply with data privacy regulations?"
-    a: "Yes. We work strictly with anonymized datasets and legitimate sources, adhering to LGPD, GDPR, and academic ethics board requirements."
-  - q: "Do you ghostwrite papers or theses for clients?"
-    a: "No. Universitas provides methodological and statistical consulting. Authorship, writing, and analytical conclusions remain solely with the researcher."
+  - q: 'Do you issue official invoices?'
+    a: 'Yes. We issue official tax invoices (nota fiscal) for individual researchers and corporate or public institutions.'
+  - q: 'How do you ensure research reproducibility?'
+    a: 'All workflows are fully scripted and version-controlled with explicit dependency environments, deterministic seeds, and transparent step-by-step documentation.'
+  - q: 'Does your research comply with data privacy regulations?'
+    a: 'Yes. We work strictly with anonymized datasets and legitimate sources, adhering to LGPD, GDPR, and academic ethics board requirements.'
+  - q: 'Do you ghostwrite papers or theses for clients?'
+    a: 'No. Universitas provides methodological and statistical consulting. Authorship, writing, and analytical conclusions remain solely with the researcher.'
 ---
 
 ## Overview

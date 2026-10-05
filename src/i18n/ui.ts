@@ -26,7 +26,8 @@ export const ui = {
     'nav.close': 'Fechar menu',
     'nav.breadcrumbs': 'Navegação estrutural',
     'footer.privacy': 'Privacidade',
-    'footer.tagline': 'Pesquisa quantitativa e qualitativa com rigor metodológico, ética e transparência.',
+    'footer.tagline':
+      'Pesquisa quantitativa e qualitativa com rigor metodológico, ética e transparência.'
   },
   en: {
     'nav.services': 'Services',
@@ -42,7 +43,8 @@ export const ui = {
     skip: 'Skip to content',
     'theme.toggle': 'Toggle light/dark theme',
     'lang.switch': 'Português',
-    'footer.invoice': 'We issue official tax invoices for individuals and organizations.',
+    'footer.invoice':
+      'We issue official tax invoices for individuals and organizations.',
     'footer.rights': 'All rights reserved.',
     'breadcrumb.home': 'Home',
     'draft.badge': 'DRAFT',
@@ -53,8 +55,9 @@ export const ui = {
     'nav.close': 'Close menu',
     'nav.breadcrumbs': 'Breadcrumbs',
     'footer.privacy': 'Privacy',
-    'footer.tagline': 'Quantitative and qualitative research grounded in rigor, ethics, and transparency.',
-  },
+    'footer.tagline':
+      'Quantitative and qualitative research grounded in rigor, ethics, and transparency.'
+  }
 } as const;
 
 export type UiKey = keyof (typeof ui)['pt'];

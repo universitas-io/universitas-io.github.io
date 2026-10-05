@@ -1,19 +1,19 @@
 ---
-title: "Dashboard de Inteligência Operacional em Power BI para LR Instalações Especiais"
-description: "Painel executivo em Power BI integrando métricas operacionais, faturamento e produtividade em tempo real para tomada de decisão."
-translationKey: "powerbi-lr"
+title: 'Dashboard de Inteligência Operacional em Power BI para LR Instalações Especiais'
+description: 'Painel executivo em Power BI integrando métricas operacionais, faturamento e produtividade em tempo real para tomada de decisão.'
+translationKey: 'powerbi-lr'
 order: 3
-client: "LR Instalações Especiais"
-sector: "business"
+client: 'LR Instalações Especiais'
+sector: 'business'
 services:
-  - "dashboards"
+  - 'dashboards'
 tools:
-  - "Power BI"
-  - "Excel"
-  - "DAX"
+  - 'Power BI'
+  - 'Excel'
+  - 'DAX'
 cover:
-  src: "../../../assets/images/cases/powerbi-lr/cover.png"
-  alt: "Painel Power BI com cartões de indicadores, gráficos de barras e filtros temporais"
+  src: '../../../assets/images/cases/powerbi-lr/cover.png'
+  alt: 'Painel Power BI com cartões de indicadores, gráficos de barras e filtros temporais'
 gallery: []
 links: []
 featured: true

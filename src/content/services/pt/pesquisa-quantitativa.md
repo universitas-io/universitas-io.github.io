@@ -1,37 +1,37 @@
 ---
-title: "Pesquisa Quantitativa"
-description: "Modelagem estatística, testes de hipóteses e análise de dados em R e Python para academia, empresas e setor público com rigor e reprodutibilidade."
-translationKey: "quantitative"
-tier: "core"
+title: 'Pesquisa Quantitativa'
+description: 'Modelagem estatística, testes de hipóteses e análise de dados em R e Python para academia, empresas e setor público com rigor e reprodutibilidade.'
+translationKey: 'quantitative'
+tier: 'core'
 order: 1
-icon: "lucide:bar-chart-3"
-summary: "Análise estatística avançada, modelagem preditiva e testes de hipóteses estruturados para decisões fundamentadas em dados."
+icon: 'lucide:bar-chart-3'
+summary: 'Análise estatística avançada, modelagem preditiva e testes de hipóteses estruturados para decisões fundamentadas em dados.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "R"
-  - "Python"
-  - "RStudio"
-  - "Jupyter"
-  - "Tidyverse"
-  - "Statsmodels"
-  - "Scikit-Learn"
+  - 'R'
+  - 'Python'
+  - 'RStudio'
+  - 'Jupyter'
+  - 'Tidyverse'
+  - 'Statsmodels'
+  - 'Scikit-Learn'
 deliverables:
-  - "Scripts documentados e reprodutíveis em R ou Python"
-  - "Relatório analítico com tabelas e gráficos prontos para publicação ou decisão"
-  - "Base de dados tratada, catalogada e documentada com dicionário de variáveis"
-  - "Sessão técnica de alinhamento e apresentação dos resultados"
+  - 'Scripts documentados e reprodutíveis em R ou Python'
+  - 'Relatório analítico com tabelas e gráficos prontos para publicação ou decisão'
+  - 'Base de dados tratada, catalogada e documentada com dicionário de variáveis'
+  - 'Sessão técnica de alinhamento e apresentação dos resultados'
 faq:
-  - q: "Vocês emitem nota fiscal?"
-    a: "Sim. Emitimos nota fiscal para pessoas físicas (pesquisadores, docentes) e jurídicas (empresas, fundações, órgãos públicos)."
-  - q: "Como garantem a reprodutibilidade dos resultados?"
-    a: "Trabalhamos com scripts totalmente versionados em R ou Python, controle de sementes aleatórias (seeds), pacotes explicitamente versionados e documentação detalhada passo a passo."
-  - q: "A pesquisa quantitativa respeita a LGPD e a ética acadêmica?"
-    a: "Sim. Trabalhamos exclusivamente com dados anonimizados ou de fontes legítimas, respeitando as exigências da LGPD e as diretrizes do sistema CEP/Conep quando aplicável."
-  - q: "Vocês escrevem trabalhos ou teses no lugar do autor?"
-    a: "Não. A Universitas oferece consultoria metodológica e análise estatística. A autoria, redação integral e conclusões permanecem sob responsabilidade do pesquisador."
+  - q: 'Vocês emitem nota fiscal?'
+    a: 'Sim. Emitimos nota fiscal para pessoas físicas (pesquisadores, docentes) e jurídicas (empresas, fundações, órgãos públicos).'
+  - q: 'Como garantem a reprodutibilidade dos resultados?'
+    a: 'Trabalhamos com scripts totalmente versionados em R ou Python, controle de sementes aleatórias (seeds), pacotes explicitamente versionados e documentação detalhada passo a passo.'
+  - q: 'A pesquisa quantitativa respeita a LGPD e a ética acadêmica?'
+    a: 'Sim. Trabalhamos exclusivamente com dados anonimizados ou de fontes legítimas, respeitando as exigências da LGPD e as diretrizes do sistema CEP/Conep quando aplicável.'
+  - q: 'Vocês escrevem trabalhos ou teses no lugar do autor?'
+    a: 'Não. A Universitas oferece consultoria metodológica e análise estatística. A autoria, redação integral e conclusões permanecem sob responsabilidade do pesquisador.'
 ---
 
 ## O que é

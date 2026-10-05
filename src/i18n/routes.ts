@@ -14,39 +14,42 @@ export type RouteKey =
   | 'thanks'
   | 'privacy';
 
-export const segments: Record<Exclude<RouteKey, 'home'>, Record<Locale, string>> = {
+export const segments: Record<
+  Exclude<RouteKey, 'home'>,
+  Record<Locale, string>
+> = {
   services: {
     pt: 'servicos',
-    en: 'services',
+    en: 'services'
   },
   audiences: {
     pt: 'para',
-    en: 'for',
+    en: 'for'
   },
   cases: {
     pt: 'casos',
-    en: 'cases',
+    en: 'cases'
   },
   insights: {
     pt: 'insights',
-    en: 'insights',
+    en: 'insights'
   },
   about: {
     pt: 'sobre',
-    en: 'about',
+    en: 'about'
   },
   contact: {
     pt: 'contato',
-    en: 'contact',
+    en: 'contact'
   },
   thanks: {
     pt: 'contato/obrigado',
-    en: 'contact/thank-you',
+    en: 'contact/thank-you'
   },
   privacy: {
     pt: 'privacidade',
-    en: 'privacy',
-  },
+    en: 'privacy'
+  }
 };
 
 export function path(lang: Locale, key: RouteKey, slug?: string): string {
@@ -63,7 +66,10 @@ export function path(lang: Locale, key: RouteKey, slug?: string): string {
   return `${prefix}/${seg}/`;
 }
 
-export function staticAlternate(pathname: string, target: Locale): string | null {
+export function staticAlternate(
+  pathname: string,
+  target: Locale
+): string | null {
   const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`;
   const routeKeys: RouteKey[] = [
     'home',
@@ -74,7 +80,7 @@ export function staticAlternate(pathname: string, target: Locale): string | null
     'about',
     'contact',
     'thanks',
-    'privacy',
+    'privacy'
   ];
 
   for (const key of routeKeys) {

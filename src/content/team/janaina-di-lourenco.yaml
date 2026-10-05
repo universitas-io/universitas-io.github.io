@@ -1,29 +1,29 @@
-name: "Janaína Di Lourenço"
+name: 'Janaína Di Lourenço'
 role:
-  pt: "Cientista Ambiental e Pesquisadora"
-  en: "Environmental Scientist and Researcher"
+  pt: 'Cientista Ambiental e Pesquisadora'
+  en: 'Environmental Scientist and Researcher'
 bio:
-  pt: "Especialista em governança ambiental, análise qualitativa de políticas públicas e sustentabilidade socioecológica."
-  en: "Specialist in environmental governance, qualitative policy analysis, and socio-ecological sustainability."
+  pt: 'Especialista em governança ambiental, análise qualitativa de políticas públicas e sustentabilidade socioecológica.'
+  en: 'Specialist in environmental governance, qualitative policy analysis, and socio-ecological sustainability.'
 education:
   pt:
-    - "Doutoranda em Ciência Ambiental (USP)"
-    - "Mestra em História Ambiental (UFRJ)"
+    - 'Doutoranda em Ciência Ambiental (USP)'
+    - 'Mestra em História Ambiental (UFRJ)'
   en:
-    - "PhD Candidate in Environmental Science (USP)"
-    - "MSc in Environmental History (UFRJ)"
+    - 'PhD Candidate in Environmental Science (USP)'
+    - 'MSc in Environmental History (UFRJ)'
 areas:
   pt:
-    - "Pesquisa Quantitativa"
-    - "Ciência Ambiental"
-    - "Pesquisa Qualitativa"
+    - 'Pesquisa Quantitativa'
+    - 'Ciência Ambiental'
+    - 'Pesquisa Qualitativa'
   en:
-    - "Quantitative Research"
-    - "Environmental Science"
-    - "Qualitative Research"
+    - 'Quantitative Research'
+    - 'Environmental Science'
+    - 'Qualitative Research'
 links:
-  lattes: "https://lattes.cnpq.br/0000000000000000"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
-  linkedin: "https://www.linkedin.com/in/exemplo"
+  lattes: 'https://lattes.cnpq.br/0000000000000000'
+  orcid: 'https://orcid.org/0000-0000-0000-0000'
+  linkedin: 'https://www.linkedin.com/in/exemplo'
 order: 2
 draft: true

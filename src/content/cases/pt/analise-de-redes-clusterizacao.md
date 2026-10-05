@@ -1,19 +1,19 @@
 ---
-title: "Visualização Interativa de Redes Complexas e Clusterização com Python e D3.js"
-description: "Dashboard interativo para análise quantitativa e qualitativa de redes, clusters temáticos e nós de influência com Python e D3.js."
-translationKey: "network-clusters"
+title: 'Visualização Interativa de Redes Complexas e Clusterização com Python e D3.js'
+description: 'Dashboard interativo para análise quantitativa e qualitativa de redes, clusters temáticos e nós de influência com Python e D3.js.'
+translationKey: 'network-clusters'
 order: 2
-sector: "academia"
+sector: 'academia'
 services:
-  - "dashboards"
-  - "quantitative"
+  - 'dashboards'
+  - 'quantitative'
 tools:
-  - "Python"
-  - "D3.js"
-  - "NetworkX"
+  - 'Python'
+  - 'D3.js'
+  - 'NetworkX'
 cover:
-  src: "../../../assets/images/cases/network-clusters/cover.png"
-  alt: "Grafo de rede com clusters de nós coloridos e arestas de conexões interativas"
+  src: '../../../assets/images/cases/network-clusters/cover.png'
+  alt: 'Grafo de rede com clusters de nós coloridos e arestas de conexões interativas'
 gallery: []
 links: []
 featured: false

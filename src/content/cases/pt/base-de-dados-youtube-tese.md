@@ -1,30 +1,30 @@
 ---
-title: "Base de Dados e Modelagem de Tópicos do YouTube para Tese de Doutorado"
-description: "Coleta em larga escala de mais de 100 mil vídeos e 50 milhões de comentários do YouTube para pesquisa acadêmica quanti-quali."
-translationKey: "youtube-thesis"
+title: 'Base de Dados e Modelagem de Tópicos do YouTube para Tese de Doutorado'
+description: 'Coleta em larga escala de mais de 100 mil vídeos e 50 milhões de comentários do YouTube para pesquisa acadêmica quanti-quali.'
+translationKey: 'youtube-thesis'
 order: 1
-sector: "academia"
+sector: 'academia'
 services:
-  - "digital-data"
-  - "quantitative"
-  - "qualitative"
+  - 'digital-data'
+  - 'quantitative'
+  - 'qualitative'
 tools:
-  - "Python"
-  - "YouTube Data API"
-  - "BERTopic"
-  - "SQLite"
-  - "Pandas"
+  - 'Python'
+  - 'YouTube Data API'
+  - 'BERTopic'
+  - 'SQLite'
+  - 'Pandas'
 cover:
-  src: "../../../assets/images/cases/youtube-thesis/cover.png"
-  alt: "Interface gráfica e código para coleta e estruturação de dados do YouTube"
+  src: '../../../assets/images/cases/youtube-thesis/cover.png'
+  alt: 'Interface gráfica e código para coleta e estruturação de dados do YouTube'
 gallery:
-  - src: "../../../assets/images/cases/youtube-thesis/image-1.png"
-    alt: "Distribuição temporal e métricas de comentários extraídos"
-  - src: "../../../assets/images/cases/youtube-thesis/image-2.png"
-    alt: "Agrupamento de tópicos com modelagem BERTopic"
+  - src: '../../../assets/images/cases/youtube-thesis/image-1.png'
+    alt: 'Distribuição temporal e métricas de comentários extraídos'
+  - src: '../../../assets/images/cases/youtube-thesis/image-2.png'
+    alt: 'Agrupamento de tópicos com modelagem BERTopic'
 links:
-  - label: "Repositório GitHub do Projeto"
-    url: "https://github.com/geraldohomero/dh-youtube-database"
+  - label: 'Repositório GitHub do Projeto'
+    url: 'https://github.com/geraldohomero/dh-youtube-database'
 featured: true
 date: 2024-06-01
 ---

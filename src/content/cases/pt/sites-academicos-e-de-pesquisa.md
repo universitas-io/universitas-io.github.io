@@ -1,37 +1,37 @@
 ---
-title: "Desenvolvimento de Portais Acadêmicos e Observatórios de Pesquisa"
-description: "Criação de websites estáticos de alto desempenho e acessibilidade para laboratórios, observatórios e eventos científicos universitários."
-translationKey: "academic-sites"
+title: 'Desenvolvimento de Portais Acadêmicos e Observatórios de Pesquisa'
+description: 'Criação de websites estáticos de alto desempenho e acessibilidade para laboratórios, observatórios e eventos científicos universitários.'
+translationKey: 'academic-sites'
 order: 4
-sector: "academia"
+sector: 'academia'
 services:
-  - "academic-websites"
+  - 'academic-websites'
 tools:
-  - "Astro"
-  - "Next.js"
-  - "WordPress"
-  - "Tailwind CSS"
+  - 'Astro'
+  - 'Next.js'
+  - 'WordPress'
+  - 'Tailwind CSS'
 cover:
-  src: "../../../assets/images/cases/academic-sites/cover.png"
-  alt: "Visão geral de interfaces de websites acadêmicos e científicos desenvolvidos"
+  src: '../../../assets/images/cases/academic-sites/cover.png'
+  alt: 'Visão geral de interfaces de websites acadêmicos e científicos desenvolvidos'
 gallery:
-  - src: "../../../assets/images/cases/academic-sites/oedla.png"
-    alt: "Página inicial do Observatório da Extrema Direita Latino-Americana (OEDLA)"
-  - src: "../../../assets/images/cases/academic-sites/labiia.png"
-    alt: "Portal do Laboratório Interdisciplinar em Inteligência Artificial (LABIIA)"
-  - src: "../../../assets/images/cases/academic-sites/seminario.png"
-    alt: "Website do II Seminário Discente de Ciência Política da Unicamp"
-  - src: "../../../assets/images/cases/academic-sites/processo.png"
-    alt: "Aplicação web de análise de processos seletivos"
+  - src: '../../../assets/images/cases/academic-sites/oedla.png'
+    alt: 'Página inicial do Observatório da Extrema Direita Latino-Americana (OEDLA)'
+  - src: '../../../assets/images/cases/academic-sites/labiia.png'
+    alt: 'Portal do Laboratório Interdisciplinar em Inteligência Artificial (LABIIA)'
+  - src: '../../../assets/images/cases/academic-sites/seminario.png'
+    alt: 'Website do II Seminário Discente de Ciência Política da Unicamp'
+  - src: '../../../assets/images/cases/academic-sites/processo.png'
+    alt: 'Aplicação web de análise de processos seletivos'
 links:
-  - label: "Observatório OEDLA"
-    url: "https://geraldohomero.github.io/oedla/"
-  - label: "LABIIA"
-    url: "https://geraldohomero.github.io/labiia/"
-  - label: "II Seminário PPGCP-Unicamp"
-    url: "https://seminariodiscenteppgcp.wordpress.com/"
-  - label: "Processo Seletivo"
-    url: "https://processo-seletivo-2024-2025.vercel.app/"
+  - label: 'Observatório OEDLA'
+    url: 'https://geraldohomero.github.io/oedla/'
+  - label: 'LABIIA'
+    url: 'https://geraldohomero.github.io/labiia/'
+  - label: 'II Seminário PPGCP-Unicamp'
+    url: 'https://seminariodiscenteppgcp.wordpress.com/'
+  - label: 'Processo Seletivo'
+    url: 'https://processo-seletivo-2024-2025.vercel.app/'
 featured: true
 date: 2025-01-01
 ---

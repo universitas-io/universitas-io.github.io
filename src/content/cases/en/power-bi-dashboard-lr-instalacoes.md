@@ -1,19 +1,19 @@
 ---
-title: "Operational Intelligence Power BI Dashboard for LR Instalações Especiais"
-description: "Executive Power BI dashboard unifying project operations, billing status, and team productivity in real time."
-translationKey: "powerbi-lr"
+title: 'Operational Intelligence Power BI Dashboard for LR Instalações Especiais'
+description: 'Executive Power BI dashboard unifying project operations, billing status, and team productivity in real time.'
+translationKey: 'powerbi-lr'
 order: 3
-client: "LR Instalações Especiais"
-sector: "business"
+client: 'LR Instalações Especiais'
+sector: 'business'
 services:
-  - "dashboards"
+  - 'dashboards'
 tools:
-  - "Power BI"
-  - "Excel"
-  - "DAX"
+  - 'Power BI'
+  - 'Excel'
+  - 'DAX'
 cover:
-  src: "../../../assets/images/cases/powerbi-lr/cover.png"
-  alt: "Power BI executive report with KPI cards, progress bars, and temporal filters"
+  src: '../../../assets/images/cases/powerbi-lr/cover.png'
+  alt: 'Power BI executive report with KPI cards, progress bars, and temporal filters'
 gallery: []
 links: []
 featured: true

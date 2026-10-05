@@ -1,30 +1,30 @@
 ---
-title: "Large-Scale YouTube Database and Topic Modeling for Doctoral Thesis"
-description: "Data harvesting of over 100k videos and 50M comments from YouTube for mixed-methods doctoral research."
-translationKey: "youtube-thesis"
+title: 'Large-Scale YouTube Database and Topic Modeling for Doctoral Thesis'
+description: 'Data harvesting of over 100k videos and 50M comments from YouTube for mixed-methods doctoral research.'
+translationKey: 'youtube-thesis'
 order: 1
-sector: "academia"
+sector: 'academia'
 services:
-  - "digital-data"
-  - "quantitative"
-  - "qualitative"
+  - 'digital-data'
+  - 'quantitative'
+  - 'qualitative'
 tools:
-  - "Python"
-  - "YouTube Data API"
-  - "BERTopic"
-  - "SQLite"
-  - "Pandas"
+  - 'Python'
+  - 'YouTube Data API'
+  - 'BERTopic'
+  - 'SQLite'
+  - 'Pandas'
 cover:
-  src: "../../../assets/images/cases/youtube-thesis/cover.png"
-  alt: "Graphical user interface and terminal scripts for YouTube data collection"
+  src: '../../../assets/images/cases/youtube-thesis/cover.png'
+  alt: 'Graphical user interface and terminal scripts for YouTube data collection'
 gallery:
-  - src: "../../../assets/images/cases/youtube-thesis/image-1.png"
-    alt: "Temporal distribution and metrics of scraped comments"
-  - src: "../../../assets/images/cases/youtube-thesis/image-2.png"
-    alt: "Topic clustering with BERTopic modeling"
+  - src: '../../../assets/images/cases/youtube-thesis/image-1.png'
+    alt: 'Temporal distribution and metrics of scraped comments'
+  - src: '../../../assets/images/cases/youtube-thesis/image-2.png'
+    alt: 'Topic clustering with BERTopic modeling'
 links:
-  - label: "Project GitHub Repository"
-    url: "https://github.com/geraldohomero/dh-youtube-database"
+  - label: 'Project GitHub Repository'
+    url: 'https://github.com/geraldohomero/dh-youtube-database'
 featured: true
 date: 2024-06-01
 ---

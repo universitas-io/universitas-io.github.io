@@ -1,19 +1,19 @@
 ---
-title: "Interactive Network Analysis and Graph Clustering with Python and D3.js"
-description: "Interactive data visualization dashboard for quantitative network metrics, modularity clusters, and influence nodes."
-translationKey: "network-clusters"
+title: 'Interactive Network Analysis and Graph Clustering with Python and D3.js'
+description: 'Interactive data visualization dashboard for quantitative network metrics, modularity clusters, and influence nodes.'
+translationKey: 'network-clusters'
 order: 2
-sector: "academia"
+sector: 'academia'
 services:
-  - "dashboards"
-  - "quantitative"
+  - 'dashboards'
+  - 'quantitative'
 tools:
-  - "Python"
-  - "D3.js"
-  - "NetworkX"
+  - 'Python'
+  - 'D3.js'
+  - 'NetworkX'
 cover:
-  src: "../../../assets/images/cases/network-clusters/cover.png"
-  alt: "Interactive network graph showing colored modular clusters and connected edge lines"
+  src: '../../../assets/images/cases/network-clusters/cover.png'
+  alt: 'Interactive network graph showing colored modular clusters and connected edge lines'
 gallery: []
 links: []
 featured: false

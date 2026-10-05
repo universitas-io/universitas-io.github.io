@@ -6,8 +6,4 @@ playwright-report/
 test-results/
 .lighthouseci/
 .DS_Store
-
-# Hugo legacy (until full cleanup)
-resources/
-.hugo_build.lock
-assets/jsconfig.json
+docs/*

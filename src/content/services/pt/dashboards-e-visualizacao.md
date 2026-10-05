@@ -1,36 +1,36 @@
 ---
-title: "Dashboards e Visualização"
-description: "Painéis interativos em Power BI, Tableau e Python/D3.js integrados a bancos de dados para monitoramento estratégico e tomada de decisões."
-translationKey: "dashboards"
-tier: "complementary"
+title: 'Dashboards e Visualização'
+description: 'Painéis interativos em Power BI, Tableau e Python/D3.js integrados a bancos de dados para monitoramento estratégico e tomada de decisões.'
+translationKey: 'dashboards'
+tier: 'complementary'
 order: 4
-icon: "lucide:layout-dashboard"
-summary: "Desenvolvimento de dashboards dinâmicos e intuitivos que transformam dados complexos em indicadores visuais claros para tomada de decisão."
+icon: 'lucide:layout-dashboard'
+summary: 'Desenvolvimento de dashboards dinâmicos e intuitivos que transformam dados complexos em indicadores visuais claros para tomada de decisão.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "Power BI"
-  - "Tableau"
-  - "Python"
-  - "D3.js"
-  - "Looker Studio"
-  - "Streamlit"
+  - 'Power BI'
+  - 'Tableau'
+  - 'Python'
+  - 'D3.js'
+  - 'Looker Studio'
+  - 'Streamlit'
 deliverables:
-  - "Dashboard interativo publicado em ambiente corporativo ou web pública"
-  - "Pipeline automatizado de atualização e conexão com bases de dados"
-  - "Guia de navegação e documentação técnica dos indicadores"
-  - "Treinamento prático de operação para a equipe"
+  - 'Dashboard interativo publicado em ambiente corporativo ou web pública'
+  - 'Pipeline automatizado de atualização e conexão com bases de dados'
+  - 'Guia de navegação e documentação técnica dos indicadores'
+  - 'Treinamento prático de operação para a equipe'
 faq:
-  - q: "Vocês emitem nota fiscal?"
-    a: "Sim. Emitimos nota fiscal para pessoas físicas e jurídicas para o desenvolvimento e manutenção de dashboards."
-  - q: "Quais ferramentas de visualização vocês utilizam?"
-    a: "Trabalhamos tanto com plataformas líderes de BI corporativo (Power BI, Tableau, Looker Studio) quanto com bibliotecas web customizadas (Python, D3.js, Streamlit)."
-  - q: "É possível conectar o painel a dados que mudam com frequência?"
-    a: "Sim. Estruturamos rotinas automatizadas de atualização conectadas a planilhas, bancos de dados SQL, APIs e sistemas ERP/CRM."
-  - q: "Como garantem a usabilidade e clareza visual?"
-    a: "Aplicamos princípios rigorosos de design de informação (tuftean data-ink ratio), hierarquia visual e testes de usabilidade com os usuários finais."
+  - q: 'Vocês emitem nota fiscal?'
+    a: 'Sim. Emitimos nota fiscal para pessoas físicas e jurídicas para o desenvolvimento e manutenção de dashboards.'
+  - q: 'Quais ferramentas de visualização vocês utilizam?'
+    a: 'Trabalhamos tanto com plataformas líderes de BI corporativo (Power BI, Tableau, Looker Studio) quanto com bibliotecas web customizadas (Python, D3.js, Streamlit).'
+  - q: 'É possível conectar o painel a dados que mudam com frequência?'
+    a: 'Sim. Estruturamos rotinas automatizadas de atualização conectadas a planilhas, bancos de dados SQL, APIs e sistemas ERP/CRM.'
+  - q: 'Como garantem a usabilidade e clareza visual?'
+    a: 'Aplicamos princípios rigorosos de design de informação (tuftean data-ink ratio), hierarquia visual e testes de usabilidade com os usuários finais.'
 ---
 
 ## O que é

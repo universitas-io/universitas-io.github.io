@@ -1,36 +1,36 @@
 ---
-title: "Document Layout & Formatting"
-description: "Professional layout and formatting for dissertations, theses, conference proceedings, and books compliant with ABNT, APA, Chicago, and Vancouver."
-translationKey: "document-formatting"
-tier: "complementary"
+title: 'Document Layout & Formatting'
+description: 'Professional layout and formatting for dissertations, theses, conference proceedings, and books compliant with ABNT, APA, Chicago, and Vancouver.'
+translationKey: 'document-formatting'
+tier: 'complementary'
 order: 6
-icon: "lucide:file-text"
-summary: "Editorial layout, typographic typesetting, and strict bibliographic standardization for scholarly publications, theses, and technical reports."
+icon: 'lucide:file-text'
+summary: 'Editorial layout, typographic typesetting, and strict bibliographic standardization for scholarly publications, theses, and technical reports.'
 audiences:
-  - "academia"
-  - "business"
-  - "public-sector"
+  - 'academia'
+  - 'business'
+  - 'public-sector'
 tools:
-  - "LaTeX"
-  - "InDesign"
-  - "Typst"
-  - "Zotero"
-  - "BibTeX"
-  - "Pandoc"
+  - 'LaTeX'
+  - 'InDesign'
+  - 'Typst'
+  - 'Zotero'
+  - 'BibTeX'
+  - 'Pandoc'
 deliverables:
-  - "High-resolution, publication-ready PDF prepared for commercial print and digital repositories"
-  - "Fully structured source documents (LaTeX, InDesign, or normalized DOCX)"
-  - "Standardized reference library in BibTeX or clean Zotero collections"
-  - "Editorial compliance checklist verified against target journal or publisher standards"
+  - 'High-resolution, publication-ready PDF prepared for commercial print and digital repositories'
+  - 'Fully structured source documents (LaTeX, InDesign, or normalized DOCX)'
+  - 'Standardized reference library in BibTeX or clean Zotero collections'
+  - 'Editorial compliance checklist verified against target journal or publisher standards'
 faq:
-  - q: "Do you issue official invoices?"
-    a: "Yes. We issue official tax invoices (nota fiscal) for individuals, institutions, and publishing houses."
-  - q: "Which citation and formatting standards do you support?"
-    a: "We support APA (7th ed.), Chicago/Turabian, ABNT, Vancouver, MLA, IEEE, and custom publisher-specific style sheets."
-  - q: "Can you manage and clean our Zotero or BibTeX library?"
-    a: "Yes. We verify DOIs, standardize author capitalization, fix missing journal metadata, and ensure exact consistency between citations and reference lists."
-  - q: "What is the difference between copyediting and layout typesetting?"
-    a: "Copyediting polishes text flow, grammar, and consistency. Typesetting handles geometry, page layout, typography, figure placement, and numbering. We deliver both in an integrated workflow."
+  - q: 'Do you issue official invoices?'
+    a: 'Yes. We issue official tax invoices (nota fiscal) for individuals, institutions, and publishing houses.'
+  - q: 'Which citation and formatting standards do you support?'
+    a: 'We support APA (7th ed.), Chicago/Turabian, ABNT, Vancouver, MLA, IEEE, and custom publisher-specific style sheets.'
+  - q: 'Can you manage and clean our Zotero or BibTeX library?'
+    a: 'Yes. We verify DOIs, standardize author capitalization, fix missing journal metadata, and ensure exact consistency between citations and reference lists.'
+  - q: 'What is the difference between copyediting and layout typesetting?'
+    a: 'Copyediting polishes text flow, grammar, and consistency. Typesetting handles geometry, page layout, typography, figure placement, and numbering. We deliver both in an integrated workflow.'
 ---
 
 ## Overview
