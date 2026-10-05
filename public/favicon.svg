@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="logo-lattice-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3BA7E0" />
+      <stop offset="100%" stop-color="#6CC24A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Navy U Body -->
+  <path
+    d="M42 12 H52 V36 C52 46.5 44 53 32 53 C22.5 53 16.5 48.5 13 43 C18 48 24 48 28.5 46.5 C36 44 42 39 42 31 Z"
+    fill="#1F3A5F"
+  />
+
+  <!-- Network Lattice (Left arm) -->
+  <!-- Connecting lines -->
+  <g stroke="url(#logo-lattice-grad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer vertical lines -->
+    <line x1="14" y1="13" x2="14" y2="25" />
+    <line x1="14" y1="25" x2="14" y2="37" />
+    <line x1="24" y1="13" x2="24" y2="25" />
+    <line x1="24" y1="25" x2="24" y2="37" />
+
+    <!-- Horizontals -->
+    <line x1="14" y1="13" x2="24" y2="13" />
+    <line x1="14" y1="25" x2="24" y2="25" />
+    <line x1="14" y1="37" x2="24" y2="37" />
+
+    <!-- Diagonals across central nodes -->
+    <line x1="14" y1="13" x2="19" y2="19" />
+    <line x1="24" y1="13" x2="19" y2="19" />
+    <line x1="19" y1="19" x2="14" y2="25" />
+    <line x1="19" y1="19" x2="24" y2="25" />
+
+    <line x1="14" y1="25" x2="19" y2="31" />
+    <line x1="24" y1="25" x2="19" y2="31" />
+    <line x1="19" y1="31" x2="14" y2="37" />
+    <line x1="19" y1="31" x2="24" y2="37" />
+
+    <!-- Lead line connecting to the base of U -->
+    <path d="M14 37 C14 43 18 47 22.5 48" />
+  </g>
+
+  <!-- Network Nodes -->
+  <g fill="url(#logo-lattice-grad)">
+    <circle cx="14" cy="13" r="2.8" />
+    <circle cx="24" cy="13" r="2.8" />
+    <circle cx="19" cy="19" r="2.4" />
+    <circle cx="14" cy="25" r="2.5" />
+    <circle cx="24" cy="25" r="2.5" />
+    <circle cx="19" cy="31" r="2.4" />
+    <circle cx="14" cy="37" r="2.8" />
+    <circle cx="24" cy="37" r="2.8" />
+    <circle cx="22.5" cy="48" r="2.8" />
+  </g>
+</svg>

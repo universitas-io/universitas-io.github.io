@@ -1,15 +1,20 @@
 ---
+import Logo from '../components/ui/Logo.astro';
 import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="pt">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Universitas</title>
   </head>
-  <body>
-    <h1>Universitas</h1>
+  <body class="bg-white text-navy-900 p-8">
+    <div class="flex items-center gap-4">
+      <Logo variant="horizontal" class="h-10 text-navy-900" />
+      <Logo variant="mark" class="h-10 w-10 text-navy-900" />
+    </div>
   </body>
 </html>

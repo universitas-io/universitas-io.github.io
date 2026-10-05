@@ -8,7 +8,6 @@ test-results/
 .DS_Store
 
 # Hugo legacy (until full cleanup)
-public/
 resources/
 .hugo_build.lock
 assets/jsconfig.json
