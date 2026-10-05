@@ -26,13 +26,19 @@ export default defineConfig({
       command: 'npm run build:preview && npm run preview -- --port 4321',
       port: 4321,
       reuseExistingServer: !process.env.CI,
-      timeout: 120000
+      timeout: 120000,
+      env: {
+        PUBLIC_WEB3FORMS_KEY: 'test-key'
+      }
     },
     {
       command: 'npm run dev -- --port 4322',
       port: 4322,
       reuseExistingServer: !process.env.CI,
-      timeout: 120000
+      timeout: 120000,
+      env: {
+        PUBLIC_WEB3FORMS_KEY: 'test-key'
+      }
     }
   ]
 });

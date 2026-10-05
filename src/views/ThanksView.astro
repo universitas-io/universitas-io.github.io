@@ -1,0 +1,91 @@
+---
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import PageLayout from '../layouts/PageLayout.astro';
+import Button from '../components/ui/Button.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const currentPath = path(lang, 'thanks');
+const alternates = {
+  pt: path('pt', 'thanks'),
+  en: path('en', 'thanks')
+};
+
+const crumbs = [
+  { name: t(lang, 'breadcrumb.home'), pathname: path(lang, 'home') },
+  { name: t(lang, 'nav.contact'), pathname: path(lang, 'contact') },
+  { name: lang === 'pt' ? 'Obrigado' : 'Thank You', pathname: currentPath }
+];
+
+const heading =
+  lang === 'pt'
+    ? 'Solicitação Enviada com Sucesso!'
+    : 'Proposal Inquiry Received!';
+
+const lead =
+  lang === 'pt'
+    ? 'Agradecemos o contato. Nossa equipe técnica já recebeu as informações da sua demanda.'
+    : 'Thank you for reaching out. Our team has received your project details.';
+
+const description =
+  lang === 'pt'
+    ? 'Confirmação de recebimento de solicitação de proposta de consultoria na Universitas.'
+    : 'Confirmation of research consulting inquiry receipt at Universitas.';
+---
+
+<PageLayout
+  lang={lang}
+  title={heading}
+  description={description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={heading}
+  lead={lead}
+  eyebrow={lang === 'pt' ? 'Confirmação' : 'Confirmation'}
+  crumbs={crumbs}
+  noindex={true}
+>
+  <div class="max-w-2xl mx-auto p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#112239] border border-gray-200 dark:border-navy-700/60 shadow-sm text-center space-y-6">
+    <div class="w-16 h-16 rounded-2xl bg-green-50 dark:bg-green-950/50 text-green-600 dark:text-green-400 flex items-center justify-center mx-auto border border-green-200 dark:border-green-800">
+      <svg
+        class="w-8 h-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          d="M5 13l4 4L19 7"
+        />
+      </svg>
+    </div>
+
+    <div class="space-y-3">
+      <h2 class="text-2xl font-bold font-display text-navy-900 dark:text-white">
+        {lang === 'pt' ? 'O que acontece agora?' : 'What happens next?'}
+      </h2>
+      <p class="text-sm sm:text-base text-ink-600 dark:text-gray-300 leading-relaxed">
+        {lang === 'pt'
+          ? 'Nossa coordenação técnica avaliará o escopo do seu projeto, o universo amostral e as bases necessárias. Em até 1 a 2 dias úteis, enviaremos por e-mail uma resposta com memorial metodológico preliminar e estimativa de cronograma.'
+          : 'Our research coordinators will review your scope, sampling needs, and target datasets. Within 1 to 2 business days, we will reply with an initial methodological outline and schedule estimate.'}
+      </p>
+    </div>
+
+    <div class="pt-6 border-t border-gray-100 dark:border-navy-700/40 flex flex-wrap justify-center gap-4">
+      <Button href={path(lang, 'home')} variant="primary" size="md">
+        {lang === 'pt' ? 'Voltar para o início' : 'Back to Home'}
+      </Button>
+      <Button href={path(lang, 'cases')} variant="outline" size="md">
+        {lang === 'pt' ? 'Explorar casos práticos' : 'Explore Case Studies'}
+      </Button>
+    </div>
+  </div>
+</PageLayout>

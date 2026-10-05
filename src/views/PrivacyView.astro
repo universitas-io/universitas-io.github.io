@@ -1,0 +1,260 @@
+---
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import { site } from '../../site.config';
+import PageLayout from '../layouts/PageLayout.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const currentPath = path(lang, 'privacy');
+const alternates = {
+  pt: path('pt', 'privacy'),
+  en: path('en', 'privacy')
+};
+
+const crumbs = [
+  { name: t(lang, 'breadcrumb.home'), pathname: path(lang, 'home') },
+  {
+    name: lang === 'pt' ? 'Política de Privacidade' : 'Privacy Policy',
+    pathname: currentPath
+  }
+];
+
+const heading = lang === 'pt' ? 'Política de Privacidade' : 'Privacy Policy';
+const lead =
+  lang === 'pt'
+    ? 'Transparência integral sobre o tratamento de dados pessoais, conformidade com a LGPD e respeito à privacidade de pesquisadores e clientes.'
+    : 'Complete transparency regarding personal data handling, compliance with LGPD and international privacy standards.';
+
+const description =
+  lang === 'pt'
+    ? 'Política de privacidade e proteção de dados da Universitas em conformidade com a LGPD (Lei 13.709/2018).'
+    : 'Privacy policy and data protection framework of Universitas in compliance with LGPD and international privacy regulations.';
+---
+
+<PageLayout
+  lang={lang}
+  title={heading}
+  description={description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={heading}
+  lead={lead}
+  eyebrow={lang === 'pt' ? 'Governança de Dados' : 'Data Governance'}
+  crumbs={crumbs}
+>
+  <!-- TODO usuário: CNPJ/endereço, se desejar -->
+  <article class="prose prose-slate dark:prose-invert max-w-3xl mx-auto">
+    {lang === 'pt' ? (
+      <>
+        <h2>1. Controlador e Princípios Gerais</h2>
+        <p>
+          A <strong>Universitas</strong> (referida como "nós" ou "consultoria")
+          assume o compromisso de proteger a privacidade e os dados pessoais de
+          todos os usuários, pesquisadores, parceiros e clientes que interagem
+          com nossa plataforma e contratam nossos serviços metodológicos.
+        </p>
+        <p>
+          Esta Política de Privacidade foi elaborada em estrita conformidade com
+          a{' '}
+          <strong>
+            Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)
+          </strong>{' '}
+          e orienta-se pelos princípios da finalidade, necessidade,
+          transparência, segurança e prevenção.
+        </p>
+        <p>
+          Para qualquer dúvida, requisição de direitos ou contato relacionado à
+          governança de dados, o canal oficial é:{' '}
+          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+        </p>
+
+        <h2>2. Dados Pessoais Coletados e Finalidades</h2>
+        <p>
+          Coletamos exclusivamente os dados estritamente necessários para
+          viabilizar o atendimento e a prestação de serviços analíticos
+          solicitados por você:
+        </p>
+        <ul>
+          <li>
+            <strong>Formulário de Solicitação de Proposta:</strong> Coletamos
+            nome completo, e-mail institucional ou profissional, organização,
+            telefone/WhatsApp, setor institucional, serviço pretendido e a
+            descrição do projeto. A base legal aplicável é a realização de
+            procedimentos preliminares relacionados a contrato a pedido do
+            titular (art. 7º, V da LGPD).
+          </li>
+          <li>
+            <strong>Comunicações Diretas:</strong> Mensagens trocadas
+            voluntariamente por e-mail ou WhatsApp corporativo para alinhamento
+            de escopos e cronogramas.
+          </li>
+        </ul>
+
+        <h2>3. Operadores e Tecnologias de Terceiros</h2>
+        <p>
+          Para manter nossa infraestrutura técnica segura, mínima e aderente às
+          melhores práticas de proteção de dados, utilizamos apenas parceiros
+          tecnológicos comprometidos com privacidade:
+        </p>
+        <ul>
+          <li>
+            <strong>Web3Forms:</strong> Atua como operador estritamente para o
+            roteamento e despacho das mensagens enviadas pelo formulário de
+            contato até nossa caixa postal segura. O serviço não comercializa
+            nem retém indefinidamente dados para perfis comportamentais.
+          </li>
+          <li>
+            <strong>GoatCounter:</strong> Plataforma de análise de audiência
+            orientada à privacidade. Não utiliza cookies, não armazena endereços
+            IP e não rastreia visitantes entre diferentes domínios da internet.
+            As métricas coletadas são agregadas e totalmente anônimas.
+          </li>
+        </ul>
+
+        <h2>4. Custódia e Retenção de Dados em Projetos de Pesquisa</h2>
+        <p>
+          Nos projetos de consultoria contratados que envolvam coleta primária
+          (entrevistas, surveys) ou extração secundária (web scraping, dados de
+          redes sociais), aplicamos rigorosos protocolos de anonimização e
+          pseudonimização. Nenhum dado de pesquisa empírica é compartilhado
+          publicamente sem consentimento ou amparo legal específico, respeitando
+          adicionalmente as resoluções éticas da Comissão Nacional de Ética em
+          Pesquisa (Conep).
+        </p>
+
+        <h2>5. Direitos do Titular de Dados (Art. 18 da LGPD)</h2>
+        <p>
+          Você tem o direito de, a qualquer momento e mediante requisição
+          gratuita:
+        </p>
+        <ul>
+          <li>Confirmar a existência de tratamento de seus dados;</li>
+          <li>Acessar seus dados pessoais armazenados;</li>
+          <li>
+            Solicitar a correção de dados incompletos, inexatos ou
+            desatualizados;
+          </li>
+          <li>
+            Requerer a eliminação de dados tratados com base em consentimento
+            prévio;
+          </li>
+          <li>Revogar o consentimento a qualquer tempo.</li>
+        </ul>
+        <p>
+          Para exercer quaisquer desses direitos, envie uma mensagem para{' '}
+          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+        </p>
+
+        <h2>6. Atualizações desta Política</h2>
+        <p>
+          Esta política pode ser periodicamente revisada para refletir
+          aprimoramentos técnicos ou novas determinações regulatórias da
+          Autoridade Nacional de Proteção de Dados (ANPD).
+        </p>
+        <p class="text-xs text-ink-600 dark:text-gray-400">
+          Última atualização: Março de 2026.
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>1. Data Controller & Governing Principles</h2>
+        <p>
+          <strong>Universitas</strong> (referred to as "we", "us", or "our
+          consultancy") is committed to protecting the privacy and personal data
+          of researchers, partners, and institutional clients engaging with our
+          platform and consulting services.
+        </p>
+        <p>
+          This Privacy Policy is established in full compliance with the
+          Brazilian General Data Protection Law (
+          <strong>LGPD — Law No. 13,709/2018</strong>) as well as the General
+          Data Protection Regulation (<strong>GDPR</strong>) principles of
+          purpose limitation, necessity, transparency, and data integrity.
+        </p>
+        <p>
+          For data governance inquiries or rights requests, our primary contact
+          is: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+        </p>
+
+        <h2>2. Data Collected & Processing Purposes</h2>
+        <p>
+          We only gather personal data strictly necessary to respond to your
+          research proposals and project inquiries:
+        </p>
+        <ul>
+          <li>
+            <strong>Proposal Request Form:</strong> Full name, institutional
+            email, organization, phone number, sector, desired service, and
+            inquiry brief. Legal basis: preparatory contractual steps initiated
+            at the request of the data subject (LGPD Art. 7, V; GDPR Art.
+            6(1)(b)).
+          </li>
+          <li>
+            <strong>Direct Inquiries:</strong> Messages exchanged via email or
+            WhatsApp regarding research methodology, scope, or deadlines.
+          </li>
+        </ul>
+
+        <h2>3. Third-Party Service Providers</h2>
+        <p>
+          We partner with privacy-centric technical infrastructure providers:
+        </p>
+        <ul>
+          <li>
+            <strong>Web3Forms:</strong> Operates solely as an encrypted
+            submission router to deliver contact form inquiries directly to our
+            secure inbox without secondary commercial use or persistent data
+            harvesting.
+          </li>
+          <li>
+            <strong>GoatCounter:</strong> Privacy-first analytics tool. It uses
+            no cookies, stores no personal IP addresses, and does not track
+            users across websites. All analytical metrics are aggregated and
+            anonymous.
+          </li>
+        </ul>
+
+        <h2>4. Data Custody in Empirical Research Engagements</h2>
+        <p>
+          In client engagements involving primary field collection (interviews,
+          surveys) or secondary data extraction, we enforce rigorous
+          pseudonymization and anonymization protocols. Research data is stored
+          in encrypted repositories and handled in accordance with academic
+          ethics boards and legal frameworks.
+        </p>
+
+        <h2>5. Your Rights as a Data Subject</h2>
+        <p>
+          Under LGPD (Article 18) and international privacy laws, you are
+          entitled to:
+        </p>
+        <ul>
+          <li>Confirm the existence of processing of your data;</li>
+          <li>Access your stored personal information;</li>
+          <li>Request correction of inaccurate or incomplete data;</li>
+          <li>Request deletion of data processed on the basis of consent;</li>
+          <li>Revoke previously granted consent at any time.</li>
+        </ul>
+        <p>
+          To exercise your rights, please email us at{' '}
+          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+        </p>
+
+        <h2>6. Policy Updates</h2>
+        <p>
+          This policy may be updated periodically to mirror legal changes and
+          technical enhancements.
+        </p>
+        <p class="text-xs text-ink-600 dark:text-gray-400">
+          Last revised: March 2026.
+        </p>
+      </>
+    )}
+  </article>
+</PageLayout>

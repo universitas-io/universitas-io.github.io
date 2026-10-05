@@ -15,7 +15,9 @@ export const site = {
     linkedin: 'https://www.linkedin.com/company/universitas-solutions'
   },
   integrations: {
-    web3formsKey: '', // preencher
+    web3formsKey:
+      (typeof process !== 'undefined' && process.env?.PUBLIC_WEB3FORMS_KEY) ||
+      '',
     goatcounter: '', // ex.: 'universitas' → universitas.goatcounter.com
     googleSiteVerification: ''
   }

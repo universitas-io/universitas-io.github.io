@@ -1,0 +1,158 @@
+---
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import { site } from '../../site.config';
+import { contactPage as makeContactPageSchema } from '../lib/seo/jsonld';
+import PageLayout from '../layouts/PageLayout.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const currentPath = path(lang, 'contact');
+const alternates = {
+  pt: path('pt', 'contact'),
+  en: path('en', 'contact')
+};
+
+const crumbs = [
+  { name: t(lang, 'breadcrumb.home'), pathname: path(lang, 'home') },
+  { name: t(lang, 'nav.contact'), pathname: currentPath }
+];
+
+const heading = lang === 'pt' ? 'Solicite uma Proposta' : 'Request a Proposal';
+const lead =
+  lang === 'pt'
+    ? 'Compartilhe sua pergunta de pesquisa ou desafio de dados. Nossa equipe elaborará um memorial metodológico e um orçamento sob medida.'
+    : 'Share your research questions or data challenges. Our team will prepare a tailored methodological memorandum and quotation.';
+
+const description =
+  lang === 'pt'
+    ? 'Solicite um orçamento de consultoria em pesquisa quantitativa e qualitativa. Resposta em até 2 dias úteis com memorial metodológico.'
+    : 'Request a proposal for quantitative and qualitative research consulting. Response within 2 business days with a methodological plan.';
+
+const jsonLd = [
+  makeContactPageSchema({
+    pathname: currentPath,
+    lang
+  })
+];
+
+const waUrl = `https://wa.me/${site.contact.whatsapp}`;
+const mailUrl = `mailto:${site.contact.email}`;
+---
+
+<PageLayout
+  lang={lang}
+  title={heading}
+  description={description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={heading}
+  lead={lead}
+  eyebrow={lang === 'pt' ? 'Atendimento Técnico' : 'Technical Consultation'}
+  crumbs={crumbs}
+  jsonLd={jsonLd}
+>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- Main Column: Form -->
+    <div class="lg:col-span-8">
+      <ContactForm lang={lang} />
+    </div>
+
+    <!-- Sidebar Column: Contacts and Pledges -->
+    <aside class="lg:col-span-4 space-y-6">
+      <Card class="p-6 sm:p-8 space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+            {lang === 'pt' ? 'Canais Diretos' : 'Direct Channels'}
+          </span>
+          <h3 class="text-xl font-bold font-display text-navy-900 dark:text-white mt-1">
+            {lang === 'pt' ? 'Prefere conversar?' : 'Prefer to talk?'}
+          </h3>
+          <p class="text-xs text-ink-600 dark:text-gray-400 leading-relaxed mt-2">
+            {lang === 'pt'
+              ? 'Se sua demanda for urgente ou se preferir um diálogo inicial, fale diretamente com nossa coordenação:'
+              : 'If your inquiry is time-sensitive or you prefer an exploratory talk, reach out directly:'}
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <Button
+            href={waUrl}
+            variant="primary"
+            size="md"
+            class="w-full text-center"
+          >
+            {lang === 'pt' ? 'Conversar no WhatsApp' : 'Message on WhatsApp'}
+          </Button>
+          <Button
+            href={mailUrl}
+            variant="outline"
+            size="md"
+            class="w-full text-center truncate"
+          >
+            {site.contact.email}
+          </Button>
+        </div>
+
+        <div class="pt-4 border-t border-gray-100 dark:border-navy-700/60 text-xs text-ink-600 dark:text-gray-400 space-y-2">
+          <div class="flex items-center gap-2">
+            <span class="text-green-500 font-bold">●</span>
+            <span>
+              {lang === 'pt'
+                ? 'Atendimento: Segunda a sexta, 9h às 18h'
+                : 'Hours: Monday to Friday, 9:00 - 18:00 (BRT)'}
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[#1a6ca8] dark:text-blue-400 font-bold">●</span>
+            <span>
+              {lang === 'pt'
+                ? 'Retorno em até 1 a 2 dias úteis'
+                : 'Response within 1 to 2 business days'}
+            </span>
+          </div>
+        </div>
+      </Card>
+
+      <Card class="p-6 sm:p-8 space-y-4 bg-surface-alt/70 dark:bg-navy-900/60">
+        <h4 class="text-sm font-bold font-display text-navy-900 dark:text-white">
+          {lang === 'pt' ? 'Nossos Compromissos' : 'Our Guarantees'}
+        </h4>
+        <ul class="space-y-3 text-xs text-ink-600 dark:text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="text-[#1a6ca8] dark:text-blue-400 font-bold">✓</span>
+            <span>
+              {lang === 'pt'
+                ? 'Sigilo rigoroso e assinatura de Acordo de Confidencialidade (NDA) quando requerido.'
+                : 'Strict non-disclosure policy and NDA execution upon project request.'}
+            </span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#1a6ca8] dark:text-blue-400 font-bold">✓</span>
+            <span>
+              {lang === 'pt'
+                ? 'Emissão de nota fiscal para pessoas físicas e jurídicas em todo o território nacional.'
+                : 'Full fiscal transparency with formal invoicing for institutions and individuals.'}
+            </span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#1a6ca8] dark:text-blue-400 font-bold">✓</span>
+            <span>
+              {lang === 'pt'
+                ? 'Memoriais metodológicos auditáveis e código reprodutível em todas as entregas.'
+                : 'Methodological transparency with fully reproducible analytical code.'}
+            </span>
+          </li>
+        </ul>
+      </Card>
+    </aside>
+  </div>
+</PageLayout>
