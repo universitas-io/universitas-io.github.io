@@ -19,6 +19,6 @@ export const site = {
       (typeof process !== 'undefined' && process.env?.PUBLIC_WEB3FORMS_KEY) ||
       '567423c7-5968-446e-97ae-1bedb1bcd23c',
     goatcounter: 'universitas', // universitas.goatcounter.com
-    googleSiteVerification: 'l808iPj8b6t7l1FTAOWraoR81RDT-eGH2EBxTTfSfTs'
+    googleSiteVerification: 'YK7G3g_R19chTc8YSPOJdZ3YGau61b9T0pXYpQFYvz8'
   }
 } as const;
