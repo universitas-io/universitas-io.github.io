@@ -1,0 +1,51 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+export interface Props {
+  name: string;
+  photo?: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { name, photo, size = 'md', class: className = '' } = Astro.props;
+
+const initials = name
+  .split(' ')
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((part) => part[0].toUpperCase())
+  .join('');
+
+const sizeClasses = {
+  sm: 'w-10 h-10 text-xs',
+  md: 'w-16 h-16 text-base',
+  lg: 'w-24 h-24 text-xl'
+}[size];
+---
+
+<div
+  class:list={[
+    'relative inline-flex items-center justify-center rounded-full overflow-hidden shrink-0 select-none font-bold font-display',
+    sizeClasses,
+    className
+  ]}
+>
+  {photo ? (
+    <Image
+      src={photo.src}
+      alt={photo.alt}
+      class="w-full h-full object-cover"
+      width={120}
+      height={120}
+    />
+  ) : (
+    <div class="w-full h-full bg-blue-100 dark:bg-navy-800 text-[#1a6ca8] dark:text-blue-300 flex items-center justify-center border border-blue-200 dark:border-navy-700/80">
+      <span>{initials}</span>
+    </div>
+  )}
+</div>

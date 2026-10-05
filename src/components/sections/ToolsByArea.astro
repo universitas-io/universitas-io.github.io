@@ -1,0 +1,63 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { toolAreas } from '../../i18n/tools';
+import Icon from '../ui/Icon.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<div class="space-y-10" aria-labelledby="tools-overview-heading">
+  <div class="space-y-2">
+    <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+      {lang === 'pt'
+        ? 'Capacidades Computacionais'
+        : 'Computational Capabilities'}
+    </span>
+    <h2
+      id="tools-overview-heading"
+      class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+    >
+      {lang === 'pt' ? 'Ferramentas & Tecnologias' : 'Tools & Technologies'}
+    </h2>
+    <p class="text-ink-600 dark:text-gray-300 text-base max-w-3xl">
+      {lang === 'pt'
+        ? 'Combinamos linguagens de ponta, bancos de dados relacionais e plataformas consagradas para cada modalidade de pesquisa.'
+        : 'We leverage modern statistical programming, relational databases, and industry-standard research software.'}
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+    {toolAreas.map((area) => (
+      <div
+        data-tool-area={area.key}
+        class="p-6 rounded-2xl bg-white dark:bg-[#112239] border border-gray-200 dark:border-navy-700/60 flex flex-col justify-between space-y-5"
+      >
+        <div class="space-y-2">
+          <h3 class="text-lg font-bold font-display text-navy-900 dark:text-white">
+            {area.label[lang]}
+          </h3>
+          <p class="text-sm text-ink-600 dark:text-gray-300 leading-relaxed">
+            {area.description[lang]}
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-navy-700/40">
+          {area.tools.map((t) => (
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-surface-alt dark:bg-navy-800 text-navy-900 dark:text-gray-200 border border-gray-200/60 dark:border-navy-700/50">
+              {t.icon && (
+                <span class="shrink-0 text-ink-600 dark:text-gray-400">
+                  <Icon name={t.icon} size={14} />
+                </span>
+              )}
+              <span>{t.name}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

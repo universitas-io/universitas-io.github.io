@@ -1,0 +1,127 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../../i18n/routes';
+import { entrySlug } from '../../lib/content';
+import Avatar from '../ui/Avatar.astro';
+import DraftBadge from '../ui/DraftBadge.astro';
+
+export interface Props {
+  members: CollectionEntry<'team'>[];
+  lang: Locale;
+}
+
+const { members, lang } = Astro.props;
+---
+
+<div class="space-y-8" aria-labelledby="team-heading">
+  <div class="space-y-2">
+    <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+      {lang === 'pt' ? 'Quem Faz' : 'Our People'}
+    </span>
+    <h2
+      id="team-heading"
+      class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+    >
+      {lang === 'pt' ? 'Equipe & Pesquisadores' : 'Team & Researchers'}
+    </h2>
+  </div>
+
+  {members.length === 0 ? (
+    <div class="p-8 rounded-2xl bg-surface-alt dark:bg-navy-900 border border-gray-200/80 dark:border-navy-700/60 text-center max-w-2xl mx-auto">
+      <p class="text-ink-600 dark:text-gray-300 italic text-base">
+        {lang === 'pt'
+          ? 'Em breve apresentaremos nossa equipe.'
+          : 'Our team will be presented soon.'}
+      </p>
+    </div>
+  ) : (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {members.map((m) => {
+        const slug = entrySlug(m.id);
+        return (
+          <article
+            id={slug}
+            class="p-6 rounded-2xl bg-white dark:bg-[#112239] border border-gray-200 dark:border-navy-700/60 flex flex-col justify-between space-y-4"
+          >
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <Avatar name={m.data.name} photo={m.data.photo} size="md" />
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-lg font-bold font-display text-navy-900 dark:text-white">
+                      {m.data.name}
+                    </h3>
+                    {m.data.draft && <DraftBadge />}
+                  </div>
+                  <p class="text-xs font-medium text-[#1a6ca8] dark:text-blue-400">
+                    {m.data.role[lang]}
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-sm text-ink-600 dark:text-gray-300 leading-relaxed mb-4">
+                {m.data.bio[lang]}
+              </p>
+
+              {m.data.education && m.data.education.length > 0 && (
+                <ul class="space-y-1 mb-4 text-xs text-ink-600 dark:text-gray-400">
+                  {m.data.education.map((edu) => (
+                    <li class="flex items-start gap-1.5">
+                      <span class="text-blue-500">•</span>
+                      <span>{edu}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {m.data.links && Object.keys(m.data.links).length > 0 && (
+              <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-navy-700/40 text-xs">
+                {m.data.links.lattes && (
+                  <a
+                    href={m.data.links.lattes}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold text-[#1a6ca8] hover:underline"
+                  >
+                    Lattes
+                  </a>
+                )}
+                {m.data.links.orcid && (
+                  <a
+                    href={m.data.links.orcid}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold text-[#1a6ca8] hover:underline"
+                  >
+                    ORCID
+                  </a>
+                )}
+                {m.data.links.linkedin && (
+                  <a
+                    href={m.data.links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold text-[#1a6ca8] hover:underline"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+                {m.data.links.website && (
+                  <a
+                    href={m.data.links.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold text-[#1a6ca8] hover:underline"
+                  >
+                    Website
+                  </a>
+                )}
+              </div>
+            )}
+          </article>
+        );
+      })}
+    </div>
+  )}
+</div>

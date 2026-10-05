@@ -1,0 +1,100 @@
+---
+import type { Locale } from '../../i18n/routes';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const pledges = [
+  {
+    icon: 'shield-check',
+    title: {
+      pt: 'LGPD & Privacidade de Dados',
+      en: 'Data Privacy & LGPD / GDPR'
+    },
+    text: {
+      pt: 'Estrito cumprimento da legislação de dados (Lei 13.709/2018). Firmamos acordos formais de confidencialidade (NDA), com anonimização de dados e armazenamento seguro.',
+      en: 'Strict adherence to data privacy regulations. We sign formal non-disclosure agreements (NDAs) with data pseudonymization and encrypted storage environments.'
+    }
+  },
+  {
+    icon: 'graduation-cap',
+    title: {
+      pt: 'Integridade Científica & CEP',
+      en: 'Scientific Integrity & Ethics'
+    },
+    text: {
+      pt: 'Apoiamos a conformidade perante comitês de ética (CEP/Conep). Preservamos a autoria do pesquisador: a Universitas atua em consultoria metodológica e não redige trabalhos por terceiros.',
+      en: 'We assist with research ethics board compliance. Researcher authorship is strictly preserved: Universitas operates as a methodological advisory and never ghostwrites papers.'
+    }
+  },
+  {
+    icon: 'file-text',
+    title: {
+      pt: 'Transparência Metodológica',
+      en: 'Methodological Transparency'
+    },
+    text: {
+      pt: 'Cada etapa amostral, de coleta ou modelagem estatística é documentada em memoriais técnicos detalhados, tornando premissas e limitações explícitas.',
+      en: 'Every sampling, collection, or modeling procedure is documented in thorough technical memos, making analytical assumptions and limitations fully explicit.'
+    }
+  },
+  {
+    icon: 'code-2',
+    title: {
+      pt: 'Reprodutibilidade Aberta',
+      en: 'Open Reproducibility'
+    },
+    text: {
+      pt: 'Processamento de dados orientado por scripts abertos e versionados (R, Python, SQL), viabilizando auditoria independente e reprodução integral de resultados.',
+      en: 'Data workflows structured through open, version-controlled scripts (R, Python, SQL), enabling independent auditing and end-to-end result replication.'
+    }
+  }
+];
+---
+
+<div class="space-y-8" aria-labelledby="ethics-heading">
+  <div class="space-y-2">
+    <span class="text-xs font-bold uppercase tracking-wider text-[#1e7e4e] dark:text-green-400">
+      {lang === 'pt' ? 'Compromisso Institucional' : 'Institutional Commitment'}
+    </span>
+    <h2
+      id="ethics-heading"
+      class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+    >
+      {lang === 'pt' ? 'Nossos Compromissos Éticos' : 'Our Ethical Pledges'}
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {pledges.map((p) => (
+      <div class="p-6 rounded-2xl bg-surface-alt dark:bg-navy-700/30 border border-gray-200/80 dark:border-navy-700/60 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 text-[#1e7e4e] dark:text-green-400 flex items-center justify-center font-bold">
+            <svg
+              class="w-5 h-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold font-display text-navy-900 dark:text-white">
+            {p.title[lang]}
+          </h3>
+          <p class="text-sm text-ink-600 dark:text-gray-300 leading-relaxed">
+            {p.text[lang]}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,149 @@
+---
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import { getTeam } from '../lib/content';
+import { aboutPage as makeAboutPageSchema } from '../lib/seo/jsonld';
+import PageLayout from '../layouts/PageLayout.astro';
+import EthicsPledges from '../components/sections/EthicsPledges.astro';
+import ToolsByArea from '../components/sections/ToolsByArea.astro';
+import TeamGrid from '../components/sections/TeamGrid.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const members = await getTeam();
+
+const currentPath = path(lang, 'about');
+const alternates = {
+  pt: path('pt', 'about'),
+  en: path('en', 'about')
+};
+
+const crumbs = [
+  { name: t(lang, 'breadcrumb.home'), pathname: path(lang, 'home') },
+  { name: t(lang, 'nav.about'), pathname: currentPath }
+];
+
+const heading = t(lang, 'nav.about');
+const description =
+  lang === 'pt'
+    ? 'Consultoria em pesquisa quantitativa e qualitativa. Rigor metodológico, ética irrestrita e transparência para academia, empresas e setor público.'
+    : 'Quantitative and qualitative research consultancy. Methodological rigor, uncompromising ethics, and transparency for academia and business.';
+const lead =
+  lang === 'pt'
+    ? 'A Universitas é uma consultoria em pesquisa quantitativa e qualitativa dedicada a transformar perguntas complexas em evidências acionáveis com rigor, ética e transparência.'
+    : 'Universitas is a quantitative and qualitative research consultancy dedicated to transforming complex inquiries into actionable evidence through rigor, ethics, and transparency.';
+const eyebrow = lang === 'pt' ? 'Quem Somos & Propósito' : 'About Us & Purpose';
+
+const jsonLd: Record<string, unknown>[] = [
+  makeAboutPageSchema({
+    pathname: currentPath,
+    lang,
+    members: members.map((m) => ({
+      name: m.data.name,
+      jobTitle: m.data.role[lang],
+      sameAs: Object.values(m.data.links || {}).filter(Boolean) as string[]
+    }))
+  })
+];
+---
+
+<PageLayout
+  lang={lang}
+  title={heading}
+  description={description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={heading}
+  lead={lead}
+  eyebrow={eyebrow}
+  crumbs={crumbs}
+  jsonLd={jsonLd}
+>
+  <div class="space-y-16 sm:space-y-20">
+    <!-- Mission & Multidisciplinary Background -->
+    <section class="max-w-3xl space-y-6" aria-labelledby="mission-heading">
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+          {lang === 'pt' ? 'Nossa Abordagem' : 'Our Approach'}
+        </span>
+        <h2
+          id="mission-heading"
+          class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+        >
+          {lang === 'pt'
+            ? 'Método Científico a Serviço de Decisões Reais'
+            : 'Scientific Method for Real Decisions'}
+        </h2>
+      </div>
+
+      <div class="prose prose-slate dark:prose-invert max-w-none text-ink-600 dark:text-gray-300 space-y-4 leading-relaxed text-base sm:text-lg">
+        {lang === 'pt' ? (
+          <>
+            <p>
+              Nossa equipe reúne formação multidisciplinar nas áreas de Ciência
+              Política, História, Ciência Ambiental, Análise de Dados e
+              Desenvolvimento Web. Essa convergência entre conhecimento
+              substantivo das ciências humanas e sociais e ferramentas
+              computacionais avançadas nos permite compreender a fundo as
+              nuances teóricas de cada projeto, sem nos limitarmos a números
+              desprovidos de contexto.
+            </p>
+            <p>
+              Atuamos na intersecção entre a universidade, o mercado corporativo
+              e o setor público. Entendemos as demandas específicas de cada
+              esfera: a rigidez metodológica e a exigência de originalidade na
+              academia; a agilidade e a clareza estratégica exigidas pelas
+              empresas; e a necessidade de transparência, equidade e
+              reprodutibilidade requeridas pelo interesse público.
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              Our multidisciplinary team combines advanced backgrounds in
+              Political Science, History, Environmental Science, Data Analytics,
+              and Web Development. This synergy between substantive social
+              science domain knowledge and computational workflows enables us to
+              grasp the theoretical nuances of each investigation, rather than
+              simply calculating disconnected metrics.
+            </p>
+            <p>
+              We operate at the intersection of academia, corporate enterprise,
+              and the public sector. We understand the distinct demands of each
+              sphere: methodological rigor and authorship integrity in academia;
+              speed, clarity, and business outcomes in corporate intelligence;
+              and transparency, accountability, and reproducibility in public
+              policy.
+            </p>
+          </>
+        )}
+      </div>
+    </section>
+
+    <!-- Ethical Pledges -->
+    <section class="pt-8 border-t border-gray-200 dark:border-navy-700/60">
+      <EthicsPledges lang={lang} />
+    </section>
+
+    <!-- Tools by Area -->
+    <section class="pt-8 border-t border-gray-200 dark:border-navy-700/60">
+      <ToolsByArea lang={lang} />
+    </section>
+
+    <!-- Team Section -->
+    <section class="pt-8 border-t border-gray-200 dark:border-navy-700/60">
+      <TeamGrid members={members} lang={lang} />
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="pt-8">
+      <CtaBanner lang={lang} />
+    </div>
+  </div>
+</PageLayout>
