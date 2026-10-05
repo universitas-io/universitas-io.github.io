@@ -26,7 +26,7 @@ faq:
     a: 'Firmamos acordo formal de confidencialidade (NDA) antes do compartilhamento de qualquer dado ou manuscrito não publicado.'
 ---
 
-## Apoio Metodológico e Presença Digital
+## Apoio metodológico e presença digital
 
 Apoiamos pesquisadores e laboratórios em desenho experimental, estatística e análise de dados, preservando integralmente a autoria: **não escrevemos trabalhos por terceiros**.
 

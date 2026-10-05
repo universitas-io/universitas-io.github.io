@@ -26,8 +26,8 @@ faq:
     a: 'We adhere strictly to informed consent protocols, anonymization of sensitive personal data, and comprehensive data privacy standards (LGPD and international ethical frameworks).'
 ---
 
-## Grounded Evidence for Social Transformation and Donor Accountability
+## Evidence for social projects and donor accountability
 
-Civil society organizations and non-governmental entities drive vital social, environmental, and civic progress. Translating frontline fieldwork into methodologically airtight evidence, however, requires specialized analytical capabilities.
+We assist civil society organizations and non-profits in measuring outcomes and organizing field data.
 
-Universitas partners with NGOs and philanthropic foundations to design robust baseline studies, evaluate intervention outcomes, and capture nuanced qualitative and quantitative dynamics. Our independent research equips organizations to secure competitive grants, influence public policy decisions, and transparently demonstrate lasting societal value.
+We conduct community assessments, track project indicators, and evaluate social outcomes. The resulting data supports grant applications, donor reporting, and policy advocacy.

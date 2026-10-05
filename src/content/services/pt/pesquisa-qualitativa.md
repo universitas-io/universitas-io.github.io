@@ -41,13 +41,13 @@ examples:
 
 ## O que é
 
-A pesquisa qualitativa da Universitas investiga sentidos, percepções e dinâmicas sociais complexas que métricas puramente numéricas não conseguem capturar. Aplicamos abordagens metodológicas consagradas como análise de conteúdo, análise de discurso, teoria fundamentada nos dados (grounded theory) e análise comparativa qualitativa (QCA).
+A pesquisa qualitativa examina textos, discursos e percepções que escapam a contagens numéricas. Usamos análise de conteúdo, análise de discurso, teoria fundamentada nos dados (grounded theory) e análise comparativa qualitativa (QCA).
 
-Utilizamos os principais softwares de análise qualitativa de dados assistida por computador (CAQDAS), como **NVivo**, **ATLAS.ti**, **MAXQDA** e **QCAmap**, garantindo transparência, rastreabilidade e rigor na categorização textual e multimodal.
+Trabalhamos com softwares de análise qualitativa assistida por computador (CAQDAS), como **NVivo**, **ATLAS.ti**, **MAXQDA** e **QCAmap**, para categorizar materiais textuais e audiovisuais com critérios explícitos.
 
 ## Para quem
 
-- **Academia:** Projetos de mestrado, doutorado e pesquisas temáticas nas ciências humanas, sociais aplicadas e saúde que exigem fundamentação qualitativa sólida e rastreável.
+- **Academia:** Projetos de mestrado, doutorado e pesquisas temáticas nas ciências humanas, sociais aplicadas e saúde que exigem categorização explícita e auditável.
 - **Empresas:** Estudos de percepção de marca, experiência do usuário (UX research), feedback aprofundado de clientes e testes de conceito.
 - **Setor Público:** Mapeamento de demandas comunitárias, avaliação qualitativa de programas governamentais e escuta qualificada de beneficiários.
 - **ONGs e Terceiro Setor:** Escuta de comunidades atendidas, sistematização de experiências de campo e narrativas qualitativas de impacto para prestação de contas.

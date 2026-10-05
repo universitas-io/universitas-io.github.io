@@ -1,6 +1,6 @@
 ---
 title: 'Website Design & Development'
-description: 'Fast, responsive, and modern website development for scholars, companies, NGOs, and institutions — from online CVs to comprehensive web portals.'
+description: 'Fast, responsive, and modern website development for scholars, companies, NGOs, and institutions, from online CVs to comprehensive web portals.'
 translationKey: 'academic-websites'
 tier: 'complementary'
 order: 5
@@ -70,23 +70,23 @@ examples:
 
 ## Overview
 
-Universitas designs and builds modern, fast, elegant, and fully accessible websites for any objective and industry. We create everything from corporate platforms and non-profit websites to highly customized digital solutions for scholars and research centers.
+Universitas designs and builds websites and web applications for individuals, businesses, NGOs, and research centers. We create institutional portals, project showcases, event platforms, and specialized tools.
 
-For scholars and academic teams, we build bespoke digital solutions including **interactive online academic CVs (CV websites)**, **scientific conference and event portals**, and **dedicated websites for research laboratories and working groups**. While we excel in academic environments, this represents only one dimension of our work: we build websites and web applications for any purpose, brand, or sector.
+In academic settings, we build online CVs for researchers and faculty, conference websites, and research lab portals. We also develop platforms for businesses and non-profits using the same technical foundation.
 
-All of our digital solutions feature clean architecture, compliance with global accessibility standards (WCAG 2.2 AA), and comprehensive search engine optimization (SEO).
+Every project follows accessibility standards (WCAG 2.2 AA) and search engine optimization (SEO) practices.
 
-## Who It's For
+## Who it is for
 
 - **Academia:** Faculty and researchers needing dynamic personal CV websites, research labs and observatories (such as LABIIA and OEDLA), and scientific symposium committees.
 - **Businesses:** Companies seeking high-performance corporate portals, product showcases, landing pages, and interactive client resources.
-- **NGOs & Non-Profits:** Civil society organizations seeking clear, inspiring websites for mission awareness, donor engagement, and advocacy.
+- **NGOs & Non-Profits:** Civil society organizations seeking clear websites for public campaigns, donor reporting, and advocacy.
 - **Public Sector:** Public institutions and open data observatories demanding universal digital accessibility and civic transparency.
 
-## Our Methodology
+## How we work
 
-We deliver across three architectural levels based on your project goals and maintenance preferences:
+We deliver across three architectural levels based on project requirements:
 
-1. **Intuitive Visual CMS (WordPress):** For teams seeking straightforward visual editors to manage announcements, articles, and team rosters without coding.
-2. **Modern Static (Astro & Markdown):** Blazing loading speeds, rock-solid security, and version-controlled Markdown editing via GitHub with minimal hosting overhead.
-3. **Custom Full-Stack (Next.js & React):** Tailored, database-backed web applications featuring bespoke forms, API integrations, and interactive dashboards.
+1. **Visual CMS (WordPress):** For teams that prefer updating announcements and articles through an admin panel without writing code.
+2. **Static site (Astro and Markdown):** Fast load times, version control with GitHub, and low hosting costs with Markdown files.
+3. **Custom application (Next.js and React):** Web applications with custom databases, forms, APIs, and interactive features.

@@ -26,20 +26,20 @@ featured: false
 date: 2024-09-01
 ---
 
-## Research Context
+## Research context
 
-Analyzing social and semantic relational networks requires more than summary statistical tables; it calls for interactive visual exploration enabling researchers to inspect hub nodes, structural bridges, and community clusters across varying analytical resolutions.
+Network analysis benefits from interactive visual exploration to inspect central nodes, bridging connections, and community clusters.
 
-## The Challenge
+## The challenge
 
-Graphs comprising hundreds of vertices and thousands of edges quickly become unintelligible when rendered as static print figures. The team needed a lightweight, high-performance web dashboard capable of executing graph-theoretic algorithms in Python and rendering interactive force-directed visuals in the browser with responsive filtering.
+Large graphs with hundreds of nodes and thousands of edges are difficult to read in static figures. The project required an interactive web application to compute network metrics in Python and display force-directed layouts in the browser.
 
-## Methodological Approach
+## Methodological approach
 
-1. **Graph Metrics Computation:** Utilization of Python's NetworkX to calculate centralities (betweenness, closeness, eigenvector) and partition community structures via the Louvain modularity algorithm.
-2. **Force-Directed Visualization:** Implementation of dynamic D3.js force layouts, allowing connected nodes to cluster organically according to link weights.
-3. **Semantic Inspection:** Custom attributes attached to every node, facilitating on-demand inspection (hover and click) of actor metadata and qualitative discourse attributes.
+1. **Graph metrics computation:** Utilization of Python's NetworkX to calculate centralities (betweenness, closeness, eigenvector) and partition community structures via the Louvain modularity algorithm.
+2. **Force-directed visualization:** Implementation of dynamic D3.js force layouts, allowing connected nodes to cluster organically according to link weights.
+3. **Semantic inspection:** Custom attributes attached to every node, facilitating on-demand inspection (hover and click) of actor metadata and qualitative discourse attributes.
 
-## Results & Impact
+## Results and impact
 
-The dashboard provided researchers with an intuitive graphical environment to test and validate qualitative hypotheses against empirical network structures. The investigation pinpointed critical intermediary actors and supplied high-resolution interactive charts for peer-reviewed academic publications.
+The dashboard allowed researchers to inspect community clusters and identify intermediary actors. The interactive visualizations supported qualitative analysis and articles published in peer-reviewed journals.

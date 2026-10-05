@@ -41,20 +41,20 @@ examples:
 
 ## Overview
 
-Universitas qualitative research explores nuances, human experiences, and institutional patterns that numerical indicators alone cannot capture. We utilize established methodologies such as content analysis, critical discourse analysis, grounded theory, and Qualitative Comparative Analysis (QCA).
+Universitas qualitative research examines texts, discourse, and social practices. We apply content analysis, discourse analysis, grounded theory, and Qualitative Comparative Analysis (QCA).
 
-Using standard Computer-Assisted Qualitative Data Analysis Software (CAQDAS)—including **NVivo**, **ATLAS.ti**, **MAXQDA**, and **QCAmap**—we ensure every analytical claim is transparent, grounded, and traceable to original field observations.
+Using standard Computer-Assisted Qualitative Data Analysis Software (CAQDAS), including **NVivo**, **ATLAS.ti**, **MAXQDA**, and **QCAmap**, we ensure analytical claims remain transparent, grounded, and traceable to original field observations.
 
-## Who It's For
+## Who it is for
 
 - **Academia:** Graduate students, postdocs, and research faculty in the social sciences, humanities, and public health requiring robust qualitative rigor.
 - **Businesses:** Product teams, brand strategists, and UX researchers needing deep insights into customer perceptions, habits, and motivations.
 - **Public Sector:** Policy evaluators and public agencies conducting stakeholder engagement and qualitative impact assessments.
 - **NGOs & Non-Profits:** Community-based organizations capturing grassroots beneficiary voices, fieldwork narratives, and qualitative evidence for grant reports.
 
-## Our Methodology
+## How we work
 
-1. **Research Design:** Sampling criteria definition, semi-structured guide creation, and ethical compliance review.
-2. **Data Preparation:** Standardized transcription, anonymization, and multimodal media hygiene.
-3. **Systematic Coding:** Inductive and deductive categorization following transparent coding guidelines.
-4. **Synthesis & Reporting:** Production of visual semantic maps, comparative matrices, and actionable insights.
+1. **Research design:** Sampling criteria definition, semi-structured guide creation, and ethical compliance review.
+2. **Data preparation:** Standardized transcription, anonymization, and multimodal media hygiene.
+3. **Systematic coding:** Inductive and deductive categorization following transparent coding guidelines.
+4. **Synthesis and reporting:** Production of visual semantic maps, comparative matrices, and actionable insights.

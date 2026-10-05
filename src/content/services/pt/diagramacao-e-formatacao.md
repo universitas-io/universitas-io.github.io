@@ -43,9 +43,9 @@ examples:
 
 ## O que é
 
-O serviço de diagramação e formatação da Universitas transforma manuscritos e relatórios brutos em publicações com acabamento gráfico impecável e conformidade estrita aos padrões acadêmicos e editoriais internacionais.
+O serviço de diagramação e formatação da Universitas prepara manuscritos, teses e relatórios segundo normas acadêmicas e padrões editoriais.
 
-Cuidamos de cada detalhe visual e estrutural: tipografia harmoniosa, espaçamentos normatizados, paginação correta, formatação precisa de tabelas e equações, além da verificação e padronização minuciosa de citações e referências bibliográficas em **LaTeX**, **InDesign** ou **Typst**.
+Ajustamos tipografia, espaçamentos, paginação, tabelas, equações, citações e referências bibliográficas em **LaTeX**, **InDesign** ou **Typst**.
 
 ## Para quem
 
@@ -56,7 +56,7 @@ Cuidamos de cada detalhe visual e estrutural: tipografia harmoniosa, espaçament
 
 ## Como fazemos
 
-1. **Diagnóstico editorial:** Verificação das diretrizes do programa de pós-graduação, evento ou periódicos alvos (ABNT, APA, Vancouver, etc.).
-2. **Normalização de elementos:** Ajuste sistemático de referências, conferência de chamadas no texto e formatação de figuras e tabelas.
+1. **Diagnóstico editorial:** Verificação das diretrizes da instituição, evento ou periódicos (ABNT, APA, Vancouver, etc.).
+2. **Normalização de elementos:** Ajuste de referências, conferência de chamadas no texto e formatação de figuras e tabelas.
 3. **Diagramação e projeto gráfico:** Aplicação da grade tipográfica, controle de viúvas/órfãs e paginação em LaTeX ou InDesign.
 4. **Fechamento e prova:** Geração do PDF final para impressão e versão com metadados para circulação digital.

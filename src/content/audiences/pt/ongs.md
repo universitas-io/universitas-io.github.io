@@ -26,8 +26,8 @@ faq:
     a: 'Seguimos protocolos rigorosos de consentimento livre e esclarecido, anonimização total de dados sensíveis e conformidade irrestrita com a LGPD e as resoluções éticas nacionais (CNS 510/2016).'
 ---
 
-## Evidências Sólidas para Transformação Social e Prestação de Contas
+## Evidências para projetos sociais e prestação de contas
 
-Organizações da sociedade civil e organizações não governamentais desempenham um papel insubstituível na defesa de direitos, no desenvolvimento socioambiental e na melhoria das políticas públicas. No entanto, traduzir ações cotidianas em evidências de impacto metodologicamente inquestionáveis é um desafio permanente.
+Apoiamos organizações da sociedade civil na mensuração de resultados e na estruturação de dados de campo.
 
-A Universitas atua lado a lado com ONGs e fundações sociais para desenhar diagnósticos territoriais participativos, monitorar indicadores de projetos e mensurar transformações qualitativas e quantitativas. Nossas análises oferecem a base técnica e ética necessária para fortalecer sua captação de recursos, dialogar em alto nível com governos e empresas, e demonstrar com transparência o valor do seu trabalho para a sociedade.
+Elaboramos diagnósticos territoriais, monitoramos indicadores de projetos e medimos impactos qualitativos e quantitativos. Os dados apoiam relatórios de prestação de contas a financiadores e ações de comunicação pública.

@@ -31,7 +31,7 @@ faq:
   - q: 'Can you manage and clean our Zotero or BibTeX library?'
     a: 'Yes. We verify DOIs, standardize author capitalization, fix missing journal metadata, and ensure exact consistency between citations and reference lists.'
   - q: 'What is the difference between copyediting and layout typesetting?'
-    a: 'What is copyediting polishes text flow, grammar, and consistency. Typesetting handles geometry, page layout, typography, figure placement, and numbering. We deliver both in an integrated workflow.'
+    a: 'Copyediting checks grammar, consistency, and readability. Typesetting handles page geometry, typography, figure placement, and numbering. We can provide both services together.'
 examples:
   title: 'Examples of Services Provided'
   items:
@@ -43,20 +43,20 @@ examples:
 
 ## Overview
 
-Universitas document layout and formatting elevates raw manuscripts and reports into elegant, beautifully typeset publications strictly adhering to international scholarly conventions.
+Universitas prepares manuscripts, technical reports, and conference proceedings according to academic and publisher standards.
 
-We refine every typographic detail: harmonious proportional grids, correct pagination, formula typesetting, table styling, and meticulous citation cross-referencing using **LaTeX**, **Adobe InDesign**, or modern engines like **Typst**.
+We format page layouts, typography, tables, formulas, citations, and reference lists using **LaTeX**, **InDesign**, or **Typst**.
 
-## Who It's For
+## Who it is for
 
 - **Academia:** Doctoral and master's candidates, journal editors, and conference chairs publishing scientific proceedings (such as the UFJF History Week Proceedings).
 - **Businesses:** White papers, ESG sustainability reports, and technical manuals that demand clean, credible typography.
 - **Public Sector:** Institutional research reports, ministerial manuals, and public policy digests prepared for print or digital distribution.
 - **NGOs & Non-Profits:** Annual impact reports, donor dossiers, informational booklets, and advocacy publications requiring compelling visual presentation.
 
-## Our Methodology
+## How we work
 
-1. **Editorial Scoping:** Auditing target university formatting guidelines, journal style guides, or publisher specifications.
-2. **Structural Standardization:** Systematic citation verification, table formatting, and caption hierarchy alignment.
-3. **Typographic Typesetting:** Implementing baseline grids, widow/orphan suppression, and cross-reference hyperlinking.
-4. **Prepress & Output:** Exporting press-ready PDFs with embedded fonts and digital editions equipped with accessible bookmarks.
+1. **Editorial guidelines check:** Auditing target university formatting guidelines, journal style guides, or publisher specifications.
+2. **Structural standardization:** Systematic citation verification, table formatting, and caption hierarchy alignment.
+3. **Typesetting:** Implementing baseline grids, widow/orphan suppression, and cross-reference hyperlinking.
+4. **Final export:** Exporting press-ready PDFs with embedded fonts and digital editions equipped with accessible bookmarks.

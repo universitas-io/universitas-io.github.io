@@ -38,7 +38,7 @@ const lead =
   lang === 'pt'
     ? 'A Universitas é uma consultoria em pesquisa quantitativa e qualitativa dedicada a transformar perguntas complexas em evidências acionáveis com rigor, ética e transparência.'
     : 'Universitas is a quantitative and qualitative research consultancy dedicated to transforming complex inquiries into actionable evidence through rigor, ethics, and transparency.';
-const eyebrow = lang === 'pt' ? 'Quem Somos & Propósito' : 'About Us & Purpose';
+const eyebrow = lang === 'pt' ? 'Quem somos e propósito' : 'About us and purpose';
 
 const jsonLd: Record<string, unknown>[] = [
   makeAboutPageSchema({
@@ -70,15 +70,15 @@ const jsonLd: Record<string, unknown>[] = [
     <section class="max-w-3xl space-y-6" aria-labelledby="mission-heading">
       <div class="space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
-          {lang === 'pt' ? 'Nossa Abordagem' : 'Our Approach'}
+          {lang === 'pt' ? 'Nossa abordagem' : 'Our approach'}
         </span>
         <h2
           id="mission-heading"
           class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
         >
           {lang === 'pt'
-            ? 'Método Científico a Serviço de Decisões Reais'
-            : 'Scientific Method for Real Decisions'}
+            ? 'Método científico para decisões reais'
+            : 'Scientific method for practical decisions'}
         </h2>
       </div>
 
@@ -86,40 +86,32 @@ const jsonLd: Record<string, unknown>[] = [
         {lang === 'pt' ? (
           <>
             <p>
-              Nossa equipe reúne formação multidisciplinar nas áreas de Ciência
-              Política, História, Ciência Ambiental, Análise de Dados e
-              Desenvolvimento Web. Essa convergência entre conhecimento
-              substantivo das ciências humanas e sociais e ferramentas
-              computacionais avançadas nos permite compreender a fundo as
-              nuances teóricas de cada projeto, sem nos limitarmos a números
-              desprovidos de contexto.
+              Nossa equipe reúne formação em Ciência Política, História,
+              Ciência Ambiental, Análise de Dados e Desenvolvimento Web.
+              Combinamos pesquisa em ciências humanas e sociais com ferramentas
+              computacionais, analisando dados no contexto de cada área.
             </p>
             <p>
-              Atuamos na intersecção entre a universidade, o mercado corporativo
-              e o setor público. Entendemos as demandas específicas de cada
-              esfera: a rigidez metodológica e a exigência de originalidade na
-              academia; a agilidade e a clareza estratégica exigidas pelas
-              empresas; e a necessidade de transparência, equidade e
-              reprodutibilidade requeridas pelo interesse público.
+              Trabalhamos com projetos para a academia, empresas e setor
+              público. Compreendemos as exigências de cada setor: rigor
+              metodológico e autoria na universidade, clareza e agilidade no
+              mercado, e transparência e reprodutibilidade em políticas
+              públicas.
             </p>
           </>
         ) : (
           <>
             <p>
-              Our multidisciplinary team combines advanced backgrounds in
-              Political Science, History, Environmental Science, Data Analytics,
-              and Web Development. This synergy between substantive social
-              science domain knowledge and computational workflows enables us to
-              grasp the theoretical nuances of each investigation, rather than
-              simply calculating disconnected metrics.
+              Our team has backgrounds in Political Science, History,
+              Environmental Science, Data Analytics, and Web Development. We
+              combine social science research with computational tools, keeping
+              analyses grounded in context.
             </p>
             <p>
-              We operate at the intersection of academia, corporate enterprise,
-              and the public sector. We understand the distinct demands of each
-              sphere: methodological rigor and authorship integrity in academia;
-              speed, clarity, and business outcomes in corporate intelligence;
-              and transparency, accountability, and reproducibility in public
-              policy.
+              We work across academia, business, and the public sector,
+              adhering to the standards of each: methodological rigor and
+              authorship integrity in universities, practical clarity in
+              business, and transparency and reproducibility in public policy.
             </p>
           </>
         )}

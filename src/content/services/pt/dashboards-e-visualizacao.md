@@ -31,11 +31,11 @@ faq:
   - q: 'É possível conectar o painel a dados que mudam com frequência?'
     a: 'Sim. Estruturamos rotinas automatizadas de atualização conectadas a planilhas, bancos de dados SQL, APIs e sistemas ERP/CRM.'
   - q: 'Como garantem a usabilidade e clareza visual?'
-    a: 'Aplicamos princípios rigorosos de design de informação (tuftean data-ink ratio), hierarquia visual e testes de usabilidade com os usuários finais.'
+    a: 'Aplicamos princípios de design de informação (taxa tinta-dado de Tufte), hierarquia visual e testes com usuários finais.'
 examples:
   title: 'Exemplos de Dashboards Criados'
   items:
-    - title: 'Python e D3.js — Visualização de Redes e Clusters'
+    - title: 'Python e D3.js: Visualização de Redes e Clusters'
       images:
         - src: '../../../assets/images/cases/network-clusters/graph.png'
           alt: 'Mapa Global da Rede de Organizações'
@@ -43,7 +43,7 @@ examples:
           alt: 'Rede de Articulações e Polos'
         - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
           alt: 'Clustermap Bipartido'
-    - title: 'Power BI — LR Instalações Especiais'
+    - title: 'Power BI: LR Instalações Especiais'
       image:
         src: '../../../assets/images/cases/powerbi-lr/cover.png'
         alt: 'Painel executivo em Power BI com indicadores operacionais e financeiros'
@@ -51,9 +51,9 @@ examples:
 
 ## O que é
 
-O serviço de dashboards e visualização da Universitas traduz grandes volumes de dados em interfaces gráficas intuitivas, rápidas e orientadas à decisão. Construímos painéis executivos, observatórios de pesquisa e ferramentas analíticas interativas que eliminam planilhas confusas e trazem clareza em tempo real.
+O serviço de dashboards e visualização da Universitas organiza dados em painéis gráficos interativos. Construímos telas para monitoramento executivo, observatórios de pesquisa e acompanhamento de indicadores em tempo real.
 
-Conectamos dados de múltiplas origens (bancos relacionais, APIs, arquivos locais e serviços de nuvem) em ferramentas consagradas como **Power BI**, **Tableau**, **Looker Studio** ou aplicações interativas sob medida com **Python** e **D3.js**.
+Conectamos dados de múltiplas origens (bancos relacionais, APIs, arquivos locais e serviços de nuvem) em ferramentas como **Power BI**, **Tableau**, **Looker Studio** ou aplicações interativas com **Python** e **D3.js**.
 
 ## Para quem
 

@@ -21,11 +21,11 @@ const description =
     ? 'Consultoria em pesquisa quantitativa, qualitativa, coleta de dados, dashboards e desenvolvimento de sites acadêmicos.'
     : 'Quantitative, qualitative, data collection, dashboard engineering, and academic web development consulting.';
 
-const heading = lang === 'pt' ? 'Nossos Serviços' : 'Our Services';
+const heading = lang === 'pt' ? 'Serviços' : 'Services';
 const lead =
   lang === 'pt'
-    ? 'Pesquisa rigorosa, inteligência analítica e engenharia de dados para subsidiar descobertas acadêmicas e decisões estratégicas.'
-    : 'Rigorous research, analytical intelligence, and data engineering to power scientific breakthroughs and decisive strategies.';
+    ? 'Pesquisa quantitativa e qualitativa, coleta de dados, dashboards e desenvolvimento web para embasar projetos e decisões.'
+    : 'Quantitative and qualitative research, data collection, dashboards, and web development to support projects and decisions.';
 
 const crumbs = [
   { name: t(lang, 'nav.services'), pathname: path(lang, 'services') }
@@ -41,7 +41,7 @@ const crumbs = [
   heading={heading}
   lead={lead}
   eyebrow={
-    lang === 'pt' ? 'Consultoria Metodológica' : 'Methodological Consulting'
+    lang === 'pt' ? 'Consultoria metodológica' : 'Methodological consulting'
   }
   crumbs={crumbs}
 >

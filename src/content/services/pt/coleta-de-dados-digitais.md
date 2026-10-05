@@ -32,18 +32,18 @@ faq:
   - q: 'Quais plataformas vocês conseguem coletar?'
     a: 'Extraímos dados de YouTube, portais governamentais de transparência, redes sociais, diários oficiais, bases jurídicas e acervos acadêmicos abertos.'
   - q: 'Vocês conseguem lidar com grandes volumes de dados?'
-    a: 'Sim. Já estruturamos projetos com mais de 100 mil vídeos e 50 milhões de comentários, utilizando arquiteturas otimizadas e bancos de dados relacionais robustos.'
+    a: 'Sim. Já estruturamos projetos com mais de 100 mil vídeos e 50 milhões de comentários, utilizando arquiteturas otimizadas e bancos de dados relacionais.'
 examples:
   title: 'Exemplos de Projetos Realizados'
   items:
-    - title: 'Tese de Doutorado — Coleta e Análise de Dados do YouTube'
+    - title: 'Tese de Doutorado: Coleta e Análise de Dados do YouTube'
       url: 'https://github.com/geraldohomero/dh-youtube-database'
       description: 'Base de dados com mais de 100 mil vídeos, 50 milhões de comentários de 49 canais do YouTube, incluindo transcrições e metadados estruturados para análise quantitativa e qualitativa e modelagem de tópicos com BERTopic.'
 ---
 
 ## O que é
 
-A coleta de dados digitais da Universitas transforma repositórios desestruturados, redes sociais e páginas web em bancos de dados limpos, normatizados e prontos para investigação científica ou estratégica. Desenvolvemos extratores customizados em **Python** que combinam consumo de APIs oficiais com rotinas avançadas de web scraping.
+A coleta de dados digitais da Universitas organiza páginas web, redes sociais e repositórios abertos em bancos de dados estruturados. Escrevemos extratores em **Python** que combinam consumo de APIs oficiais e rotinas de web scraping.
 
 Nossa atuação prioriza a integridade técnica e a conformidade ética: respeitamos diretrizes de rate limiting, termos de uso das plataformas, parâmetros do `robots.txt` e a Lei Geral de Proteção de Dados Pessoais (LGPD).
 

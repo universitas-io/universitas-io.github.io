@@ -26,8 +26,8 @@ faq:
     a: 'Standard market diagnostics or custom dashboard engagements are delivered within 2 to 4 weeks, structured around agile weekly review checkpoints.'
 ---
 
-## Concrete Intelligence for Strategic Decisions
+## Data and analytics for business decisions
 
-In competitive markets, decisions made on intuition are costly. Universitas bridges the gap between rigorous scientific research methodology and commercial speed, delivering precise diagnostic intelligence on consumer behavior, market dynamics, and operations.
+We help companies analyze customer behavior, market trends, and operational data.
 
-We engineer customer segmentation models, execute qualitative product perception studies, and deploy executive Business Intelligence dashboards that deliver real-time clarity directly to decision-makers.
+We build segmentation models, run qualitative user perception studies, and create dashboards to track performance metrics in real time.

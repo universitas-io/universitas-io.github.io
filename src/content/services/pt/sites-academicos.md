@@ -70,11 +70,11 @@ examples:
 
 ## O que é
 
-A Universitas projeta e desenvolve ambientes web modernos, elegantes, rápidos e totalmente responsivos para qualquer objetivo ou setor. Criamos desde landing pages e portais institucionais para empresas e organizações do terceiro setor até ferramentas digitais e sites altamente personalizados para a comunidade acadêmica.
+Desenvolvemos websites e aplicações para pessoas, empresas, ONGs e grupos de pesquisa. Atuamos na criação de páginas institucionais, portfólios, portais de eventos e ferramentas online.
 
-Na vertente acadêmica e profissional, realizamos trabalhos customizados como a **criação de currículos online (sites CV)** para pesquisadores e docentes, **sites para congressos e simpósios**, e **portais institucionais para laboratórios e grupos de pesquisa**. Essa especialização acadêmica, contudo, é apenas uma das vertentes da nossa capacidade técnica: desenvolvemos websites e plataformas sob medida para qualquer finalidade.
+No ambiente acadêmico, criamos currículos online (sites CV) para pesquisadores e docentes, páginas para congressos e eventos científicos, e portais para laboratórios e grupos de pesquisa. Desenvolvemos também projetos corporativos e institucionais com a mesma base técnica.
 
-Todos os nossos projetos contam com código limpo, arquitetura moderna, conformidade com acessibilidade web (WCAG 2.2 AA) e otimização para motores de busca (SEO).
+Os projetos seguem padrões de acessibilidade (WCAG 2.2 AA) e otimização para motores de busca (SEO).
 
 ## Para quem
 
@@ -87,6 +87,6 @@ Todos os nossos projetos contam com código limpo, arquitetura moderna, conformi
 
 Oferecemos três níveis de arquitetura conforme a necessidade do projeto:
 
-1. **Fácil Manutenção (Painel Visual):** Para equipes que desejam autonomia para atualizar textos, notícias e imagens por painéis visuais intuitivos sem conhecimento de código (WordPress).
-2. **Moderno e Estático (Astro & Markdown):** Velocidade extrema de carregamento, máxima segurança contra invasões e versionamento contínuo via GitHub, com conteúdo facilmente editável em arquivos Markdown.
-3. **Avançado e Interativo (Full-Stack):** Aplicações web completas e sob medida, integradas a bancos de dados, formulários de submissão, APIs externas e dashboards interativos (Next.js, React).
+1. **Painel de controle visual (WordPress):** Para equipes que desejam autonomia para atualizar textos, notícias e imagens por painéis visuais intuitivos sem conhecimento de código.
+2. **Site estático com Markdown e Astro:** Velocidade de carregamento, segurança e versionamento via GitHub, com conteúdo editável em arquivos Markdown.
+3. **Aplicação web sob medida (Next.js/React):** Aplicações interativas integradas a bancos de dados, formulários de submissão, APIs externas e painéis de dados.

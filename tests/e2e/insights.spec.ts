@@ -69,7 +69,7 @@ test.describe('insights preview (production mode - port 4321)', () => {
     const body = await response.text();
     expect(body).toContain('<?xml');
     expect(body).toContain('<rss');
-    expect(body).toContain('<title>Universitas — Insights</title>');
+    expect(body).toContain('<title>Universitas: Insights</title>');
   });
 
   test('en rss feed is valid xml', async ({ request }) => {
@@ -81,7 +81,7 @@ test.describe('insights preview (production mode - port 4321)', () => {
     const body = await response.text();
     expect(body).toContain('<?xml');
     expect(body).toContain('<rss');
-    expect(body).toContain('<title>Universitas — Insights</title>');
+    expect(body).toContain('<title>Universitas: Insights</title>');
   });
 });
 
@@ -121,7 +121,7 @@ test.describe('insights dev mode (port 4322)', () => {
 
     // Heading
     await expect(page.getByRole('heading', { level: 1 })).toContainText(
-      'Como Escolher a Abordagem de Pesquisa'
+      /Como Escolher a Abordagem de Pesquisa/i
     );
 
     // Author byline and link to team anchor

@@ -26,7 +26,7 @@ faq:
     a: 'We execute formal Non-Disclosure Agreements (NDAs) prior to accessing any unpublished drafts, raw interview transcripts, or proprietary datasets.'
 ---
 
-## Methodological Rigor and Digital Presence
+## Methodological support and digital presence
 
 We support researchers and academic labs with study design, statistics, and data analysis while fully preserving authorship: **we do not ghostwrite papers**.
 

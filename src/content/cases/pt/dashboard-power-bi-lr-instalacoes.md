@@ -20,22 +20,22 @@ featured: true
 date: 2024-11-01
 ---
 
-## Contexto Corporativo
+## Contexto
 
-A empresa de engenharia e prestação de serviços técnicos operava com registros de ordens de serviço, insumos e custos distribuídos em planilhas eletrônicas heterogêneas preenchidas por diferentes frentes de obra.
+A empresa de engenharia e prestação de serviços técnicos operava com registros de ordens de serviço, insumos e custos distribuídos em planilhas preenchidas por diferentes frentes de obra.
 
-## O Desafio
+## O desafio
 
-A diretoria e as gerências técnicas não dispunham de um panorama consolidado do andamento das obras, faturamento por contrato e gargalos de atendimento em tempo hábil. O fechamento mensal consumia dias de trabalho manual de consolidação, com margem considerável para erros de digitação e duplicidades.
+A diretoria e as gerências técnicas não dispunham de um panorama consolidado do andamento das obras, faturamento por contrato e gargalos de atendimento em tempo hábil. O fechamento mensal exigia dias de consolidação manual de planilhas.
 
-## Abordagem Metodológica
+## Abordagem metodológica
 
-A Universitas conduziu um processo estruturado de Business Intelligence:
+A Universitas conduziu a estruturação do painel em etapas:
 
-1. **Higienização e modelagem de dados:** Normalização das bases de dados em Power Query, eliminando registros inconsistentes e estabelecendo um modelo estrela com tabelas de dimensões e fatos.
+1. **Higienização e modelagem de dados:** Normalização das bases em Power Query, eliminando registros inconsistentes e estabelecendo um modelo estrela com tabelas de dimensões e fatos.
 2. **Engenharia de medidas DAX:** Formulação de métricas de lucratividade por projeto, taxa de conclusão de chamados e previsão de fluxo de caixa operacional.
-3. **Design de interface focado no usuário:** Criação de telas executivas limpas com hierarquia visual clara, alertas automáticos para desvios orçamentários e filtros cruzados por cliente, período e equipe técnica.
+3. **Design de interface:** Telas executivas com hierarquia visual clara, alertas para desvios orçamentários e filtros por cliente, período e equipe técnica.
 
-## Resultados e Impacto
+## Resultados e impacto
 
 O painel unificado em Power BI reduziu o tempo de fechamento gerencial de dias para minutos, permitindo à diretoria acompanhar o status de cada frente operacional diariamente. A identificação antecipada de custos excedentes aumentou o controle de margem dos contratos.

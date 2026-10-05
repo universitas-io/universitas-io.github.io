@@ -26,8 +26,8 @@ faq:
     a: 'Projetos padrão de dashboard ou pesquisa de mercado duram de 2 a 4 semanas, com entregas parciais em sprints semanais.'
 ---
 
-## Inteligência Concreta para Decisões Estratégicas
+## Diagnósticos e dados para decisões de negócio
 
-No ambiente corporativo, decisões baseadas em suposições custam caro. A Universitas combina técnicas consagradas de pesquisa acadêmica com a agilidade exigida pelo mercado para entregar diagnósticos precisos sobre clientes, concorrentes e processos.
+Apoiamos empresas com análise de dados de mercado, comportamento de clientes e monitoramento da concorrência.
 
-Criamos modelos estatísticos de segmentação, realizamos pesquisas qualitativas de percepção de marca e construímos painéis interativos de BI que conectam equipes de operações e liderança executiva a indicadores vitais em tempo real.
+Desenvolvemos modelos estatísticos de segmentação, pesquisas qualitativas de percepção de marca e dashboards para acompanhar métricas de operação e vendas.

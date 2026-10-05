@@ -26,12 +26,12 @@ export async function listOgPages(): Promise<OgPage[]> {
     { slug: 'default', title: 'Universitas', lang: 'pt' },
     {
       slug: 'index',
-      title: 'Universitas — Consultoria em Pesquisa',
+      title: 'Universitas: Consultoria em Pesquisa',
       lang: 'pt'
     },
     {
       slug: 'en/index',
-      title: 'Universitas — Research Consultancy',
+      title: 'Universitas: Research Consultancy',
       lang: 'en'
     },
     { slug: 'sobre', title: 'Sobre a Universitas', lang: 'pt' },

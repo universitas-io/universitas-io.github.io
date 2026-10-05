@@ -25,8 +25,8 @@ const crumbs = [
 
 const heading =
   lang === 'pt'
-    ? 'Solicitação Enviada com Sucesso!'
-    : 'Proposal Inquiry Received!';
+    ? 'Solicitação enviada'
+    : 'Proposal inquiry received';
 
 const lead =
   lang === 'pt'
@@ -81,10 +81,10 @@ const description =
 
     <div class="pt-6 border-t border-gray-100 dark:border-navy-700/40 flex flex-wrap justify-center gap-4">
       <Button href={path(lang, 'home')} variant="primary" size="md">
-        {lang === 'pt' ? 'Voltar para o início' : 'Back to Home'}
+        {lang === 'pt' ? 'Voltar para o início' : 'Back to home'}
       </Button>
       <Button href={path(lang, 'services')} variant="outline" size="md">
-        {lang === 'pt' ? 'Conhecer nossos serviços' : 'Explore Our Services'}
+        {lang === 'pt' ? 'Conhecer nossos serviços' : 'Explore services'}
       </Button>
     </div>
   </div>

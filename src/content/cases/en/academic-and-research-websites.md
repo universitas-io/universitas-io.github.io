@@ -36,22 +36,22 @@ featured: true
 date: 2025-01-01
 ---
 
-## Institutional Context
+## Institutional context
 
-Academic research clusters, university labs, and conference steering committees require an authoritative digital footprint to disseminate research findings, publications, and open datasets without excessive recurring server overhead.
+Academic research clusters, university labs, and conference committees need to publish findings, reports, and event schedules without high hosting fees.
 
-## The Challenge
+## The challenge
 
-Generic Content Management Systems frequently suffer from security vulnerabilities, sluggish page loads, and poor screen-reader accessibility. Furthermore, academic researchers rarely have the time to maintain complex databases or manage Linux server configurations.
+Standard CMS platforms often require regular security patching and database maintenance for content that changes infrequently.
 
-## Methodological Approach
+## Methodological approach
 
-Universitas deploys modern Jamstack static architectures designed for performance, security, and authorial autonomy:
+We deploy static architectures focused on speed and straightforward editing:
 
-1. **Modern Jamstack Engineering:** Built with static site generators (Astro and Next.js) generating pure HTML for sub-second load times and Lighthouse scores exceeding 95.
-2. **Accessibility & Scientific Standards:** Strict compliance with WCAG 2.2 AA accessibility criteria, scholarly metadata tagging (Google Scholar, Dublin Core), and clean semantic markup.
-3. **Flexible Content Workflows:** Version-controlled Markdown editing on GitHub Pages for technical research teams, paired with headless or visual WordPress setups for non-technical groups.
+1. **Modern Jamstack architecture:** Built with static site generators (Astro and Next.js) generating pure HTML for fast load times and Lighthouse scores exceeding 95.
+2. **Accessibility and scientific standards:** Compliance with WCAG 2.2 AA accessibility criteria, scholarly metadata tagging (Google Scholar, Dublin Core), and clean semantic markup.
+3. **Flexible content workflows:** Version-controlled Markdown editing on GitHub Pages for technical research teams, paired with visual WordPress setups for non-technical groups.
 
-## Results & Impact
+## Results and impact
 
-We launched authoritative scientific portals, including the **Latin American Far-Right Observatory (OEDLA)**, the **Interdisciplinary Artificial Intelligence Lab (LABIIA)**, the official website for the **2nd PPGCP-Unicamp Graduate Symposium (2025)**, and interactive tools for analyzing public academic admissions. All projects feature zero-cost hosting and effortless long-term maintainability.
+We built portals including the **Latin American Far-Right Observatory (OEDLA)**, the **Interdisciplinary Artificial Intelligence Lab (LABIIA)**, the **2nd PPGCP-Unicamp Graduate Symposium (2025)**, and tools for analyzing academic admissions. All projects run on low-maintenance static hosting.

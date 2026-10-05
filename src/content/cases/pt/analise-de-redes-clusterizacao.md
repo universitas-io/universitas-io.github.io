@@ -26,20 +26,20 @@ featured: false
 date: 2024-09-01
 ---
 
-## Contexto da Investigação
+## Contexto da investigação
 
-A análise de redes sociais e de redes semânticas requer mais do que métricas tabulares; exige exploração visual que permita aos pesquisadores inspecionar nós centrais, pontes de intermediação e agrupamentos modulares em diferentes escalas analíticas.
+A análise de redes complexas ganha clareza com a exploração visual de nós centrais, pontes de intermediação e agrupamentos modulares.
 
-## O Desafio
+## O desafio
 
-Grafos com centenas de vértices e milhares de arestas tornam-se visualmente inteligíveis em representações estáticas impressas. Havia a necessidade de construir uma aplicação web rápida e interativa, capaz de calcular métricas de centralidade e modularidade em Python e renderizá-las no navegador com filtros dinâmicos e zoom sem degradação de performance.
+Grafos com centenas de vértices e milhares de arestas perdem clareza em formatos estáticos. O projeto exigia uma aplicação web para calcular métricas de centralidade e modularidade em Python e renderizá-las no navegador com filtros interativos e zoom.
 
-## Abordagem Metodológica
+## Abordagem metodológica
 
 1. **Cálculo de métricas de rede:** Utilização da biblioteca NetworkX em Python para computar graus de centralidade (intermediação, proximidade e autovetor) e detecção de comunidades via algoritmo de Louvain.
-2. **Visualização interativa baseada em força:** Implementação de layout dirigido por força com D3.js, permitindo que nós se posicionem organicamente com base na densidade de conexões.
-3. **Exploração semântica:** Cada nó recebeu atributos customizados para inspeção sob demanda (hover e clique), permitindo a leitura de perfis de atores e atributos discursivos associados.
+2. **Visualização interativa baseada em força:** Implementação de layout dirigido por força com D3.js, permitindo que nós se posicionem com base na densidade de conexões.
+3. **Exploração semântica:** Atributos customizados em cada nó para inspeção sob demanda (hover e clique), permitindo a leitura de perfis de atores e atributos discursivos.
 
-## Resultados e Impacto
+## Resultados e impacto
 
-O painel proporcionou aos pesquisadores uma plataforma intuitiva para validar hipóteses qualitativas a partir da estrutura empírica da rede. O estudo identificou atores-chave na intermediação de temas transversais e fundamentou artigos acadêmicos com visualizações reproduzíveis e interativas.
+A ferramenta permitiu inspecionar comunidades temáticas e atores centrais na intermediação de informações. As visualizações subsidiaram análises qualitativas e artigos acadêmicos com gráficos interativos e reproduzíveis.

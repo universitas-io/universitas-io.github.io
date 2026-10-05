@@ -36,27 +36,27 @@ faq:
 examples:
   title: 'Examples of Projects Delivered'
   items:
-    - title: 'PhD Thesis — YouTube Data Collection and Topic Modeling'
+    - title: 'PhD Thesis: YouTube Data Collection and Topic Modeling'
       url: 'https://github.com/geraldohomero/dh-youtube-database'
       description: 'Structured database of over 100,000 videos and 50 million comments across 49 YouTube channels, including full transcripts and metadata for quantitative and qualitative analysis using BERTopic.'
 ---
 
 ## Overview
 
-Universitas digital data collection turns scattered web pages, document archives, and social media feeds into structured, clean, queryable databases. We design bespoke **Python** collectors combining official API access with resilient web scraping procedures.
+Universitas digital data collection turns web pages, document archives, and social media feeds into structured, clean databases. We design **Python** collectors combining official API access with resilient web scraping procedures.
 
-Our workflows place paramount importance on technical integrity and legal compliance: adhering strictly to rate limits, robots.txt directives, platform terms of service, and privacy frameworks such as the LGPD and GDPR.
+We follow rate limits, robots.txt directives, platform terms of service, and privacy rules under the LGPD and GDPR.
 
-## Who It's For
+## Who it is for
 
 - **Academia:** Research labs and doctoral candidates studying online discourse, political communication, social networks, and public policy records.
 - **Businesses:** Market intelligence, competitive benchmarking, automated pricing monitors, and digital consumer trend analysts.
 - **Public Sector:** Policy observatories, compliance auditors, and open-government transparency initiatives tracking institutional indices.
 - **NGOs & Non-Profits:** Non-profit advocacy teams tracking civic discussions, monitoring disinformation, and collecting public evidence for campaigns and investigative reports.
 
-## Our Methodology
+## How we work
 
-1. **Feasibility Review:** Technical assessment of target platforms, API limits, and ethical boundaries.
-2. **Extractor Engineering:** Writing fault-tolerant extraction scripts equipped with session recovery and logging.
-3. **Data Normalization:** Deduplication, text normalization, schema mapping, and relational indexing.
-4. **Compliance Validation:** Verification against privacy standards and delivery of comprehensive variable dictionaries.
+1. **Feasibility review:** Technical assessment of target platforms, API limits, and ethical boundaries.
+2. **Extractor engineering:** Writing fault-tolerant extraction scripts equipped with session recovery and logging.
+3. **Data normalization:** Deduplication, text normalization, schema mapping, and relational indexing.
+4. **Compliance check:** Verification against privacy standards and delivery of comprehensive variable dictionaries.

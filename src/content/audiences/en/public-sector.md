@@ -26,8 +26,8 @@ faq:
     a: 'Yes. We possess extensive expertise integrating official demographic census microdata, healthcare indices, educational records, and municipal open databases.'
 ---
 
-## Scientific Evidence in the Public Interest
+## Scientific evidence for public policy
 
-Public policy formulation and monitoring require analytical methodologies that are non-partisan, transparent, and dedicated to societal benefit. Universitas equips public managers, government ministries, regulatory agencies, and NGOs with rigorous empirical diagnostics.
+We support public agencies, government bodies, and planning teams with socioeconomic diagnostics and policy evaluations.
 
-Our assessments combine quasi-experimental econometric modeling, qualitative beneficiary listening, and public indicator dashboards, ensuring administrative choices are backed by auditable data and democratic accountability.
+We conduct impact evaluations, qualitative fieldwork with citizens, and open data dashboards using auditable scripts.

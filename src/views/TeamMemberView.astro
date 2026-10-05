@@ -65,7 +65,7 @@ const jsonLd = [
   })
 ];
 
-const title = `${member.data.name} — ${role}`;
+const title = `${member.data.name} | ${role}`;
 const description =
   bio.length > 150
     ? `${bio.slice(0, 147)}...`
@@ -80,7 +80,7 @@ const description =
   alternates={alternates}
   heading={member.data.name}
   lead={role}
-  eyebrow={lang === 'pt' ? 'Equipe & Especialistas' : 'Team & Specialists'}
+  eyebrow={lang === 'pt' ? 'Equipe e especialistas' : 'Team and specialists'}
   crumbs={crumbs}
   jsonLd={jsonLd}
 >
@@ -192,7 +192,7 @@ const description =
           <h3 class="text-xl font-bold font-display text-navy-900 dark:text-white">
             {lang === 'pt'
               ? 'Formação & Trajetória'
-              : 'Education & Credentials'}
+              : 'Education & Background'}
           </h3>
           <ul class="space-y-2.5 pt-2 text-sm text-ink-600 dark:text-gray-300">
             {edus.map((edu) => (

@@ -26,7 +26,7 @@ const crumbs = [
   { name: t(lang, 'nav.contact'), pathname: currentPath }
 ];
 
-const heading = lang === 'pt' ? 'Solicite uma Proposta' : 'Request a Proposal';
+const heading = lang === 'pt' ? 'Solicite uma proposta' : 'Request a proposal';
 const lead =
   lang === 'pt'
     ? 'Compartilhe sua pergunta de pesquisa ou desafio de dados. Nossa equipe elaborará um memorial metodológico e um orçamento sob medida.'
@@ -56,7 +56,7 @@ const mailUrl = `mailto:${site.contact.email}`;
   alternates={alternates}
   heading={heading}
   lead={lead}
-  eyebrow={lang === 'pt' ? 'Atendimento Técnico' : 'Technical Consultation'}
+  eyebrow={lang === 'pt' ? 'Atendimento técnico' : 'Technical consultation'}
   crumbs={crumbs}
   jsonLd={jsonLd}
 >
@@ -71,7 +71,7 @@ const mailUrl = `mailto:${site.contact.email}`;
       <Card class="p-6 sm:p-8 space-y-6">
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
-            {lang === 'pt' ? 'Canais Diretos' : 'Direct Channels'}
+            {lang === 'pt' ? 'Canais diretos' : 'Direct channels'}
           </span>
           <h3 class="text-xl font-bold font-display text-navy-900 dark:text-white mt-1">
             {lang === 'pt' ? 'Prefere conversar?' : 'Prefer to talk?'}
@@ -124,7 +124,7 @@ const mailUrl = `mailto:${site.contact.email}`;
 
       <Card class="p-6 sm:p-8 space-y-4 bg-surface-alt/70 dark:bg-navy-900/60">
         <h4 class="text-sm font-bold font-display text-navy-900 dark:text-white">
-          {lang === 'pt' ? 'Nossos Compromissos' : 'Our Guarantees'}
+          {lang === 'pt' ? 'Nossos compromissos' : 'Our commitments'}
         </h4>
         <ul class="space-y-3 text-xs text-ink-600 dark:text-gray-300">
           <li class="flex items-start gap-2">

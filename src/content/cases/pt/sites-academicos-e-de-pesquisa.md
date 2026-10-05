@@ -36,22 +36,22 @@ featured: true
 date: 2025-01-01
 ---
 
-## Contexto Institucional
+## Contexto institucional
 
-Grupos de pesquisa, laboratórios e comissões organizadoras de eventos acadêmicos necessitam de presença digital que transmita autoridade científica, permita a disseminação de relatórios e publicações e permaneça acessível sem custos proibitivos de hospedagem recorrente.
+Grupos de pesquisa, laboratórios e comissões de eventos científicos precisam divulgar relatórios, publicações e programações com estabilidade e baixo custo de manutenção.
 
-## O Desafio
+## O desafio
 
-Plataformas genéricas com frequência exigem manutenção constante contra brechas de segurança ou são lentas e inacessíveis para leitores com deficiência visual. Além disso, pesquisadores raramente dispõem de tempo para lidar com configurações complexas de servidores ou bancos de dados relacionais para sites institucionais.
+Muitos sistemas convencionais exigem atualizações constantes de segurança e geram custos de servidor desnecessários para páginas que são primariamente informativas.
 
-## Abordagem Metodológica
+## Abordagem metodológica
 
-A Universitas adota uma arquitetura estática moderna orientada a desempenho e autonomia dos autores:
+Estruturamos as páginas com arquitetura estática leve:
 
 1. **Desenvolvimento com Jamstack moderno:** Construção com geradores estáticos (Astro e Next.js), gerando HTML puro com carregamento instantâneo e pontuações Lighthouse superiores a 95.
 2. **Acessibilidade e padrões acadêmicos:** Conformidade com as diretrizes WCAG 2.2 AA, metadados acadêmicos (Dublin Core, Open Graph, Google Scholar) e marcação semântica estruturada.
 3. **Autonomia de gestão:** Configuração de fluxos via Markdown/GitHub Pages para grupos com perfil técnico, ou implantação em WordPress com painéis simplificados para equipes que preferem gestão sem código.
 
-## Resultados e Impacto
+## Resultados e impacto
 
-Desenvolvemos portais institucionais de destaque, incluindo o **Observatório da Extrema Direita Latino-Americana (OEDLA)**, o **Laboratório Interdisciplinar em Inteligência Artificial (LABIIA)**, a página oficial do **II Seminário Discente do PPGCP-Unicamp (2025)** e ferramentas interativas para análise de seleções acadêmicas. Todos os projetos contam com hospedagem de custo zero ou reduzido e manutenção descomplicada.
+Desenvolvemos os portais do **Observatório da Extrema Direita Latino-Americana (OEDLA)**, do **Laboratório Interdisciplinar em Inteligência Artificial (LABIIA)**, a página oficial do **II Seminário Discente do PPGCP-Unicamp (2025)** e ferramentas interativas para análise de seleções acadêmicas. Os sites têm baixo custo de hospedagem e fluxos simples de atualização.

@@ -25,23 +25,23 @@ featured: true
 date: 2024-06-01
 ---
 
-## Research Context
+## Research context
 
-In advanced social and computational humanities research, investigating public discourse across video streaming platforms demands extensive empirical evidence. A doctoral thesis required comprehensive mapping of discursive circulation, engagement dynamics, and online communities across Brazilian thematic YouTube channels over multiple years.
+A doctoral thesis in the humanities investigated public discourse, engagement patterns, and community dynamics across 49 Brazilian YouTube channels over several years.
 
-## The Challenge
+## The challenge
 
-The core obstacle was data scale and structural heterogeneity: reliably collecting metadata, user comments, and transcripts across dozens of channels, managing API rate limits, handling encoding inconsistencies, and engineering local storage optimized for high-performance querying without data loss.
+The project required harvesting metadata, comments, and transcripts at scale while managing API quotas, large text volumes, and efficient local storage for querying.
 
-## Methodological Approach
+## Methodological approach
 
-Universitas engineered an automated Python data pipeline combining:
+We built a collection and processing pipeline in Python:
 
-1. **Systematic Extraction:** Customized scripts interfacing with the YouTube Data API v3 and specialized scrapers to retrieve complete video subtitles and transcriptions.
-2. **Database Architecture:** Relational SQLite schema design and Parquet export workflows, enabling rapid indexing and performant querying by timeframe, channel, and engagement depth.
-3. **Natural Language Topic Modeling:** Integration of transformer-based BERTopic algorithms with Portuguese embeddings to extract latent semantic structures.
-4. **Ethical Governance & LGPD:** Rigorous pseudonymization of individual user identifiers, adhering strictly to platform developer policies and ethical standards in scientific inquiry.
+1. **Systematic extraction:** Scripts interfacing with the YouTube Data API v3 and scrapers to retrieve complete video subtitles and transcriptions.
+2. **Database architecture:** Relational SQLite schema design and Parquet export workflows, enabling rapid indexing and querying by timeframe, channel, and engagement depth.
+3. **Topic modeling:** Transformer-based BERTopic algorithms with Portuguese embeddings to extract semantic clusters.
+4. **Ethical governance and LGPD:** Pseudonymization of individual user identifiers, adhering to platform developer policies and ethical standards in scientific inquiry.
 
-## Results & Impact
+## Results and impact
 
 The automated infrastructure aggregated an empirical repository of **over 100,000 videos, 50 million comments, and 49 tracked channels**. This structured database directly empowered core analytical chapters of the doctoral dissertation, facilitating statistical hypothesis testing and discourse analysis with end-to-end reproducibility. Source code and documentation were published openly on GitHub.

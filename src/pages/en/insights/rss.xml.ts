@@ -8,7 +8,7 @@ export async function GET(context: APIContext) {
   const posts = await getLocalized('insights', 'en');
 
   return rss({
-    title: 'Universitas — Insights',
+    title: 'Universitas: Insights',
     description:
       'Articles, methodological essays, and practical guides on empirical research and data analytics.',
     site: context.site ?? site.url,

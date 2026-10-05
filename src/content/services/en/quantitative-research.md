@@ -36,7 +36,7 @@ faq:
 examples:
   title: 'Examples of Projects Delivered'
   items:
-    - title: 'PhD Thesis — YouTube Data Collection and Topic Modeling'
+    - title: 'PhD Thesis: YouTube Data Collection and Topic Modeling'
       url: 'https://github.com/geraldohomero/dh-youtube-database'
       description: 'Large-scale collection and BERTopic modeling from 100,000 videos and 50 million comments structured in SQLite and Parquet.'
     - title: 'Network Analysis and Clustering (Python & D3.js)'
@@ -51,20 +51,20 @@ examples:
 
 ## Overview
 
-Universitas quantitative research couples methodological rigor with modern statistical computing to transform raw observations into solid evidence. From study design to multi-level predictive modeling, every analytical step is auditable and reproducible.
+Universitas quantitative research applies statistical modeling and computation to test hypotheses and analyze data patterns. From study design to regression models, our code is documented and reproducible.
 
 We deliver descriptive and inferential statistics, parametric and non-parametric tests, linear and logistic regressions, clustering, and predictive modeling using standard scientific languages: **R** and **Python**.
 
-## Who It's For
+## Who it is for
 
-- **Academia:** Researchers, graduate students, and lab directors needing statistical support for doctoral dissertations, research grants, and papers aimed at high-impact journals.
+- **Academia:** Researchers, graduate students, and lab directors needing statistical support for doctoral dissertations, research grants, and peer-reviewed journal submissions.
 - **Businesses:** Product, marketing intelligence, and strategy teams seeking to identify customer patterns, market segmentation, and measurable ROI.
 - **Public Sector:** Government bodies focused on public policy evaluation, socioeconomic diagnostics, and open data transparency.
 - **NGOs & Non-Profits:** Civil society organizations seeking social impact assessment, territorial indicators, and quantitative evidence for grants and advocacy.
 
-## Our Methodology
+## How we work
 
-1. **Problem Definition:** Deep alignment on analytical questions, hypotheses, and variables.
-2. **Data Auditing & Cleaning:** Systematic handling of missing values, outlier detection, and schema validation.
-3. **Statistical Estimation:** Execution of models tailored to data properties, validating theoretical assumptions.
-4. **Synthesis & Handoff:** Production of transparent methodology documentation, standardized tables, and full source code.
+1. **Problem definition:** Alignment on analytical questions, hypotheses, and variables.
+2. **Data cleaning:** Systematic handling of missing values, outlier detection, and schema validation.
+3. **Statistical modeling:** Execution of models tailored to data properties, validating theoretical assumptions.
+4. **Delivery:** Methodological documentation, standardized tables, and full source code.

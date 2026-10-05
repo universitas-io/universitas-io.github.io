@@ -24,7 +24,10 @@ export interface PageMeta {
 }
 
 export function formatTitle(title: string): string {
-  if (title.includes('Universitas —') || title.endsWith('| Universitas')) {
+  if (
+    title.startsWith('Universitas') ||
+    title.endsWith('| Universitas')
+  ) {
     return title;
   }
   return `${title} | Universitas`;

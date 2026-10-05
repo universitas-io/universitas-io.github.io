@@ -25,23 +25,23 @@ featured: true
 date: 2024-06-01
 ---
 
-## Contexto da Investigação
+## Contexto da investigação
 
-Em pesquisas de ponta nas ciências humanas e sociais, a análise do debate público em plataformas de vídeo exige volumes maciços de dados empíricos. Uma pesquisa de doutorado demandava o mapeamento aprofundado da circulação de discursos, dinâmicas de engajamento e comunidades discursivas em canais temáticos brasileiros no YouTube ao longo de múltiplos anos.
+Uma pesquisa de doutorado em ciências humanas investigou a circulação de discursos, dinâmicas de engajamento e comunidades discursivas em 49 canais temáticos do YouTube ao longo de múltiplos anos.
 
-## O Desafio
+## O desafio
 
-O desafio central residia na magnitude e heterogeneidade dos dados: coletar com estabilidade metadados, comentários e transcrições de dezenas de canais, contornando limitações de taxa das APIs, tratando inconsistências de codificação e viabilizando armazenamento local estruturado para consultas analíticas rápidas sem perda de integridade.
+O projeto exigia coletar metadados, comentários e transcrições em larga escala, lidando com limites de taxa da API, volumes extensos de texto e necessidade de armazenamento estruturado para consultas locais rápidas.
 
-## Abordagem Metodológica
+## Abordagem metodológica
 
-A equipe da Universitas desenvolveu um pipeline computacional sob medida em Python, combinando:
+Desenvolvemos um fluxo de coleta e processamento em Python:
 
-1. **Extração sistemática:** Scripts automatizados conectados à YouTube Data API v3 e raspadores complementares para enriquecimento com legendas e transcrições completas.
-2. **Estruturação de banco de dados:** Modelagem relacional em SQLite e exports em Parquet, garantindo indexação rápida e consultas eficientes por período, canal e tipo de engajamento.
-3. **Modelagem de tópicos:** Aplicação de algoritmos de processamento de linguagem natural (BERTopic) com embeddings em língua portuguesa para identificação de núcleos temáticos emergentes.
-4. **Governança ética e LGPD:** Pseudonimização dos identificadores de usuários e estrito cumprimento dos termos de serviço da plataforma e das diretrizes éticas em pesquisa científica.
+1. **Extração sistemática:** Scripts automatizados conectados à YouTube Data API v3 e extratores complementares para recuperação de legendas e transcrições completas.
+2. **Estruturação de banco de dados:** Modelagem relacional em SQLite e exportação em Parquet, garantindo consultas por período, canal e engajamento.
+3. **Modelagem de tópicos:** Algoritmos de processamento de linguagem natural (BERTopic) com embeddings em português para identificar agrupamentos temáticos.
+4. **Governança ética e LGPD:** Pseudonimização de identificadores de usuários e respeito aos termos de serviço e diretrizes de pesquisa.
 
-## Resultados e Impacto
+## Resultados e impacto
 
-O pipeline consolidou uma base com **mais de 100 mil vídeos, 50 milhões de comentários e 49 canais monitorados**. A base estruturada fundamentou capítulos analíticos da tese de doutorado, permitindo testes estatísticos de dispersão de tópicos e análises qualitativas de discurso com rastreabilidade total do dado bruto ao resultado publicado. O código e documentação metodológica foram disponibilizados em acesso aberto no GitHub.
+A base consolidou **mais de 100 mil vídeos, 50 milhões de comentários e 49 canais monitorados**. Os dados estruturados fundamentaram capítulos da tese de doutorado, permitindo testes estatísticos de dispersão de tópicos e análises qualitativas de discurso. O código e a documentação metodológica foram disponibilizados em acesso aberto no GitHub.

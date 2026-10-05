@@ -35,7 +35,7 @@ faq:
 examples:
   title: 'Examples of Dashboards Created'
   items:
-    - title: 'Python and D3.js — Network and Cluster Visualization'
+    - title: 'Python and D3.js: Network and Cluster Visualization'
       images:
         - src: '../../../assets/images/cases/network-clusters/graph.png'
           alt: 'Global Map of the Network of Organizations'
@@ -43,7 +43,7 @@ examples:
           alt: 'Network of Articulations and Poles'
         - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
           alt: 'Bipartite Clustermap'
-    - title: 'Power BI — LR Instalações Especiais'
+    - title: 'Power BI: LR Instalações Especiais'
       image:
         src: '../../../assets/images/cases/powerbi-lr/cover.png'
         alt: 'Executive Power BI dashboard showing operational and financial indicators'
@@ -51,20 +51,20 @@ examples:
 
 ## Overview
 
-Universitas dashboard engineering bridges the gap between raw database tables and executive decisions. We build responsive executive cockpits, research observatories, and interactive data portals that replace brittle spreadsheets with automated, reliable visual clarity.
+Universitas builds interactive dashboards that connect directly to your databases. We create operational views, research observatories, and public data portals to track indicators in real time.
 
-We unify data across heterogeneous sources into industry-standard BI platforms such as **Power BI**, **Tableau**, and **Looker Studio**, or develop bespoke interactive web visualizations using **Python** and **D3.js**.
+We unify data across sources into BI platforms such as **Power BI**, **Tableau**, and **Looker Studio**, or develop interactive web visualizations using **Python** and **D3.js**.
 
-## Who It's For
+## Who it is for
 
 - **Academia:** Research consortium observatories, grant dissemination hubs, and interactive scientific data explorers.
 - **Businesses:** Operations managers, finance leaders, and sales directors monitoring revenue, churn, and operational metrics.
 - **Public Sector:** Government transparency dashboards, municipal indicator portals, and public health surveillance systems.
 - **NGOs & Non-Profits:** Social impact indicator tracking, interactive dashboards for donor accountability, and community mobilization dashboards.
 
-## Our Methodology
+## How we work
 
-1. **KPI Architecture:** Aligning key questions with necessary metrics, refresh rates, and role-based access.
-2. **Data Modeling:** Extraction, cleaning, and semantic data schema modeling to guarantee performant queries.
-3. **Interactive Design:** Prototyping layouts with high data-to-ink ratio and intuitive filter interactions.
-4. **Deployment & Training:** Secure deployment to organizational tenants accompanied by user training.
+1. **KPI mapping:** Aligning key questions with necessary metrics, refresh rates, and access controls.
+2. **Data modeling:** Extraction, cleaning, and semantic data schema modeling to guarantee performant queries.
+3. **Interface design:** Layouts with clear hierarchy, high data-to-ink ratio, and intuitive filter controls.
+4. **Deployment and training:** Secure deployment to organizational tenants accompanied by user training.

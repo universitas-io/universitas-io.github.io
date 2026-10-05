@@ -60,11 +60,11 @@ if (service.data.faq && service.data.faq.length > 0) {
   eyebrow={
     service.data.tier === 'core'
       ? lang === 'pt'
-        ? 'Serviço Principal'
-        : 'Core Service'
+        ? 'Serviço principal'
+        : 'Core service'
       : lang === 'pt'
-        ? 'Serviço Complementar'
-        : 'Complementary Service'
+        ? 'Serviço complementar'
+        : 'Complementary service'
   }
   crumbs={crumbs}
   jsonLd={jsonLd}
@@ -81,7 +81,7 @@ if (service.data.faq && service.data.faq.length > 0) {
       {service.data.deliverables && service.data.deliverables.length > 0 && (
         <section class="space-y-4 pt-6 border-t border-gray-200 dark:border-navy-700/60">
           <h2 class="text-2xl font-bold font-display text-navy-900 dark:text-white">
-            {lang === 'pt' ? 'O que você recebe' : 'What We Deliver'}
+            {lang === 'pt' ? 'O que você recebe' : 'What we deliver'}
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {service.data.deliverables.map((item) => (
@@ -219,8 +219,8 @@ if (service.data.faq && service.data.faq.length > 0) {
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-ink-600 dark:text-gray-400">
             {lang === 'pt'
-              ? 'Ferramentas & Tecnologias'
-              : 'Tools & Technologies'}
+              ? 'Ferramentas e tecnologias'
+              : 'Tools and technologies'}
           </span>
           <div class="mt-3">
             <ToolList tools={service.data.tools} />

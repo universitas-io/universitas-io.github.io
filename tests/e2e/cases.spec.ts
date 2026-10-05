@@ -128,10 +128,10 @@ test.describe('simple project examples embedded inside respective services', () 
     ).toBeVisible();
 
     await expect(
-      section.getByText(/Python e D3.js — Visualização de Redes e Clusters/)
+      section.getByText(/Python e D3.js: Visualização de Redes e Clusters/)
     ).toBeVisible();
     await expect(
-      section.getByText(/Power BI — LR Instalações Especiais/)
+      section.getByText(/Power BI: LR Instalações Especiais/)
     ).toBeVisible();
 
     await expect(

@@ -16,13 +16,13 @@ const { lang, title, text, class: className = '' } = Astro.props;
 
 const defaultTitle =
   lang === 'pt'
-    ? 'Pronto para estruturar sua pesquisa com método e evidências?'
-    : 'Ready to empower your research with method and rigor?';
+    ? 'Pronto para planejar sua pesquisa com método e evidências?'
+    : 'Ready to structure your research with rigorous methods?';
 
 const defaultText =
   lang === 'pt'
-    ? 'Fale com nossa equipe técnica para desenhar a abordagem ideal para seu projeto ou instituição.'
-    : 'Speak with our technical team to design the optimal research strategy for your project.';
+    ? 'Fale com nossa equipe técnica para desenhar a abordagem ideal para o seu projeto.'
+    : 'Talk to our team to plan the methodology for your project.';
 
 const whatsappUrl = `https://wa.me/${site.contact.whatsapp}`;
 ---

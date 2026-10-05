@@ -15,8 +15,8 @@ test('buildMeta generates title, canonical, hreflang, robots, and og tags', () =
   });
 
   expect(m.title).toBe('Pesquisa Quantitativa | Universitas');
-  expect(formatTitle('Universitas — Consultoria em pesquisa')).toBe(
-    'Universitas — Consultoria em pesquisa'
+  expect(formatTitle('Universitas: Consultoria em pesquisa')).toBe(
+    'Universitas: Consultoria em pesquisa'
   );
   expect(m.canonical).toBe(`${site.url}/servicos/pesquisa-quantitativa/`);
   expect(m.hreflang).toEqual([

@@ -26,8 +26,8 @@ faq:
     a: 'Sim. Temos ampla experiência na integração de bases oficiais (Censo IBGE, RAIS, DATASUS, Censo Escolar) e dados abertos municipais e estaduais.'
 ---
 
-## Evidências Científicas a Serviço do Interesse Público
+## Evidências científicas para o interesse público
 
-A formulação e avaliação de políticas públicas requerem métodos analíticos imunes a vieses e orientados pelo interesse coletivo. A Universitas apoia gestores públicos, secretarias de governo, agências reguladoras e organizações multilaterais com diagnósticos socioeconômicos independentes e robustos.
+Apoiamos órgãos governamentais, agências públicas e equipes de planejamento com diagnósticos socioeconômicos e avaliação de políticas públicas.
 
-Nossos estudos combinam modelagem econométrica de impacto, pesquisa qualitativa com beneficiários e criação de observatórios de indicadores, garantindo que cada decisão administrativa seja amparada por dados verificáveis e em total sintonia com os princípios de transparência pública.
+Trabalhamos com avaliação de impacto, pesquisas qualitativas com cidadãos e criação de painéis de indicadores abertos, com dados documentados e auditáveis.

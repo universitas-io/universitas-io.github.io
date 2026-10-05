@@ -16,12 +16,12 @@ export const toolAreas: ToolArea[] = [
   {
     key: 'quant',
     label: {
-      pt: 'Pesquisa Quantitativa & Estatística',
-      en: 'Quantitative Research & Statistics'
+      pt: 'Pesquisa quantitativa e estatística',
+      en: 'Quantitative research and statistics'
     },
     description: {
-      pt: 'Modelagem estatística, testes de hipóteses, econometria e manipulação de grandes bases de dados.',
-      en: 'Statistical modeling, hypothesis testing, econometrics, and large-scale data manipulation.'
+      pt: 'Modelagem estatística, testes de hipóteses, econometria e manipulação de bases de dados.',
+      en: 'Statistical modeling, hypothesis testing, econometrics, and data manipulation.'
     },
     tools: [
       { name: 'R', icon: 'simple-icons:r' },
@@ -37,8 +37,8 @@ export const toolAreas: ToolArea[] = [
   {
     key: 'qual',
     label: {
-      pt: 'Pesquisa Qualitativa & CAQDAS',
-      en: 'Qualitative Research & CAQDAS'
+      pt: 'Pesquisa qualitativa e CAQDAS',
+      en: 'Qualitative research and CAQDAS'
     },
     description: {
       pt: 'Análise de conteúdo, análise de discurso, codificação temática e métodos mistos com apoio computacional.',
@@ -56,12 +56,12 @@ export const toolAreas: ToolArea[] = [
   {
     key: 'viz',
     label: {
-      pt: 'Visualização de Dados & BI',
-      en: 'Data Visualization & BI'
+      pt: 'Visualização de dados e BI',
+      en: 'Data visualization and BI'
     },
     description: {
-      pt: 'Dashboards interativos, observatórios públicos e relatórios executivos para comunicação clara de evidências.',
-      en: 'Interactive dashboards, public observatories, and executive reporting for clear evidence communication.'
+      pt: 'Dashboards interativos, observatórios públicos e relatórios para acompanhamento de indicadores.',
+      en: 'Interactive dashboards, public observatories, and reports for tracking indicators.'
     },
     tools: [
       { name: 'Power BI', icon: 'simple-icons:powerbi' },
@@ -75,12 +75,12 @@ export const toolAreas: ToolArea[] = [
   {
     key: 'web',
     label: {
-      pt: 'Desenvolvimento Web & Editorial',
-      en: 'Web Development & Publishing'
+      pt: 'Desenvolvimento web e editorial',
+      en: 'Web development and publishing'
     },
     description: {
-      pt: 'Portais acadêmicos estáticos de alta performance e editoração eletrônica de publicações científicas.',
-      en: 'High-performance static academic portals and electronic publishing of scientific works.'
+      pt: 'Desenvolvimento de websites, portais institucionais e editoração eletrônica de publicações.',
+      en: 'Web development, institutional portals, and desktop publishing.'
     },
     tools: [
       { name: 'Astro', icon: 'simple-icons:astro' },
