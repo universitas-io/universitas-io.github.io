@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'LaTeX'
   - 'InDesign'
@@ -51,6 +52,7 @@ We refine every typographic detail: harmonious proportional grids, correct pagin
 - **Academia:** Doctoral and master's candidates, journal editors, and conference chairs publishing scientific proceedings (such as the UFJF History Week Proceedings).
 - **Businesses:** White papers, ESG sustainability reports, and technical manuals that demand clean, credible typography.
 - **Public Sector:** Institutional research reports, ministerial manuals, and public policy digests prepared for print or digital distribution.
+- **NGOs & Non-Profits:** Annual impact reports, donor dossiers, informational booklets, and advocacy publications requiring compelling visual presentation.
 
 ## Our Methodology
 

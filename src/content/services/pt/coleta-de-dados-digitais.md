@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'Python'
   - 'Scrapy'
@@ -51,6 +52,7 @@ Nossa atuação prioriza a integridade técnica e a conformidade ética: respeit
 - **Academia:** Grupos de pesquisa e teses que investigam comunicação política, debates públicos em redes sociais, discursos digitais e dados abertos governamentais.
 - **Empresas:** Monitoramento de mercado, inteligência competitiva, análise de preços e mapeamento de tendências de consumo.
 - **Setor Público:** Monitoramento de indicadores, coleta de evidências em diários oficiais e fiscalização de transparência ativa em portais públicos.
+- **ONGs e Terceiro Setor:** Monitoramento de causas e pautas públicas na internet, análise de desinformação e coleta de dados públicos para campanhas e relatórios temáticos.
 
 ## Como fazemos
 

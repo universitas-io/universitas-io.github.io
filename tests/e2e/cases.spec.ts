@@ -67,7 +67,7 @@ test.describe('simple project examples embedded inside respective services', () 
     await expect(section).toBeVisible();
     await expect(
       section.getByRole('heading', {
-        name: /Exemplos de Sites Acadêmicos Criados/
+        name: /Exemplos de Sites (Acadêmicos )?Criados/
       })
     ).toBeVisible();
 

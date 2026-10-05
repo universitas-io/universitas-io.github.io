@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'NVivo'
   - 'ATLAS.ti'
@@ -49,6 +50,7 @@ Utilizamos os principais softwares de análise qualitativa de dados assistida po
 - **Academia:** Projetos de mestrado, doutorado e pesquisas temáticas nas ciências humanas, sociais aplicadas e saúde que exigem fundamentação qualitativa sólida e rastreável.
 - **Empresas:** Estudos de percepção de marca, experiência do usuário (UX research), feedback aprofundado de clientes e testes de conceito.
 - **Setor Público:** Mapeamento de demandas comunitárias, avaliação qualitativa de programas governamentais e escuta qualificada de beneficiários.
+- **ONGs e Terceiro Setor:** Escuta de comunidades atendidas, sistematização de experiências de campo e narrativas qualitativas de impacto para prestação de contas.
 
 ## Como fazemos
 

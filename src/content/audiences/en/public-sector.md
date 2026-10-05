@@ -13,8 +13,10 @@ painPoints:
 services:
   - 'quantitative'
   - 'qualitative'
-  - 'dashboards'
   - 'digital-data'
+  - 'dashboards'
+  - 'academic-websites'
+  - 'document-formatting'
 faq:
   - q: 'Can government entities contract Universitas services directly?'
     a: 'Yes. We work with municipal, state, and federal agencies via standard public procurement, research exemptions, and university foundation partnerships.'

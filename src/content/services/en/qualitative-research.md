@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'NVivo'
   - 'ATLAS.ti'
@@ -48,7 +49,8 @@ Using standard Computer-Assisted Qualitative Data Analysis Software (CAQDAS)—i
 
 - **Academia:** Graduate students, postdocs, and research faculty in the social sciences, humanities, and public health requiring robust qualitative rigor.
 - **Businesses:** Product teams, brand strategists, and UX researchers needing deep insights into customer perceptions, habits, and motivations.
-- **Public Sector:** Policy evaluators, NGO program managers, and public agencies conducting stakeholder engagement and qualitative impact assessments.
+- **Public Sector:** Policy evaluators and public agencies conducting stakeholder engagement and qualitative impact assessments.
+- **NGOs & Non-Profits:** Community-based organizations capturing grassroots beneficiary voices, fieldwork narratives, and qualitative evidence for grant reports.
 
 ## Our Methodology
 

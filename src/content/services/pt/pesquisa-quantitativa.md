@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'R'
   - 'Python'
@@ -58,7 +59,8 @@ Realizamos estatísticas descritivas e inferenciais, testes paramétricos e não
 
 - **Academia:** Docentes, pós-graduandos e laboratórios que necessitam de apoio estatístico para teses, dissertações e artigos a serem submetidos a periódicos internacionais de alto impacto.
 - **Empresas:** Equipes de produto, inteligência de mercado e operações que buscam identificar padrões de comportamento de clientes, segmentação e mensuração de impacto.
-- **Setor Público:** Órgãos governamentais e instituições do terceiro setor focados em avaliação de impacto de políticas públicas, diagnósticos socioeconômicos e transparência.
+- **Setor Público:** Órgãos governamentais focados em avaliação de impacto de políticas públicas, diagnósticos socioeconômicos e transparência.
+- **ONGs e Terceiro Setor:** Organizações sociais que necessitam de avaliação de impacto de projetos, diagnósticos territoriais e evidências quantitativas para captação de recursos e advocacy.
 
 ## Como fazemos
 

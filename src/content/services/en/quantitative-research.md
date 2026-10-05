@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'R'
   - 'Python'
@@ -58,7 +59,8 @@ We deliver descriptive and inferential statistics, parametric and non-parametric
 
 - **Academia:** Researchers, graduate students, and lab directors needing statistical support for doctoral dissertations, research grants, and papers aimed at high-impact journals.
 - **Businesses:** Product, marketing intelligence, and strategy teams seeking to identify customer patterns, market segmentation, and measurable ROI.
-- **Public Sector:** Government bodies, NGOs, and think tanks focused on public policy evaluation, socioeconomic diagnostics, and open data transparency.
+- **Public Sector:** Government bodies focused on public policy evaluation, socioeconomic diagnostics, and open data transparency.
+- **NGOs & Non-Profits:** Civil society organizations seeking social impact assessment, territorial indicators, and quantitative evidence for grants and advocacy.
 
 ## Our Methodology
 

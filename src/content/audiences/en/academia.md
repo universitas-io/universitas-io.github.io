@@ -14,6 +14,7 @@ services:
   - 'quantitative'
   - 'qualitative'
   - 'digital-data'
+  - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
 faq:
@@ -25,8 +26,8 @@ faq:
     a: 'We execute formal Non-Disclosure Agreements (NDAs) prior to accessing any unpublished drafts, raw interview transcripts, or proprietary datasets.'
 ---
 
-## Methodological Support with Rigor and Ethics
+## Methodological Rigor and Digital Presence
 
-Universitas assists university faculty, doctoral candidates, and research labs throughout the research lifecycle. Our role is to provide specialized technical expertise in study design, statistical inference, and data architecture so you can focus on core theoretical inquiries.
+We support researchers and academic labs with study design, statistics, and data analysis while fully preserving authorship: **we do not ghostwrite papers**.
 
-We uphold an uncompromising commitment to research integrity: **Universitas does not write academic papers for clients**. We provide methodological consulting, data analysis, and technical guidance, ensuring researchers fully command and defend every technique employed.
+Beyond research consulting, we build tailored digital solutions including **online academic CVs (CV websites)**, **event portals**, and **laboratory websites**. This academic focus is just one facet of our broader web development work, creating modern and accessible sites for any purpose or organization.

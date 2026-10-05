@@ -1,15 +1,16 @@
 ---
-title: 'Criação de Sites Acadêmicos'
-description: 'Desenvolvimento de portais acadêmicos rápidos e acessíveis para laboratórios, congressos e pesquisadores, com SEO para Google Acadêmico e ORCID.'
+title: 'Criação e Desenvolvimento de Sites'
+description: 'Desenvolvimento de sites modernos, rápidos e responsivos para pessoas, empresas, ONGs e academia, de currículos online (CVs) a portais completos.'
 translationKey: 'academic-websites'
 tier: 'complementary'
 order: 5
 icon: 'lucide:globe'
-summary: 'Portais web modernos e acessíveis para grupos de pesquisa, eventos científicos e pesquisadores, com gestão simplificada e indexação acadêmica.'
+summary: 'Desenvolvimento de sites modernos, acessíveis e responsivos para qualquer finalidade: portais corporativos, currículos online (sites CV), laboratórios, eventos e ONGs.'
 audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'Astro'
   - 'Next.js'
@@ -19,20 +20,21 @@ tools:
   - 'WordPress'
 deliverables:
   - 'Site responsivo publicado com domínio próprio ou institucional'
-  - 'Integração com identificadores acadêmicos (ORCID, Google Acadêmico, Lattes)'
-  - 'Otimização de SEO acadêmico e metadados estruturados (Highwire Press, Dublin Core)'
-  - 'Manual de atualização de conteúdo e tutoriais passo a passo'
+  - 'Soluções sob medida: sites corporativos, currículos online (sites CV), portais de laboratórios e páginas de eventos'
+  - 'Otimização de SEO (mecanismos de busca e indexadores acadêmicos)'
+  - 'Integração com identificadores profissionais e acadêmicos (ORCID, Lattes, LinkedIn)'
+  - 'Manual prático de atualização de conteúdo e autonomia para a sua equipe'
 faq:
   - q: 'Vocês emitem nota fiscal?'
-    a: 'Sim. Emitimos nota fiscal para pessoas físicas e jurídicas (universidades, fundações de apoio e laboratórios).'
+    a: 'Sim. Emitimos nota fiscal para pessoas físicas e jurídicas (empresas, ONGs, universidades, fundações de apoio e laboratórios).'
   - q: 'Quais modelos de gestão vocês oferecem?'
     a: 'Oferecemos três modelos: 1) Fácil manutenção via painel visual (WordPress); 2) Estático intermediário ultra-rápido via Markdown e GitHub (Astro/Hugo); 3) Avançado personalizado com bancos de dados e APIs (Next.js/React).'
-  - q: 'O site pode ser hospedado em servidores institucionais da universidade?'
-    a: 'Sim. Podemos implantar em servidores institucionais, GitHub Pages gratuito ou serviços de nuvem de alta disponibilidade (Netlify, Vercel).'
+  - q: 'O site pode ser hospedado em servidores institucionais ou corporativos?'
+    a: 'Sim. Podemos implantar em servidores institucionais, infraestrutura corporativa própria, GitHub Pages gratuito ou serviços de nuvem de alta disponibilidade (Netlify, Vercel).'
   - q: 'Como garantem a longevidade e baixa manutenção do site?'
     a: 'Sites estáticos modernos em Astro ou Markdown dispensam bancos de dados pesados e plugins vulneráveis, funcionando por anos com custo quase zero de infraestrutura.'
 examples:
-  title: 'Exemplos de Sites Acadêmicos Criados'
+  title: 'Exemplos de Sites Criados'
   items:
     - title: 'Observatório da Extrema Direita Latino-Americana | OEDLA'
       url: 'https://geraldohomero.github.io/oedla/'
@@ -68,20 +70,23 @@ examples:
 
 ## O que é
 
-O serviço de criação de sites acadêmicos da Universitas desenvolve ambientes web elegantes, acessíveis e tecnicamente sólidos para comunicar projetos científicos à sociedade e à comunidade de pares. Desenvolvemos desde sites institucionais para laboratórios e redes de pesquisa até páginas para congressos e portais curriculares de docentes.
+A Universitas projeta e desenvolve ambientes web modernos, elegantes, rápidos e totalmente responsivos para qualquer objetivo ou setor. Criamos desde landing pages e portais institucionais para empresas e organizações do terceiro setor até ferramentas digitais e sites altamente personalizados para a comunidade acadêmica.
 
-Integramos identificadores acadêmicos (ORCID, Currículo Lattes, Google Acadêmico), aplicamos metadados de indexação científica internacional e garantimos total conformidade com diretrizes de acessibilidade web (WCAG 2.2 AA).
+Na vertente acadêmica e profissional, realizamos trabalhos customizados como a **criação de currículos online (sites CV)** para pesquisadores e docentes, **sites para congressos e simpósios**, e **portais institucionais para laboratórios e grupos de pesquisa**. Essa especialização acadêmica, contudo, é apenas uma das vertentes da nossa capacidade técnica: desenvolvemos websites e plataformas sob medida para qualquer finalidade.
+
+Todos os nossos projetos contam com código limpo, arquitetura moderna, conformidade com acessibilidade web (WCAG 2.2 AA) e otimização para motores de busca (SEO).
 
 ## Para quem
 
-- **Academia:** Grupos de pesquisa (como OEDLA e LABIIA), comissões organizadoras de eventos científicos (como o Seminário Discente PPGCP-Unicamp), programas de pós-graduação e docentes.
-- **Empresas:** Centros de P&D (Pesquisa e Desenvolvimento), institutos corporativos e consultorias técnicas que publicam relatórios científicos.
-- **Setor Público:** Órgãos de fomento, fundações de amparo à pesquisa e observatórios governamentais.
+- **Academia:** Docentes e pesquisadores buscando currículos online dinâmicos (sites CV), laboratórios e observatórios de pesquisa (como LABIIA e OEDLA), e comissões organizadoras de eventos científicos (como o Seminário Discente PPGCP-Unicamp).
+- **Empresas:** Negócios de todos os portes que necessitam de portais institucionais velozes, páginas de serviços, landing pages de conversão e portfólios corporativos.
+- **ONGs e Terceiro Setor:** Organizações sociais que necessitam de portais transparentes para divulgação de causas, campanhas de mobilização e relatórios de prestação de contas.
+- **Setor Público:** Órgãos de governo, fundações públicas e observatórios sociais que demandam transparência e acessibilidade irrestrita.
 
 ## Como fazemos
 
 Oferecemos três níveis de arquitetura conforme a necessidade do projeto:
 
-1. **Fácil Manutenção (Painel Visual):** Para equipes que desejam atualizar textos e fotos via painéis visuais intuitivos sem conhecimento de código (WordPress).
-2. **Intermediário Estático (Astro & Markdown):** Velocidade extrema, máxima segurança e versionamento via GitHub, com textos editados em Markdown simples.
-3. **Avançado & Personalizado (Full-Stack):** Aplicações interativas sob medida com bancos de dados, formulários de submissão e dashboards dinâmicos (React, Next.js).
+1. **Fácil Manutenção (Painel Visual):** Para equipes que desejam autonomia para atualizar textos, notícias e imagens por painéis visuais intuitivos sem conhecimento de código (WordPress).
+2. **Moderno e Estático (Astro & Markdown):** Velocidade extrema de carregamento, máxima segurança contra invasões e versionamento contínuo via GitHub, com conteúdo facilmente editável em arquivos Markdown.
+3. **Avançado e Interativo (Full-Stack):** Aplicações web completas e sob medida, integradas a bancos de dados, formulários de submissão, APIs externas e dashboards interativos (Next.js, React).

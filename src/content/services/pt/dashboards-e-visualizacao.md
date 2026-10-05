@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'Power BI'
   - 'Tableau'
@@ -59,6 +60,7 @@ Conectamos dados de múltiplas origens (bancos relacionais, APIs, arquivos locai
 - **Academia:** Observatórios de dados científicos, portais públicos de divulgação científica e mapas interativos para projetos de pesquisa.
 - **Empresas:** Gestores e lideranças que necessitam de KPIs de desempenho financeiro, comercial, retenção de clientes e operações.
 - **Setor Público:** Painéis de transparência cidadã, monitoramento de metas governamentais e acompanhamento de indicadores sociais e de saúde.
+- **ONGs e Terceiro Setor:** Painéis de monitoramento de projetos sociais, infográficos interativos para prestação de contas a doadores e dashboards de mobilização comunitária.
 
 ## Como fazemos
 

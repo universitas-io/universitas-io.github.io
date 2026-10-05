@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'LaTeX'
   - 'InDesign'
@@ -51,6 +52,7 @@ Cuidamos de cada detalhe visual e estrutural: tipografia harmoniosa, espaçament
 - **Academia:** Autores de teses de doutorado, dissertações de mestrado e organizadores de anais de congressos científicos (como os Anais da Semana de História da UFJF) e livros acadêmicos.
 - **Empresas:** Relatórios de sustentabilidade (ESG), estudos de mercado e manuais técnicos que exigem apresentação visual sóbria e profissional.
 - **Setor Público:** Publicações oficiais, diagnósticos de políticas públicas e livros institucionais para download ou impressão.
+- **ONGs e Terceiro Setor:** Relatórios anuais de atividades, dossiês de prestação de contas, cartilhas e publicações de advocacy com diagramação atrativa e acessível.
 
 ## Como fazemos
 

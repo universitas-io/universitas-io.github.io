@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'Power BI'
   - 'Tableau'
@@ -59,6 +60,7 @@ We unify data across heterogeneous sources into industry-standard BI platforms s
 - **Academia:** Research consortium observatories, grant dissemination hubs, and interactive scientific data explorers.
 - **Businesses:** Operations managers, finance leaders, and sales directors monitoring revenue, churn, and operational metrics.
 - **Public Sector:** Government transparency dashboards, municipal indicator portals, and public health surveillance systems.
+- **NGOs & Non-Profits:** Social impact indicator tracking, interactive dashboards for donor accountability, and community mobilization dashboards.
 
 ## Our Methodology
 

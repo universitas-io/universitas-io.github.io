@@ -12,9 +12,11 @@ painPoints:
   - 'Relatórios estáticos que não respondem com agilidade às mudanças de mercado'
 services:
   - 'quantitative'
-  - 'dashboards'
-  - 'digital-data'
   - 'qualitative'
+  - 'digital-data'
+  - 'dashboards'
+  - 'academic-websites'
+  - 'document-formatting'
 faq:
   - q: 'Vocês emitem nota fiscal para empresas?'
     a: 'Sim. Emitimos nota fiscal eletrônica de serviços para pessoas jurídicas, com faturamento compatível com processos de compras corporativas.'

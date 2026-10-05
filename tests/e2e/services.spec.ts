@@ -30,7 +30,7 @@ for (const [pt, en] of [
     });
     await expectJsonLdTypes(page, ['Service', 'FAQPage', 'BreadcrumbList']);
     if (isMobile) {
-      await page.getByRole('button', { name: /menu/i }).click();
+      await page.locator('[data-mobile-menu-trigger]').click();
     }
     await page.getByRole('link', { name: 'English' }).click();
     await expect(page).toHaveURL(new RegExp(`/en/services/${en}/$`));

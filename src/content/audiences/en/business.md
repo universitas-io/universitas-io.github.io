@@ -12,9 +12,11 @@ painPoints:
   - 'Static presentation decks that cannot dynamically adapt to rapidly evolving market conditions'
 services:
   - 'quantitative'
-  - 'dashboards'
-  - 'digital-data'
   - 'qualitative'
+  - 'digital-data'
+  - 'dashboards'
+  - 'academic-websites'
+  - 'document-formatting'
 faq:
   - q: 'Do you issue official corporate invoices?'
     a: 'Yes. We issue official tax invoices (nota fiscal) compliant with standard enterprise vendor management and procurement workflows.'

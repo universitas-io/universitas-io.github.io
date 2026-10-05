@@ -13,8 +13,10 @@ painPoints:
 services:
   - 'quantitative'
   - 'qualitative'
-  - 'dashboards'
   - 'digital-data'
+  - 'dashboards'
+  - 'academic-websites'
+  - 'document-formatting'
 faq:
   - q: 'A Universitas atende processos licitatórios e termos de parceria?'
     a: 'Sim. Atendemos órgãos públicos via contratos diretos, dispensas fundamentadas e parcerias com fundações de apoio e instituições de ciência e tecnologia.'

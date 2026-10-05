@@ -10,6 +10,7 @@ audiences:
   - 'academia'
   - 'business'
   - 'public-sector'
+  - 'ngos'
 tools:
   - 'Python'
   - 'Scrapy'
@@ -51,6 +52,7 @@ Our workflows place paramount importance on technical integrity and legal compli
 - **Academia:** Research labs and doctoral candidates studying online discourse, political communication, social networks, and public policy records.
 - **Businesses:** Market intelligence, competitive benchmarking, automated pricing monitors, and digital consumer trend analysts.
 - **Public Sector:** Policy observatories, compliance auditors, and open-government transparency initiatives tracking institutional indices.
+- **NGOs & Non-Profits:** Non-profit advocacy teams tracking civic discussions, monitoring disinformation, and collecting public evidence for campaigns and investigative reports.
 
 ## Our Methodology
 

@@ -14,6 +14,7 @@ services:
   - 'quantitative'
   - 'qualitative'
   - 'digital-data'
+  - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
 faq:
@@ -25,8 +26,8 @@ faq:
     a: 'Firmamos acordo formal de confidencialidade (NDA) antes do compartilhamento de qualquer dado ou manuscrito não publicado.'
 ---
 
-## Apoio Metodológico com Rigor e Ética
+## Apoio Metodológico e Presença Digital
 
-A Universitas apoia pesquisadores, pós-graduandos e laboratórios universitários em todas as etapas do ciclo de pesquisa científica. Nosso papel é fornecer suporte técnico especializado em desenho experimental, estatística e análise de dados para que você foque nas perguntas teóricas centrais da sua investigação.
+Apoiamos pesquisadores e laboratórios em desenho experimental, estatística e análise de dados, preservando integralmente a autoria: **não escrevemos trabalhos por terceiros**.
 
-Reforçamos nosso compromisso inegociável com a integridade científica: **a Universitas não escreve trabalhos acadêmicos por terceiros**. Oferecemos consultoria, análise e capacitação, garantindo que o pesquisador compreenda, domine e defenda cada método utilizado.
+Além da consultoria metodológica, desenvolvemos soluções digitais personalizadas como **currículos online (sites CV)**, **sites de eventos científicos** e **portais de laboratórios**. Essa vertente acadêmica é parte da nossa atuação geral em desenvolvimento web, criando sites modernos e acessíveis para qualquer objetivo ou setor.
