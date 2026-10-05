@@ -50,9 +50,13 @@ test.describe('cases embedded inside respective services', () => {
       )
     ).toBeVisible();
 
-    // Images rendered
-    const images = casesSection.locator('img');
-    await expect(images.first()).toBeVisible();
+    // Images rendered, including the specific gallery images for network clusters
+    await expect(
+      casesSection.getByRole('img', { name: 'Rede de Articulações e Polos' })
+    ).toBeVisible();
+    await expect(
+      casesSection.getByRole('img', { name: 'Clustermap Bipartido' })
+    ).toBeVisible();
 
     // No links taking user to separate case pages
     const standaloneLinks = casesSection.locator('a[href*="/casos/"]');

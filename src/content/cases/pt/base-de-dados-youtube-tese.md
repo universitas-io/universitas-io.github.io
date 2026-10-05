@@ -17,11 +17,7 @@ tools:
 cover:
   src: '../../../assets/images/cases/youtube-thesis/cover.png'
   alt: 'Interface gráfica e código para coleta e estruturação de dados do YouTube'
-gallery:
-  - src: '../../../assets/images/cases/youtube-thesis/image-1.png'
-    alt: 'Distribuição temporal e métricas de comentários extraídos'
-  - src: '../../../assets/images/cases/youtube-thesis/image-2.png'
-    alt: 'Agrupamento de tópicos com modelagem BERTopic'
+gallery: []
 links:
   - label: 'Repositório GitHub do Projeto'
     url: 'https://github.com/geraldohomero/dh-youtube-database'

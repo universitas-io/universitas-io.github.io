@@ -14,7 +14,11 @@ tools:
 cover:
   src: '../../../assets/images/cases/network-clusters/cover.png'
   alt: 'Interactive network graph showing colored modular clusters and connected edge lines'
-gallery: []
+gallery:
+  - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
+    alt: 'Network of Articulations and Poles'
+  - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
+    alt: 'Bipartite Clustermap'
 links: []
 featured: false
 date: 2024-09-01

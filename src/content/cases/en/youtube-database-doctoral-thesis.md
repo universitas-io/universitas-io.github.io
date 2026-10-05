@@ -17,11 +17,7 @@ tools:
 cover:
   src: '../../../assets/images/cases/youtube-thesis/cover.png'
   alt: 'Graphical user interface and terminal scripts for YouTube data collection'
-gallery:
-  - src: '../../../assets/images/cases/youtube-thesis/image-1.png'
-    alt: 'Temporal distribution and metrics of scraped comments'
-  - src: '../../../assets/images/cases/youtube-thesis/image-2.png'
-    alt: 'Topic clustering with BERTopic modeling'
+gallery: []
 links:
   - label: 'Project GitHub Repository'
     url: 'https://github.com/geraldohomero/dh-youtube-database'

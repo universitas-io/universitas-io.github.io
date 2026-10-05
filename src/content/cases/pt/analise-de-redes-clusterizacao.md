@@ -14,7 +14,11 @@ tools:
 cover:
   src: '../../../assets/images/cases/network-clusters/cover.png'
   alt: 'Grafo de rede com clusters de nós coloridos e arestas de conexões interativas'
-gallery: []
+gallery:
+  - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
+    alt: 'Rede de Articulações e Polos'
+  - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
+    alt: 'Clustermap Bipartido'
 links: []
 featured: false
 date: 2024-09-01
