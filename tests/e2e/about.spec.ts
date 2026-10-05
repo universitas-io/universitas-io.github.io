@@ -33,11 +33,20 @@ test('about page pt: seo, jsonld, tools, team placeholder, and a11y', async ({
   // Verify NO img.shields.io requests were triggered
   expect(requestedShields).toHaveLength(0);
 
-  // In preview build (PROD mode), team placeholder is in draft so neutral notice is shown
-  await expect(
-    page.getByText(/Em breve apresentaremos nossa equipe/i)
-  ).toBeVisible();
-  await expect(page.getByText('Pesquisadora Exemplo')).not.toBeVisible();
+  // Active team members are shown with links to their profile pages
+  const geraldoLink = page.getByRole('link', { name: /Geraldo.*Couto Neto/i });
+  await expect(geraldoLink.first()).toBeVisible();
+  await expect(geraldoLink.first()).toHaveAttribute(
+    'href',
+    '/sobre/geraldo-couto-neto/'
+  );
+
+  const janainaLink = page.getByRole('link', { name: 'Janaína Di Lourenço' });
+  await expect(janainaLink.first()).toBeVisible();
+  await expect(janainaLink.first()).toHaveAttribute(
+    'href',
+    '/sobre/janaina-di-lourenco/'
+  );
 
   // Language switcher goes to /en/about/
   if (isMobile) {
@@ -73,9 +82,21 @@ test('about page en: seo, jsonld, tools, team placeholder, and a11y', async ({
 
   await expect(page.locator('[data-tool-area]')).toHaveCount(4);
 
-  await expect(
-    page.getByText(/Our team will be presented soon/i)
-  ).toBeVisible();
+  const geraldoEnLink = page.getByRole('link', {
+    name: /Geraldo.*Couto Neto/i
+  });
+  await expect(geraldoEnLink.first()).toBeVisible();
+  await expect(geraldoEnLink.first()).toHaveAttribute(
+    'href',
+    '/en/about/geraldo-couto-neto/'
+  );
+
+  const janainaEnLink = page.getByRole('link', { name: 'Janaína Di Lourenço' });
+  await expect(janainaEnLink.first()).toBeVisible();
+  await expect(janainaEnLink.first()).toHaveAttribute(
+    'href',
+    '/en/about/janaina-di-lourenco/'
+  );
 
   await expectA11y(page);
 });

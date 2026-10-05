@@ -37,7 +37,6 @@ const audienceLinks = audiences.map((aud) => {
 
 const homePath = path(lang, 'home');
 const servicesPath = path(lang, 'services');
-const casesPath = path(lang, 'cases');
 const insightsPath = path(lang, 'insights');
 const aboutPath = path(lang, 'about');
 const contactPath = path(lang, 'contact');
@@ -115,13 +114,6 @@ const contactPath = path(lang, 'contact');
         class="text-sm font-semibold text-navy-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
       >
         {t(lang, 'nav.services')}
-      </a>
-
-      <a
-        href={casesPath}
-        class="text-sm font-semibold text-navy-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-      >
-        {t(lang, 'nav.cases')}
       </a>
 
       <a

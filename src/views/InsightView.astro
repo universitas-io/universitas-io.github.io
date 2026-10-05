@@ -28,7 +28,7 @@ const currentPath = `${path(lang, 'insights')}${slug}/`;
 
 const author = await getEntry(post.data.author);
 const authorSlug = post.data.author.id;
-const authorUrl = `${path(lang, 'about')}#${authorSlug}`;
+const authorUrl = `${path(lang, 'about')}${authorSlug}/`;
 const estMinutes = readingTime(post.body || '');
 
 const crumbs = [
@@ -71,7 +71,7 @@ const jsonLd: Record<string, unknown>[] = [
     author: {
       name: author ? author.data.name : 'Universitas',
       jobTitle: author?.data.role[lang],
-      url: `${new URL(path(lang, 'about'), site.url).href}#${authorSlug}`
+      url: new URL(`${path(lang, 'about')}${authorSlug}/`, site.url).href
     }
   })
 ];

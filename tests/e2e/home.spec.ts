@@ -32,7 +32,6 @@ test.describe('home page pt', () => {
       'audiences',
       'services',
       'process',
-      'cases',
       'ethics',
       'cta'
     ];
@@ -47,10 +46,6 @@ test.describe('home page pt', () => {
     // Services: 3 core + 3 complementary (6 total cards in services section)
     const serviceCards = page.locator('[data-section="services"] article');
     await expect(serviceCards).toHaveCount(6);
-
-    // Cases: 3 featured cases
-    const caseCards = page.locator('[data-section="cases"] article');
-    await expect(caseCards).toHaveCount(3);
 
     // Process section has 5 steps
     const processSteps = page.locator('[data-process-step]');

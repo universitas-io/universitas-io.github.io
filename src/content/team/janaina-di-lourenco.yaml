@@ -26,4 +26,4 @@ links:
   orcid: 'https://orcid.org/0000-0000-0000-0000'
   linkedin: 'https://www.linkedin.com/in/exemplo'
 order: 2
-draft: true
+draft: false

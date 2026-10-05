@@ -24,12 +24,15 @@ const audienceLinks = [
   {
     name: lang === 'pt' ? 'Para o Setor Público' : 'For the Public Sector',
     href: lang === 'pt' ? '/para/setor-publico/' : '/en/for/public-sector/'
+  },
+  {
+    name: lang === 'pt' ? 'Para ONGs & 3º Setor' : 'For NGOs & Non-Profits',
+    href: lang === 'pt' ? '/para/ongs/' : '/en/for/ngos/'
   }
 ];
 
 const institutionalLinks = [
   { name: t(lang, 'nav.about'), href: path(lang, 'about') },
-  { name: t(lang, 'nav.cases'), href: path(lang, 'cases') },
   { name: t(lang, 'nav.insights'), href: path(lang, 'insights') },
   { name: t(lang, 'nav.contact'), href: path(lang, 'contact') },
   { name: t(lang, 'footer.privacy'), href: path(lang, 'privacy') }
@@ -125,9 +128,9 @@ const institutionalLinks = [
           <li>
             <a
               href={`mailto:${site.contact.email}`}
-              class="hover:text-blue-500 transition-colors break-all"
+              class="hover:text-blue-500 transition-colors"
             >
-              {site.contact.email}
+              {lang === 'pt' ? 'E-mail' : 'Email'}
             </a>
           </li>
           <li>

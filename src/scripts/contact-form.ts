@@ -91,8 +91,8 @@ export function initContactForm(): void {
             : 'There was an error sending your message.';
         const errorDesc =
           lang === 'pt'
-            ? `Não se preocupe: você pode falar conosco diretamente pelo <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">WhatsApp</a> ou escrever para <a href="${mailUrl}" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">${contactEmail}</a>.`
-            : `Please contact us directly via <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">WhatsApp</a> or send an email to <a href="${mailUrl}" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">${contactEmail}</a>.`;
+            ? `Não se preocupe: você pode falar conosco diretamente pelo <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">WhatsApp</a> ou escrever por <a href="${mailUrl}" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">E-mail</a>.`
+            : `Please contact us directly via <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">WhatsApp</a> or send an <a href="${mailUrl}" class="font-bold underline hover:text-red-950 dark:hover:text-red-100">Email</a>.`;
 
         statusEl.innerHTML = `
           <p class="font-bold font-display text-base">${errorTitle}</p>

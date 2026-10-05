@@ -101,16 +101,25 @@ test.describe('SEO infrastructure', () => {
     await expectA11y(page);
   });
 
-  test('no analytics request sent when goatcounter is unconfigured', async ({
+  test('goatcounter analytics script is configured and requests count.js', async ({
     page
   }) => {
     let goatCounterCalled = false;
     await page.route(/.*gc\.zgo\.at.*/, (route) => {
       goatCounterCalled = true;
-      route.abort();
+      route.fulfill({
+        status: 200,
+        contentType: 'application/javascript',
+        body: ''
+      });
     });
 
     await page.goto('/');
-    expect(goatCounterCalled).toBe(false);
+    expect(goatCounterCalled).toBe(true);
+    const script = page.locator('script[data-goatcounter]');
+    await expect(script).toHaveAttribute(
+      'data-goatcounter',
+      'https://universitas.goatcounter.com/count'
+    );
   });
 });

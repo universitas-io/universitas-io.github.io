@@ -24,8 +24,8 @@ areas:
     - 'Web Scraping'
     - 'Digital Humanities'
 links:
-  lattes: 'https://lattes.cnpq.br/0000000000000000'
-  orcid: 'https://orcid.org/0000-0000-0000-0000'
-  linkedin: 'https://www.linkedin.com/in/exemplo'
+  lattes: 'http://lattes.cnpq.br/9924558848538635'
+  orcid: 'https://orcid.org/0000-0001-6686-7182'
+  linkedin: 'https://linkedin.com/in/geraldohomero'
 order: 1
-draft: true
+draft: false

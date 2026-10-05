@@ -34,7 +34,7 @@ faq:
 
 ## O que é
 
-A pesquisa qualitativa da Universitas investiga sentidos, percepções e dinâmicas sociais complexas que métricas puramente numéricas não conseguem capturar. Aplicamos abordagens metodológicas consagradas como análise de conteúdo (Bardin), análise de discurso, teoria fundamentada nos dados (grounded theory) e análise comparativa qualitativa (QCA).
+A pesquisa qualitativa da Universitas investiga sentidos, percepções e dinâmicas sociais complexas que métricas puramente numéricas não conseguem capturar. Aplicamos abordagens metodológicas consagradas como análise de conteúdo, análise de discurso, teoria fundamentada nos dados (grounded theory) e análise comparativa qualitativa (QCA).
 
 Utilizamos os principais softwares de análise qualitativa de dados assistida por computador (CAQDAS), como **NVivo**, **ATLAS.ti**, **MAXQDA** e **QCAmap**, garantindo transparência, rastreabilidade e rigor na categorização textual e multimodal.
 

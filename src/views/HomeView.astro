@@ -8,7 +8,6 @@ import Hero from '../components/sections/Hero.astro';
 import AudienceGrid from '../components/sections/AudienceGrid.astro';
 import ServiceGrid from '../components/sections/ServiceGrid.astro';
 import Process from '../components/sections/Process.astro';
-import CaseGrid from '../components/sections/CaseGrid.astro';
 import EthicsPledges from '../components/sections/EthicsPledges.astro';
 import InsightList from '../components/sections/InsightList.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
@@ -21,10 +20,6 @@ const { lang } = Astro.props;
 
 const audiences = await getLocalized('audiences', lang);
 const services = await getLocalized('services', lang);
-const allCases = await getLocalized('cases', lang);
-const featuredCases = allCases.filter((c) => c.data.featured).slice(0, 3);
-const displayCases =
-  featuredCases.length >= 3 ? featuredCases : allCases.slice(0, 3);
 const posts = await getLocalized('insights', lang);
 
 const title =
@@ -108,41 +103,6 @@ const alternates = {
 
   <!-- 4. Process Section -->
   <Process lang={lang} />
-
-  <!-- 5. Cases Section -->
-  <section
-    data-section="cases"
-    class="py-16 sm:py-24 bg-white dark:bg-[#0B1626]"
-  >
-    <Container>
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
-        <div class="space-y-3 max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
-            {lang === 'pt' ? 'Projetos Selecionados' : 'Featured Work'}
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight">
-            {lang === 'pt'
-              ? 'Casos de Aplicação Real'
-              : 'Case Studies in Action'}
-          </h2>
-          <p class="text-lg text-ink-600 dark:text-gray-300">
-            {lang === 'pt'
-              ? 'Conheça investigações e ferramentas construídas para clientes acadêmicos, corporativos e governamentais.'
-              : 'Explore empirical investigations and data products engineered for academic, corporate, and public sector partners.'}
-          </p>
-        </div>
-        <a
-          href={path(lang, 'cases')}
-          class="inline-flex items-center gap-2 font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline shrink-0"
-        >
-          <span>{lang === 'pt' ? 'Ver todos os casos' : 'View all cases'}</span>
-          <span>→</span>
-        </a>
-      </div>
-
-      <CaseGrid cases={displayCases} lang={lang} limit={3} />
-    </Container>
-  </section>
 
   <!-- 6. Ethics Pledges Section -->
   <section

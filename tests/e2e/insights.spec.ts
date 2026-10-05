@@ -131,7 +131,7 @@ test.describe('insights dev mode (port 4322)', () => {
     await expect(authorLink.first()).toBeVisible();
     await expect(authorLink.first()).toHaveAttribute(
       'href',
-      '/sobre/#exemplo-pesquisadora'
+      '/sobre/exemplo-pesquisadora/'
     );
 
     // Reading time and date in time tag

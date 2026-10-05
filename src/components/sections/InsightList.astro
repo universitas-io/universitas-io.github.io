@@ -36,7 +36,7 @@ const postsWithAuthors = await Promise.all(
   {postsWithAuthors.map(({ post, author, authorSlug, readingMinutes }) => {
     const slug = entrySlug(post.id);
     const postUrl = `${path(lang, 'insights')}${slug}/`;
-    const authorUrl = `${path(lang, 'about')}#${authorSlug}`;
+    const authorUrl = `${path(lang, 'about')}${authorSlug}/`;
     const formattedDate = new Intl.DateTimeFormat(
       lang === 'pt' ? 'pt-BR' : 'en-US',
       { day: 'numeric', month: 'long', year: 'numeric' }

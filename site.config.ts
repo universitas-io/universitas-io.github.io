@@ -7,7 +7,7 @@ export const site = {
     en: 'en'
   },
   contact: {
-    email: 'geraldohomero+universitas@pm.me',
+    email: 'universitas.contato@gmail.com',
     whatsapp: '551992400792'
   },
   social: {
@@ -17,8 +17,8 @@ export const site = {
   integrations: {
     web3formsKey:
       (typeof process !== 'undefined' && process.env?.PUBLIC_WEB3FORMS_KEY) ||
-      '',
-    goatcounter: '', // ex.: 'universitas' → universitas.goatcounter.com
+      '567423c7-5968-446e-97ae-1bedb1bcd23c',
+    goatcounter: 'universitas', // universitas.goatcounter.com
     googleSiteVerification: ''
   }
 } as const;
