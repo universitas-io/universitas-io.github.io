@@ -1,0 +1,115 @@
+---
+import type { Locale } from '../../i18n/routes';
+import Container from '../ui/Container.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const content = {
+  pt: {
+    eyebrow: 'Método de Trabalho',
+    heading: 'Como Conduzimos Nossos Projetos',
+    lead: 'Um processo estruturado em 5 etapas para garantir rigor metodológico, reprodutibilidade e conformidade ética.',
+    steps: [
+      {
+        num: '01',
+        title: 'Briefing e Alinhamento',
+        desc: 'Compreensão aprofundada dos objetivos da pesquisa, hipóteses de trabalho e requisitos éticos e regulatórios.'
+      },
+      {
+        num: '02',
+        title: 'Desenho Metodológico',
+        desc: 'Definição da estratégia amostral, seleção de instrumentos quantitativos ou qualitativos e desenho de validação.'
+      },
+      {
+        num: '03',
+        title: 'Coleta e Custódia',
+        desc: 'Extração automatizada, aplicação de surveys ou coleta em campo com rastreabilidade e custódia segura de dados.'
+      },
+      {
+        num: '04',
+        title: 'Análise e Modelagem',
+        desc: 'Processamento analítico com modelos estatísticos, análise de redes ou codificação qualitativa sistemática.'
+      },
+      {
+        num: '05',
+        title: 'Entrega e Suporte',
+        desc: 'Relatórios analíticos detalhados, dashboards interativos, scripts documentados e suporte na interpretação.'
+      }
+    ]
+  },
+  en: {
+    eyebrow: 'Our Workflow',
+    heading: 'How We Conduct Research Projects',
+    lead: 'A structured 5-step lifecycle ensuring methodological rigor, full reproducibility, and ethical compliance.',
+    steps: [
+      {
+        num: '01',
+        title: 'Briefing & Scoping',
+        desc: 'In-depth assessment of research questions, core objectives, hypotheses, and ethical governance constraints.'
+      },
+      {
+        num: '02',
+        title: 'Methodological Design',
+        desc: 'Sampling strategy definition, quantitative or qualitative instrument design, and pre-testing protocols.'
+      },
+      {
+        num: '03',
+        title: 'Data Collection & Custody',
+        desc: 'Automated digital extraction, field surveys, or interviews executed with secure data custody.'
+      },
+      {
+        num: '04',
+        title: 'Analysis & Modeling',
+        desc: 'Advanced analytical processing through statistical models, network graphs, or structured qualitative coding.'
+      },
+      {
+        num: '05',
+        title: 'Delivery & Advisory',
+        desc: 'Comprehensive analytical reports, interactive dashboards, reproducible scripts, and interpretation support.'
+      }
+    ]
+  }
+}[lang];
+---
+
+<section
+  data-section="process"
+  class="py-16 sm:py-24 bg-surface-alt/50 dark:bg-navy-900/40 border-y border-gray-200/60 dark:border-navy-700/60"
+>
+  <Container>
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
+      <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+        {content.eyebrow}
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight">
+        {content.heading}
+      </h2>
+      <p class="text-lg text-ink-600 dark:text-gray-300">{content.lead}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      {content.steps.map((step) => (
+        <div
+          data-process-step
+          class="relative bg-white dark:bg-[#112239] rounded-2xl border border-gray-200 dark:border-navy-700/60 p-6 flex flex-col justify-between hover:shadow-md transition-shadow group"
+        >
+          <div>
+            <div class="text-2xl font-bold font-mono text-[#1a6ca8] dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform origin-left">
+              {step.num}
+            </div>
+            <h3 class="text-lg font-bold font-display text-navy-900 dark:text-white mb-2">
+              {step.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-ink-600 dark:text-gray-300 leading-relaxed">
+              {step.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

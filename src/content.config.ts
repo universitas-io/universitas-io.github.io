@@ -54,7 +54,7 @@ const cases = defineCollection({
   schema: ({ image }) =>
     commonSchema.extend({
       client: z.string().optional(),
-      sector: z.enum(['academia', 'business', 'public']),
+      sector: z.enum(['academia', 'business', 'public', 'ngo']),
       services: z.array(z.string()).default([]),
       tools: z.array(z.string()).default([]),
       cover: z
@@ -121,8 +121,20 @@ const team = defineCollection({
         pt: z.string(),
         en: z.string()
       }),
-      education: z.array(z.string()).default([]),
-      areas: z.array(z.string()).default([]),
+      education: z
+        .object({
+          pt: z.array(z.string()),
+          en: z.array(z.string())
+        })
+        .or(z.array(z.string()).transform((arr) => ({ pt: arr, en: arr })))
+        .default({ pt: [], en: [] }),
+      areas: z
+        .object({
+          pt: z.array(z.string()),
+          en: z.array(z.string())
+        })
+        .or(z.array(z.string()).transform((arr) => ({ pt: arr, en: arr })))
+        .default({ pt: [], en: [] }),
       links: z
         .object({
           lattes: z.string().optional(),

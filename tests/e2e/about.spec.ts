@@ -79,3 +79,22 @@ test('about page en: seo, jsonld, tools, team placeholder, and a11y', async ({
 
   await expectA11y(page);
 });
+
+test('dev: team member profile page displays credentials, areas, and links', async ({
+  page
+}) => {
+  await page.goto('http://localhost:4322/sobre/exemplo-pesquisadora/');
+
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Pesquisadora Exemplo'
+  );
+  await expect(
+    page.getByText('Cientista de Dados & Pesquisadora').first()
+  ).toBeVisible();
+  await expect(page.getByText('Áreas de Especialidade')).toBeVisible();
+  await expect(page.getByText('Pesquisa Quantitativa').first()).toBeVisible();
+  await expect(page.getByText('Formação & Trajetória')).toBeVisible();
+
+  await expectJsonLdTypes(page, ['Person']);
+  await expectA11y(page);
+});

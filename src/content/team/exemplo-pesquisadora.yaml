@@ -6,12 +6,21 @@ bio:
   pt: "Perfil provisório de exemplo para validação da estrutura. Aguardando dados reais da equipe."
   en: "Placeholder profile for structure validation. Awaiting real team member details."
 education:
-  - "Doutorado em Ciência Política (exemplo)"
-  - "Mestrado em Métodos Quantitativos (exemplo)"
+  pt:
+    - "Doutorado em Ciência Política (exemplo)"
+    - "Mestrado em Métodos Quantitativos (exemplo)"
+  en:
+    - "PhD in Political Science (example)"
+    - "MSc in Quantitative Methods (example)"
 areas:
-  - "Pesquisa Quantitativa"
-  - "Ciência de Dados"
-  - "Web Scraping"
+  pt:
+    - "Pesquisa Quantitativa"
+    - "Ciência de Dados"
+    - "Web Scraping"
+  en:
+    - "Quantitative Research"
+    - "Data Science"
+    - "Web Scraping"
 links:
   lattes: "https://lattes.cnpq.br/0000000000000000"
   orcid: "https://orcid.org/0000-0000-0000-0000"

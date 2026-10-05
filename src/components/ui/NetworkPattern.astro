@@ -4,54 +4,188 @@ export interface Props {
 }
 
 const { class: className = '' } = Astro.props;
+
+// Rich node constellation (x, y, radius, color, opacity)
+const nodes = [
+  { cx: 70, cy: 90, r: 4, fill: '#2A8FC7', opacity: 0.7 },
+  { cx: 160, cy: 60, r: 3.5, fill: 'currentColor', opacity: 0.6 },
+  { cx: 250, cy: 110, r: 5, fill: '#2A8FC7', opacity: 0.85 },
+  { cx: 370, cy: 70, r: 4, fill: '#2E9E6B', opacity: 0.75 },
+  { cx: 480, cy: 110, r: 6, fill: '#1a6ca8', opacity: 0.9 },
+  { cx: 590, cy: 80, r: 4.5, fill: '#2A8FC7', opacity: 0.8 },
+  { cx: 710, cy: 130, r: 4, fill: 'currentColor', opacity: 0.65 },
+  { cx: 770, cy: 220, r: 3.5, fill: '#2E9E6B', opacity: 0.7 },
+
+  { cx: 60, cy: 210, r: 4.5, fill: '#2E9E6B', opacity: 0.75 },
+  { cx: 150, cy: 190, r: 6.5, fill: '#1a6ca8', opacity: 0.95 },
+  { cx: 260, cy: 230, r: 4, fill: 'currentColor', opacity: 0.65 },
+  { cx: 350, cy: 180, r: 5.5, fill: '#2A8FC7', opacity: 0.85 },
+  { cx: 440, cy: 240, r: 7, fill: '#2A8FC7', opacity: 0.95 },
+  { cx: 540, cy: 200, r: 5, fill: '#2E9E6B', opacity: 0.85 },
+  { cx: 650, cy: 250, r: 6, fill: '#1a6ca8', opacity: 0.9 },
+  { cx: 740, cy: 330, r: 4, fill: 'currentColor', opacity: 0.6 },
+
+  { cx: 90, cy: 330, r: 5, fill: '#2A8FC7', opacity: 0.8 },
+  { cx: 190, cy: 320, r: 6, fill: '#2E9E6B', opacity: 0.85 },
+  { cx: 310, cy: 310, r: 7.5, fill: '#1a6ca8', opacity: 1 },
+  { cx: 410, cy: 360, r: 5, fill: 'currentColor', opacity: 0.7 },
+  { cx: 510, cy: 330, r: 6.5, fill: '#2A8FC7', opacity: 0.9 },
+  { cx: 620, cy: 370, r: 5, fill: '#2E9E6B', opacity: 0.8 },
+  { cx: 700, cy: 440, r: 4.5, fill: '#1a6ca8', opacity: 0.75 },
+
+  { cx: 120, cy: 450, r: 4, fill: 'currentColor', opacity: 0.6 },
+  { cx: 230, cy: 430, r: 5.5, fill: '#2A8FC7', opacity: 0.85 },
+  { cx: 340, cy: 460, r: 6, fill: '#2E9E6B', opacity: 0.9 },
+  { cx: 460, cy: 470, r: 7, fill: '#1a6ca8', opacity: 0.95 },
+  { cx: 570, cy: 480, r: 5, fill: 'currentColor', opacity: 0.7 },
+  { cx: 660, cy: 530, r: 4, fill: '#2A8FC7', opacity: 0.75 },
+
+  { cx: 180, cy: 540, r: 4.5, fill: '#1a6ca8', opacity: 0.7 },
+  { cx: 290, cy: 550, r: 4, fill: 'currentColor', opacity: 0.6 },
+  { cx: 420, cy: 560, r: 5, fill: '#2E9E6B', opacity: 0.8 },
+  { cx: 520, cy: 550, r: 4, fill: '#2A8FC7', opacity: 0.75 }
+];
+
+// Explicit connection graph between neighbouring nodes
+const connections = [
+  [0, 1],
+  [1, 2],
+  [2, 3],
+  [3, 4],
+  [4, 5],
+  [5, 6],
+  [6, 7],
+  [0, 8],
+  [1, 9],
+  [2, 10],
+  [3, 11],
+  [4, 12],
+  [5, 13],
+  [6, 14],
+  [7, 15],
+  [8, 9],
+  [9, 10],
+  [10, 11],
+  [11, 12],
+  [12, 13],
+  [13, 14],
+  [14, 15],
+  [8, 16],
+  [9, 17],
+  [10, 18],
+  [11, 18],
+  [12, 19],
+  [13, 20],
+  [14, 21],
+  [15, 22],
+  [16, 17],
+  [17, 18],
+  [18, 19],
+  [19, 20],
+  [20, 21],
+  [21, 22],
+  [16, 23],
+  [17, 24],
+  [18, 25],
+  [19, 26],
+  [20, 27],
+  [21, 28],
+  [23, 24],
+  [24, 25],
+  [25, 26],
+  [26, 27],
+  [27, 28],
+  [24, 29],
+  [25, 30],
+  [26, 31],
+  [27, 32],
+  [29, 30],
+  [30, 31],
+  [31, 32],
+  // Cross diagonal reinforcements for dense network look
+  [2, 9],
+  [4, 11],
+  [5, 12],
+  [9, 16],
+  [12, 20],
+  [18, 26],
+  [17, 25],
+  [20, 26],
+  [10, 17]
+];
 ---
 
 <svg
   class={`pointer-events-none select-none ${className}`}
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 800 600"
+  viewBox="0 0 820 600"
   fill="none"
   aria-hidden="true"
 >
   <defs>
-    <linearGradient id="network-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2A8FC7" stop-opacity="0.3"></stop>
-      <stop offset="100%" stop-color="#1F3A5F" stop-opacity="0.05"></stop>
-    </linearGradient>
-    <radialGradient id="node-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#2A8FC7" stop-opacity="0.8"></stop>
-      <stop offset="100%" stop-color="#2A8FC7" stop-opacity="0"></stop>
-    </radialGradient>
+    <filter id="node-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
 
-  <!-- Connection Lines -->
-  <g stroke="currentColor" stroke-opacity="0.15" stroke-width="1">
-    <line x1="120" y1="100" x2="280" y2="180"></line>
-    <line x1="280" y1="180" x2="450" y2="120"></line>
-    <line x1="450" y1="120" x2="620" y2="200"></line>
-    <line x1="280" y1="180" x2="240" y2="340"></line>
-    <line x1="450" y1="120" x2="420" y2="300"></line>
-    <line x1="240" y1="340" x2="420" y2="300"></line>
-    <line x1="420" y1="300" x2="580" y2="380"></line>
-    <line x1="620" y1="200" x2="580" y2="380"></line>
-    <line x1="240" y1="340" x2="380" y2="480"></line>
-    <line x1="420" y1="300" x2="380" y2="480"></line>
-    <line x1="580" y1="380" x2="700" y2="460"></line>
-    <line x1="120" y1="100" x2="80" y2="260"></line>
-    <line x1="80" y1="260" x2="240" y2="340"></line>
+  <!-- Network Connection Lines (Stronger stroke and distinct opacity) -->
+  <g stroke="currentColor" stroke-opacity="0.38" stroke-width="1.5">
+    {connections.map(([from, to]) => {
+      const n1 = nodes[from];
+      const n2 = nodes[to];
+      return <line x1={n1.cx} y1={n1.cy} x2={n2.cx} y2={n2.cy} />;
+    })}
   </g>
 
-  <!-- Network Nodes -->
-  <g fill="currentColor">
-    <circle cx="120" cy="100" r="3" opacity="0.3"></circle>
-    <circle cx="280" cy="180" r="4.5" opacity="0.5" fill="#2A8FC7"></circle>
-    <circle cx="450" cy="120" r="3.5" opacity="0.4"></circle>
-    <circle cx="620" cy="200" r="4" opacity="0.45" fill="#2E9E6B"></circle>
-    <circle cx="80" cy="260" r="3" opacity="0.25"></circle>
-    <circle cx="240" cy="340" r="5" opacity="0.6" fill="#2A8FC7"></circle>
-    <circle cx="420" cy="300" r="6" opacity="0.7" fill="#1F3A5F"></circle>
-    <circle cx="580" cy="380" r="4.5" opacity="0.5" fill="#2A8FC7"></circle>
-    <circle cx="380" cy="480" r="3.5" opacity="0.4"></circle>
-    <circle cx="700" cy="460" r="3" opacity="0.3"></circle>
+  <!-- Accent Highlighted Lines -->
+  <g stroke="#2A8FC7" stroke-opacity="0.5" stroke-width="2">
+    <line
+      x1={nodes[9].cx}
+      y1={nodes[9].cy}
+      x2={nodes[18].cx}
+      y2={nodes[18].cy}
+    />
+    <line
+      x1={nodes[18].cx}
+      y1={nodes[18].cy}
+      x2={nodes[12].cx}
+      y2={nodes[12].cy}
+    />
+    <line
+      x1={nodes[12].cx}
+      y1={nodes[12].cy}
+      x2={nodes[26].cx}
+      y2={nodes[26].cy}
+    />
+    <line
+      x1={nodes[18].cx}
+      y1={nodes[18].cy}
+      x2={nodes[25].cx}
+      y2={nodes[25].cy}
+    />
+    <line
+      x1={nodes[4].cx}
+      y1={nodes[4].cy}
+      x2={nodes[12].cx}
+      y2={nodes[12].cy}
+    />
+  </g>
+
+  <!-- Constellation Nodes (Bolinhas) -->
+  <g>
+    {nodes.map((node) => (
+      <circle
+        cx={node.cx}
+        cy={node.cy}
+        r={node.r}
+        fill={node.fill}
+        opacity={node.opacity}
+        filter={node.r >= 6 ? 'url(#node-glow)' : undefined}
+      />
+    ))}
   </g>
 </svg>

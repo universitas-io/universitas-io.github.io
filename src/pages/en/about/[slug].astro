@@ -1,0 +1,30 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { entrySlug, isVisible } from '../../../lib/content';
+import { path } from '../../../i18n/routes';
+import TeamMemberView from '../../../views/TeamMemberView.astro';
+
+export async function getStaticPaths() {
+  const members = await getCollection('team', (m) => isVisible(m.data));
+  return members.map((member) => {
+    const slug = entrySlug(member.id);
+    const alternates = {
+      pt: `${path('pt', 'about')}${slug}/`,
+      en: `${path('en', 'about')}${slug}/`
+    };
+    return {
+      params: { slug },
+      props: { member, alternates }
+    };
+  });
+}
+
+export interface Props {
+  member: CollectionEntry<'team'>;
+  alternates: { pt: string; en: string };
+}
+
+const { member, alternates } = Astro.props;
+---
+
+<TeamMemberView member={member} lang="en" alternates={alternates} />

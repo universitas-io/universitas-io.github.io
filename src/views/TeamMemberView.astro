@@ -1,0 +1,231 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import { entrySlug, isVisible } from '../lib/content';
+import { person as makePersonSchema } from '../lib/seo/jsonld';
+import PageLayout from '../layouts/PageLayout.astro';
+import Avatar from '../components/ui/Avatar.astro';
+import DraftBadge from '../components/ui/DraftBadge.astro';
+import InsightList from '../components/sections/InsightList.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+export interface Props {
+  member: CollectionEntry<'team'>;
+  lang: Locale;
+  alternates: Partial<Record<Locale, string>>;
+}
+
+const { member, lang, alternates } = Astro.props;
+
+const slug = entrySlug(member.id);
+const currentPath = `${path(lang, 'about')}${slug}/`;
+
+const crumbs = [
+  { name: t(lang, 'breadcrumb.home'), pathname: path(lang, 'home') },
+  { name: t(lang, 'nav.about'), pathname: path(lang, 'about') },
+  { name: member.data.name, pathname: currentPath }
+];
+
+const edus = Array.isArray(member.data.education)
+  ? member.data.education
+  : (member.data.education?.[lang] ?? []);
+
+const areas = Array.isArray(member.data.areas)
+  ? member.data.areas
+  : (member.data.areas?.[lang] ?? []);
+
+const role = member.data.role[lang];
+const bio = member.data.bio[lang];
+
+// Check for articles authored by this member
+const allInsights = await getCollection('insights', (item) =>
+  isVisible(item.data)
+);
+const authoredArticles = allInsights.filter((post) => {
+  const authorRef = post.data.author;
+  const authorId = typeof authorRef === 'string' ? authorRef : authorRef?.id;
+  const isTargetLang = post.id.startsWith(`${lang}/`);
+  return authorId === slug && isTargetLang;
+});
+
+const jsonLd = [
+  makePersonSchema({
+    name: member.data.name,
+    jobTitle: role,
+    url: currentPath,
+    sameAs: [
+      member.data.links?.lattes,
+      member.data.links?.orcid,
+      member.data.links?.linkedin,
+      member.data.links?.website
+    ].filter(Boolean) as string[]
+  })
+];
+
+const title = `${member.data.name} — ${role}`;
+const description =
+  bio.length > 150
+    ? `${bio.slice(0, 147)}...`
+    : bio || `${member.data.name}, ${role} na Universitas.`;
+---
+
+<PageLayout
+  lang={lang}
+  title={title}
+  description={description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={member.data.name}
+  lead={role}
+  eyebrow={lang === 'pt' ? 'Equipe & Especialistas' : 'Team & Specialists'}
+  crumbs={crumbs}
+  jsonLd={jsonLd}
+>
+  <div class="space-y-16">
+    <!-- Profile Card Hero -->
+    <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#112239] border border-gray-200 dark:border-navy-700/60 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-8">
+      <div class="shrink-0">
+        <Avatar
+          name={member.data.name}
+          photo={member.data.photo}
+          size="lg"
+          class="ring-4 ring-blue-500/20"
+        />
+      </div>
+
+      <div class="space-y-3 flex-1">
+        <div class="flex flex-wrap items-center gap-3">
+          <h2 class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white">
+            {member.data.name}
+          </h2>
+          {member.data.draft && <DraftBadge />}
+        </div>
+
+        <p class="text-base sm:text-lg font-semibold text-[#1a6ca8] dark:text-blue-400">
+          {role}
+        </p>
+
+        {bio && (
+          <p class="text-ink-600 dark:text-gray-300 text-base leading-relaxed pt-1">
+            {bio}
+          </p>
+        )}
+
+        <!-- Professional External Links -->
+        {member.data.links && Object.keys(member.data.links).length > 0 && (
+          <div class="flex flex-wrap items-center gap-4 pt-3 text-sm">
+            {member.data.links.lattes && (
+              <a
+                href={member.data.links.lattes}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>Currículo Lattes</span>
+                <span>↗</span>
+              </a>
+            )}
+            {member.data.links.orcid && (
+              <a
+                href={member.data.links.orcid}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>ORCID</span>
+                <span>↗</span>
+              </a>
+            )}
+            {member.data.links.linkedin && (
+              <a
+                href={member.data.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>LinkedIn</span>
+                <span>↗</span>
+              </a>
+            )}
+            {member.data.links.website && (
+              <a
+                href={member.data.links.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>Website</span>
+                <span>↗</span>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Detailed Background Grid (Education & Areas) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Areas of Expertise -->
+      {areas && areas.length > 0 && (
+        <div class="p-8 rounded-2xl bg-surface-alt/70 dark:bg-navy-900/60 border border-gray-200/80 dark:border-navy-700/60 space-y-4">
+          <h3 class="text-xl font-bold font-display text-navy-900 dark:text-white flex items-center gap-2">
+            <span>
+              {lang === 'pt' ? 'Áreas de Especialidade' : 'Areas of Expertise'}
+            </span>
+          </h3>
+          <div class="flex flex-wrap gap-2 pt-2">
+            {areas.map((area) => (
+              <span class="px-3 py-1 text-sm rounded-lg bg-white dark:bg-[#112239] text-navy-900 dark:text-blue-200 border border-gray-200 dark:border-navy-700/80 font-medium shadow-xs">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Education & Credentials -->
+      {edus && edus.length > 0 && (
+        <div class="p-8 rounded-2xl bg-surface-alt/70 dark:bg-navy-900/60 border border-gray-200/80 dark:border-navy-700/60 space-y-4">
+          <h3 class="text-xl font-bold font-display text-navy-900 dark:text-white">
+            {lang === 'pt'
+              ? 'Formação & Trajetória'
+              : 'Education & Credentials'}
+          </h3>
+          <ul class="space-y-2.5 pt-2 text-sm text-ink-600 dark:text-gray-300">
+            {edus.map((edu) => (
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#1a6ca8] dark:text-blue-400 font-bold">
+                  •
+                </span>
+                <span class="leading-relaxed">{edu}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+
+    <!-- Authored Articles (if any) -->
+    {authoredArticles.length > 0 && (
+      <div class="space-y-8 pt-8 border-t border-gray-200 dark:border-navy-700/60">
+        <div class="space-y-1">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+            {lang === 'pt' ? 'Publicações' : 'Publications'}
+          </span>
+          <h3 class="text-2xl font-bold font-display text-navy-900 dark:text-white">
+            {lang === 'pt'
+              ? `Artigos por ${member.data.name}`
+              : `Articles by ${member.data.name}`}
+          </h3>
+        </div>
+        <InsightList posts={authoredArticles} lang={lang} />
+      </div>
+    )}
+
+    <!-- CTA Section -->
+    <CtaBanner lang={lang} />
+  </div>
+</PageLayout>

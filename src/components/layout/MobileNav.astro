@@ -21,7 +21,9 @@ const audiences = await getLocalized('audiences', lang);
 const audienceShortNames: Record<string, Record<Locale, string>> = {
   academia: { pt: 'Academia', en: 'Academia' },
   business: { pt: 'Empresas', en: 'Business' },
-  'public-sector': { pt: 'Setor Público', en: 'Public Sector' }
+  'public-sector': { pt: 'Setor Público', en: 'Public Sector' },
+  ongs: { pt: 'ONGs & 3º Setor', en: 'NGOs & Non-Profits' },
+  ngos: { pt: 'ONGs & 3º Setor', en: 'NGOs & Non-Profits' }
 };
 
 const audienceLinks = audiences.map((aud) => {

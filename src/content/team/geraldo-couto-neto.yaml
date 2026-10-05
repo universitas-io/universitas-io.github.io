@@ -1,18 +1,28 @@
 name: "Geraldo H. Couto Neto"
 role:
   pt: "Cientista de Dados, Desenvolvedor de Software e Pesquisador"
-  en: "Data Scientist, Developer of Software and Researcher"
+  en: "Data Scientist, Software Developer and Researcher"
 bio:
-  pt: ""
-  en: ""
+  pt: "Pesquisador dedicado à intersecção entre métodos computacionais, ciência política e análise de dados em larga escala."
+  en: "Researcher focused on the intersection between computational methods, political science, and large-scale data analysis."
 education:
-  - "Doutorando em Ciência Política (Unicamp)"
-  - "Analista e Desenvolvedor de Sistemas (PUC Minas)"
+  pt:
+    - "Doutorando em Ciência Política (Unicamp)"
+    - "Analista e Desenvolvedor de Sistemas (PUC Minas)"
+  en:
+    - "PhD Candidate in Political Science (Unicamp)"
+    - "Systems Analysis and Development (PUC Minas)"
 areas:
-  - "Pesquisa Quantitativa"
-  - "Ciência de Dados"
-  - "Web Scraping"
-  - "Humanidades Digitais"
+  pt:
+    - "Pesquisa Quantitativa"
+    - "Ciência de Dados"
+    - "Web Scraping"
+    - "Humanidades Digitais"
+  en:
+    - "Quantitative Research"
+    - "Data Science"
+    - "Web Scraping"
+    - "Digital Humanities"
 links:
   lattes: "https://lattes.cnpq.br/0000000000000000"
   orcid: "https://orcid.org/0000-0000-0000-0000"

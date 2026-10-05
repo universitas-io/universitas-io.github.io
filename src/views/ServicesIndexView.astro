@@ -3,8 +3,10 @@ import type { CollectionEntry } from 'astro:content';
 import type { Locale } from '../i18n/routes';
 import { path } from '../i18n/routes';
 import { t } from '../i18n/ui';
+import { getLocalized } from '../lib/content';
 import PageLayout from '../layouts/PageLayout.astro';
 import ServiceGrid from '../components/sections/ServiceGrid.astro';
+import CaseGrid from '../components/sections/CaseGrid.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 
 export interface Props {
@@ -30,6 +32,8 @@ const lead =
 const crumbs = [
   { name: t(lang, 'nav.services'), pathname: path(lang, 'services') }
 ];
+
+const cases = await getLocalized('cases', lang);
 ---
 
 <PageLayout
@@ -45,8 +49,36 @@ const crumbs = [
   }
   crumbs={crumbs}
 >
-  <div class="space-y-16">
+  <div class="space-y-20">
     <ServiceGrid services={services} lang={lang} tier="all" />
+
+    {cases.length > 0 && (
+      <section
+        class="space-y-8 pt-10 border-t border-gray-200/80 dark:border-navy-700/60"
+        aria-labelledby="services-cases-heading"
+      >
+        <div class="space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+            {lang === 'pt' ? 'Aplicações Práticas' : 'Applied Research'}
+          </span>
+          <h2
+            id="services-cases-heading"
+            class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+          >
+            {lang === 'pt'
+              ? 'Casos de Aplicação dos Serviços'
+              : 'Case Studies in Action'}
+          </h2>
+          <p class="text-ink-600 dark:text-gray-300 text-base max-w-2xl">
+            {lang === 'pt'
+              ? 'Veja como nossos métodos quantitativos, qualitativos e de dados são aplicados na prática em projetos reais.'
+              : 'Discover how our quantitative, qualitative, and data methodologies are applied across real client engagements.'}
+          </p>
+        </div>
+        <CaseGrid cases={cases} lang={lang} />
+      </section>
+    )}
+
     <CtaBanner lang={lang} />
   </div>
 </PageLayout>

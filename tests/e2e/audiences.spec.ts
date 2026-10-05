@@ -4,7 +4,8 @@ import { expectSeo, expectA11y, expectJsonLdTypes } from './helpers';
 const audiencePairs = [
   ['academia', 'academia'],
   ['empresas', 'business'],
-  ['setor-publico', 'public-sector']
+  ['setor-publico', 'public-sector'],
+  ['ongs', 'ngos']
 ] as const;
 
 for (const [pt, en] of audiencePairs) {

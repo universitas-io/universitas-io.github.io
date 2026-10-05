@@ -3,18 +3,27 @@ role:
   pt: "Cientista Ambiental e Pesquisadora"
   en: "Environmental Scientist and Researcher"
 bio:
-  pt: ""
-  en: ""
+  pt: "Especialista em governança ambiental, análise qualitativa de políticas públicas e sustentabilidade socioecológica."
+  en: "Specialist in environmental governance, qualitative policy analysis, and socio-ecological sustainability."
 education:
-  - "Doutoranda em Ciência Ambiental (USP)"
-  - "Mestra em História Ambiental (UFRJ)"
+  pt:
+    - "Doutoranda em Ciência Ambiental (USP)"
+    - "Mestra em História Ambiental (UFRJ)"
+  en:
+    - "PhD Candidate in Environmental Science (USP)"
+    - "MSc in Environmental History (UFRJ)"
 areas:
-  - "Pesquisa Quantitativa"
-  - "Ciência Ambiental"
-  - "Pesquisa Qualitativa"
+  pt:
+    - "Pesquisa Quantitativa"
+    - "Ciência Ambiental"
+    - "Pesquisa Qualitativa"
+  en:
+    - "Quantitative Research"
+    - "Environmental Science"
+    - "Qualitative Research"
 links:
   lattes: "https://lattes.cnpq.br/0000000000000000"
   orcid: "https://orcid.org/0000-0000-0000-0000"
   linkedin: "https://www.linkedin.com/in/exemplo"
-order: 1
+order: 2
 draft: true

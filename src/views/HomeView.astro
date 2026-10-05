@@ -1,0 +1,204 @@
+---
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { getLocalized } from '../lib/content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Hero from '../components/sections/Hero.astro';
+import AudienceGrid from '../components/sections/AudienceGrid.astro';
+import ServiceGrid from '../components/sections/ServiceGrid.astro';
+import Process from '../components/sections/Process.astro';
+import CaseGrid from '../components/sections/CaseGrid.astro';
+import EthicsPledges from '../components/sections/EthicsPledges.astro';
+import InsightList from '../components/sections/InsightList.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const audiences = await getLocalized('audiences', lang);
+const services = await getLocalized('services', lang);
+const allCases = await getLocalized('cases', lang);
+const featuredCases = allCases.filter((c) => c.data.featured).slice(0, 3);
+const displayCases =
+  featuredCases.length >= 3 ? featuredCases : allCases.slice(0, 3);
+const posts = await getLocalized('insights', lang);
+
+const title =
+  lang === 'pt'
+    ? 'Universitas — Consultoria em pesquisa quantitativa e qualitativa'
+    : 'Universitas — Quantitative and qualitative research consultancy';
+
+const description =
+  lang === 'pt'
+    ? 'Pesquisa quantitativa e qualitativa para universidades, empresas e setor público, com método, ética e transparência.'
+    : 'Quantitative and qualitative research for universities, businesses, and the public sector, grounded in method, ethics, and transparency.';
+
+const pathname = path(lang, 'home');
+const alternates = {
+  pt: path('pt', 'home'),
+  en: path('en', 'home')
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title={title}
+  description={description}
+  pathname={pathname}
+  alternates={alternates}
+>
+  <!-- 1. Hero Section -->
+  <Hero lang={lang} />
+
+  <!-- 2. Audiences Section -->
+  <section
+    data-section="audiences"
+    class="py-16 sm:py-24 bg-white dark:bg-[#0B1626]"
+  >
+    <Container>
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+          {lang === 'pt' ? 'Para Quem Trabalhamos' : 'Who We Serve'}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight">
+          {lang === 'pt'
+            ? 'Soluções Especializadas para Cada Contexto'
+            : 'Tailored Solutions for Every Sector'}
+        </h2>
+        <p class="text-lg text-ink-600 dark:text-gray-300">
+          {lang === 'pt'
+            ? 'Atendemos demandas de pesquisa científica, inteligência corporativa e políticas públicas com metodologia customizada.'
+            : 'Addressing academic research, corporate intelligence, and public policy inquiries with tailored methodologies.'}
+        </p>
+      </div>
+
+      <AudienceGrid audiences={audiences} lang={lang} />
+    </Container>
+  </section>
+
+  <!-- 3. Services Section -->
+  <section
+    data-section="services"
+    class="py-16 sm:py-24 bg-surface-alt/50 dark:bg-navy-900/40 border-t border-gray-200/60 dark:border-navy-700/60"
+  >
+    <Container>
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+          {lang === 'pt' ? 'Portfólio de Serviços' : 'Our Services'}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight">
+          {lang === 'pt'
+            ? 'Do Desenho Amostral à Publicação'
+            : 'From Sampling Design to Publication'}
+        </h2>
+        <p class="text-lg text-ink-600 dark:text-gray-300">
+          {lang === 'pt'
+            ? 'Metodologias quantitativas e qualitativas integradas a engenharia de dados e design de relatórios.'
+            : 'Quantitative and qualitative methodologies combined with data engineering and scientific reporting.'}
+        </p>
+      </div>
+
+      <ServiceGrid services={services} lang={lang} tier="all" />
+    </Container>
+  </section>
+
+  <!-- 4. Process Section -->
+  <Process lang={lang} />
+
+  <!-- 5. Cases Section -->
+  <section
+    data-section="cases"
+    class="py-16 sm:py-24 bg-white dark:bg-[#0B1626]"
+  >
+    <Container>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
+        <div class="space-y-3 max-w-2xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+            {lang === 'pt' ? 'Projetos Selecionados' : 'Featured Work'}
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight">
+            {lang === 'pt'
+              ? 'Casos de Aplicação Real'
+              : 'Case Studies in Action'}
+          </h2>
+          <p class="text-lg text-ink-600 dark:text-gray-300">
+            {lang === 'pt'
+              ? 'Conheça investigações e ferramentas construídas para clientes acadêmicos, corporativos e governamentais.'
+              : 'Explore empirical investigations and data products engineered for academic, corporate, and public sector partners.'}
+          </p>
+        </div>
+        <a
+          href={path(lang, 'cases')}
+          class="inline-flex items-center gap-2 font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline shrink-0"
+        >
+          <span>{lang === 'pt' ? 'Ver todos os casos' : 'View all cases'}</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <CaseGrid cases={displayCases} lang={lang} limit={3} />
+    </Container>
+  </section>
+
+  <!-- 6. Ethics Pledges Section -->
+  <section
+    data-section="ethics"
+    class="py-16 sm:py-24 bg-surface-alt/50 dark:bg-navy-900/40 border-y border-gray-200/60 dark:border-navy-700/60"
+  >
+    <Container>
+      <EthicsPledges lang={lang} />
+    </Container>
+  </section>
+
+  <!-- 7. Insights Section (Optional, rendered if visible posts exist) -->
+  {posts.length > 0 && (
+    <section
+      data-section="insights"
+      class="py-16 sm:py-24 bg-white dark:bg-[#0B1626]"
+    >
+      <Container>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
+          <div class="space-y-3 max-w-2xl">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+              {lang === 'pt'
+                ? 'Conhecimento & Métodos'
+                : 'Knowledge & Insights'}
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight">
+              {lang === 'pt'
+                ? 'Artigos e Reflexões Metodológicas'
+                : 'Articles & Methodological Notes'}
+            </h2>
+            <p class="text-lg text-ink-600 dark:text-gray-300">
+              {lang === 'pt'
+                ? 'Análises aprofundadas sobre desenho de pesquisa, ética em dados e novas ferramentas analíticas.'
+                : 'In-depth essays on research design, data ethics, and contemporary analytical toolchains.'}
+            </p>
+          </div>
+          <a
+            href={path(lang, 'insights')}
+            class="inline-flex items-center gap-2 font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline shrink-0"
+          >
+            <span>
+              {lang === 'pt' ? 'Ver todos os artigos' : 'View all articles'}
+            </span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <InsightList posts={posts} lang={lang} limit={3} />
+      </Container>
+    </section>
+  )}
+
+  <!-- 8. Final CTA Banner -->
+  <section data-section="cta" class="py-16 sm:py-24 bg-white dark:bg-[#0B1626]">
+    <Container>
+      <CtaBanner lang={lang} />
+    </Container>
+  </section>
+</BaseLayout>
