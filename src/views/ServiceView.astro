@@ -4,7 +4,7 @@ import { render } from 'astro:content';
 import type { Locale } from '../i18n/routes';
 import { path } from '../i18n/routes';
 import { t } from '../i18n/ui';
-import { entrySlug } from '../lib/content';
+import { entrySlug, getLocalized } from '../lib/content';
 import {
   service as makeServiceSchema,
   faqPage as makeFaqSchema
@@ -13,6 +13,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import ToolList from '../components/sections/ToolList.astro';
 import Faq from '../components/sections/Faq.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
+import CaseGrid from '../components/sections/CaseGrid.astro';
 import Card from '../components/ui/Card.astro';
 
 export interface Props {
@@ -46,6 +47,11 @@ const jsonLd: Record<string, unknown>[] = [
 if (service.data.faq && service.data.faq.length > 0) {
   jsonLd.push(makeFaqSchema(service.data.faq));
 }
+
+const allCases = await getLocalized('cases', lang);
+const relatedCases = allCases.filter((c) =>
+  c.data.services.includes(service.data.translationKey)
+);
 ---
 
 <PageLayout
@@ -114,6 +120,22 @@ if (service.data.faq && service.data.faq.length > 0) {
         <div class="pt-6 border-t border-gray-200 dark:border-navy-700/60">
           <Faq items={service.data.faq} lang={lang} />
         </div>
+      )}
+
+      <!-- Related Cases Section -->
+      {relatedCases.length > 0 && (
+        <section
+          class="space-y-6 pt-6 border-t border-gray-200 dark:border-navy-700/60"
+          aria-labelledby="related-cases-heading"
+        >
+          <h2
+            id="related-cases-heading"
+            class="text-2xl font-bold font-display text-navy-900 dark:text-white"
+          >
+            {t(lang, 'section.cases')}
+          </h2>
+          <CaseGrid cases={relatedCases} lang={lang} />
+        </section>
       )}
     </div>
 

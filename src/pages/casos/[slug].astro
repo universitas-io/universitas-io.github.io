@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getLocalized, translationOf, entrySlug } from '../../lib/content';
+import { path } from '../../i18n/routes';
+import CaseView from '../../views/CaseView.astro';
+
+export async function getStaticPaths() {
+  const cases = await getLocalized('cases', 'pt');
+
+  const paths = await Promise.all(
+    cases.map(async (caseItem) => {
+      const slug = entrySlug(caseItem.id);
+      const enPair = await translationOf(caseItem, 'en');
+
+      const alternates: { pt: string; en?: string } = {
+        pt: `${path('pt', 'cases')}${slug}/`
+      };
+      if (enPair) {
+        alternates.en = `${path('en', 'cases')}${entrySlug(enPair.id)}/`;
+      }
+
+      return {
+        params: { slug },
+        props: { caseItem, alternates }
+      };
+    })
+  );
+
+  return paths;
+}
+
+export interface Props {
+  caseItem: CollectionEntry<'cases'>;
+  alternates: { pt: string; en?: string };
+}
+
+const { caseItem, alternates } = Astro.props;
+---
+
+<CaseView caseItem={caseItem} lang="pt" alternates={alternates} />

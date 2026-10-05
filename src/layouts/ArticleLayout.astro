@@ -1,0 +1,96 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import type { Locale } from '../i18n/routes';
+import PageLayout from './PageLayout.astro';
+
+export interface Props {
+  lang: Locale;
+  title: string;
+  description: string;
+  pathname: string;
+  alternates: Partial<Record<Locale, string>>;
+  heading: string;
+  lead?: string;
+  eyebrow?: string;
+  crumbs?: { name: string; pathname: string }[];
+  ogImage?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>[];
+  publishedTime?: string;
+  modifiedTime?: string;
+  cover?: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  meta?: {
+    label: string;
+    value: string;
+  }[];
+}
+
+const {
+  lang,
+  title,
+  description,
+  pathname,
+  alternates,
+  heading,
+  lead,
+  eyebrow,
+  crumbs,
+  ogImage,
+  noindex = false,
+  jsonLd = [],
+  publishedTime,
+  modifiedTime,
+  cover,
+  meta
+} = Astro.props;
+---
+
+<PageLayout
+  lang={lang}
+  title={title}
+  description={description}
+  pathname={pathname}
+  alternates={alternates}
+  heading={heading}
+  lead={lead}
+  eyebrow={eyebrow}
+  crumbs={crumbs}
+  ogImage={ogImage}
+  type="article"
+  noindex={noindex}
+  jsonLd={jsonLd}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+>
+  <div class="max-w-4xl mx-auto">
+    {cover && (
+      <div class="mb-8 rounded-2xl overflow-hidden border border-gray-200 dark:border-navy-700/60 shadow-md bg-surface-alt dark:bg-navy-900">
+        <Image
+          src={cover.src}
+          alt={cover.alt}
+          class="w-full h-auto object-cover max-h-[520px]"
+          loading="eager"
+        />
+      </div>
+    )}
+
+    {meta && meta.length > 0 && (
+      <div class="flex flex-wrap gap-x-8 gap-y-2 py-4 mb-8 border-y border-gray-200 dark:border-navy-700/60 text-sm text-ink-600 dark:text-gray-300">
+        {meta.map((m) => (
+          <div>
+            <span class="font-semibold text-navy-900 dark:text-white">
+              {m.label}:
+            </span>{' '}
+            <span>{m.value}</span>
+          </div>
+        ))}
+      </div>
+    )}
+
+    <slot />
+  </div>
+</PageLayout>

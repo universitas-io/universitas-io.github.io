@@ -1,0 +1,8 @@
+---
+import { getLocalized } from '../../lib/content';
+import CasesIndexView from '../../views/CasesIndexView.astro';
+
+const cases = await getLocalized('cases', 'pt');
+---
+
+<CasesIndexView cases={cases} lang="pt" />
