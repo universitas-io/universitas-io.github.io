@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import PageLayout from '../layouts/PageLayout.astro';
+import ServiceGrid from '../components/sections/ServiceGrid.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+export interface Props {
+  lang: Locale;
+  services: CollectionEntry<'services'>[];
+  alternates: Partial<Record<Locale, string>>;
+}
+
+const { lang, services, alternates } = Astro.props;
+
+const title = lang === 'pt' ? 'Serviços' : 'Services';
+const description =
+  lang === 'pt'
+    ? 'Consultoria em pesquisa quantitativa, qualitativa, coleta de dados, dashboards e desenvolvimento de sites acadêmicos.'
+    : 'Quantitative, qualitative, data collection, dashboard engineering, and academic web development consulting.';
+
+const heading = lang === 'pt' ? 'Nossos Serviços' : 'Our Services';
+const lead =
+  lang === 'pt'
+    ? 'Pesquisa rigorosa, inteligência analítica e engenharia de dados para subsidiar descobertas acadêmicas e decisões estratégicas.'
+    : 'Rigorous research, analytical intelligence, and data engineering to power scientific breakthroughs and decisive strategies.';
+
+const crumbs = [
+  { name: t(lang, 'nav.services'), pathname: path(lang, 'services') }
+];
+---
+
+<PageLayout
+  lang={lang}
+  title={title}
+  description={description}
+  pathname={path(lang, 'services')}
+  alternates={alternates}
+  heading={heading}
+  lead={lead}
+  eyebrow={
+    lang === 'pt' ? 'Consultoria Metodológica' : 'Methodological Consulting'
+  }
+  crumbs={crumbs}
+>
+  <div class="space-y-16">
+    <ServiceGrid services={services} lang={lang} tier="all" />
+    <CtaBanner lang={lang} />
+  </div>
+</PageLayout>

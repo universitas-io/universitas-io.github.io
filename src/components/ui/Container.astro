@@ -1,16 +1,13 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { HTMLTag } from 'astro/types';
 
-export type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
-  as?: Tag;
+export interface Props {
+  as?: HTMLTag;
+  class?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
-}>;
+}
 
-const {
-  as: Component = 'div',
-  class: className = '',
-  size = 'xl'
-} = Astro.props;
+const { as: Tag = 'div', class: className = '', size = 'xl' } = Astro.props;
 
 const sizeClasses = {
   sm: 'max-w-3xl',
@@ -21,8 +18,8 @@ const sizeClasses = {
 };
 ---
 
-<Component
+<Tag
   class={`w-full mx-auto px-4 sm:px-6 lg:px-8 ${sizeClasses[size]} ${className}`}
 >
   <slot />
-</Component>
+</Tag>

@@ -1,0 +1,16 @@
+---
+export interface Props {
+  tools: string[];
+  class?: string;
+}
+
+const { tools, class: className = '' } = Astro.props;
+---
+
+<div class={`flex flex-wrap items-center gap-2 ${className}`}>
+  {tools.map((tool) => (
+    <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-surface-alt dark:bg-navy-700/60 text-navy-900 dark:text-gray-200 border border-gray-200 dark:border-navy-700/80">
+      {tool}
+    </span>
+  ))}
+</div>

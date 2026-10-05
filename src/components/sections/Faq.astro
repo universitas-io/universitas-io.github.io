@@ -1,0 +1,54 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+
+export interface Props {
+  items: { q: string; a: string }[];
+  lang: Locale;
+  title?: string;
+  class?: string;
+}
+
+const { items, lang, title, class: className = '' } = Astro.props;
+const heading = title || t(lang, 'section.faq');
+---
+
+<section class={`space-y-6 ${className}`} aria-labelledby="faq-heading">
+  <h2
+    id="faq-heading"
+    class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+  >
+    {heading}
+  </h2>
+
+  <div class="space-y-3 divide-y divide-gray-200 dark:divide-navy-700/60">
+    {items.map((item, idx) => (
+      <details
+        class="group pt-4 first:pt-0 transition-colors"
+        data-faq-item={idx}
+      >
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none py-2 font-semibold text-lg text-navy-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">
+          <span>{item.q}</span>
+          <span class="shrink-0 text-ink-600 dark:text-gray-400 group-open:rotate-180 transition-transform">
+            <svg
+              class="w-5 h-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div class="mt-2 text-ink-600 dark:text-gray-300 leading-relaxed pb-3 text-base">
+          <p>{item.a}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>

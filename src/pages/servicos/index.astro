@@ -1,0 +1,9 @@
+---
+import { getLocalized } from '../../lib/content';
+import ServicesIndexView from '../../views/ServicesIndexView.astro';
+
+const services = await getLocalized('services', 'pt');
+const alternates = { pt: '/servicos/', en: '/en/services/' };
+---
+
+<ServicesIndexView lang="pt" services={services} alternates={alternates} />

@@ -1,26 +1,21 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { HTMLTag } from 'astro/types';
 
-export type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
-  as?: Tag;
+export interface Props {
+  as?: HTMLTag;
+  class?: string;
   hover?: boolean;
-}>;
+}
 
-const {
-  as: Component = 'div',
-  class: className = '',
-  hover = true,
-  ...rest
-} = Astro.props;
+const { as: Tag = 'div', class: className = '', hover = true } = Astro.props;
 ---
 
-<Component
+<Tag
   class={`bg-white dark:bg-[#112239] rounded-xl border border-gray-200 dark:border-navy-700/60 p-6 ${
     hover
       ? 'transition-all duration-200 hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-500/40'
       : ''
   } ${className}`}
-  {...rest}
 >
   <slot />
-</Component>
+</Tag>

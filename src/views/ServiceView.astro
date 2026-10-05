@@ -1,0 +1,157 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import { entrySlug } from '../lib/content';
+import {
+  service as makeServiceSchema,
+  faqPage as makeFaqSchema
+} from '../lib/seo/jsonld';
+import PageLayout from '../layouts/PageLayout.astro';
+import ToolList from '../components/sections/ToolList.astro';
+import Faq from '../components/sections/Faq.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import Card from '../components/ui/Card.astro';
+
+export interface Props {
+  service: CollectionEntry<'services'>;
+  lang: Locale;
+  alternates: Partial<Record<Locale, string>>;
+}
+
+const { service, lang, alternates } = Astro.props;
+
+const { Content } = await render(service);
+
+const slug = entrySlug(service.id);
+const currentPath = `${path(lang, 'services')}${slug}/`;
+
+const crumbs = [
+  { name: t(lang, 'nav.services'), pathname: path(lang, 'services') },
+  { name: service.data.title, pathname: currentPath }
+];
+
+const jsonLd: Record<string, unknown>[] = [
+  makeServiceSchema({
+    name: service.data.title,
+    description: service.data.description,
+    pathname: currentPath,
+    lang,
+    audience: service.data.audiences
+  })
+];
+
+if (service.data.faq && service.data.faq.length > 0) {
+  jsonLd.push(makeFaqSchema(service.data.faq));
+}
+---
+
+<PageLayout
+  lang={lang}
+  title={service.data.title}
+  description={service.data.description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={service.data.title}
+  lead={service.data.summary}
+  eyebrow={
+    service.data.tier === 'core'
+      ? lang === 'pt'
+        ? 'Serviço Principal'
+        : 'Core Service'
+      : lang === 'pt'
+        ? 'Serviço Complementar'
+        : 'Complementary Service'
+  }
+  crumbs={crumbs}
+  jsonLd={jsonLd}
+>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- Main Content Column -->
+    <div class="lg:col-span-8 space-y-12">
+      <!-- Markdown Body -->
+      <article class="prose prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:tracking-tight prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:font-bold prose-h2:text-navy-900 dark:prose-h2:text-white prose-p:text-ink-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-li:text-ink-600 dark:prose-li:text-gray-300">
+        <Content />
+      </article>
+
+      <!-- Deliverables Section -->
+      {service.data.deliverables && service.data.deliverables.length > 0 && (
+        <section class="space-y-4 pt-6 border-t border-gray-200 dark:border-navy-700/60">
+          <h2 class="text-2xl font-bold font-display text-navy-900 dark:text-white">
+            {lang === 'pt' ? 'O que você recebe' : 'What We Deliver'}
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {service.data.deliverables.map((item) => (
+              <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-alt dark:bg-navy-700/30 border border-gray-200/80 dark:border-navy-700/60">
+                <div class="shrink-0 w-6 h-6 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center mt-0.5">
+                  <svg
+                    class="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-navy-900 dark:text-gray-200 leading-snug">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- FAQ Section -->
+      {service.data.faq && service.data.faq.length > 0 && (
+        <div class="pt-6 border-t border-gray-200 dark:border-navy-700/60">
+          <Faq items={service.data.faq} lang={lang} />
+        </div>
+      )}
+    </div>
+
+    <!-- Sidebar Column -->
+    <aside class="lg:col-span-4 space-y-6">
+      <Card class="space-y-6 sticky top-24">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-ink-600 dark:text-gray-400">
+            {lang === 'pt'
+              ? 'Ferramentas & Tecnologias'
+              : 'Tools & Technologies'}
+          </span>
+          <div class="mt-3">
+            <ToolList tools={service.data.tools} />
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-gray-200 dark:border-navy-700/60 space-y-3">
+          <h3 class="text-base font-bold text-navy-900 dark:text-white">
+            {lang === 'pt' ? 'Precisa deste serviço?' : 'Need this service?'}
+          </h3>
+          <p class="text-xs text-ink-600 dark:text-gray-400 leading-relaxed">
+            {lang === 'pt'
+              ? 'Desenhamos cada projeto sob medida com transparência metodológica e orçamento sem compromisso.'
+              : 'Every project is tailored with methodological transparency and upfront scoping.'}
+          </p>
+          <a
+            href={path(lang, 'contact')}
+            class="block w-full text-center py-2.5 px-4 rounded-lg bg-[#1a6ca8] hover:bg-[#155a8a] text-white font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            {t(lang, 'cta.proposal')}
+          </a>
+        </div>
+      </Card>
+    </aside>
+  </div>
+
+  <div class="mt-20">
+    <CtaBanner lang={lang} />
+  </div>
+</PageLayout>
