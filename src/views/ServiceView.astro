@@ -9,11 +9,11 @@ import {
   service as makeServiceSchema,
   faqPage as makeFaqSchema
 } from '../lib/seo/jsonld';
+import { Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import ToolList from '../components/sections/ToolList.astro';
 import Faq from '../components/sections/Faq.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
-import CaseGrid from '../components/sections/CaseGrid.astro';
 import Card from '../components/ui/Card.astro';
 
 export interface Props {
@@ -49,11 +49,16 @@ if (service.data.faq && service.data.faq.length > 0) {
 }
 
 const allCases = await getLocalized('cases', lang);
-const matchedCases = allCases.filter((c) =>
-  c.data.services.includes(service.data.translationKey)
+const matchedCases = allCases
+  .filter((c) => c.data.services.includes(service.data.translationKey))
+  .sort((a, b) => a.data.order - b.data.order);
+
+const renderedCases = await Promise.all(
+  matchedCases.map(async (caseItem) => {
+    const { Content: CaseContent } = await render(caseItem);
+    return { caseItem, CaseContent };
+  })
 );
-const displayCases =
-  matchedCases.length > 0 ? matchedCases : allCases.slice(0, 3);
 ---
 
 <PageLayout
@@ -124,26 +129,171 @@ const displayCases =
         </div>
       )}
 
-      <!-- Related Cases Section -->
-      {displayCases.length > 0 && (
+      <!-- Applied Cases / Examples Section (directly below FAQ) -->
+      {renderedCases.length > 0 && (
         <section
-          class="space-y-6 pt-6 border-t border-gray-200 dark:border-navy-700/60"
-          aria-labelledby="related-cases-heading"
+          class="space-y-8 pt-8 border-t border-gray-200 dark:border-navy-700/60"
+          aria-labelledby="cases-showcase-heading"
         >
-          <div class="space-y-1">
+          <div class="space-y-2">
             <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
-              {lang === 'pt' ? 'Evidência Prática' : 'Practical Evidence'}
+              {lang === 'pt' ? 'Casos Reais & Portfólio' : 'Portfolio & Case Studies'}
             </span>
             <h2
-              id="related-cases-heading"
-              class="text-2xl font-bold font-display text-navy-900 dark:text-white"
+              id="cases-showcase-heading"
+              class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
             >
               {lang === 'pt'
-                ? 'Casos Relacionados & Aplicações'
-                : 'Related Case Studies & Applications'}
+                ? 'Exemplos de Projetos Realizados'
+                : 'Real-World Projects & Examples'}
             </h2>
+            <p class="text-ink-600 dark:text-gray-300 text-sm max-w-2xl leading-relaxed">
+              {lang === 'pt'
+                ? 'Aplicações práticas e soluções desenvolvidas neste serviço, com objetivos, abordagem metodológica e entregáveis.'
+                : 'Practical applications and solutions developed for this service, detailing objectives, methodology, and deliverables.'}
+            </p>
           </div>
-          <CaseGrid cases={displayCases} lang={lang} />
+
+          <div class="space-y-12">
+            {renderedCases.map(({ caseItem, CaseContent }) => (
+              <article class="p-6 sm:p-8 rounded-2xl bg-surface-alt/70 dark:bg-navy-900/60 border border-gray-200/80 dark:border-navy-700/60 space-y-6">
+                <!-- Case Header: Meta & Title -->
+                <div class="space-y-3">
+                  <div class="flex flex-wrap items-center gap-2">
+                    {caseItem.data.client && (
+                      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-[#1a6ca8] dark:bg-blue-900/40 dark:text-blue-300">
+                        {caseItem.data.client}
+                      </span>
+                    )}
+                    {caseItem.data.sector && (
+                      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-200/70 text-gray-700 dark:bg-navy-800 dark:text-gray-300 capitalize">
+                        {caseItem.data.sector === 'academia'
+                          ? (lang === 'pt' ? 'Academia' : 'Academia')
+                          : caseItem.data.sector === 'business'
+                            ? (lang === 'pt' ? 'Empresas' : 'Business')
+                            : caseItem.data.sector === 'public'
+                              ? (lang === 'pt' ? 'Setor Público' : 'Public Sector')
+                              : (lang === 'pt' ? 'ONGs' : 'NGOs')}
+                      </span>
+                    )}
+                    {caseItem.data.date && (
+                      <span class="text-xs text-ink-600 dark:text-gray-400">
+                        {new Intl.DateTimeFormat(
+                          lang === 'pt' ? 'pt-BR' : 'en-US',
+                          { month: 'long', year: 'numeric' }
+                        ).format(caseItem.data.date)}
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 class="text-xl sm:text-2xl font-bold font-display text-navy-900 dark:text-white leading-tight">
+                    {caseItem.data.title}
+                  </h3>
+
+                  {caseItem.data.description && (
+                    <p class="text-ink-600 dark:text-gray-300 text-sm leading-relaxed italic">
+                      {caseItem.data.description}
+                    </p>
+                  )}
+                </div>
+
+                <!-- Cover Image -->
+                {caseItem.data.cover && (
+                  <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-navy-700/60 bg-white dark:bg-navy-950 shadow-sm">
+                    <Image
+                      src={caseItem.data.cover.src}
+                      alt={caseItem.data.cover.alt}
+                      class="w-full h-auto object-cover max-h-[480px]"
+                      width={1000}
+                      height={560}
+                      loading="lazy"
+                    />
+                    {caseItem.data.cover.alt && (
+                      <figcaption class="text-xs text-ink-600 dark:text-gray-400 p-2 text-center bg-gray-50 dark:bg-navy-900/80 border-t border-gray-200 dark:border-navy-700/60">
+                        {caseItem.data.cover.alt}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
+
+                <!-- Case Markdown Body -->
+                <div class="prose prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:tracking-tight prose-h2:text-xl prose-h2:font-bold prose-h2:text-navy-900 dark:prose-h2:text-white prose-p:text-ink-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-li:text-ink-600 dark:prose-li:text-gray-300 prose-strong:text-navy-900 dark:prose-strong:text-white">
+                  <CaseContent />
+                </div>
+
+                <!-- Gallery -->
+                {caseItem.data.gallery && caseItem.data.gallery.length > 0 && (
+                  <div class="space-y-3 pt-4 border-t border-gray-200 dark:border-navy-700/60">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-ink-600 dark:text-gray-400">
+                      {lang === 'pt' ? 'Imagens do Projeto' : 'Project Images'}
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {caseItem.data.gallery.map((img) => (
+                        <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-navy-700/60 bg-white dark:bg-navy-950 p-1.5 space-y-1.5">
+                          <Image
+                            src={img.src}
+                            alt={img.alt}
+                            class="w-full h-auto rounded-lg object-cover"
+                            width={600}
+                            height={375}
+                            loading="lazy"
+                          />
+                          <figcaption class="text-xs text-ink-600 dark:text-gray-400 px-1 pb-1 text-center">
+                            {img.alt}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <!-- Technologies & Links -->
+                {((caseItem.data.tools && caseItem.data.tools.length > 0) ||
+                  (caseItem.data.links && caseItem.data.links.length > 0)) && (
+                  <div class="pt-4 border-t border-gray-200 dark:border-navy-700/60 flex flex-wrap items-center justify-between gap-4">
+                    {caseItem.data.tools && caseItem.data.tools.length > 0 && (
+                      <div class="space-y-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-ink-600 dark:text-gray-400 block">
+                          {lang === 'pt' ? 'Tecnologias' : 'Technologies'}
+                        </span>
+                        <div class="flex flex-wrap gap-1.5">
+                          {caseItem.data.tools.map((tool) => (
+                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-white dark:bg-navy-800 text-ink-700 dark:text-gray-300 border border-gray-200 dark:border-navy-700">
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {caseItem.data.links && caseItem.data.links.length > 0 && (
+                      <div class="space-y-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-ink-600 dark:text-gray-400 block">
+                          {lang === 'pt' ? 'Links' : 'Links'}
+                        </span>
+                        <div class="flex flex-wrap gap-2">
+                          {caseItem.data.links.map((link) => (
+                            <a
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 hover:underline"
+                            >
+                              <span>{link.label}</span>
+                              <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h4a.75.75 0 0 1 0 1.5h-4Z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06 1.06L13 8.12v2.63a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.63l-5.686 5.693Z" clip-rule="evenodd" />
+                              </svg>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
         </section>
       )}
     </div>

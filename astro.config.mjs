@@ -35,7 +35,9 @@ export default defineConfig({
         !page.includes('/archives/') &&
         !page.includes('/categories/') &&
         !page.includes('/tags/') &&
-        !page.includes('/pt-br/')
+        !page.includes('/pt-br/') &&
+        !page.includes('/casos/') &&
+        !page.includes('/cases/')
     })
   ]
 });

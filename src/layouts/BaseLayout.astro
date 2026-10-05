@@ -53,15 +53,11 @@ const defaultFallback = pathname.startsWith('/insights/')
   ? '/en/insights/'
   : pathname.startsWith('/en/insights/')
     ? '/insights/'
-    : pathname.startsWith('/casos/')
-      ? '/en/cases/'
-      : pathname.startsWith('/en/cases/')
-        ? '/casos/'
-        : pathname.startsWith('/servicos/')
-          ? '/en/services/'
-          : pathname.startsWith('/en/services/')
-            ? '/servicos/'
-            : pathname.startsWith('/para/')
+    : pathname.startsWith('/servicos/')
+      ? '/en/services/'
+      : pathname.startsWith('/en/services/')
+        ? '/servicos/'
+        : pathname.startsWith('/para/')
               ? '/en/for/'
               : pathname.startsWith('/en/for/')
                 ? '/para/'

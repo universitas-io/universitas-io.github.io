@@ -4,14 +4,13 @@ import { render } from 'astro:content';
 import type { Locale } from '../i18n/routes';
 import { path } from '../i18n/routes';
 import { t } from '../i18n/ui';
-import { entrySlug, getLocalized } from '../lib/content';
+import { entrySlug } from '../lib/content';
 import {
   webPage as makeWebPageSchema,
   faqPage as makeFaqSchema
 } from '../lib/seo/jsonld';
 import PageLayout from '../layouts/PageLayout.astro';
 import ServiceGrid from '../components/sections/ServiceGrid.astro';
-import CaseGrid from '../components/sections/CaseGrid.astro';
 import Faq from '../components/sections/Faq.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 
@@ -46,13 +45,6 @@ const jsonLd: Record<string, unknown>[] = [
 if (audience.data.faq && audience.data.faq.length > 0) {
   jsonLd.push(makeFaqSchema(audience.data.faq));
 }
-
-const targetSector =
-  audience.data.translationKey === 'public-sector'
-    ? 'public'
-    : audience.data.translationKey;
-const allCases = await getLocalized('cases', lang);
-const relatedCases = allCases.filter((c) => c.data.sector === targetSector);
 ---
 
 <PageLayout
@@ -142,26 +134,6 @@ const relatedCases = allCases.filter((c) => c.data.sector === targetSector);
       </section>
     )}
 
-    <!-- Related Cases Section -->
-    {relatedCases.length > 0 && (
-      <section
-        class="space-y-8 pt-8 border-t border-gray-200 dark:border-navy-700/60"
-        aria-labelledby="related-cases-heading"
-      >
-        <div class="space-y-2">
-          <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
-            {lang === 'pt' ? 'Experiência Prática' : 'Practical Experience'}
-          </span>
-          <h2
-            id="related-cases-heading"
-            class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
-          >
-            {t(lang, 'section.cases')}
-          </h2>
-        </div>
-        <CaseGrid cases={relatedCases} lang={lang} />
-      </section>
-    )}
 
     <!-- FAQ Section -->
     {audience.data.faq && audience.data.faq.length > 0 && (

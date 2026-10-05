@@ -52,8 +52,6 @@ export async function listOgPages(): Promise<OgPage[]> {
       lang: 'pt'
     },
     { slug: 'en/privacy', title: 'Privacy Policy | Universitas', lang: 'en' },
-    { slug: 'casos', title: 'Casos de Estudo | Universitas', lang: 'pt' },
-    { slug: 'en/cases', title: 'Case Studies | Universitas', lang: 'en' },
     {
       slug: 'servicos',
       title: 'Serviços de Pesquisa | Universitas',
@@ -76,7 +74,6 @@ export async function listOgPages(): Promise<OgPage[]> {
   }[] = [
     { name: 'services', segmentPt: 'servicos', segmentEn: 'services' },
     { name: 'audiences', segmentPt: 'para', segmentEn: 'for' },
-    { name: 'cases', segmentPt: 'casos', segmentEn: 'cases' },
     { name: 'insights', segmentPt: 'insights', segmentEn: 'insights' }
   ];
 

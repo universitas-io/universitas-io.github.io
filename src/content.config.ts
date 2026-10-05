@@ -53,6 +53,7 @@ const cases = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/cases' }),
   schema: ({ image }) =>
     commonSchema.extend({
+      order: z.number().default(99),
       client: z.string().optional(),
       sector: z.enum(['academia', 'business', 'public', 'ngo']),
       services: z.array(z.string()).default([]),

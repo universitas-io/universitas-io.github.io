@@ -31,8 +31,16 @@ describe('Redirects map', () => {
     expect(redirects['/en/archives/']).toBe('/en/insights/');
   });
 
-  it('contains exactly 13 legacy redirects according to section 3.4', () => {
-    expect(Object.keys(redirects)).toHaveLength(13);
+  it('contains legacy redirects and case redirects to services', () => {
+    expect(redirects['/casos/']).toBe('/servicos/');
+    expect(redirects['/en/cases/']).toBe('/en/services/');
+    expect(redirects['/casos/dashboard-power-bi-lr-instalacoes/']).toBe(
+      '/servicos/dashboards-e-visualizacao/'
+    );
+    expect(redirects['/casos/sites-academicos-e-de-pesquisa/']).toBe(
+      '/servicos/sites-academicos/'
+    );
+    expect(Object.keys(redirects).length).toBeGreaterThanOrEqual(13);
   });
 
   it('all redirect targets end with trailing slash', () => {

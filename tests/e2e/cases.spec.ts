@@ -1,82 +1,114 @@
 import { test, expect } from '@playwright/test';
-import { expectSeo, expectA11y, expectJsonLdTypes } from './helpers';
+import { expectA11y } from './helpers';
 
-test('cases index lists 5 case studies', async ({ page }) => {
-  await page.goto('/casos/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText(/Casos/);
-  await expect(page.locator('article')).toHaveCount(5);
-});
-
-const casePairs = [
-  ['base-de-dados-youtube-tese', 'youtube-database-doctoral-thesis'],
-  ['analise-de-redes-clusterizacao', 'network-analysis-clustering'],
-  ['dashboard-power-bi-lr-instalacoes', 'power-bi-dashboard-lr-instalacoes'],
-  ['sites-academicos-e-de-pesquisa', 'academic-and-research-websites'],
-  ['diagramacao-dissertacao-e-anais', 'dissertation-and-proceedings-layout']
-] as const;
-
-for (const [pt, en] of casePairs) {
-  test(`case study ${pt} seo, h1, image and switcher`, async ({
-    page,
-    isMobile
+test.describe('cases embedded inside respective services', () => {
+  test('redirects legacy standalone case routes to corresponding service pages', async ({
+    page
   }) => {
-    await page.goto(`/casos/${pt}/`);
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await page.goto('/casos/');
+    await expect(page).toHaveURL(/\/servicos\/$/);
 
-    const coverImg = page.locator('main img').first();
-    await expect(coverImg).toBeVisible();
-    await expect(coverImg).toHaveAttribute('alt', /.+/);
+    await page.goto('/en/cases/');
+    await expect(page).toHaveURL(/\/en\/services\/$/);
 
-    await expectSeo(page, {
-      canonical: `/casos/${pt}/`,
-      hreflang: {
-        'pt-BR': `/casos/${pt}/`,
-        en: `/en/cases/${en}/`,
-        'x-default': `/casos/${pt}/`
-      }
-    });
+    await page.goto('/casos/dashboard-power-bi-lr-instalacoes/');
+    await expect(page).toHaveURL(/\/servicos\/dashboards-e-visualizacao\/$/);
 
-    await expectJsonLdTypes(page, ['Article', 'BreadcrumbList']);
+    await page.goto('/casos/sites-academicos-e-de-pesquisa/');
+    await expect(page).toHaveURL(/\/servicos\/sites-academicos\/$/);
 
-    if (isMobile) {
-      await page.getByRole('button', { name: /menu/i }).click();
-      const mobileNav = page.getByRole('dialog');
-      await mobileNav.getByRole('link', { name: 'English' }).click();
-    } else {
-      await page.getByRole('link', { name: 'English' }).click();
-    }
+    await page.goto('/casos/base-de-dados-youtube-tese/');
+    await expect(page).toHaveURL(/\/servicos\/coleta-de-dados-digitais\/$/);
 
-    await expect(page).toHaveURL(new RegExp(`/en/cases/${en}/$`));
+    await page.goto('/en/cases/academic-and-research-websites/');
+    await expect(page).toHaveURL(/\/en\/services\/academic-websites\/$/);
   });
-}
 
-test('digital data collection service links to youtube thesis case', async ({
-  page
-}) => {
-  await page.goto('/servicos/coleta-de-dados-digitais/');
-  const caseLink = page.locator(
-    'main a[href*="/casos/base-de-dados-youtube-tese/"]'
-  );
-  await expect(caseLink.first()).toBeVisible();
-});
+  test('dashboards service renders its cases inline below FAQ without linking away', async ({
+    page
+  }) => {
+    await page.goto('/servicos/dashboards-e-visualizacao/');
 
-test('external links in case studies have rel noopener', async ({ page }) => {
-  await page.goto('/casos/base-de-dados-youtube-tese/');
-  const externalLinks = page.locator('main a[href^="http"]');
-  const count = await externalLinks.count();
-  expect(count).toBeGreaterThan(0);
-  for (let i = 0; i < count; i++) {
-    await expect(externalLinks.nth(i)).toHaveAttribute('rel', /noopener/);
-  }
-});
+    // Section exists
+    const casesSection = page.locator(
+      'section[aria-labelledby="cases-showcase-heading"]'
+    );
+    await expect(casesSection).toBeVisible();
+    await expect(
+      casesSection.getByRole('heading', { name: /Exemplos de Projetos Realizados/ })
+    ).toBeVisible();
 
-test('cases pages a11y', async ({ page }) => {
-  await page.goto('/casos/');
-  await expectA11y(page);
+    // Check both dashboard cases are rendered inline
+    await expect(
+      casesSection.getByText(
+        'Dashboard de Inteligência Operacional em Power BI para LR Instalações Especiais'
+      )
+    ).toBeVisible();
+    await expect(
+      casesSection.getByText(
+        'Visualização Interativa de Redes Complexas e Clusterização com Python e D3.js'
+      )
+    ).toBeVisible();
 
-  await page.goto('/casos/base-de-dados-youtube-tese/');
-  await expectA11y(page);
+    // Images rendered
+    const images = casesSection.locator('img');
+    await expect(images.first()).toBeVisible();
 
-  await page.goto('/en/cases/academic-and-research-websites/');
-  await expectA11y(page);
+    // No links taking user to separate case pages
+    const standaloneLinks = casesSection.locator('a[href*="/casos/"]');
+    await expect(standaloneLinks).toHaveCount(0);
+  });
+
+  test('academic websites service renders case body, gallery, and external links inline', async ({
+    page
+  }) => {
+    await page.goto('/servicos/sites-academicos/');
+
+    const casesSection = page.locator(
+      'section[aria-labelledby="cases-showcase-heading"]'
+    );
+    await expect(casesSection).toBeVisible();
+    await expect(
+      casesSection.getByText(
+        'Desenvolvimento de Portais Acadêmicos e Observatórios de Pesquisa'
+      )
+    ).toBeVisible();
+
+    // External links have rel noopener
+    const externalLinks = casesSection.locator('a[href^="http"]');
+    const linkCount = await externalLinks.count();
+    expect(linkCount).toBeGreaterThan(0);
+    for (let i = 0; i < linkCount; i++) {
+      await expect(externalLinks.nth(i)).toHaveAttribute('rel', /noopener/);
+    }
+  });
+
+  test('cases do not appear on audience pages or services index', async ({
+    page
+  }) => {
+    // Services index
+    await page.goto('/servicos/');
+    await expect(
+      page.locator('section[aria-labelledby="cases-showcase-heading"]')
+    ).toHaveCount(0);
+    await expect(
+      page.locator('section[aria-labelledby="services-cases-heading"]')
+    ).toHaveCount(0);
+
+    // Audience page
+    await page.goto('/para/empresas/');
+    await expect(
+      page.locator('section[aria-labelledby="cases-showcase-heading"]')
+    ).toHaveCount(0);
+    await expect(
+      page.locator('section[aria-labelledby="related-cases-heading"]')
+    ).toHaveCount(0);
+  });
+
+  test('service page with embedded cases passes accessibility', async ({
+    page
+  }) => {
+    await page.goto('/servicos/dashboards-e-visualizacao/');
+    await expectA11y(page);
+  });
 });
