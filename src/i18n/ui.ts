@@ -38,7 +38,7 @@ export const ui = {
     'cta.proposal': 'Request a proposal',
     'cta.services': 'View services',
     'cta.whatsapp': 'Chat on WhatsApp',
-    'cta.more': 'Learn more',
+    'cta.more': 'Explore details',
     skip: 'Skip to content',
     'theme.toggle': 'Toggle light/dark theme',
     'lang.switch': 'Português',

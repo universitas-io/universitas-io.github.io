@@ -56,6 +56,7 @@ const { audiences, lang, heading, lead } = Astro.props;
             <a
               href={url}
               class="inline-flex items-center gap-2 text-sm font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 group-hover:translate-x-1 transition-transform"
+              aria-label={`${t(lang, 'cta.more')} - ${aud.data.title}`}
             >
               <span>{t(lang, 'cta.more')}</span>
               <svg

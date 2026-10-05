@@ -17,6 +17,7 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "links": "linkinator ./dist --recurse --skip \"^https://universitas-io.github.io\" --silent",
     "icons": "node scripts/generate-icons.ts",
     "postinstall": "node scripts/patch-vite.js",
     "lhci": "lhci autorun"
