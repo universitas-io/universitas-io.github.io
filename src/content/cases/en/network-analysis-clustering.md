@@ -15,6 +15,8 @@ cover:
   src: '../../../assets/images/cases/network-clusters/cover.png'
   alt: 'Interactive network graph showing colored modular clusters and connected edge lines'
 gallery:
+  - src: '../../../assets/images/cases/network-clusters/graph.png'
+    alt: 'Global Map of the Network of Organizations'
   - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
     alt: 'Network of Articulations and Poles'
   - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'

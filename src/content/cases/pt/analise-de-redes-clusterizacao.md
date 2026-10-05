@@ -15,6 +15,8 @@ cover:
   src: '../../../assets/images/cases/network-clusters/cover.png'
   alt: 'Grafo de rede com clusters de nós coloridos e arestas de conexões interativas'
 gallery:
+  - src: '../../../assets/images/cases/network-clusters/graph.png'
+    alt: 'Mapa Global da Rede de Organizações'
   - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
     alt: 'Rede de Articulações e Polos'
   - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'

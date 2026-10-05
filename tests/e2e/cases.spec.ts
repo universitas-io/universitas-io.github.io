@@ -52,6 +52,9 @@ test.describe('cases embedded inside respective services', () => {
 
     // Images rendered, including the specific gallery images for network clusters
     await expect(
+      casesSection.getByRole('img', { name: 'Mapa Global da Rede de Organizações' })
+    ).toBeVisible();
+    await expect(
       casesSection.getByRole('img', { name: 'Rede de Articulações e Polos' })
     ).toBeVisible();
     await expect(
