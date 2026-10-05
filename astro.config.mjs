@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { site } from './site.config';
+import { redirects } from './src/i18n/redirects';
 
 export default defineConfig({
   site: site.url,
@@ -10,6 +12,7 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
+  redirects,
   i18n: {
     defaultLocale: 'pt',
     locales: ['pt', 'en'],
@@ -20,5 +23,19 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [mdx(), icon()]
+  integrations: [
+    mdx(),
+    icon(),
+    sitemap({
+      filter: (page) =>
+        !page.includes('obrigado') &&
+        !page.includes('thank-you') &&
+        !page.includes('404') &&
+        !page.includes('/p/') &&
+        !page.includes('/archives/') &&
+        !page.includes('/categories/') &&
+        !page.includes('/tags/') &&
+        !page.includes('/pt-br/')
+    })
+  ]
 });

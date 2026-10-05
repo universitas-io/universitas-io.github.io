@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  lang="pt"
+  title="404 — Página não encontrada | Page Not Found"
+  description="Página não encontrada na Universitas. Page not found."
+  pathname="/404.html"
+  alternates={{}}
+  noindex={true}
+>
+  <div class="min-h-[60vh] flex items-center justify-center py-16 px-4">
+    <div class="max-w-xl w-full text-center space-y-8 bg-white dark:bg-[#112239] p-8 sm:p-12 rounded-3xl border border-gray-200 dark:border-navy-700/60 shadow-sm">
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-blue-50 dark:bg-navy-800 text-[#1a6ca8] dark:text-blue-400 font-extrabold text-3xl font-display">
+        404
+      </div>
+
+      <div class="space-y-3">
+        <h1 class="text-2xl sm:text-3xl font-extrabold font-display text-navy-900 dark:text-white">
+          Página não encontrada{' '}
+          <span class="text-ink-600/40 dark:text-gray-500 font-normal">/</span>{' '}
+          Page Not Found
+        </h1>
+        <p class="text-sm sm:text-base text-ink-600 dark:text-gray-300 leading-relaxed">
+          O link que você seguiu pode estar desatualizado ou a página pode ter
+          sido movida em nossa nova estrutura.
+        </p>
+        <p class="text-xs sm:text-sm text-ink-600 dark:text-gray-400 leading-relaxed italic">
+          The link you followed may be outdated or the page has moved in our new
+          platform.
+        </p>
+      </div>
+
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <Button href="/" variant="primary" size="md">
+          Início (Português)
+        </Button>
+        <Button href="/en/" variant="outline" size="md">
+          Home (English)
+        </Button>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

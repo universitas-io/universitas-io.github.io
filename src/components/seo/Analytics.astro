@@ -1,0 +1,18 @@
+---
+import { site } from '../../../site.config';
+
+const goatCounterCode = site.integrations.goatcounter;
+const googleSiteVerification = site.integrations.googleSiteVerification;
+---
+
+{googleSiteVerification && (
+  <meta name="google-site-verification" content={googleSiteVerification} />
+)}
+
+{goatCounterCode && (
+  <script
+    data-goatcounter={`https://${goatCounterCode}.goatcounter.com/count`}
+    async
+    src="https://gc.zgo.at/count.js"
+  ></script>
+)}
