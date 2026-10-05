@@ -12,9 +12,10 @@ import { getLocalized, entrySlug } from '../../lib/content';
 export interface Props {
   lang: Locale;
   alternates?: Partial<Record<Locale, string>>;
+  fallbackPathname?: string;
 }
 
-const { lang, alternates = {} } = Astro.props;
+const { lang, alternates = {}, fallbackPathname } = Astro.props;
 
 const audiences = await getLocalized('audiences', lang);
 const audienceShortNames: Record<string, Record<Locale, string>> = {
@@ -138,7 +139,11 @@ const contactPath = path(lang, 'contact');
 
     <!-- Desktop Actions -->
     <div class="hidden md:flex items-center gap-3">
-      <LanguageSwitcher lang={lang} alternates={alternates} />
+      <LanguageSwitcher
+        lang={lang}
+        alternates={alternates}
+        fallbackPathname={fallbackPathname}
+      />
       <ThemeToggle lang={lang} />
       <Button
         href={contactPath}

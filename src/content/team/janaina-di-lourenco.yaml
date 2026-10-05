@@ -1,0 +1,20 @@
+name: "Janaína Di Lourenço"
+role:
+  pt: "Cientista Ambiental e Pesquisadora"
+  en: "Environmental Scientist and Researcher"
+bio:
+  pt: ""
+  en: ""
+education:
+  - "Doutoranda em Ciência Ambiental (USP)"
+  - "Mestra em História Ambiental (UFRJ)"
+areas:
+  - "Pesquisa Quantitativa"
+  - "Ciência Ambiental"
+  - "Pesquisa Qualitativa"
+links:
+  lattes: "https://lattes.cnpq.br/0000000000000000"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+  linkedin: "https://www.linkedin.com/in/exemplo"
+order: 1
+draft: true

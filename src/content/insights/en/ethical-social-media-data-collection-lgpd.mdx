@@ -1,0 +1,55 @@
+---
+title: "Social Media Data Harvesting: Best Practices, Ethics, and LGPD Compliance"
+description: "Legal grounds, pseudonymization, and compliance guidelines for scraping and analyzing digital social platform datasets."
+translationKey: "social-data-ethics"
+author: "exemplo-pesquisadora"
+pubDate: 2026-03-20
+featured: false
+draft: true
+---
+
+import Callout from '../../../components/mdx/Callout.astro';
+
+Automated data extraction from digital platforms—such as YouTube, X (formerly Twitter), Instagram, and online discussion forums—has become an essential tool for studying public opinion, consumer sentiment, and communication networks. However, the technical ease with which Python or R scripts collect millions of records does not release researchers from legal and ethical obligations.
+
+In Brazil, the General Data Protection Law (Law No. 13,709/2018 – LGPD) and National Health Council resolutions (CNS No. 466/2012 and No. 510/2016) set non-negotiable benchmarks for research involving human data. In this article, we outline the technical standards required to ensure your research data workflows remain rigorous, ethical, and legally sound.
+
+## 1. The Fallacy of "Publicly Available Data"
+
+A common misunderstanding is assuming that public posts require no privacy governance. Under Article 7, § 4 of the LGPD, while processing manifestly public personal data does not require explicit prior consent in all instances, the initial purpose, good faith, and public interest that justified its publication must be strictly observed.
+
+Furthermore, analyzing individuals by real names in academic or commercial datasets may constitute a privacy breach if data is disseminated outside its original setting or utilized in ways detrimental to the data subject.
+
+<Callout type="warning" title="Statutory Requirements">
+The statutory ground for processing personal data in scientific research is explicitly provided in Article 7, IV of the LGPD ("for studies conducted by research entities, guaranteeing, whenever feasible, pseudonymization"). Notice the mandatory condition: anonymization or pseudonymization must be prioritized across all data pipelines.
+</Callout>
+
+## 2. Pseudonymization vs. Irreversible Anonymization
+
+Data architecture protocols should maintain a clear technical distinction between two workflows:
+
+- **Pseudonymization (Art. 13, § 4 of the LGPD):** A procedure in which personal data can no longer be attributed to a specific subject without additional information. Replacing user names or numeric IDs with cryptographic salted hashes (e.g., SHA-256) preserves network relational structures while preventing direct identification.
+- **Anonymization (Art. 12 of the LGPD):** Data concerning a subject who cannot be identified through reasonable technical means available at the time of processing. Irreversibly anonymized records fall outside the scope of personal data regulation.
+
+## 3. Institutional Review Board Guidelines
+
+For research projects reviewed by Institutional Review Boards (CEP/Conep system in Brazil), CNS Resolution No. 510/2016 specifies exemptions:
+
+1. Public opinion polls with unidentified participants.
+2. Inquiries utilizing information strictly in the public domain.
+3. Analyses utilizing open datasets already anonymized at their origin.
+
+However, when web scraping involves assembling unique individual profiles, accessing private closed discussion boards, or analyzing sensitive categories (political opinions, religious beliefs, or health data), prior ethical clearance is legally mandatory.
+
+<Callout type="tip" title="Technical Compliance Checklist">
+1. **Politeness & Rate Limiting:** Implement rate limits and throttling delays to avoid placing undue strain on target web servers.
+2. **Platform Terms of Service:** Prioritize official developer APIs where available.
+3. **Secure Decommissioning:** Maintain an explicit data lifecycle policy detailing secure deletion of raw records upon project completion.
+4. **Data Protection Impact Assessment:** In corporate or government projects, draft a privacy impact memo documenting cryptographic safeguards and access controls.
+</Callout>
+
+## Conclusion
+
+Ethical and regulatory compliance is not a bureaucratic hurdle to scientific inquiry; rather, it represents the foundation ensuring the longevity, credibility, and defensibility of your research findings.
+
+Universitas assists academic laboratories, corporations, and public bodies in designing automated data harvesting pipelines in compliance with the LGPD and international privacy standards. Contact our technical team to audit your data management protocols.

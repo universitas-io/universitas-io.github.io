@@ -21,10 +21,18 @@ export default defineConfig({
       use: { ...devices['Pixel 7'] }
     }
   ],
-  webServer: {
-    command: 'npm run build:preview && npm run preview -- --port 4321',
-    port: 4321,
-    reuseExistingServer: !process.env.CI,
-    timeout: 120000
-  }
+  webServer: [
+    {
+      command: 'npm run build:preview && npm run preview -- --port 4321',
+      port: 4321,
+      reuseExistingServer: !process.env.CI,
+      timeout: 120000
+    },
+    {
+      command: 'npm run dev -- --port 4322',
+      port: 4322,
+      reuseExistingServer: !process.env.CI,
+      timeout: 120000
+    }
+  ]
 });

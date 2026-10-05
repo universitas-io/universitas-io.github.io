@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getLocalized, translationOf, entrySlug } from '../../../lib/content';
+import { path } from '../../../i18n/routes';
+import InsightView from '../../../views/InsightView.astro';
+
+export async function getStaticPaths() {
+  const posts = await getLocalized('insights', 'en');
+
+  const paths = await Promise.all(
+    posts.map(async (post) => {
+      const slug = entrySlug(post.id);
+      const ptPair = await translationOf(post, 'pt');
+
+      const alternates: { en: string; pt?: string } = {
+        en: `${path('en', 'insights')}${slug}/`
+      };
+      if (ptPair) {
+        alternates.pt = `${path('pt', 'insights')}${entrySlug(ptPair.id)}/`;
+      }
+
+      return {
+        params: { slug },
+        props: { post, alternates }
+      };
+    })
+  );
+
+  return paths;
+}
+
+export interface Props {
+  post: CollectionEntry<'insights'>;
+  alternates: { en: string; pt?: string };
+}
+
+const { post, alternates } = Astro.props;
+---
+
+<InsightView post={post} lang="en" alternates={alternates} />

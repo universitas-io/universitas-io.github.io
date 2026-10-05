@@ -51,7 +51,7 @@ export function findMissingTranslations(entries: RawEntry[]): string[] {
 
 export function findBadSlugs(entries: RawEntry[]): string[] {
   const errors: string[] = [];
-  const slugRegex = /^[a-z0-9-]+$/;
+  const slugRegex = /^_?[a-z0-9-]+$/;
 
   for (const entry of entries) {
     if (!slugRegex.test(entry.slug)) {

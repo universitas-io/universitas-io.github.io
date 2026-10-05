@@ -1,0 +1,48 @@
+---
+export interface Props {
+  type?: 'note' | 'tip' | 'warning' | 'info';
+  title?: string;
+}
+
+const { type = 'note', title } = Astro.props;
+
+const styles = {
+  note: {
+    border:
+      'border-blue-500/40 bg-blue-50/60 dark:bg-navy-900/60 text-navy-900 dark:text-gray-100',
+    iconColor: 'text-[#1a6ca8] dark:text-blue-400'
+  },
+  tip: {
+    border:
+      'border-green-500/40 bg-green-50/60 dark:bg-navy-900/60 text-navy-900 dark:text-gray-100',
+    iconColor: 'text-[#1e7e4e] dark:text-green-400'
+  },
+  warning: {
+    border:
+      'border-amber-500/40 bg-amber-50/60 dark:bg-navy-900/60 text-navy-900 dark:text-gray-100',
+    iconColor: 'text-amber-600 dark:text-amber-400'
+  },
+  info: {
+    border:
+      'border-slate-400/40 bg-slate-50/60 dark:bg-navy-900/60 text-navy-900 dark:text-gray-100',
+    iconColor: 'text-slate-600 dark:text-slate-400'
+  }
+}[type];
+---
+
+<aside
+  class:list={[
+    'my-6 p-5 rounded-xl border-l-4 shadow-sm not-prose',
+    styles.border
+  ]}
+  role="note"
+>
+  {title && (
+    <h4 class="text-sm font-bold uppercase tracking-wider mb-2 font-display">
+      {title}
+    </h4>
+  )}
+  <div class="text-sm leading-relaxed space-y-2 text-ink-600 dark:text-gray-200">
+    <slot />
+  </div>
+</aside>

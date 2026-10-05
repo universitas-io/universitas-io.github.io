@@ -1,0 +1,152 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render, getEntry } from 'astro:content';
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import { entrySlug } from '../lib/content';
+import { readingTime } from '../lib/reading-time';
+import { article as makeArticleSchema } from '../lib/seo/jsonld';
+import { site } from '../../site.config';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import Avatar from '../components/ui/Avatar.astro';
+import DraftBadge from '../components/ui/DraftBadge.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+export interface Props {
+  post: CollectionEntry<'insights'>;
+  lang: Locale;
+  alternates: Partial<Record<Locale, string>>;
+}
+
+const { post, lang, alternates } = Astro.props;
+
+const { Content } = await render(post);
+
+const slug = entrySlug(post.id);
+const currentPath = `${path(lang, 'insights')}${slug}/`;
+
+const author = await getEntry(post.data.author);
+const authorSlug = post.data.author.id;
+const authorUrl = `${path(lang, 'about')}#${authorSlug}`;
+const estMinutes = readingTime(post.body || '');
+
+const crumbs = [
+  { name: t(lang, 'breadcrumb.home'), pathname: path(lang, 'home') },
+  { name: t(lang, 'nav.insights'), pathname: path(lang, 'insights') },
+  { name: post.data.title, pathname: currentPath }
+];
+
+const formattedDate = new Intl.DateTimeFormat(
+  lang === 'pt' ? 'pt-BR' : 'en-US',
+  { day: 'numeric', month: 'long', year: 'numeric' }
+).format(post.data.pubDate);
+
+const meta: { label: string; value: string }[] = [
+  {
+    label: lang === 'pt' ? 'Publicado em' : 'Published on',
+    value: formattedDate
+  },
+  {
+    label: lang === 'pt' ? 'Tempo de leitura' : 'Reading time',
+    value: `${estMinutes} ${lang === 'pt' ? 'min' : 'mins'}`
+  }
+];
+
+if (author) {
+  meta.push({
+    label: lang === 'pt' ? 'Autoria' : 'Author',
+    value: author.data.name
+  });
+}
+
+const jsonLd: Record<string, unknown>[] = [
+  makeArticleSchema({
+    headline: post.data.title,
+    description: post.data.description,
+    pathname: currentPath,
+    lang,
+    datePublished: post.data.pubDate.toISOString(),
+    dateModified: post.data.updatedDate?.toISOString(),
+    author: {
+      name: author ? author.data.name : 'Universitas',
+      jobTitle: author?.data.role[lang],
+      url: `${new URL(path(lang, 'about'), site.url).href}#${authorSlug}`
+    }
+  })
+];
+---
+
+<ArticleLayout
+  lang={lang}
+  title={post.data.title}
+  description={post.data.description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={post.data.title}
+  lead={post.data.description}
+  eyebrow={lang === 'pt' ? 'Artigo & Análise' : 'Article & Analysis'}
+  crumbs={crumbs}
+  jsonLd={jsonLd}
+  cover={post.data.cover}
+  meta={meta}
+  publishedTime={post.data.pubDate.toISOString()}
+  modifiedTime={post.data.updatedDate?.toISOString()}
+>
+  <div class="space-y-12">
+    <!-- Post Info Header (Date, Author link, Draft Badge) -->
+    <div class="flex flex-wrap items-center gap-3 text-sm text-ink-600 dark:text-gray-400 not-prose pb-4 border-b border-gray-100 dark:border-navy-700/40">
+      <time datetime={post.data.pubDate.toISOString()}>{formattedDate}</time>
+      <span>•</span>
+      <span>
+        {estMinutes} {lang === 'pt' ? 'minutos de leitura' : 'min read'}
+      </span>
+      {author && (
+        <>
+          <span>•</span>
+          <span>{lang === 'pt' ? 'Por' : 'By'}</span>
+          <a
+            href={authorUrl}
+            class="text-[#1a6ca8] dark:text-blue-400 font-semibold hover:underline"
+          >
+            {author.data.name}
+          </a>
+        </>
+      )}
+      {post.data.draft && <DraftBadge />}
+    </div>
+
+    <!-- Article Content -->
+    <article class="prose prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:tracking-tight prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:font-bold prose-h2:text-navy-900 dark:prose-h2:text-white prose-p:text-ink-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-li:text-ink-600 dark:prose-li:text-gray-300 prose-a:text-[#1a6ca8] dark:prose-a:text-blue-400">
+      <Content />
+    </article>
+
+    <!-- Author Profile Bio Box -->
+    {author && (
+      <div class="p-6 sm:p-8 rounded-2xl bg-surface-alt dark:bg-navy-900 border border-gray-200 dark:border-navy-700/60 not-prose flex flex-col sm:flex-row items-start sm:items-center gap-5">
+        <Avatar name={author.data.name} photo={author.data.photo} size="lg" />
+        <div class="space-y-1 flex-1">
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-bold font-display text-navy-900 dark:text-white">
+              <a href={authorUrl} class="hover:underline">
+                {author.data.name}
+              </a>
+            </h3>
+            {author.data.draft && <DraftBadge />}
+          </div>
+          <p class="text-xs font-semibold text-[#1a6ca8] dark:text-blue-400">
+            {author.data.role[lang]}
+          </p>
+          <p class="text-sm text-ink-600 dark:text-gray-300 leading-relaxed pt-1">
+            {author.data.bio[lang]}
+          </p>
+        </div>
+      </div>
+    )}
+
+    <!-- CTA Banner -->
+    <div class="pt-8">
+      <CtaBanner lang={lang} />
+    </div>
+  </div>
+</ArticleLayout>

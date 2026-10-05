@@ -1,0 +1,8 @@
+---
+import { getLocalized } from '../../../lib/content';
+import InsightsIndexView from '../../../views/InsightsIndexView.astro';
+
+const posts = await getLocalized('insights', 'en');
+---
+
+<InsightsIndexView posts={posts} lang="en" />
