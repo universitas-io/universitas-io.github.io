@@ -8,245 +8,106 @@ const { class: className = '' } = Astro.props;
 // Rich constellation nodes (60 nodes covering full hero width & height)
 const nodes = [
   // Top row (y: 40..80)
-  { id: 0, cx: 50, cy: 60, r: 4.5, fill: '#2A8FC7', opacity: 0.8 },
-  { id: 1, cx: 130, cy: 50, r: 4, fill: '#2E9E6B', opacity: 0.8 },
-  { id: 2, cx: 220, cy: 80, r: 5.5, fill: '#1a6ca8', opacity: 0.9 },
-  { id: 3, cx: 310, cy: 45, r: 4, fill: '#2A8FC7', opacity: 0.8 },
-  { id: 4, cx: 400, cy: 75, r: 6, fill: '#2E9E6B', opacity: 0.85 },
-  { id: 5, cx: 490, cy: 50, r: 4.5, fill: '#1a6ca8', opacity: 0.8 },
-  { id: 6, cx: 580, cy: 70, r: 6.5, fill: '#2A8FC7', opacity: 0.9 },
-  { id: 7, cx: 670, cy: 40, r: 4, fill: '#2E9E6B', opacity: 0.8 },
-  { id: 8, cx: 760, cy: 65, r: 5.5, fill: '#1a6ca8', opacity: 0.85 },
-  { id: 9, cx: 840, cy: 80, r: 4.5, fill: '#2A8FC7', opacity: 0.8 },
+  { id: 0, cx: 50, cy: 60, r: 4.5, fill: '#2A8FC7', opacity: 0.75 },
+  { id: 1, cx: 130, cy: 50, r: 4, fill: '#2E9E6B', opacity: 0.75 },
+  { id: 2, cx: 220, cy: 80, r: 5.5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 3, cx: 310, cy: 45, r: 4, fill: '#2A8FC7', opacity: 0.75 },
+  { id: 4, cx: 400, cy: 75, r: 6, fill: '#2E9E6B', opacity: 0.8 },
+  { id: 5, cx: 490, cy: 50, r: 4.5, fill: '#1a6ca8', opacity: 0.75 },
+  { id: 6, cx: 580, cy: 70, r: 6.5, fill: '#2A8FC7', opacity: 0.85 },
+  { id: 7, cx: 670, cy: 40, r: 4, fill: '#2E9E6B', opacity: 0.75 },
+  { id: 8, cx: 760, cy: 65, r: 5.5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 9, cx: 840, cy: 80, r: 4.5, fill: '#2A8FC7', opacity: 0.75 },
 
   // Upper mid row (y: 130..170)
-  { id: 10, cx: 40, cy: 150, r: 4, fill: '#2E9E6B', opacity: 0.8 },
-  { id: 11, cx: 110, cy: 130, r: 5.5, fill: '#1a6ca8', opacity: 0.9 },
-  { id: 12, cx: 190, cy: 160, r: 4.5, fill: '#2A8FC7', opacity: 0.8 },
-  { id: 13, cx: 270, cy: 130, r: 6.5, fill: '#2E9E6B', opacity: 0.95 },
-  { id: 14, cx: 360, cy: 155, r: 5, fill: '#1a6ca8', opacity: 0.85 },
-  { id: 15, cx: 440, cy: 135, r: 6, fill: '#2A8FC7', opacity: 0.9 },
-  { id: 16, cx: 530, cy: 150, r: 7, fill: '#2E9E6B', opacity: 0.95 },
-  { id: 17, cx: 620, cy: 130, r: 5, fill: '#1a6ca8', opacity: 0.85 },
-  { id: 18, cx: 700, cy: 155, r: 6.5, fill: '#2A8FC7', opacity: 0.9 },
-  { id: 19, cx: 790, cy: 140, r: 5, fill: '#2E9E6B', opacity: 0.85 },
-  { id: 20, cx: 860, cy: 170, r: 4, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 10, cx: 40, cy: 150, r: 4, fill: '#2E9E6B', opacity: 0.75 },
+  { id: 11, cx: 110, cy: 130, r: 5.5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 12, cx: 190, cy: 160, r: 4.5, fill: '#2A8FC7', opacity: 0.75 },
+  { id: 13, cx: 270, cy: 130, r: 6.5, fill: '#2E9E6B', opacity: 0.85 },
+  { id: 14, cx: 360, cy: 155, r: 5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 15, cx: 440, cy: 135, r: 6, fill: '#2A8FC7', opacity: 0.85 },
+  { id: 16, cx: 530, cy: 150, r: 7, fill: '#2E9E6B', opacity: 0.9 },
+  { id: 17, cx: 620, cy: 130, r: 5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 18, cx: 700, cy: 155, r: 6.5, fill: '#2A8FC7', opacity: 0.85 },
+  { id: 19, cx: 790, cy: 140, r: 5, fill: '#2E9E6B', opacity: 0.8 },
+  { id: 20, cx: 860, cy: 170, r: 4, fill: '#1a6ca8', opacity: 0.75 },
 
   // Center row (y: 230..260)
-  { id: 21, cx: 60, cy: 240, r: 5, fill: '#2A8FC7', opacity: 0.85 },
-  { id: 22, cx: 150, cy: 230, r: 6.5, fill: '#2E9E6B', opacity: 0.9 },
-  { id: 23, cx: 230, cy: 260, r: 5, fill: '#1a6ca8', opacity: 0.85 },
-  { id: 24, cx: 320, cy: 235, r: 7, fill: '#2A8FC7', opacity: 0.95 },
-  { id: 25, cx: 410, cy: 250, r: 6, fill: '#2E9E6B', opacity: 0.9 },
-  { id: 26, cx: 500, cy: 230, r: 7.5, fill: '#1a6ca8', opacity: 1 },
-  { id: 27, cx: 590, cy: 255, r: 6, fill: '#2A8FC7', opacity: 0.9 },
-  { id: 28, cx: 670, cy: 230, r: 7, fill: '#2E9E6B', opacity: 0.95 },
-  { id: 29, cx: 760, cy: 245, r: 5.5, fill: '#1a6ca8', opacity: 0.85 },
-  { id: 30, cx: 840, cy: 260, r: 4.5, fill: '#2A8FC7', opacity: 0.8 },
+  { id: 21, cx: 60, cy: 240, r: 5, fill: '#2A8FC7', opacity: 0.8 },
+  { id: 22, cx: 150, cy: 230, r: 6.5, fill: '#2E9E6B', opacity: 0.85 },
+  { id: 23, cx: 230, cy: 260, r: 5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 24, cx: 320, cy: 235, r: 7, fill: '#2A8FC7', opacity: 0.9 },
+  { id: 25, cx: 410, cy: 250, r: 6, fill: '#2E9E6B', opacity: 0.85 },
+  { id: 26, cx: 500, cy: 230, r: 7.5, fill: '#1a6ca8', opacity: 0.95 },
+  { id: 27, cx: 590, cy: 255, r: 6, fill: '#2A8FC7', opacity: 0.85 },
+  { id: 28, cx: 670, cy: 230, r: 7, fill: '#2E9E6B', opacity: 0.9 },
+  { id: 29, cx: 760, cy: 245, r: 5.5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 30, cx: 840, cy: 260, r: 4.5, fill: '#2A8FC7', opacity: 0.75 },
 
   // Lower mid row (y: 330..360)
-  { id: 31, cx: 50, cy: 340, r: 4.5, fill: '#2E9E6B', opacity: 0.8 },
-  { id: 32, cx: 130, cy: 330, r: 6, fill: '#1a6ca8', opacity: 0.9 },
-  { id: 33, cx: 220, cy: 355, r: 5.5, fill: '#2A8FC7', opacity: 0.85 },
-  { id: 34, cx: 300, cy: 330, r: 7, fill: '#2E9E6B', opacity: 0.95 },
-  { id: 35, cx: 390, cy: 350, r: 6, fill: '#1a6ca8', opacity: 0.9 },
-  { id: 36, cx: 480, cy: 330, r: 8, fill: '#2A8FC7', opacity: 1 },
-  { id: 37, cx: 570, cy: 360, r: 6.5, fill: '#2E9E6B', opacity: 0.9 },
-  { id: 38, cx: 650, cy: 335, r: 7.5, fill: '#1a6ca8', opacity: 1 },
-  { id: 39, cx: 740, cy: 355, r: 6, fill: '#2A8FC7', opacity: 0.9 },
-  { id: 40, cx: 830, cy: 340, r: 5, fill: '#2E9E6B', opacity: 0.85 },
+  { id: 31, cx: 50, cy: 340, r: 4.5, fill: '#2E9E6B', opacity: 0.75 },
+  { id: 32, cx: 130, cy: 330, r: 6, fill: '#1a6ca8', opacity: 0.85 },
+  { id: 33, cx: 220, cy: 355, r: 5.5, fill: '#2A8FC7', opacity: 0.8 },
+  { id: 34, cx: 300, cy: 330, r: 7, fill: '#2E9E6B', opacity: 0.9 },
+  { id: 35, cx: 390, cy: 350, r: 6, fill: '#1a6ca8', opacity: 0.85 },
+  { id: 36, cx: 480, cy: 330, r: 8, fill: '#2A8FC7', opacity: 0.95 },
+  { id: 37, cx: 570, cy: 360, r: 6.5, fill: '#2E9E6B', opacity: 0.85 },
+  { id: 38, cx: 650, cy: 335, r: 7.5, fill: '#1a6ca8', opacity: 0.95 },
+  { id: 39, cx: 740, cy: 355, r: 6, fill: '#2A8FC7', opacity: 0.85 },
+  { id: 40, cx: 830, cy: 340, r: 5, fill: '#2E9E6B', opacity: 0.8 },
 
   // Bottom row 1 (y: 430..460)
-  { id: 41, cx: 70, cy: 440, r: 5, fill: '#1a6ca8', opacity: 0.85 },
-  { id: 42, cx: 160, cy: 430, r: 5.5, fill: '#2A8FC7', opacity: 0.85 },
-  { id: 43, cx: 250, cy: 450, r: 6.5, fill: '#2E9E6B', opacity: 0.9 },
-  { id: 44, cx: 340, cy: 430, r: 6, fill: '#1a6ca8', opacity: 0.9 },
-  { id: 45, cx: 430, cy: 455, r: 7.5, fill: '#2A8FC7', opacity: 1 },
-  { id: 46, cx: 520, cy: 435, r: 7, fill: '#2E9E6B', opacity: 0.95 },
-  { id: 47, cx: 610, cy: 460, r: 6.5, fill: '#1a6ca8', opacity: 0.9 },
-  { id: 48, cx: 700, cy: 440, r: 7, fill: '#2A8FC7', opacity: 0.95 },
-  { id: 49, cx: 790, cy: 450, r: 5.5, fill: '#2E9E6B', opacity: 0.85 },
-  { id: 50, cx: 860, cy: 430, r: 4.5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 41, cx: 70, cy: 440, r: 5, fill: '#1a6ca8', opacity: 0.8 },
+  { id: 42, cx: 160, cy: 430, r: 5.5, fill: '#2A8FC7', opacity: 0.8 },
+  { id: 43, cx: 250, cy: 450, r: 6.5, fill: '#2E9E6B', opacity: 0.85 },
+  { id: 44, cx: 340, cy: 430, r: 6, fill: '#1a6ca8', opacity: 0.85 },
+  { id: 45, cx: 430, cy: 455, r: 7.5, fill: '#2A8FC7', opacity: 0.95 },
+  { id: 46, cx: 520, cy: 435, r: 7, fill: '#2E9E6B', opacity: 0.9 },
+  { id: 47, cx: 610, cy: 460, r: 6.5, fill: '#1a6ca8', opacity: 0.85 },
+  { id: 48, cx: 700, cy: 440, r: 7, fill: '#2A8FC7', opacity: 0.9 },
+  { id: 49, cx: 790, cy: 450, r: 5.5, fill: '#2E9E6B', opacity: 0.8 },
+  { id: 50, cx: 860, cy: 430, r: 4.5, fill: '#1a6ca8', opacity: 0.75 },
 
   // Bottom row 2 (y: 520..545)
-  { id: 51, cx: 100, cy: 530, r: 4.5, fill: '#2A8FC7', opacity: 0.8 },
-  { id: 52, cx: 200, cy: 520, r: 5.5, fill: '#2E9E6B', opacity: 0.85 },
-  { id: 53, cx: 290, cy: 540, r: 6, fill: '#1a6ca8', opacity: 0.9 },
-  { id: 54, cx: 390, cy: 525, r: 7, fill: '#2A8FC7', opacity: 0.95 },
-  { id: 55, cx: 480, cy: 545, r: 6.5, fill: '#2E9E6B', opacity: 0.9 },
-  { id: 56, cx: 570, cy: 530, r: 7, fill: '#1a6ca8', opacity: 0.95 },
-  { id: 57, cx: 660, cy: 545, r: 6, fill: '#2A8FC7', opacity: 0.9 },
-  { id: 58, cx: 750, cy: 530, r: 5.5, fill: '#2E9E6B', opacity: 0.85 },
-  { id: 59, cx: 830, cy: 540, r: 5, fill: '#1a6ca8', opacity: 0.8 }
+  { id: 51, cx: 100, cy: 530, r: 4.5, fill: '#2A8FC7', opacity: 0.75 },
+  { id: 52, cx: 200, cy: 520, r: 5.5, fill: '#2E9E6B', opacity: 0.8 },
+  { id: 53, cx: 290, cy: 540, r: 6, fill: '#1a6ca8', opacity: 0.85 },
+  { id: 54, cx: 390, cy: 525, r: 7, fill: '#2A8FC7', opacity: 0.9 },
+  { id: 55, cx: 480, cy: 545, r: 6.5, fill: '#2E9E6B', opacity: 0.85 },
+  { id: 56, cx: 570, cy: 530, r: 7, fill: '#1a6ca8', opacity: 0.9 },
+  { id: 57, cx: 660, cy: 545, r: 6, fill: '#2A8FC7', opacity: 0.85 },
+  { id: 58, cx: 750, cy: 530, r: 5.5, fill: '#2E9E6B', opacity: 0.8 },
+  { id: 59, cx: 830, cy: 540, r: 5, fill: '#1a6ca8', opacity: 0.75 }
 ];
 
 // Calculated graph connections (distance <= 118)
 const connections: [number, number][] = [
-  [0, 1],
-  [0, 10],
-  [0, 11],
-  [1, 2],
-  [1, 11],
-  [1, 12],
-  [2, 3],
-  [2, 12],
-  [2, 13],
-  [3, 4],
-  [3, 13],
-  [3, 14],
-  [4, 5],
-  [4, 14],
-  [4, 15],
-  [5, 6],
-  [5, 15],
-  [5, 16],
-  [6, 7],
-  [6, 16],
-  [6, 17],
-  [7, 8],
-  [7, 17],
-  [7, 18],
-  [8, 9],
-  [8, 18],
-  [8, 19],
-  [9, 19],
-  [9, 20],
-  [10, 11],
-  [10, 21],
-  [11, 12],
-  [11, 21],
-  [11, 22],
-  [12, 13],
-  [12, 22],
-  [12, 23],
-  [13, 14],
-  [13, 23],
-  [13, 24],
-  [14, 15],
-  [14, 24],
-  [14, 25],
-  [15, 16],
-  [15, 25],
-  [15, 26],
-  [16, 17],
-  [16, 26],
-  [16, 27],
-  [17, 18],
-  [17, 27],
-  [17, 28],
-  [18, 19],
-  [18, 28],
-  [18, 29],
-  [19, 20],
-  [19, 29],
-  [19, 30],
-  [20, 30],
-  [21, 22],
-  [21, 31],
-  [21, 32],
-  [22, 23],
-  [22, 32],
-  [22, 33],
-  [23, 24],
-  [23, 33],
-  [23, 34],
-  [24, 25],
-  [24, 34],
-  [24, 35],
-  [25, 26],
-  [25, 35],
-  [25, 36],
-  [26, 27],
-  [26, 36],
-  [26, 37],
-  [27, 28],
-  [27, 37],
-  [27, 38],
-  [28, 29],
-  [28, 38],
-  [28, 39],
-  [29, 30],
-  [29, 39],
-  [29, 40],
-  [30, 40],
-  [31, 32],
-  [31, 41],
-  [32, 33],
-  [32, 41],
-  [32, 42],
-  [33, 34],
-  [33, 42],
-  [33, 43],
-  [34, 35],
-  [34, 43],
-  [34, 44],
-  [35, 36],
-  [35, 44],
-  [35, 45],
-  [36, 37],
-  [36, 45],
-  [36, 46],
-  [37, 38],
-  [37, 46],
-  [37, 47],
-  [38, 39],
-  [38, 47],
-  [38, 48],
-  [39, 40],
-  [39, 48],
-  [39, 49],
-  [40, 49],
-  [40, 50],
-  [41, 42],
-  [41, 51],
-  [42, 43],
-  [42, 51],
-  [42, 52],
-  [43, 44],
-  [43, 52],
-  [43, 53],
-  [44, 45],
-  [44, 53],
-  [44, 54],
-  [45, 46],
-  [45, 54],
-  [45, 55],
-  [46, 47],
-  [46, 55],
-  [46, 56],
-  [47, 48],
-  [47, 56],
-  [47, 57],
-  [48, 49],
-  [48, 57],
-  [48, 58],
-  [49, 50],
-  [49, 58],
-  [49, 59],
-  [50, 59],
-  [51, 52],
-  [52, 53],
-  [53, 54],
-  [54, 55],
-  [55, 56],
-  [56, 57],
-  [57, 58],
-  [58, 59]
+  [0, 1], [0, 10], [0, 11], [1, 2], [1, 11], [1, 12], [2, 3], [2, 12], [2, 13],
+  [3, 4], [3, 13], [3, 14], [4, 5], [4, 14], [4, 15], [5, 6], [5, 15], [5, 16],
+  [6, 7], [6, 16], [6, 17], [7, 8], [7, 17], [7, 18], [8, 9], [8, 18], [8, 19],
+  [9, 19], [9, 20], [10, 11], [10, 21], [11, 12], [11, 21], [11, 22], [12, 13],
+  [12, 22], [12, 23], [13, 14], [13, 23], [13, 24], [14, 15], [14, 24], [14, 25],
+  [15, 16], [15, 25], [15, 26], [16, 17], [16, 26], [16, 27], [17, 18], [17, 27],
+  [17, 28], [18, 19], [18, 28], [18, 29], [19, 20], [19, 29], [19, 30], [20, 30],
+  [21, 22], [21, 31], [21, 32], [22, 23], [22, 32], [22, 33], [23, 24], [23, 33],
+  [23, 34], [24, 25], [24, 34], [24, 35], [25, 26], [25, 35], [25, 36], [26, 27],
+  [26, 36], [26, 37], [27, 28], [27, 37], [27, 38], [28, 29], [28, 38], [28, 39],
+  [29, 30], [29, 39], [29, 40], [30, 40], [31, 32], [31, 41], [32, 33], [32, 41],
+  [32, 42], [33, 34], [33, 42], [33, 43], [34, 35], [34, 43], [34, 44], [35, 36],
+  [35, 44], [35, 45], [36, 37], [36, 45], [36, 46], [37, 38], [37, 46], [37, 47],
+  [38, 39], [38, 47], [38, 48], [39, 40], [39, 48], [39, 49], [40, 49], [40, 50],
+  [41, 42], [41, 51], [42, 43], [42, 51], [42, 52], [43, 44], [43, 52], [43, 53],
+  [44, 45], [44, 53], [44, 54], [45, 46], [45, 54], [45, 55], [46, 47], [46, 55],
+  [46, 56], [47, 48], [47, 56], [47, 57], [48, 49], [48, 57], [48, 58], [49, 50],
+  [49, 58], [49, 59], [50, 59], [51, 52], [52, 53], [53, 54], [54, 55], [55, 56],
+  [56, 57], [57, 58], [58, 59]
 ];
 
 // Highlighted analytical backbone lines
 const backbonePairs: [number, number][] = [
-  [13, 24],
-  [24, 36],
-  [36, 45],
-  [45, 54],
-  [16, 26],
-  [26, 36],
-  [26, 38],
-  [38, 48],
-  [22, 34],
-  [34, 44],
-  [44, 53]
+  [13, 24], [24, 36], [36, 45], [45, 54],
+  [16, 26], [26, 36], [26, 38], [38, 48],
+  [22, 34], [34, 44], [44, 53]
 ];
 ---
 
@@ -261,7 +122,7 @@ const backbonePairs: [number, number][] = [
   <defs>
     <!-- Radiant node glow filter -->
     <filter id="hero-node-glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -269,31 +130,41 @@ const backbonePairs: [number, number][] = [
     </filter>
   </defs>
 
-  <!-- Base Network Connection Lines (Strong, visible stroke) -->
-  <g
-    stroke="currentColor"
-    stroke-opacity="0.55"
-    stroke-width="1.6"
-    stroke-linecap="round"
-  >
+  <!-- Base Network Connection Lines (Clean, balanced presence) -->
+  <g stroke="currentColor" stroke-opacity="0.42" stroke-width="1.25" stroke-linecap="round">
     {connections.map(([from, to]) => {
       const n1 = nodes[from];
       const n2 = nodes[to];
-      return <line x1={n1.cx} y1={n1.cy} x2={n2.cx} y2={n2.cy} />;
+      return (
+        <line
+          class="hero-line"
+          data-from={from}
+          data-to={to}
+          x1={n1.cx}
+          y1={n1.cy}
+          x2={n2.cx}
+          y2={n2.cy}
+        />
+      );
     })}
   </g>
 
-  <!-- Accent Analytical Backbone Lines (High contrast, luminous) -->
-  <g
-    stroke="#2A8FC7"
-    stroke-opacity="0.8"
-    stroke-width="2.4"
-    stroke-linecap="round"
-  >
+  <!-- Accent Backbone Lines -->
+  <g stroke="#2A8FC7" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round">
     {backbonePairs.map(([from, to]) => {
       const n1 = nodes[from];
       const n2 = nodes[to];
-      return <line x1={n1.cx} y1={n1.cy} x2={n2.cx} y2={n2.cy} />;
+      return (
+        <line
+          class="hero-line"
+          data-from={from}
+          data-to={to}
+          x1={n1.cx}
+          y1={n1.cy}
+          x2={n2.cx}
+          y2={n2.cy}
+        />
+      );
     })}
   </g>
 
@@ -302,6 +173,7 @@ const backbonePairs: [number, number][] = [
     {nodes.map((node) => (
       <circle
         class="hero-node"
+        data-id={node.id}
         cx={node.cx}
         cy={node.cy}
         r={node.r}
@@ -310,101 +182,162 @@ const backbonePairs: [number, number][] = [
         data-cx={node.cx}
         data-cy={node.cy}
         data-r={node.r}
-        data-fill={node.fill}
         data-opacity={node.opacity}
-        filter={node.r >= 7 ? 'url(#hero-node-glow)' : undefined}
       />
     ))}
   </g>
 </svg>
 
-<style>
-  .hero-node {
-    transform-box: fill-box;
-    transform-origin: center;
-    transition:
-      transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
-      opacity 0.25s ease,
-      filter 0.25s ease;
-    will-change: transform, filter, opacity;
-  }
-</style>
-
 <script>
   function initHeroConstellation() {
-    const heroSection = document.querySelector<HTMLElement>(
-      '[data-section="hero"]'
-    );
-    const svg = document.getElementById(
-      'hero-constellation-svg'
-    ) as SVGSVGElement | null;
+    const heroSection = document.querySelector<HTMLElement>('[data-section="hero"]');
+    const svg = document.getElementById('hero-constellation-svg') as SVGSVGElement | null;
     if (!heroSection || !svg) return;
 
-    const nodes = svg.querySelectorAll<SVGCircleElement>('.hero-node');
-    if (!nodes.length) return;
+    const circleEls = svg.querySelectorAll<SVGCircleElement>('.hero-node');
+    const lineEls = svg.querySelectorAll<SVGLineElement>('.hero-line');
+    if (!circleEls.length) return;
 
-    // Cache initial data
-    const nodeData = Array.from(nodes).map((node) => {
-      const cx = parseFloat(node.getAttribute('data-cx') || '0');
-      const cy = parseFloat(node.getAttribute('data-cy') || '0');
-      const r = parseFloat(node.getAttribute('data-r') || '4');
-      const opacity = parseFloat(node.getAttribute('data-opacity') || '0.8');
-      const fill = node.getAttribute('data-fill') || '#2A8FC7';
-      return { el: node, cx, cy, r, opacity, fill };
+    // Node state collection
+    const nodeStates = Array.from(circleEls).map((el) => {
+      const id = parseInt(el.getAttribute('data-id') || '0', 10);
+      const baseX = parseFloat(el.getAttribute('data-cx') || '0');
+      const baseY = parseFloat(el.getAttribute('data-cy') || '0');
+      const baseR = parseFloat(el.getAttribute('data-r') || '4');
+      const baseOpacity = parseFloat(el.getAttribute('data-opacity') || '0.8');
+
+      return {
+        id,
+        el,
+        baseX,
+        baseY,
+        currX: baseX,
+        currY: baseY,
+        targetX: baseX,
+        targetY: baseY,
+        baseR,
+        currR: baseR,
+        targetR: baseR,
+        baseOpacity,
+        currOpacity: baseOpacity,
+        targetOpacity: baseOpacity,
+        isGlow: false
+      };
     });
 
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
+    // Line state collection
+    const lineStates = Array.from(lineEls).map((el) => {
+      const from = parseInt(el.getAttribute('data-from') || '0', 10);
+      const to = parseInt(el.getAttribute('data-to') || '0', 10);
+      return { el, from, to };
+    });
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let rafId: number | null = null;
     let activePointer = false;
-    let mouseSvgX = -1000;
-    let mouseSvgY = -1000;
+    let mouseSvgX = -2000;
+    let mouseSvgY = -2000;
 
-    const INFLUENCE_RADIUS = 160;
+    const INFLUENCE_RADIUS = 150;
+    const LERP_FACTOR = 0.16;
 
-    function updateNodes() {
+    function renderLoop() {
       rafId = null;
+      let hasSignificantMovement = false;
 
-      for (let i = 0; i < nodeData.length; i++) {
-        const item = nodeData[i];
-        if (!activePointer) {
-          item.el.style.transform = '';
-          item.el.style.filter = '';
-          item.el.style.opacity = String(item.opacity);
-          continue;
-        }
+      // 1. Calculate targets based on pointer position
+      for (let i = 0; i < nodeStates.length; i++) {
+        const item = nodeStates[i];
 
-        const dx = item.cx - mouseSvgX;
-        const dy = item.cy - mouseSvgY;
-        const dist = Math.hypot(dx, dy);
+        if (activePointer) {
+          const dx = item.baseX - mouseSvgX;
+          const dy = item.baseY - mouseSvgY;
+          const dist = Math.hypot(dx, dy);
 
-        if (dist < INFLUENCE_RADIUS) {
-          const ratio = 1 - dist / INFLUENCE_RADIUS; // 0 to 1
+          if (dist < INFLUENCE_RADIUS) {
+            const ratio = 1 - dist / INFLUENCE_RADIUS; // 0 to 1
 
-          // 1. Move: repel smoothly away from mouse cursor
-          let tx = 0;
-          let ty = 0;
-          if (!prefersReducedMotion) {
-            const angle = Math.atan2(dy, dx);
-            const pushDist = ratio * 28; // Up to 28px displacement in SVG units
-            tx = Math.cos(angle) * pushDist;
-            ty = Math.sin(angle) * pushDist;
+            if (!prefersReducedMotion) {
+              const angle = Math.atan2(dy, dx);
+              const pushDist = ratio * 24; // Smooth 24px organic displacement
+              item.targetX = item.baseX + Math.cos(angle) * pushDist;
+              item.targetY = item.baseY + Math.sin(angle) * pushDist;
+            } else {
+              item.targetX = item.baseX;
+              item.targetY = item.baseY;
+            }
+
+            // Enlarge up to 1.6x and glow
+            item.targetR = item.baseR * (1 + ratio * 0.6);
+            item.targetOpacity = 1.0;
+            item.isGlow = true;
+          } else {
+            item.targetX = item.baseX;
+            item.targetY = item.baseY;
+            item.targetR = item.baseR;
+            item.targetOpacity = item.baseOpacity;
+            item.isGlow = false;
           }
-
-          // 2. Enlarge: expand scale up to 2.2x
-          const scale = 1 + ratio * 1.25;
-
-          // 3. Glow / Brighten: luminous drop shadow + 100% opacity
-          const glowBlur = (4 + ratio * 10).toFixed(1);
-          item.el.style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) scale(${scale.toFixed(2)})`;
-          item.el.style.filter = `drop-shadow(0 0 ${glowBlur}px #38BDF8)`;
-          item.el.style.opacity = '1';
         } else {
-          item.el.style.transform = '';
-          item.el.style.filter = '';
-          item.el.style.opacity = String(item.opacity);
+          item.targetX = item.baseX;
+          item.targetY = item.baseY;
+          item.targetR = item.baseR;
+          item.targetOpacity = item.baseOpacity;
+          item.isGlow = false;
         }
+
+        // 2. Smooth lerp position, radius and opacity
+        const diffX = item.targetX - item.currX;
+        const diffY = item.targetY - item.currY;
+        const diffR = item.targetR - item.currR;
+        const diffO = item.targetOpacity - item.currOpacity;
+
+        if (
+          Math.abs(diffX) > 0.05 ||
+          Math.abs(diffY) > 0.05 ||
+          Math.abs(diffR) > 0.05 ||
+          Math.abs(diffO) > 0.01
+        ) {
+          hasSignificantMovement = true;
+          item.currX += diffX * LERP_FACTOR;
+          item.currY += diffY * LERP_FACTOR;
+          item.currR += diffR * LERP_FACTOR;
+          item.currOpacity += diffO * LERP_FACTOR;
+        } else {
+          item.currX = item.targetX;
+          item.currY = item.targetY;
+          item.currR = item.targetR;
+          item.currOpacity = item.targetOpacity;
+        }
+
+        // Apply circle attributes
+        item.el.setAttribute('cx', item.currX.toFixed(2));
+        item.el.setAttribute('cy', item.currY.toFixed(2));
+        item.el.setAttribute('r', item.currR.toFixed(2));
+        item.el.setAttribute('opacity', item.currOpacity.toFixed(2));
+
+        if (item.isGlow) {
+          item.el.style.filter = 'drop-shadow(0 0 7px #38BDF8)';
+        } else {
+          item.el.style.filter = '';
+        }
+      }
+
+      // 3. Update all attached lines so they stay 100% attached to the moving nodes
+      for (let j = 0; j < lineStates.length; j++) {
+        const line = lineStates[j];
+        const n1 = nodeStates[line.from];
+        const n2 = nodeStates[line.to];
+
+        line.el.setAttribute('x1', n1.currX.toFixed(2));
+        line.el.setAttribute('y1', n1.currY.toFixed(2));
+        line.el.setAttribute('x2', n2.currX.toFixed(2));
+        line.el.setAttribute('y2', n2.currY.toFixed(2));
+      }
+
+      // Keep animation running while active or settling back
+      if (activePointer || hasSignificantMovement) {
+        rafId = requestAnimationFrame(renderLoop);
       }
     }
 
@@ -419,25 +352,22 @@ const backbonePairs: [number, number][] = [
       mouseSvgY = ((e.clientY - rect.top) / rect.height) * 600;
 
       if (!rafId) {
-        rafId = requestAnimationFrame(updateNodes);
+        rafId = requestAnimationFrame(renderLoop);
       }
     }
 
     function onPointerLeave() {
       activePointer = false;
-      mouseSvgX = -1000;
-      mouseSvgY = -1000;
+      mouseSvgX = -2000;
+      mouseSvgY = -2000;
+
       if (!rafId) {
-        rafId = requestAnimationFrame(updateNodes);
+        rafId = requestAnimationFrame(renderLoop);
       }
     }
 
-    heroSection.addEventListener('pointermove', onPointerMove, {
-      passive: true
-    });
-    heroSection.addEventListener('pointerleave', onPointerLeave, {
-      passive: true
-    });
+    heroSection.addEventListener('pointermove', onPointerMove, { passive: true });
+    heroSection.addEventListener('pointerleave', onPointerLeave, { passive: true });
   }
 
   if (typeof document !== 'undefined') {

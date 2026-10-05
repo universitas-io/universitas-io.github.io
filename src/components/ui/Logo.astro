@@ -17,119 +17,130 @@ const uniqueId = `logo-grad-${Math.random().toString(36).slice(2, 8)}`;
     aria-hidden="true"
   >
     <defs>
-      <linearGradient id={uniqueId} x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#2A8FC7" />
-        <stop offset="100%" stop-color="#2E9E6B" />
+      <linearGradient id={uniqueId} x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#3BA7E0" />
+        <stop offset="100%" stop-color="#6CC24A" />
       </linearGradient>
     </defs>
 
-    <!-- Left stem ambient fill -->
+    <!-- U Body -->
     <path
-      d="M14 16 C14 14.9 14.9 14 16 14 H22 C23.1 14 24 14.9 24 16 V32 C24 37 27 42 32 43 C26.5 43 21 39 18 34 C15.4 29.8 14 23.5 14 16 Z"
-      fill={`url(#${uniqueId})`}
-      fill-opacity="0.14"
-    />
-
-    <!-- Right Stem & Base: Solid architectural U -->
-    <path
-      d="M40 14 H50 V32 C50 42 42 50 32 50 C23 50 16.5 44 14.5 37 C18 42.5 24.5 45 30 44 C37 42.5 42 37.5 42 30 V14 H40 Z"
+      d="M42 12 H52 V36 C52 46.5 44 53 32 53 C22.5 53 16.5 48.5 13 43 C18 48 24 48 28.5 46.5 C36 44 42 39 42 31 Z"
       fill="currentColor"
     />
 
-    <!-- Network Edges -->
+    <!-- Network Lattice -->
     <g
       stroke={`url(#${uniqueId})`}
-      stroke-width="2.2"
+      stroke-width="1.8"
       stroke-linecap="round"
       stroke-linejoin="round"
     >
-      <line x1="19" y1="14" x2="19" y2="26" />
-      <line x1="19" y1="14" x2="26" y2="20" />
-      <line x1="26" y1="20" x2="19" y2="26" />
-      <line x1="19" y1="26" x2="26" y2="32" />
-      <line x1="26" y1="20" x2="26" y2="32" />
-      <line x1="19" y1="26" x2="19" y2="36" />
-      <line x1="26" y1="32" x2="19" y2="36" />
-      <path d="M19 36 C19 42.5 24 47.5 30 49" />
-      <line x1="26" y1="32" x2="30" y2="49" />
+      <line x1="14" y1="13" x2="14" y2="25" />
+      <line x1="14" y1="25" x2="14" y2="37" />
+      <line x1="24" y1="13" x2="24" y2="25" />
+      <line x1="24" y1="25" x2="24" y2="37" />
+
+      <line x1="14" y1="13" x2="24" y2="13" />
+      <line x1="14" y1="25" x2="24" y2="25" />
+      <line x1="14" y1="37" x2="24" y2="37" />
+
+      <line x1="14" y1="13" x2="19" y2="19" />
+      <line x1="24" y1="13" x2="19" y2="19" />
+      <line x1="19" y1="19" x2="14" y2="25" />
+      <line x1="19" y1="19" x2="24" y2="25" />
+
+      <line x1="14" y1="25" x2="19" y2="31" />
+      <line x1="24" y1="25" x2="19" y2="31" />
+      <line x1="19" y1="31" x2="14" y2="37" />
+      <line x1="19" y1="31" x2="24" y2="37" />
+
+      <path d="M14 37 C14 43 18 47 22.5 48" />
     </g>
 
-    <!-- Constellation Nodes -->
+    <!-- Network Nodes -->
     <g fill={`url(#${uniqueId})`}>
-      <circle cx="19" cy="14" r="3.6" />
-      <circle cx="26" cy="20" r="2.8" />
-      <circle cx="19" cy="26" r="3.2" />
-      <circle cx="26" cy="32" r="2.8" />
-      <circle cx="19" cy="36" r="3.4" />
-      <circle cx="30" cy="49" r="3.8" />
+      <circle cx="14" cy="13" r="2.8" />
+      <circle cx="24" cy="13" r="2.8" />
+      <circle cx="19" cy="19" r="2.4" />
+      <circle cx="14" cy="25" r="2.5" />
+      <circle cx="24" cy="25" r="2.5" />
+      <circle cx="19" cy="31" r="2.4" />
+      <circle cx="14" cy="37" r="2.8" />
+      <circle cx="24" cy="37" r="2.8" />
+      <circle cx="22.5" cy="48" r="2.8" />
     </g>
   </svg>
 ) : (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 230 48"
+    viewBox="0 0 220 48"
     fill="none"
     class={className || 'h-8 w-auto'}
     aria-hidden="true"
   >
     <defs>
-      <linearGradient id={uniqueId} x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#2A8FC7" />
-        <stop offset="100%" stop-color="#2E9E6B" />
+      <linearGradient id={uniqueId} x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#3BA7E0" />
+        <stop offset="100%" stop-color="#6CC24A" />
       </linearGradient>
     </defs>
 
-    <g transform="translate(4, 4) scale(0.625)">
-      <!-- Left stem ambient fill -->
+    <g transform="translate(0, 0) scale(0.75)">
       <path
-        d="M14 16 C14 14.9 14.9 14 16 14 H22 C23.1 14 24 14.9 24 16 V32 C24 37 27 42 32 43 C26.5 43 21 39 18 34 C15.4 29.8 14 23.5 14 16 Z"
-        fill={`url(#${uniqueId})`}
-        fill-opacity="0.14"
-      />
-
-      <!-- Solid U Body -->
-      <path
-        d="M40 14 H50 V32 C50 42 42 50 32 50 C23 50 16.5 44 14.5 37 C18 42.5 24.5 45 30 44 C37 42.5 42 37.5 42 30 V14 H40 Z"
+        d="M42 12 H52 V36 C52 46.5 44 53 32 53 C22.5 53 16.5 48.5 13 43 C18 48 24 48 28.5 46.5 C36 44 42 39 42 31 Z"
         fill="currentColor"
       />
 
-      <!-- Network Edges -->
       <g
         stroke={`url(#${uniqueId})`}
-        stroke-width="2.2"
+        stroke-width="1.8"
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <line x1="19" y1="14" x2="19" y2="26" />
-        <line x1="19" y1="14" x2="26" y2="20" />
-        <line x1="26" y1="20" x2="19" y2="26" />
-        <line x1="19" y1="26" x2="26" y2="32" />
-        <line x1="26" y1="20" x2="26" y2="32" />
-        <line x1="19" y1="26" x2="19" y2="36" />
-        <line x1="26" y1="32" x2="19" y2="36" />
-        <path d="M19 36 C19 42.5 24 47.5 30 49" />
-        <line x1="26" y1="32" x2="30" y2="49" />
+        <line x1="14" y1="13" x2="14" y2="25" />
+        <line x1="14" y1="25" x2="14" y2="37" />
+        <line x1="24" y1="13" x2="24" y2="25" />
+        <line x1="24" y1="25" x2="24" y2="37" />
+
+        <line x1="14" y1="13" x2="24" y2="13" />
+        <line x1="14" y1="25" x2="24" y2="25" />
+        <line x1="14" y1="37" x2="24" y2="37" />
+
+        <line x1="14" y1="13" x2="19" y2="19" />
+        <line x1="24" y1="13" x2="19" y2="19" />
+        <line x1="19" y1="19" x2="14" y2="25" />
+        <line x1="19" y1="19" x2="24" y2="25" />
+
+        <line x1="14" y1="25" x2="19" y2="31" />
+        <line x1="24" y1="25" x2="19" y2="31" />
+        <line x1="19" y1="31" x2="14" y2="37" />
+        <line x1="19" y1="31" x2="24" y2="37" />
+
+        <path d="M14 37 C14 43 18 47 22.5 48" />
       </g>
 
-      <!-- Constellation Nodes -->
       <g fill={`url(#${uniqueId})`}>
-        <circle cx="19" cy="14" r="3.6" />
-        <circle cx="26" cy="20" r="2.8" />
-        <circle cx="19" cy="26" r="3.2" />
-        <circle cx="26" cy="32" r="2.8" />
-        <circle cx="19" cy="36" r="3.4" />
-        <circle cx="30" cy="49" r="3.8" />
+        <circle cx="14" cy="13" r="2.8" />
+        <circle cx="24" cy="13" r="2.8" />
+        <circle cx="19" cy="19" r="2.4" />
+        <circle cx="14" cy="25" r="2.5" />
+        <circle cx="24" cy="25" r="2.5" />
+        <circle cx="19" cy="31" r="2.4" />
+        <circle cx="14" cy="37" r="2.8" />
+        <circle cx="24" cy="37" r="2.8" />
+        <circle cx="22.5" cy="48" r="2.8" />
       </g>
     </g>
 
     <text
       x="52"
-      y="31"
+      y="30"
       fill="currentColor"
       font-family="Manrope, system-ui, -apple-system, sans-serif"
-      font-size="21"
+      font-size="20"
       font-weight="800"
-      letter-spacing="0.06em"
+      letter-spacing="0.08em"
     >
       UNIVERSITAS
     </text>
