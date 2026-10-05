@@ -3,6 +3,7 @@ import { getViteConfig } from 'astro/config';
 
 export default getViteConfig({
   test: {
-    globals: true
+    globals: true,
+    include: ['tests/unit/**/*.{test,spec}.ts']
   }
 });

@@ -1,0 +1,20 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+
+export interface Props {
+  lang?: Locale;
+  class?: string;
+}
+
+const { lang = 'pt', class: className = '' } = Astro.props;
+const isDev = import.meta.env.DEV;
+---
+
+{isDev && (
+  <span
+    class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 border border-amber-300 dark:border-amber-700/60 ${className}`}
+  >
+    {t(lang, 'draft.badge')}
+  </span>
+)}

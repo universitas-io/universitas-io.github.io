@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/ui/Container.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import Button from '../../components/ui/Button.astro';
+import NetworkPattern from '../../components/ui/NetworkPattern.astro';
+import { path } from '../../i18n/routes';
+
+const title = 'Universitas — Quantitative and qualitative research consultancy';
+const description =
+  'Quantitative and qualitative research for universities, businesses, and the public sector, grounded in method, ethics, and transparency.';
+---
+
+<BaseLayout
+  lang="en"
+  title={title}
+  description={description}
+  pathname="/en/"
+  alternates={{ pt: '/', en: '/en/' }}
+>
+  <section class="relative overflow-hidden py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-surface-alt/60 to-white dark:from-[#0B1626] dark:to-[#0F2340]">
+    <NetworkPattern class="absolute inset-0 w-full h-full text-blue-500/10 dark:text-blue-400/10" />
+    <Container class="relative z-10">
+      <div class="max-w-3xl">
+        <SectionHeading
+          align="left"
+          eyebrow="Research consultancy"
+          title="Rigorous evidence for decisions and discoveries."
+          lead="Quantitative and qualitative research for universities, businesses, and the public sector, grounded in method, ethics, and transparency."
+          level={1}
+        />
+        <div class="flex flex-wrap items-center gap-4 mt-8">
+          <Button href={path('en', 'contact')} variant="primary" size="lg">
+            Request a proposal
+          </Button>
+          <Button href={path('en', 'services')} variant="outline" size="lg">
+            View services
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

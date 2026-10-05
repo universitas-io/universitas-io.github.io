@@ -1,0 +1,50 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+
+export interface Props {
+  lang: Locale;
+  alternates?: Partial<Record<Locale, string>>;
+  fallbackPathname?: string;
+  class?: string;
+}
+
+const {
+  lang,
+  alternates = {},
+  fallbackPathname,
+  class: className = ''
+} = Astro.props;
+
+const targetLang: Locale = lang === 'pt' ? 'en' : 'pt';
+const targetHref =
+  (targetLang === 'en' ? alternates.en : alternates.pt) ||
+  fallbackPathname ||
+  (targetLang === 'en' ? '/en/' : '/');
+
+const label = t(lang, 'lang.switch');
+---
+
+<a
+  href={targetHref}
+  hreflang={targetLang === 'pt' ? 'pt-BR' : 'en'}
+  class={`inline-flex items-center gap-1.5 px-2.5 py-1 text-sm font-medium rounded-md text-navy-700 dark:text-gray-200 hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-navy-700/50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ${className}`}
+  aria-label={`Switch language to ${label}`}
+>
+  <svg
+    class="w-4 h-4 text-ink-600 dark:text-gray-400"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+    <path d="M2 12h20"></path>
+  </svg>
+  <span>{label}</span>
+</a>

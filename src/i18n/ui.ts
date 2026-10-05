@@ -21,6 +21,12 @@ export const ui = {
     'draft.badge': 'RASCUNHO',
     'section.cases': 'Casos relacionados',
     'section.faq': 'Perguntas frequentes',
+    'nav.main': 'Navegação principal',
+    'nav.menu': 'Abrir menu',
+    'nav.close': 'Fechar menu',
+    'nav.breadcrumbs': 'Navegação estrutural',
+    'footer.privacy': 'Privacidade',
+    'footer.tagline': 'Pesquisa quantitativa e qualitativa com rigor metodológico, ética e transparência.',
   },
   en: {
     'nav.services': 'Services',
@@ -42,6 +48,12 @@ export const ui = {
     'draft.badge': 'DRAFT',
     'section.cases': 'Related cases',
     'section.faq': 'Frequently asked questions',
+    'nav.main': 'Main navigation',
+    'nav.menu': 'Open menu',
+    'nav.close': 'Close menu',
+    'nav.breadcrumbs': 'Breadcrumbs',
+    'footer.privacy': 'Privacy',
+    'footer.tagline': 'Quantitative and qualitative research grounded in rigor, ethics, and transparency.',
   },
 } as const;
 

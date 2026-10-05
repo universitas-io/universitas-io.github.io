@@ -1,0 +1,162 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { path } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+import { site } from '../../../site.config';
+import Logo from '../ui/Logo.astro';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const currentYear = new Date().getFullYear();
+
+const audienceLinks = [
+  {
+    name: lang === 'pt' ? 'Para a Academia' : 'For Academia',
+    href: lang === 'pt' ? '/para/academia/' : '/en/for/academia/'
+  },
+  {
+    name: lang === 'pt' ? 'Para Empresas' : 'For Business',
+    href: lang === 'pt' ? '/para/empresas/' : '/en/for/business/'
+  },
+  {
+    name: lang === 'pt' ? 'Para o Setor Público' : 'For the Public Sector',
+    href: lang === 'pt' ? '/para/setor-publico/' : '/en/for/public-sector/'
+  }
+];
+
+const institutionalLinks = [
+  { name: t(lang, 'nav.about'), href: path(lang, 'about') },
+  { name: t(lang, 'nav.cases'), href: path(lang, 'cases') },
+  { name: t(lang, 'nav.insights'), href: path(lang, 'insights') },
+  { name: t(lang, 'nav.contact'), href: path(lang, 'contact') },
+  { name: t(lang, 'footer.privacy'), href: path(lang, 'privacy') }
+];
+---
+
+<footer class="bg-[#F8FAFC] dark:bg-[#07101C] border-t border-gray-200 dark:border-navy-700/60 transition-colors mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+      <!-- Column 1: Brand & Tagline -->
+      <div class="lg:col-span-2 space-y-4">
+        <a
+          href={path(lang, 'home')}
+          class="inline-block"
+          aria-label="Universitas - Início"
+        >
+          <Logo
+            variant="horizontal"
+            class="h-8 w-auto text-navy-900 dark:text-white"
+          />
+        </a>
+        <p class="text-sm text-ink-600 dark:text-gray-300 max-w-sm leading-relaxed">
+          {t(lang, 'footer.tagline')}
+        </p>
+
+        <!-- Official tax invoice badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-50 dark:bg-navy-900/60 border border-blue-200 dark:border-blue-900/50 text-xs font-medium text-navy-900 dark:text-blue-200">
+          <svg
+            class="w-4 h-4 text-blue-500 shrink-0"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>{t(lang, 'footer.invoice')}</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Para quem -->
+      <div>
+        <h2 class="text-sm font-bold text-navy-900 dark:text-white uppercase tracking-wider mb-4">
+          {t(lang, 'nav.audiences')}
+        </h2>
+        <ul class="space-y-2.5 text-sm">
+          {audienceLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-ink-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Institucional -->
+      <div>
+        <h2 class="text-sm font-bold text-navy-900 dark:text-white uppercase tracking-wider mb-4">
+          Institucional
+        </h2>
+        <ul class="space-y-2.5 text-sm">
+          {institutionalLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-ink-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4: Contato direto -->
+      <div>
+        <h2 class="text-sm font-bold text-navy-900 dark:text-white uppercase tracking-wider mb-4">
+          {t(lang, 'nav.contact')}
+        </h2>
+        <ul class="space-y-2.5 text-sm text-ink-600 dark:text-gray-300">
+          <li>
+            <a
+              href={`mailto:${site.contact.email}`}
+              class="hover:text-blue-500 transition-colors break-all"
+            >
+              {site.contact.email}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`https://wa.me/${site.contact.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-blue-500 transition-colors"
+            >
+              WhatsApp
+            </a>
+          </li>
+          <li class="pt-2 text-xs text-ink-600 dark:text-gray-400">
+            Juiz de Fora — MG, Brasil
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 pt-8 border-t border-gray-200 dark:border-navy-700/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-600 dark:text-gray-400">
+      <p>
+        © {currentYear} {site.name}. {t(lang, 'footer.rights')}
+      </p>
+      <p class="text-center sm:text-right">
+        {lang === 'pt'
+          ? 'Método, ética e transparência.'
+          : 'Method, ethics, and transparency.'}
+      </p>
+    </div>
+  </div>
+</footer>

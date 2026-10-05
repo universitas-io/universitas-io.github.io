@@ -1,0 +1,207 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { path } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+import Logo from '../ui/Logo.astro';
+import Button from '../ui/Button.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+export interface Props {
+  lang: Locale;
+  alternates?: Partial<Record<Locale, string>>;
+}
+
+const { lang, alternates = {} } = Astro.props;
+
+const audienceLinks = [
+  {
+    name: lang === 'pt' ? 'Academia' : 'Academia',
+    href: lang === 'pt' ? '/para/academia/' : '/en/for/academia/'
+  },
+  {
+    name: lang === 'pt' ? 'Empresas' : 'Business',
+    href: lang === 'pt' ? '/para/empresas/' : '/en/for/business/'
+  },
+  {
+    name: lang === 'pt' ? 'Setor Público' : 'Public Sector',
+    href: lang === 'pt' ? '/para/setor-publico/' : '/en/for/public-sector/'
+  }
+];
+
+const homePath = path(lang, 'home');
+const servicesPath = path(lang, 'services');
+const casesPath = path(lang, 'cases');
+const insightsPath = path(lang, 'insights');
+const aboutPath = path(lang, 'about');
+const contactPath = path(lang, 'contact');
+---
+
+<header class="sticky top-0 z-30 w-full bg-white/90 dark:bg-[#0F2340]/90 backdrop-blur-md border-b border-gray-200 dark:border-navy-700/60 transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
+    <!-- Brand Logo -->
+    <a
+      href={homePath}
+      class="flex items-center gap-2.5 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-label="Universitas - Início"
+    >
+      <Logo
+        variant="horizontal"
+        class="h-9 w-auto text-navy-900 dark:text-white"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav
+      class="hidden md:flex items-center gap-6"
+      aria-label={t(lang, 'nav.main')}
+    >
+      <!-- Audiences Dropdown -->
+      <div class="relative group" id="audiences-dropdown-container">
+        <button
+          type="button"
+          id="audiences-menu-button"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-navy-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+        >
+          <span>{t(lang, 'nav.audiences')}</span>
+          <svg
+            class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        <div
+          id="audiences-menu-panel"
+          class="hidden group-hover:block group-focus-within:block absolute left-0 top-full pt-2 w-52 z-40"
+        >
+          <div
+            class="bg-white dark:bg-[#112239] rounded-xl shadow-xl border border-gray-200 dark:border-navy-700/80 p-2 space-y-1"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="audiences-menu-button"
+          >
+            {audienceLinks.map((link) => (
+              <a
+                href={link.href}
+                role="menuitem"
+                class="block px-3 py-2 text-sm font-medium rounded-lg text-navy-900 dark:text-gray-100 hover:bg-surface-alt dark:hover:bg-navy-700/60 hover:text-blue-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <a
+        href={servicesPath}
+        class="text-sm font-semibold text-navy-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+      >
+        {t(lang, 'nav.services')}
+      </a>
+
+      <a
+        href={casesPath}
+        class="text-sm font-semibold text-navy-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+      >
+        {t(lang, 'nav.cases')}
+      </a>
+
+      <a
+        href={insightsPath}
+        class="text-sm font-semibold text-navy-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+      >
+        {t(lang, 'nav.insights')}
+      </a>
+
+      <a
+        href={aboutPath}
+        class="text-sm font-semibold text-navy-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+      >
+        {t(lang, 'nav.about')}
+      </a>
+    </nav>
+
+    <!-- Desktop Actions -->
+    <div class="hidden md:flex items-center gap-3">
+      <LanguageSwitcher lang={lang} alternates={alternates} />
+      <ThemeToggle lang={lang} />
+      <Button
+        href={contactPath}
+        variant="primary"
+        size="sm"
+        class="font-semibold"
+      >
+        {t(lang, 'cta.proposal')}
+      </Button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex items-center gap-2 md:hidden">
+      <button
+        type="button"
+        data-mobile-menu-trigger
+        aria-label={t(lang, 'nav.menu')}
+        aria-expanded="false"
+        aria-controls="mobile-nav-dialog"
+        class="p-2 rounded-lg text-navy-900 dark:text-white hover:bg-gray-100 dark:hover:bg-navy-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById('audiences-menu-button');
+    const panel = document.getElementById('audiences-menu-panel');
+    if (!btn || !panel) return;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      panel.classList.toggle('hidden', expanded);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !panel.contains(e.target)) {
+        btn.setAttribute('aria-expanded', 'false');
+        panel.classList.add('hidden');
+      }
+    });
+
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        btn.setAttribute('aria-expanded', 'false');
+        panel.classList.add('hidden');
+        btn.focus();
+      }
+    });
+  })();
+</script>

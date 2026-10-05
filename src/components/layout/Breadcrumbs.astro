@@ -1,0 +1,62 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+import { path } from '../../i18n/routes';
+
+export interface Props {
+  crumbs: { name: string; pathname: string }[];
+  lang: Locale;
+  class?: string;
+}
+
+const { crumbs, lang, class: className = '' } = Astro.props;
+const homePath = path(lang, 'home');
+const homeName = t(lang, 'breadcrumb.home');
+
+const fullCrumbs = [
+  { name: homeName, pathname: homePath },
+  ...crumbs.filter((c) => c.pathname !== homePath)
+];
+---
+
+<nav aria-label={t(lang, 'nav.breadcrumbs')} class={`py-4 ${className}`}>
+  <ol class="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm text-ink-600 dark:text-gray-400">
+    {fullCrumbs.map((item, index) => {
+      const isLast = index === fullCrumbs.length - 1;
+      return (
+        <li class="inline-flex items-center gap-1.5">
+          {index > 0 && (
+            <svg
+              class="w-3.5 h-3.5 text-gray-400 dark:text-gray-600"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          )}
+          {isLast ? (
+            <span
+              class="font-semibold text-navy-900 dark:text-white"
+              aria-current="page"
+            >
+              {item.name}
+            </span>
+          ) : (
+            <a
+              href={item.pathname}
+              class="hover:text-blue-500 hover:underline transition-colors focus:outline-none focus:ring-1 focus:ring-blue-500 rounded"
+            >
+              {item.name}
+            </a>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>

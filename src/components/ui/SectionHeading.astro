@@ -1,0 +1,45 @@
+---
+import Eyebrow from './Eyebrow.astro';
+
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  align?: 'left' | 'center';
+  level?: 1 | 2 | 3;
+  class?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  lead,
+  align = 'center',
+  level = 2,
+  class: className = ''
+} = Astro.props;
+
+const HeadingTag = `h${level}` as 'h1' | 'h2' | 'h3';
+
+const alignClasses = {
+  center: 'text-center mx-auto max-w-3xl',
+  left: 'text-left max-w-3xl'
+};
+
+const titleSizeClasses = {
+  1: 'text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-navy-900 dark:text-white tracking-tight',
+  2: 'text-2xl sm:text-3xl lg:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight',
+  3: 'text-xl sm:text-2xl font-bold font-display text-navy-900 dark:text-white'
+};
+---
+
+<div class={`space-y-3 mb-10 sm:mb-12 ${alignClasses[align]} ${className}`}>
+  {eyebrow && <Eyebrow text={eyebrow} />}
+  <HeadingTag class={titleSizeClasses[level]}>{title}</HeadingTag>
+  {lead && (
+    <p class="text-base sm:text-lg text-ink-600 dark:text-gray-300 leading-relaxed">
+      {lead}
+    </p>
+  )}
+  <slot />
+</div>

@@ -1,0 +1,55 @@
+---
+export interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+  target?: string;
+  rel?: string;
+  [key: string]: unknown;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  type = 'button',
+  class: className = '',
+  target,
+  rel,
+  ...rest
+} = Astro.props;
+
+const baseClasses =
+  'inline-flex items-center justify-center font-medium transition-all duration-150 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed';
+
+const variantClasses = {
+  primary:
+    'bg-[#1a6ca8] hover:bg-[#155a8a] text-white shadow-sm focus:ring-[#1a6ca8] focus:ring-offset-white dark:focus:ring-offset-navy-900',
+  secondary:
+    'bg-navy-900 hover:bg-navy-700 text-white shadow-sm focus:ring-navy-900 focus:ring-offset-white dark:focus:ring-offset-navy-900',
+  outline:
+    'border border-navy-700/20 dark:border-white/20 text-navy-900 dark:text-white hover:bg-navy-700/5 dark:hover:bg-white/10 focus:ring-blue-500',
+  ghost:
+    'text-navy-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-700/50 focus:ring-blue-500'
+};
+
+const sizeClasses = {
+  sm: 'text-xs px-3 py-1.5 gap-1.5',
+  md: 'text-sm px-4 py-2 gap-2',
+  lg: 'text-base px-6 py-3 gap-2.5 font-semibold'
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={classes} target={target} rel={rel} {...rest}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={classes} {...rest}>
+    <slot />
+  </button>
+)}

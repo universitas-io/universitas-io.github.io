@@ -1,0 +1,12 @@
+---
+import { graph } from '../../lib/seo/jsonld';
+
+export interface Props {
+  schema: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { schema } = Astro.props;
+const data = Array.isArray(schema) ? graph(...schema) : schema;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} />

@@ -1,0 +1,31 @@
+---
+import { buildMeta, type MetaInput } from '../../lib/seo/meta';
+
+export type Props = MetaInput;
+
+const meta = buildMeta(Astro.props);
+---
+
+<title>{meta.title}</title>
+<meta name="description" content={meta.description} />
+<link rel="canonical" href={meta.canonical} />
+<meta name="robots" content={meta.robots} />
+
+{meta.hreflang.map((item) => (
+  <link rel="alternate" hreflang={item.lang} href={item.href} />
+))}
+
+{Object.entries(meta.og).map(([key, val]) => {
+  if (Array.isArray(val)) {
+    return val.map((v) => <meta property={key} content={v} />);
+  }
+  if (key.startsWith('twitter:')) {
+    return <meta name={key} content={val} />;
+  }
+  return <meta property={key} content={val} />;
+})}
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" sizes="any" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />

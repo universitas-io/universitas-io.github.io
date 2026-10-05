@@ -1,0 +1,86 @@
+---
+import type { Locale } from '../i18n/routes';
+import { breadcrumbs as makeBreadcrumbsSchema } from '../lib/seo/jsonld';
+import BaseLayout from './BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Breadcrumbs from '../components/layout/Breadcrumbs.astro';
+import Eyebrow from '../components/ui/Eyebrow.astro';
+
+export interface Props {
+  lang: Locale;
+  title: string;
+  description: string;
+  pathname: string;
+  alternates: Partial<Record<Locale, string>>;
+  heading: string;
+  lead?: string;
+  eyebrow?: string;
+  crumbs?: { name: string; pathname: string }[];
+  ogImage?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>[];
+  publishedTime?: string;
+  modifiedTime?: string;
+}
+
+const {
+  lang,
+  title,
+  description,
+  pathname,
+  alternates,
+  heading,
+  lead,
+  eyebrow,
+  crumbs,
+  ogImage,
+  type = 'website',
+  noindex = false,
+  jsonLd = [],
+  publishedTime,
+  modifiedTime
+} = Astro.props;
+
+const enrichedJsonLd = [...jsonLd];
+if (crumbs && crumbs.length > 0) {
+  enrichedJsonLd.push(makeBreadcrumbsSchema(crumbs));
+}
+---
+
+<BaseLayout
+  lang={lang}
+  title={title}
+  description={description}
+  pathname={pathname}
+  alternates={alternates}
+  ogImage={ogImage}
+  type={type}
+  noindex={noindex}
+  jsonLd={enrichedJsonLd}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+>
+  <div class="py-6 sm:py-8 border-b border-gray-100 dark:border-navy-700/40 bg-surface-alt/40 dark:bg-surface-alt/10">
+    <Container>
+      {crumbs && crumbs.length > 0 && (
+        <Breadcrumbs crumbs={crumbs} lang={lang} />
+      )}
+      <header class="max-w-3xl pt-2 pb-6">
+        {eyebrow && <Eyebrow text={eyebrow} class="mb-2" />}
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-navy-900 dark:text-white tracking-tight">
+          {heading}
+        </h1>
+        {lead && (
+          <p class="mt-4 text-lg sm:text-xl text-ink-600 dark:text-gray-300 leading-relaxed">
+            {lead}
+          </p>
+        )}
+      </header>
+    </Container>
+  </div>
+
+  <Container class="py-10 sm:py-12">
+    <slot />
+  </Container>
+</BaseLayout>

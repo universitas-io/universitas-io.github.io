@@ -1,1 +1,74 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/inter';
+
+@theme {
+  --color-navy-900: #0f2340;
+  --color-navy-700: #1f3a5f;
+  --color-blue-600: #1a6ca8;
+  --color-blue-500: #2a8fc7;
+  --color-green-600: #2e9e6b;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f3f7fb;
+  --color-ink-600: #4b5b70;
+  --color-ink-900: #0f2340;
+  --font-display:
+    'Manrope Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  color-scheme: light;
+  --bg-page: #ffffff;
+  --text-body: #0f2340;
+  --text-muted: #4b5b70;
+  --surface-card: #ffffff;
+  --surface-alt: #f3f7fb;
+  --border-subtle: #e2e8f0;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-page: #0b1626;
+  --text-body: #e8eef6;
+  --text-muted: #94a3b8;
+  --surface-card: #112239;
+  --surface-alt: #182f4e;
+  --border-subtle: #1e385b;
+  --color-surface: #112239;
+  --color-surface-alt: #182f4e;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

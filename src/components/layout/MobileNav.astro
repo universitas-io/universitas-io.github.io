@@ -1,0 +1,125 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { path } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+import Logo from '../ui/Logo.astro';
+import Button from '../ui/Button.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+export interface Props {
+  lang: Locale;
+  alternates?: Partial<Record<Locale, string>>;
+}
+
+const { lang, alternates = {} } = Astro.props;
+
+const audienceLinks = [
+  {
+    name: lang === 'pt' ? 'Academia' : 'Academia',
+    href: lang === 'pt' ? '/para/academia/' : '/en/for/academia/'
+  },
+  {
+    name: lang === 'pt' ? 'Empresas' : 'Business',
+    href: lang === 'pt' ? '/para/empresas/' : '/en/for/business/'
+  },
+  {
+    name: lang === 'pt' ? 'Setor Público' : 'Public Sector',
+    href: lang === 'pt' ? '/para/setor-publico/' : '/en/for/public-sector/'
+  }
+];
+
+const navLinks = [
+  { name: t(lang, 'nav.services'), href: path(lang, 'services') },
+  { name: t(lang, 'nav.cases'), href: path(lang, 'cases') },
+  { name: t(lang, 'nav.insights'), href: path(lang, 'insights') },
+  { name: t(lang, 'nav.about'), href: path(lang, 'about') },
+  { name: t(lang, 'nav.contact'), href: path(lang, 'contact') }
+];
+---
+
+<dialog
+  id="mobile-nav-dialog"
+  class="fixed inset-0 m-0 p-0 w-full h-full max-w-full max-h-full bg-black/50 backdrop-blur-sm z-50 overflow-hidden border-none open:flex flex-col"
+  aria-label={t(lang, 'nav.main')}
+>
+  <div class="w-full max-w-md h-full bg-white dark:bg-[#0B1626] ml-auto p-6 flex flex-col shadow-2xl overflow-y-auto">
+    <!-- Header inside drawer -->
+    <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-navy-700/60">
+      <a
+        href={path(lang, 'home')}
+        class="inline-block"
+        aria-label="Universitas Início"
+      >
+        <Logo variant="horizontal" class="h-8 text-navy-900 dark:text-white" />
+      </a>
+      <button
+        type="button"
+        data-mobile-menu-close
+        aria-label={t(lang, 'nav.close')}
+        class="p-2 rounded-lg text-ink-600 hover:text-navy-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-navy-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="flex-1 py-6 space-y-6">
+      <div>
+        <div class="text-xs font-bold uppercase tracking-wider text-ink-600 dark:text-gray-400 mb-2">
+          {t(lang, 'nav.audiences')}
+        </div>
+        <div class="space-y-1 pl-2">
+          {audienceLinks.map((link) => (
+            <a
+              href={link.href}
+              class="block py-2 text-base font-medium text-navy-900 dark:text-white hover:text-blue-500 transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="space-y-1">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block py-2.5 text-lg font-semibold text-navy-900 dark:text-white hover:text-blue-500 transition-colors"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <!-- Bottom Controls & CTA -->
+    <div class="pt-6 border-t border-gray-200 dark:border-navy-700/60 space-y-4">
+      <div class="flex items-center justify-between">
+        <LanguageSwitcher lang={lang} alternates={alternates} />
+        <ThemeToggle lang={lang} />
+      </div>
+      <Button
+        href={path(lang, 'contact')}
+        variant="primary"
+        size="md"
+        class="w-full justify-center"
+      >
+        {t(lang, 'cta.proposal')}
+      </Button>
+    </div>
+  </div>
+</dialog>

@@ -12,12 +12,13 @@
     "check": "astro check",
     "build": "npm run check:content && astro build",
     "build:preview": "node scripts/check-content.ts --allow-drafts && astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --ignore-lock",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "icons": "node scripts/generate-icons.ts",
+    "postinstall": "node scripts/patch-vite.js",
     "lhci": "lhci autorun"
   },
   "dependencies": {

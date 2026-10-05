@@ -1,0 +1,56 @@
+---
+import type { Locale } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+
+export interface Props {
+  lang: Locale;
+  class?: string;
+}
+
+const { lang, class: className = '' } = Astro.props;
+---
+
+<button
+  type="button"
+  data-theme-toggle
+  aria-label={t(lang, 'theme.toggle')}
+  class={`p-2 rounded-lg text-ink-600 hover:text-navy-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-navy-700/50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ${className}`}
+>
+  <!-- Sun icon (shown in dark mode) -->
+  <svg
+    class="w-5 h-5 hidden [html[data-theme='dark']_&]:block"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2"></path>
+    <path d="M12 20v2"></path>
+    <path d="m4.93 4.93 1.41 1.41"></path>
+    <path d="m17.66 17.66 1.41 1.41"></path>
+    <path d="M2 12h2"></path>
+    <path d="M20 12h2"></path>
+    <path d="m6.34 17.66-1.41 1.41"></path>
+    <path d="m19.07 4.93-1.41 1.41"></path>
+  </svg>
+  <!-- Moon icon (shown in light mode) -->
+  <svg
+    class="w-5 h-5 block [html[data-theme='dark']_&]:hidden"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+  </svg>
+  <span class="sr-only">{t(lang, 'theme.toggle')}</span>
+</button>
