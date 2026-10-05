@@ -31,6 +31,39 @@ faq:
     a: 'Sim. Podemos implantar em servidores institucionais, GitHub Pages gratuito ou serviços de nuvem de alta disponibilidade (Netlify, Vercel).'
   - q: 'Como garantem a longevidade e baixa manutenção do site?'
     a: 'Sites estáticos modernos em Astro ou Markdown dispensam bancos de dados pesados e plugins vulneráveis, funcionando por anos com custo quase zero de infraestrutura.'
+examples:
+  title: 'Exemplos de Sites Acadêmicos Criados'
+  items:
+    - title: 'Observatório da Extrema Direita Latino-Americana | OEDLA'
+      url: 'https://geraldohomero.github.io/oedla/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/oedla.png'
+        alt: 'Página inicial do Observatório da Extrema Direita Latino-Americana (OEDLA)'
+    - title: 'Laboratório Interdisciplinar em Inteligência Artificial | LABIIA'
+      url: 'https://geraldohomero.github.io/labiia/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/labiia.png'
+        alt: 'Portal do Laboratório Interdisciplinar em Inteligência Artificial (LABIIA)'
+    - title: 'II Seminário Discente do Programa de Pós-graduação em Ciência Política da Unicamp (2025)'
+      url: 'https://seminariodiscenteppgcp.wordpress.com/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/seminario.png'
+        alt: 'Website do II Seminário Discente PPGCP-Unicamp'
+    - title: 'Site de Análise de processos seletivos'
+      url: 'https://processo-seletivo-2024-2025.vercel.app/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/processo.png'
+        alt: 'Aplicação web de análise de processos seletivos'
+    - title: 'Site acadêmico profissional'
+      url: 'https://geraldohomero.github.io/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/site-profissional.png'
+        alt: 'Site acadêmico profissional'
+    - title: 'Texto em Voz'
+      url: 'https://app-masters-elevenlabs-project.vercel.app/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/texto-em-voz.png'
+        alt: 'Aplicação web de síntese de voz Texto em Voz'
 ---
 
 ## O que é

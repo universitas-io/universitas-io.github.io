@@ -32,6 +32,20 @@ faq:
     a: 'Yes. We work strictly with anonymized datasets and legitimate sources, adhering to LGPD, GDPR, and academic ethics board requirements.'
   - q: 'Do you ghostwrite papers or theses for clients?'
     a: 'No. Universitas provides methodological and statistical consulting. Authorship, writing, and analytical conclusions remain solely with the researcher.'
+examples:
+  title: 'Examples of Projects Delivered'
+  items:
+    - title: 'PhD Thesis — YouTube Data Collection and Topic Modeling'
+      url: 'https://github.com/geraldohomero/dh-youtube-database'
+      description: 'Large-scale collection and BERTopic modeling from 100,000 videos and 50 million comments structured in SQLite and Parquet.'
+    - title: 'Network Analysis and Clustering (Python & D3.js)'
+      images:
+        - src: '../../../assets/images/cases/network-clusters/graph.png'
+          alt: 'Global Map of the Network of Organizations'
+        - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
+          alt: 'Network of Articulations and Poles'
+        - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
+          alt: 'Bipartite Clustermap'
 ---
 
 ## Overview

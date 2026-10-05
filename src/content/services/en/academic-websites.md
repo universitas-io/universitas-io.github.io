@@ -31,6 +31,39 @@ faq:
     a: 'Yes. We can deploy to institutional university infrastructure, free GitHub Pages setups, or global serverless clouds (Netlify, Vercel).'
   - q: 'How do you guarantee long-term site sustainability?'
     a: 'Modern static architectures like Astro avoid bulky databases and vulnerable plugins, running reliably for years with near-zero maintenance overhead.'
+examples:
+  title: 'Examples of Academic Websites Created'
+  items:
+    - title: 'Latin American Far-Right Observatory | OEDLA'
+      url: 'https://geraldohomero.github.io/oedla/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/oedla.png'
+        alt: 'Homepage of the Latin American Far-Right Observatory (OEDLA)'
+    - title: 'Interdisciplinary Laboratory on Artificial Intelligence | LABIIA'
+      url: 'https://geraldohomero.github.io/labiia/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/labiia.png'
+        alt: 'Portal of the Interdisciplinary Laboratory on Artificial Intelligence (LABIIA)'
+    - title: 'II Graduate Student Seminar of the Unicamp Political Science Program (2025)'
+      url: 'https://seminariodiscenteppgcp.wordpress.com/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/seminario.png'
+        alt: 'Website of the II PPGCP-Unicamp Graduate Seminar'
+    - title: 'Selection Process Analysis Website'
+      url: 'https://processo-seletivo-2024-2025.vercel.app/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/processo.png'
+        alt: 'Web application for selection process analysis'
+    - title: 'Professional Academic Website'
+      url: 'https://geraldohomero.github.io/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/site-profissional.png'
+        alt: 'Professional academic website'
+    - title: 'Text-to-Speech'
+      url: 'https://app-masters-elevenlabs-project.vercel.app/'
+      image:
+        src: '../../../assets/images/cases/academic-sites/texto-em-voz.png'
+        alt: 'Text-to-speech web application'
 ---
 
 ## Overview

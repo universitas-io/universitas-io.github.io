@@ -31,6 +31,21 @@ faq:
     a: 'Yes. We set up automated ingestion schedules and direct queries connecting to SQL databases, REST APIs, or cloud spreadsheets.'
   - q: 'How do you ensure visual clarity and user adoption?'
     a: 'We follow core information design principles, prioritizing clean visual hierarchy, low cognitive load, and iterative user testing.'
+examples:
+  title: 'Examples of Dashboards Created'
+  items:
+    - title: 'Python and D3.js — Network and Cluster Visualization'
+      images:
+        - src: '../../../assets/images/cases/network-clusters/graph.png'
+          alt: 'Global Map of the Network of Organizations'
+        - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
+          alt: 'Network of Articulations and Poles'
+        - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
+          alt: 'Bipartite Clustermap'
+    - title: 'Power BI — LR Instalações Especiais'
+      image:
+        src: '../../../assets/images/cases/powerbi-lr/cover.png'
+        alt: 'Executive Power BI dashboard showing operational and financial indicators'
 ---
 
 ## Overview

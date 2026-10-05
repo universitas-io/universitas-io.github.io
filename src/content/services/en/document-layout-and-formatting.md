@@ -30,7 +30,14 @@ faq:
   - q: 'Can you manage and clean our Zotero or BibTeX library?'
     a: 'Yes. We verify DOIs, standardize author capitalization, fix missing journal metadata, and ensure exact consistency between citations and reference lists.'
   - q: 'What is the difference between copyediting and layout typesetting?'
-    a: 'Copyediting polishes text flow, grammar, and consistency. Typesetting handles geometry, page layout, typography, figure placement, and numbering. We deliver both in an integrated workflow.'
+    a: 'What is copyediting polishes text flow, grammar, and consistency. Typesetting handles geometry, page layout, typography, figure placement, and numbering. We deliver both in an integrated workflow.'
+examples:
+  title: 'Examples of Services Provided'
+  items:
+    - title: "Master's Dissertation"
+      url: 'https://www.academia.edu/88065978'
+    - title: 'Electronic Proceedings of the XXXIV UFJF History Week'
+      url: 'https://www.academia.edu/124845124/'
 ---
 
 ## Overview

@@ -32,6 +32,12 @@ faq:
     a: 'We extract data from YouTube, public government registries, academic databases, social media platforms, and specialized public web portals.'
   - q: 'Can your team handle large-scale data ingestion?'
     a: 'Yes. We have engineered pipelines processing over 100,000 videos and 50 million comments using distributed storage and indexed database architectures.'
+examples:
+  title: 'Examples of Projects Delivered'
+  items:
+    - title: 'PhD Thesis — YouTube Data Collection and Topic Modeling'
+      url: 'https://github.com/geraldohomero/dh-youtube-database'
+      description: 'Structured database of over 100,000 videos and 50 million comments across 49 YouTube channels, including full transcripts and metadata for quantitative and qualitative analysis using BERTopic.'
 ---
 
 ## Overview

@@ -30,6 +30,12 @@ faq:
     a: 'All personal identifiers are pseudonymized upon ingestion, informed consent workflows are strictly verified, and primary media files are encrypted at rest.'
   - q: 'Do you conduct interviews or only process existing transcripts?'
     a: 'We can assist with both: guide formulation, interview facilitation, transcription, and thematic/computational qualitative coding.'
+examples:
+  title: 'Examples of Projects Delivered'
+  items:
+    - title: 'Public Debates and Digital Discourse Analysis'
+      url: 'https://github.com/geraldohomero/dh-youtube-database'
+      description: 'Discourse community mapping, sentiment analysis, and qualitative narrative framing across extensive transcripts and comments.'
 ---
 
 ## Overview

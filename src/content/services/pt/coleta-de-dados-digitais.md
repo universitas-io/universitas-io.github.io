@@ -32,6 +32,12 @@ faq:
     a: 'Extraímos dados de YouTube, portais governamentais de transparência, redes sociais, diários oficiais, bases jurídicas e acervos acadêmicos abertos.'
   - q: 'Vocês conseguem lidar com grandes volumes de dados?'
     a: 'Sim. Já estruturamos projetos com mais de 100 mil vídeos e 50 milhões de comentários, utilizando arquiteturas otimizadas e bancos de dados relacionais robustos.'
+examples:
+  title: 'Exemplos de Projetos Realizados'
+  items:
+    - title: 'Tese de Doutorado — Coleta e Análise de Dados do YouTube'
+      url: 'https://github.com/geraldohomero/dh-youtube-database'
+      description: 'Base de dados com mais de 100 mil vídeos, 50 milhões de comentários de 49 canais do YouTube, incluindo transcrições e metadados estruturados para análise quantitativa e qualitativa e modelagem de tópicos com BERTopic.'
 ---
 
 ## O que é

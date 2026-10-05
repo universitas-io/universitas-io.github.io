@@ -31,6 +31,13 @@ faq:
     a: 'Sim. Higienizamos, organizamos e exportamos bases completas de referências com identificadores DOI verificados.'
   - q: 'Qual a diferença entre revisão ortográfica e diagramação?'
     a: 'A diagramação cuida do projeto gráfico, paginação, tipografia, alinhamento de figuras e tabelas e normas. A revisão textual verifica gramática, coesão e estilo. Oferecemos ambos os serviços de forma integrada.'
+examples:
+  title: 'Exemplos de Serviços Realizados'
+  items:
+    - title: 'Dissertação de Mestrado'
+      url: 'https://www.academia.edu/88065978'
+    - title: 'Anais Eletrônicos da XXXIV Semana de História da UFJF'
+      url: 'https://www.academia.edu/124845124/'
 ---
 
 ## O que é

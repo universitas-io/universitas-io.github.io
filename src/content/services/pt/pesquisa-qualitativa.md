@@ -30,6 +30,12 @@ faq:
     a: 'Garantimos o sigilo integral dos participantes por meio de pseudonimização, termo de consentimento livre e esclarecido (TCLE) e armazenamento criptografado de áudios e transcrições.'
   - q: 'Vocês realizam as entrevistas ou apenas a análise?'
     a: 'Podemos apoiar tanto na elaboração dos roteiros e condução de entrevistas/grupos focais quanto na transcrição, estruturação e análise interpretativa dos dados já coletados.'
+examples:
+  title: 'Exemplos de Projetos Realizados'
+  items:
+    - title: 'Análise de Debates Públicos e Redes Sociais'
+      url: 'https://github.com/geraldohomero/dh-youtube-database'
+      description: 'Mapeamento de comunidades discursivas, análise de sentimentos e enquadramentos temáticos em milhares de comentários e transcrições em profundidade.'
 ---
 
 ## O que é

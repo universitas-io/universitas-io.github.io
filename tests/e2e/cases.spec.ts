@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { expectA11y } from './helpers';
 
-test.describe('cases embedded inside respective services', () => {
+test.describe('simple project examples embedded inside respective services', () => {
   test('redirects legacy standalone case routes to corresponding service pages', async ({
     page
   }) => {
@@ -24,98 +24,149 @@ test.describe('cases embedded inside respective services', () => {
     await expect(page).toHaveURL(/\/en\/services\/academic-websites\/$/);
   });
 
-  test('dashboards service renders its cases inline below FAQ without linking away', async ({
+  test('diagramacao service renders simple clean list of project links', async ({
     page
   }) => {
-    await page.goto('/servicos/dashboards-e-visualizacao/');
+    await page.goto('/servicos/diagramacao-e-formatacao/');
 
-    // Section exists
-    const casesSection = page.locator(
+    const section = page.locator(
       'section[aria-labelledby="cases-showcase-heading"]'
     );
-    await expect(casesSection).toBeVisible();
+    await expect(section).toBeVisible();
     await expect(
-      casesSection.getByRole('heading', { name: /Exemplos de Projetos Realizados/ })
+      section.getByRole('heading', { name: /Exemplos de Serviços Realizados/ })
     ).toBeVisible();
 
-    // Check both dashboard cases are rendered inline
-    await expect(
-      casesSection.getByText(
-        'Dashboard de Inteligência Operacional em Power BI para LR Instalações Especiais'
-      )
-    ).toBeVisible();
-    await expect(
-      casesSection.getByText(
-        'Visualização Interativa de Redes Complexas e Clusterização com Python e D3.js'
-      )
-    ).toBeVisible();
+    const dissertacaoLink = section.getByRole('link', {
+      name: /Dissertação de Mestrado/
+    });
+    await expect(dissertacaoLink).toBeVisible();
+    await expect(dissertacaoLink).toHaveAttribute(
+      'href',
+      'https://www.academia.edu/88065978'
+    );
 
-    // Images rendered, including the specific gallery images for network clusters
-    await expect(
-      casesSection.getByRole('img', { name: 'Mapa Global da Rede de Organizações' })
-    ).toBeVisible();
-    await expect(
-      casesSection.getByRole('img', { name: 'Rede de Articulações e Polos' })
-    ).toBeVisible();
-    await expect(
-      casesSection.getByRole('img', { name: 'Clustermap Bipartido' })
-    ).toBeVisible();
-
-    // No links taking user to separate case pages
-    const standaloneLinks = casesSection.locator('a[href*="/casos/"]');
-    await expect(standaloneLinks).toHaveCount(0);
+    const anaisLink = section.getByRole('link', {
+      name: /Anais Eletrônicos da XXXIV Semana de História da UFJF/
+    });
+    await expect(anaisLink).toBeVisible();
+    await expect(anaisLink).toHaveAttribute(
+      'href',
+      'https://www.academia.edu/124845124/'
+    );
   });
 
-  test('academic websites service renders case body, gallery, and external links inline', async ({
+  test('academic websites service renders simple list with links and screenshots', async ({
     page
   }) => {
     await page.goto('/servicos/sites-academicos/');
 
-    const casesSection = page.locator(
+    const section = page.locator(
       'section[aria-labelledby="cases-showcase-heading"]'
     );
-    await expect(casesSection).toBeVisible();
+    await expect(section).toBeVisible();
     await expect(
-      casesSection.getByText(
-        'Desenvolvimento de Portais Acadêmicos e Observatórios de Pesquisa'
-      )
+      section.getByRole('heading', {
+        name: /Exemplos de Sites Acadêmicos Criados/
+      })
+    ).toBeVisible();
+
+    // Verify all 6 links
+    await expect(
+      section.getByRole('link', {
+        name: /Observatório da Extrema Direita Latino-Americana \| OEDLA/
+      })
+    ).toBeVisible();
+    await expect(
+      section.getByRole('link', {
+        name: /Laboratório Interdisciplinar em Inteligência Artificial \| LABIIA/
+      })
+    ).toBeVisible();
+    await expect(
+      section.getByRole('link', {
+        name: /II Seminário Discente do Programa de Pós-graduação em Ciência Política da Unicamp/
+      })
+    ).toBeVisible();
+    await expect(
+      section.getByRole('link', {
+        name: /Site de Análise de processos seletivos/
+      })
+    ).toBeVisible();
+    await expect(
+      section.getByRole('link', { name: /Site acadêmico profissional/ })
+    ).toBeVisible();
+    await expect(
+      section.getByRole('link', { name: /Texto em Voz/ })
     ).toBeVisible();
 
     // External links have rel noopener
-    const externalLinks = casesSection.locator('a[href^="http"]');
+    const externalLinks = section.locator('a[href^="http"]');
     const linkCount = await externalLinks.count();
     expect(linkCount).toBeGreaterThan(0);
     for (let i = 0; i < linkCount; i++) {
       await expect(externalLinks.nth(i)).toHaveAttribute('rel', /noopener/);
     }
+
+    // Screenshots rendered
+    const images = section.locator('img');
+    await expect(images).toHaveCount(6);
   });
 
-  test('cases do not appear on audience pages or services index', async ({
+  test('dashboards service renders its example projects and images below FAQ', async ({
     page
   }) => {
-    // Services index
+    await page.goto('/servicos/dashboards-e-visualizacao/');
+
+    const section = page.locator(
+      'section[aria-labelledby="cases-showcase-heading"]'
+    );
+    await expect(section).toBeVisible();
+    await expect(
+      section.getByRole('heading', {
+        name: /Exemplos de Dashboards Criados/
+      })
+    ).toBeVisible();
+
+    await expect(
+      section.getByText(/Python e D3.js — Visualização de Redes e Clusters/)
+    ).toBeVisible();
+    await expect(
+      section.getByText(/Power BI — LR Instalações Especiais/)
+    ).toBeVisible();
+
+    await expect(
+      section.getByRole('img', { name: 'Mapa Global da Rede de Organizações' })
+    ).toBeVisible();
+    await expect(
+      section.getByRole('img', { name: 'Rede de Articulações e Polos' })
+    ).toBeVisible();
+    await expect(
+      section.getByRole('img', { name: 'Clustermap Bipartido' })
+    ).toBeVisible();
+
+    // No links taking user to separate case pages
+    const standaloneLinks = section.locator('a[href*="/casos/"]');
+    await expect(standaloneLinks).toHaveCount(0);
+  });
+
+  test('examples do not appear on audience pages or services index', async ({
+    page
+  }) => {
     await page.goto('/servicos/');
     await expect(
       page.locator('section[aria-labelledby="cases-showcase-heading"]')
     ).toHaveCount(0);
-    await expect(
-      page.locator('section[aria-labelledby="services-cases-heading"]')
-    ).toHaveCount(0);
 
-    // Audience page
     await page.goto('/para/empresas/');
     await expect(
       page.locator('section[aria-labelledby="cases-showcase-heading"]')
     ).toHaveCount(0);
-    await expect(
-      page.locator('section[aria-labelledby="related-cases-heading"]')
-    ).toHaveCount(0);
   });
 
-  test('service page with embedded cases passes accessibility', async ({
+  test('service page with simple examples passes accessibility', async ({
     page
   }) => {
-    await page.goto('/servicos/dashboards-e-visualizacao/');
+    await page.goto('/servicos/sites-academicos/');
     await expectA11y(page);
   });
 });

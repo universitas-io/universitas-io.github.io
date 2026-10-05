@@ -32,6 +32,20 @@ faq:
     a: 'Sim. Trabalhamos exclusivamente com dados anonimizados ou de fontes legítimas, respeitando as exigências da LGPD e as diretrizes do sistema CEP/Conep quando aplicável.'
   - q: 'Vocês escrevem trabalhos ou teses no lugar do autor?'
     a: 'Não. A Universitas oferece consultoria metodológica e análise estatística. A autoria, redação integral e conclusões permanecem sob responsabilidade do pesquisador.'
+examples:
+  title: 'Exemplos de Projetos Realizados'
+  items:
+    - title: 'Tese de Doutorado — Coleta e Análise de Dados do YouTube'
+      url: 'https://github.com/geraldohomero/dh-youtube-database'
+      description: 'Coleta em larga escala e modelagem de tópicos com BERTopic a partir de 100 mil vídeos e 50 milhões de comentários estruturados em SQLite e Parquet.'
+    - title: 'Análise de Redes e Clusterização (Python e D3.js)'
+      images:
+        - src: '../../../assets/images/cases/network-clusters/graph.png'
+          alt: 'Mapa Global da Rede de Organizações'
+        - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
+          alt: 'Rede de Articulações e Polos'
+        - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
+          alt: 'Clustermap Bipartido'
 ---
 
 ## O que é

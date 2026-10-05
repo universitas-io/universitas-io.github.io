@@ -11,23 +11,51 @@ const commonSchema = z.object({
 
 const services = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/services' }),
-  schema: commonSchema.extend({
-    tier: z.enum(['core', 'complementary']),
-    order: z.number(),
-    icon: z.string(),
-    summary: z.string(),
-    audiences: z.array(z.string()).default([]),
-    tools: z.array(z.string()).default([]),
-    deliverables: z.array(z.string()).default([]),
-    faq: z
-      .array(
-        z.object({
-          q: z.string(),
-          a: z.string()
+  schema: ({ image }) =>
+    commonSchema.extend({
+      tier: z.enum(['core', 'complementary']),
+      order: z.number(),
+      icon: z.string(),
+      summary: z.string(),
+      audiences: z.array(z.string()).default([]),
+      tools: z.array(z.string()).default([]),
+      deliverables: z.array(z.string()).default([]),
+      faq: z
+        .array(
+          z.object({
+            q: z.string(),
+            a: z.string()
+          })
+        )
+        .default([]),
+      examples: z
+        .object({
+          title: z.string(),
+          description: z.string().optional(),
+          items: z.array(
+            z.object({
+              title: z.string(),
+              url: z.string().optional(),
+              description: z.string().optional(),
+              image: z
+                .object({
+                  src: image(),
+                  alt: z.string()
+                })
+                .optional(),
+              images: z
+                .array(
+                  z.object({
+                    src: image(),
+                    alt: z.string()
+                  })
+                )
+                .optional()
+            })
+          )
         })
-      )
-      .default([])
-  })
+        .optional()
+    })
 });
 
 const audiences = defineCollection({

@@ -31,6 +31,21 @@ faq:
     a: 'Sim. Estruturamos rotinas automatizadas de atualização conectadas a planilhas, bancos de dados SQL, APIs e sistemas ERP/CRM.'
   - q: 'Como garantem a usabilidade e clareza visual?'
     a: 'Aplicamos princípios rigorosos de design de informação (tuftean data-ink ratio), hierarquia visual e testes de usabilidade com os usuários finais.'
+examples:
+  title: 'Exemplos de Dashboards Criados'
+  items:
+    - title: 'Python e D3.js — Visualização de Redes e Clusters'
+      images:
+        - src: '../../../assets/images/cases/network-clusters/graph.png'
+          alt: 'Mapa Global da Rede de Organizações'
+        - src: '../../../assets/images/cases/network-clusters/rede-articulacoes-polos.png'
+          alt: 'Rede de Articulações e Polos'
+        - src: '../../../assets/images/cases/network-clusters/clustermap-bipartido.png'
+          alt: 'Clustermap Bipartido'
+    - title: 'Power BI — LR Instalações Especiais'
+      image:
+        src: '../../../assets/images/cases/powerbi-lr/cover.png'
+        alt: 'Painel executivo em Power BI com indicadores operacionais e financeiros'
 ---
 
 ## O que é
