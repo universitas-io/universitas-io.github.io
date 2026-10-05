@@ -11,6 +11,7 @@
     "check:content": "node scripts/check-content.ts",
     "check": "astro check",
     "build": "npm run check:content && astro build",
+    "build:preview": "node scripts/check-content.ts --allow-drafts && astro build",
     "preview": "astro preview",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
