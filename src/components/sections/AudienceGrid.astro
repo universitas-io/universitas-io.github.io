@@ -1,0 +1,78 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../../i18n/routes';
+import { path } from '../../i18n/routes';
+import { t } from '../../i18n/ui';
+import { entrySlug } from '../../lib/content';
+import Icon from '../ui/Icon.astro';
+
+export interface Props {
+  audiences: CollectionEntry<'audiences'>[];
+  lang: Locale;
+  heading?: string;
+  lead?: string;
+}
+
+const { audiences, lang, heading, lead } = Astro.props;
+---
+
+<div class="space-y-8">
+  {(heading || lead) && (
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      {heading && (
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-navy-900 dark:text-white tracking-tight">
+          {heading}
+        </h2>
+      )}
+      {lead && <p class="text-lg text-ink-600 dark:text-gray-300">{lead}</p>}
+    </div>
+  )}
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+    {audiences.map((aud) => {
+      const slug = entrySlug(aud.id);
+      const url = path(lang, 'audiences', slug);
+      return (
+        <article class="bg-white dark:bg-[#112239] rounded-2xl border border-gray-200 dark:border-navy-700/60 p-6 sm:p-8 flex flex-col justify-between hover:shadow-xl hover:border-blue-500/50 dark:hover:border-blue-500/40 transition-all duration-200 group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-blue-50 dark:bg-navy-900/80 flex items-center justify-center text-[#1a6ca8] dark:text-blue-400 mb-6 group-hover:scale-105 transition-transform">
+              <Icon name={aud.data.icon} size={28} />
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold font-display text-navy-900 dark:text-white mb-3 group-hover:text-[#1a6ca8] dark:group-hover:text-blue-400 transition-colors">
+              <a href={url} class="focus:outline-none focus:underline">
+                {aud.data.title}
+              </a>
+            </h3>
+
+            <p class="text-ink-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+              {aud.data.summary}
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-gray-100 dark:border-navy-700/40">
+            <a
+              href={url}
+              class="inline-flex items-center gap-2 text-sm font-semibold text-[#1a6ca8] hover:text-blue-700 dark:text-blue-400 group-hover:translate-x-1 transition-transform"
+            >
+              <span>{t(lang, 'cta.more')}</span>
+              <svg
+                class="w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+</div>

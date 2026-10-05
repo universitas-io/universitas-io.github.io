@@ -9,6 +9,7 @@ import {
   person,
   aboutPage,
   contactPage,
+  webPage,
   graph
 } from '../../src/lib/seo/jsonld';
 import { site } from '../../site.config';
@@ -131,6 +132,19 @@ test('aboutPage and contactPage JSON-LD structure', () => {
   expect(contact).toMatchObject({
     '@type': 'ContactPage',
     url: `${site.url}/contato/`,
+    inLanguage: 'pt-BR'
+  });
+
+  const web = webPage({
+    name: 'Pesquisa para a Academia',
+    description: 'Apoio metodológico',
+    pathname: '/para/academia/',
+    lang: 'pt'
+  });
+  expect(web).toMatchObject({
+    '@type': 'WebPage',
+    name: 'Pesquisa para a Academia',
+    url: `${site.url}/para/academia/`,
     inLanguage: 'pt-BR'
   });
 });

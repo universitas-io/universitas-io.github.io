@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  getLocalized,
+  translationOf,
+  entrySlug,
+  byTranslationKeys
+} from '../../../lib/content';
+import { path } from '../../../i18n/routes';
+import AudienceView from '../../../views/AudienceView.astro';
+
+export async function getStaticPaths() {
+  const audiences = await getLocalized('audiences', 'en');
+
+  const paths = await Promise.all(
+    audiences.map(async (audience) => {
+      const slug = entrySlug(audience.id);
+      const ptPair = await translationOf(audience, 'pt');
+
+      const alternates: { en: string; pt?: string } = {
+        en: path('en', 'audiences', slug)
+      };
+      if (ptPair) {
+        alternates.pt = path('pt', 'audiences', entrySlug(ptPair.id));
+      }
+
+      const relatedServices = await byTranslationKeys(
+        'services',
+        audience.data.services,
+        'en'
+      );
+
+      return {
+        params: { slug },
+        props: { audience, alternates, relatedServices }
+      };
+    })
+  );
+
+  return paths;
+}
+
+export interface Props {
+  audience: CollectionEntry<'audiences'>;
+  alternates: { en: string; pt?: string };
+  relatedServices: CollectionEntry<'services'>[];
+}
+
+const { audience, alternates, relatedServices } = Astro.props;
+---
+
+<AudienceView
+  audience={audience}
+  lang="en"
+  alternates={alternates}
+  relatedServices={relatedServices}
+/>

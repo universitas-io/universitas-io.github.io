@@ -7,6 +7,8 @@ import Button from '../ui/Button.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
+import { getLocalized, entrySlug } from '../../lib/content';
+
 export interface Props {
   lang: Locale;
   alternates?: Partial<Record<Locale, string>>;
@@ -14,20 +16,21 @@ export interface Props {
 
 const { lang, alternates = {} } = Astro.props;
 
-const audienceLinks = [
-  {
-    name: lang === 'pt' ? 'Academia' : 'Academia',
-    href: lang === 'pt' ? '/para/academia/' : '/en/for/academia/'
-  },
-  {
-    name: lang === 'pt' ? 'Empresas' : 'Business',
-    href: lang === 'pt' ? '/para/empresas/' : '/en/for/business/'
-  },
-  {
-    name: lang === 'pt' ? 'Setor Público' : 'Public Sector',
-    href: lang === 'pt' ? '/para/setor-publico/' : '/en/for/public-sector/'
-  }
-];
+const audiences = await getLocalized('audiences', lang);
+const audienceShortNames: Record<string, Record<Locale, string>> = {
+  academia: { pt: 'Academia', en: 'Academia' },
+  business: { pt: 'Empresas', en: 'Business' },
+  'public-sector': { pt: 'Setor Público', en: 'Public Sector' }
+};
+
+const audienceLinks = audiences.map((aud) => {
+  const slug = entrySlug(aud.id);
+  const key = aud.data.translationKey;
+  return {
+    name: audienceShortNames[key]?.[lang] ?? aud.data.title,
+    href: path(lang, 'audiences', slug)
+  };
+});
 
 const homePath = path(lang, 'home');
 const servicesPath = path(lang, 'services');

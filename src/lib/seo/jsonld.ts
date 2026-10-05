@@ -186,6 +186,22 @@ export function contactPage(options: {
   };
 }
 
+export function webPage(options: {
+  name: string;
+  description: string;
+  pathname: string;
+  lang: Locale;
+}): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: options.name,
+    description: options.description,
+    url: new URL(options.pathname, site.url).href,
+    inLanguage: options.lang === 'pt' ? 'pt-BR' : 'en'
+  };
+}
+
 export function graph(
   ...nodes: Record<string, unknown>[]
 ): Record<string, unknown> {

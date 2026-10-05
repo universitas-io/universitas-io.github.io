@@ -1,0 +1,155 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import type { Locale } from '../i18n/routes';
+import { path } from '../i18n/routes';
+import { t } from '../i18n/ui';
+import { entrySlug } from '../lib/content';
+import {
+  webPage as makeWebPageSchema,
+  faqPage as makeFaqSchema
+} from '../lib/seo/jsonld';
+import PageLayout from '../layouts/PageLayout.astro';
+import ServiceGrid from '../components/sections/ServiceGrid.astro';
+import Faq from '../components/sections/Faq.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+export interface Props {
+  audience: CollectionEntry<'audiences'>;
+  lang: Locale;
+  alternates: Partial<Record<Locale, string>>;
+  relatedServices: CollectionEntry<'services'>[];
+}
+
+const { audience, lang, alternates, relatedServices } = Astro.props;
+
+const { Content } = await render(audience);
+
+const slug = entrySlug(audience.id);
+const currentPath = path(lang, 'audiences', slug);
+
+const crumbs = [
+  { name: t(lang, 'breadcrumb.home'), pathname: path(lang, 'home') },
+  { name: audience.data.title, pathname: currentPath }
+];
+
+const jsonLd: Record<string, unknown>[] = [
+  makeWebPageSchema({
+    name: audience.data.title,
+    description: audience.data.description,
+    pathname: currentPath,
+    lang
+  })
+];
+
+if (audience.data.faq && audience.data.faq.length > 0) {
+  jsonLd.push(makeFaqSchema(audience.data.faq));
+}
+---
+
+<PageLayout
+  lang={lang}
+  title={audience.data.title}
+  description={audience.data.description}
+  pathname={currentPath}
+  alternates={alternates}
+  heading={audience.data.title}
+  lead={audience.data.summary}
+  eyebrow={lang === 'pt' ? 'Para quem' : 'For whom'}
+  crumbs={crumbs}
+  jsonLd={jsonLd}
+>
+  <div class="space-y-16 sm:space-y-20">
+    <!-- Pain Points / Challenges -->
+    {audience.data.painPoints && audience.data.painPoints.length > 0 && (
+      <section class="space-y-8" aria-labelledby="pain-points-heading">
+        <div class="space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1a6ca8] dark:text-blue-400">
+            {lang === 'pt' ? 'Diagnóstico Inicial' : 'Initial Diagnostic'}
+          </span>
+          <h2
+            id="pain-points-heading"
+            class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+          >
+            {lang === 'pt' ? 'Desafios que resolvemos' : 'Challenges We Solve'}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {audience.data.painPoints.map((point) => (
+            <div class="p-5 sm:p-6 rounded-xl bg-surface-alt dark:bg-navy-700/30 border border-gray-200/80 dark:border-navy-700/60 flex items-start gap-4">
+              <div class="shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 text-[#1a6ca8] dark:text-blue-400 flex items-center justify-center mt-0.5">
+                <svg
+                  class="w-5 h-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-11.25a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 1.5 0v-4.5Zm0 7.5a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm sm:text-base font-medium text-navy-900 dark:text-gray-200 leading-relaxed">
+                {point}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Detailed Approach / Body Content -->
+    <section
+      class="space-y-6 pt-8 border-t border-gray-200 dark:border-navy-700/60"
+      aria-labelledby="approach-heading"
+    >
+      <article class="prose prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:tracking-tight prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:font-bold prose-h2:text-navy-900 dark:prose-h2:text-white prose-p:text-ink-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-li:text-ink-600 dark:prose-li:text-gray-300">
+        <Content />
+      </article>
+    </section>
+
+    <!-- Recommended Services Section -->
+    {relatedServices.length > 0 && (
+      <section
+        class="space-y-8 pt-8 border-t border-gray-200 dark:border-navy-700/60"
+        aria-labelledby="services-heading"
+      >
+        <div class="space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1e7e4e] dark:text-green-400">
+            {lang === 'pt' ? 'Metodologias Aplicadas' : 'Applied Methodologies'}
+          </span>
+          <h2
+            id="services-heading"
+            class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
+          >
+            {lang === 'pt' ? 'Serviços recomendados' : 'Recommended Services'}
+          </h2>
+        </div>
+
+        <ServiceGrid services={relatedServices} lang={lang} tier="all" />
+      </section>
+    )}
+
+    <!-- Related Cases (Placeholder to be connected in Task 9) -->
+    <div id="related-cases" class="hidden"></div>
+
+    <!-- FAQ Section -->
+    {audience.data.faq && audience.data.faq.length > 0 && (
+      <section
+        class="pt-8 border-t border-gray-200 dark:border-navy-700/60"
+        aria-labelledby="faq-heading"
+      >
+        <Faq items={audience.data.faq} lang={lang} />
+      </section>
+    )}
+
+    <!-- CTA Banner -->
+    <div class="pt-8">
+      <CtaBanner lang={lang} />
+    </div>
+  </div>
+</PageLayout>
