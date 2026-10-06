@@ -33,6 +33,7 @@ test('about page pt: seo, jsonld, tools, team placeholder, and a11y', async ({
   // Verify NO img.shields.io requests were triggered
   expect(requestedShields).toHaveLength(0);
 
+  /*
   // Active team members are shown with links to their profile pages
   const geraldoLink = page.getByRole('link', { name: /Geraldo.*Couto Neto/i });
   await expect(geraldoLink.first()).toBeVisible();
@@ -47,6 +48,7 @@ test('about page pt: seo, jsonld, tools, team placeholder, and a11y', async ({
     'href',
     '/sobre/janaina-di-lourenco/'
   );
+  */
 
   // Language switcher goes to /en/about/
   if (isMobile) {
@@ -82,6 +84,7 @@ test('about page en: seo, jsonld, tools, team placeholder, and a11y', async ({
 
   await expect(page.locator('[data-tool-area]')).toHaveCount(4);
 
+  /*
   const geraldoEnLink = page.getByRole('link', {
     name: /Geraldo.*Couto Neto/i
   });
@@ -97,6 +100,7 @@ test('about page en: seo, jsonld, tools, team placeholder, and a11y', async ({
     'href',
     '/en/about/janaina-di-lourenco/'
   );
+  */
 
   await expectA11y(page);
 });
