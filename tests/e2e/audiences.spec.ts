@@ -68,10 +68,16 @@ for (const [pt, en] of audiencePairs) {
 
 test('audience pages display new text-editing service', async ({ page }) => {
   await page.goto('/para/academia/');
-  await expect(page.locator('a[href*="/servicos/revisao-textual/"]').first()).toBeVisible();
+  await expect(
+    page.locator('a[href*="/servicos/revisao-textual/"]').first()
+  ).toBeVisible();
 
   await page.goto('/en/for/academia/');
-  await expect(page.locator('a[href*="/en/services/text-editing-and-proofreading/"]').first()).toBeVisible();
+  await expect(
+    page
+      .locator('a[href*="/en/services/text-editing-and-proofreading/"]')
+      .first()
+  ).toBeVisible();
 });
 
 test('audience pages a11y', async ({ page }) => {

@@ -1,10 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { expectSeo, expectA11y, expectJsonLdTypes } from './helpers';
 
-test('services index lists 3 categories with 7 services total', async ({ page }) => {
+test('services index lists 3 categories with 7 services total', async ({
+  page
+}) => {
   await page.goto('/servicos/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(/Serviços/);
-  await expect(page.locator('[data-tier="research-data"] article')).toHaveCount(3);
+  await expect(page.locator('[data-tier="research-data"] article')).toHaveCount(
+    3
+  );
   await expect(
     page.locator('[data-tier="visualization-dissemination"] article')
   ).toHaveCount(2);
@@ -59,7 +63,5 @@ test('text editing service displays ai humanization faq', async ({ page }) => {
   ).toBeVisible();
 
   await page.goto('/en/services/text-editing-and-proofreading/');
-  await expect(
-    page.getByText(/AI writing patterns/i).first()
-  ).toBeVisible();
+  await expect(page.getByText(/AI writing patterns/i).first()).toBeVisible();
 });

@@ -2,9 +2,7 @@ import { test, expect } from '@playwright/test';
 import { expectSeo, expectA11y, expectJsonLdTypes } from './helpers';
 
 test.describe('insights preview (production mode - port 4321)', () => {
-  test('pt index lists published articles and valid seo', async ({
-    page
-  }) => {
+  test('pt index lists published articles and valid seo', async ({ page }) => {
     await page.goto('/insights/');
 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(
@@ -33,9 +31,7 @@ test.describe('insights preview (production mode - port 4321)', () => {
     await expectA11y(page);
   });
 
-  test('en index lists published articles and valid seo', async ({
-    page
-  }) => {
+  test('en index lists published articles and valid seo', async ({ page }) => {
     await page.goto('/en/insights/');
 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(
@@ -67,7 +63,9 @@ test.describe('insights preview (production mode - port 4321)', () => {
   test('pt rss feed is valid xml', async ({ request }) => {
     const response = await request.get('/insights/rss.xml');
     expect(response.ok()).toBe(true);
-    expect(response.headers()['content-type']).toMatch(/(application|text)\/xml/);
+    expect(response.headers()['content-type']).toMatch(
+      /(application|text)\/xml/
+    );
 
     const body = await response.text();
     expect(body).toContain('<?xml');
@@ -78,7 +76,9 @@ test.describe('insights preview (production mode - port 4321)', () => {
   test('en rss feed is valid xml', async ({ request }) => {
     const response = await request.get('/en/insights/rss.xml');
     expect(response.ok()).toBe(true);
-    expect(response.headers()['content-type']).toMatch(/(application|text)\/xml/);
+    expect(response.headers()['content-type']).toMatch(
+      /(application|text)\/xml/
+    );
 
     const body = await response.text();
     expect(body).toContain('<?xml');
