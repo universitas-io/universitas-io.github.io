@@ -2,7 +2,7 @@
 title: 'Website Design & Development'
 description: 'Fast, responsive, and modern website development for scholars, companies, NGOs, and institutions, from online CVs to comprehensive web portals.'
 translationKey: 'academic-websites'
-tier: 'complementary'
+tier: 'visualization-dissemination'
 order: 5
 icon: 'lucide:globe'
 summary: 'Modern, accessible, and responsive website development for any purpose: corporate portals, academic CV websites, research labs, conferences, and NGOs.'

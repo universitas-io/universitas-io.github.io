@@ -13,7 +13,13 @@ const services = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/services' }),
   schema: ({ image }) =>
     commonSchema.extend({
-      tier: z.enum(['core', 'complementary']),
+      tier: z.enum([
+        'research-data',
+        'visualization-dissemination',
+        'editorial-review',
+        'core',
+        'complementary'
+      ]),
       order: z.number(),
       icon: z.string(),
       summary: z.string(),

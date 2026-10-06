@@ -2,7 +2,7 @@
 title: 'Qualitative Research'
 description: 'Content analysis, discourse analysis, systematic coding in NVivo and ATLAS.ti, and qualitative network mapping with method and ethics.'
 translationKey: 'qualitative'
-tier: 'core'
+tier: 'research-data'
 order: 2
 icon: 'lucide:messages-square'
 summary: 'In-depth qualitative inquiry, thematic analysis, and discourse mapping with CAQDAS software to understand human meanings and social dynamics.'

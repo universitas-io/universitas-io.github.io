@@ -17,6 +17,7 @@ services:
   - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
+  - 'text-editing'
 faq:
   - q: 'Does Universitas tailor research design to non-profit budgets and grant milestones?'
     a: 'Yes. We create tiered, modular scopes that leverage open secondary data alongside targeted field collection to maximize analytical return on grant funding.'

@@ -2,7 +2,7 @@
 title: 'Dashboards e Visualização'
 description: 'Painéis interativos em Power BI, Tableau e Python/D3.js integrados a bancos de dados para monitoramento estratégico e tomada de decisões.'
 translationKey: 'dashboards'
-tier: 'complementary'
+tier: 'visualization-dissemination'
 order: 4
 icon: 'lucide:layout-dashboard'
 summary: 'Desenvolvimento de dashboards dinâmicos e intuitivos que transformam dados complexos em indicadores visuais claros para tomada de decisão.'

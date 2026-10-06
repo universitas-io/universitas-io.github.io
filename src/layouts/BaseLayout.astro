@@ -58,12 +58,12 @@ const defaultFallback = pathname.startsWith('/insights/')
       : pathname.startsWith('/en/services/')
         ? '/servicos/'
         : pathname.startsWith('/para/')
-              ? '/en/for/'
-              : pathname.startsWith('/en/for/')
-                ? '/para/'
-                : targetLang === 'en'
-                  ? '/en/'
-                  : '/';
+          ? '/en/for/'
+          : pathname.startsWith('/en/for/')
+            ? '/para/'
+            : targetLang === 'en'
+              ? '/en/'
+              : '/';
 ---
 
 <!doctype html>

@@ -17,6 +17,7 @@ services:
   - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
+  - 'text-editing'
 faq:
   - q: 'Vocês escrevem a dissertação, tese ou artigo por mim?'
     a: 'Não. A Universitas atua estritamente como consultoria técnico-metodológica. A autoria, redação integral e conclusões permanecem sob responsabilidade do pesquisador, preservando a integridade acadêmica.'

@@ -4,6 +4,8 @@ import { path } from '../../i18n/routes';
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import NetworkPattern from '../ui/NetworkPattern.astro';
+import Icon from '../ui/Icon.astro';
+import { site } from '../../../site.config';
 
 export interface Props {
   lang: Locale;
@@ -61,6 +63,45 @@ const servicesUrl = path(lang, 'services');
         <Button href={servicesUrl} variant="outline" size="lg">
           {content.secondaryCta}
         </Button>
+        {(site.social.linkedin || site.social.instagram) && (
+          <div
+            class="flex items-center gap-2.5 sm:pl-2"
+            aria-label={lang === 'pt' ? 'Redes sociais' : 'Social media'}
+          >
+            {site.social.linkedin && (
+              <a
+                href={site.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="w-12 h-12 rounded-lg flex items-center justify-center text-navy-900 dark:text-gray-200 hover:text-[#1a6ca8] dark:hover:text-blue-400 bg-white dark:bg-navy-800/80 hover:bg-blue-50/60 dark:hover:bg-navy-700/80 transition-colors border border-navy-700/20 dark:border-white/20 shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <Icon
+                  name="simple-icons:linkedin"
+                  size={20}
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                />
+              </a>
+            )}
+            {site.social.instagram && (
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="w-12 h-12 rounded-lg flex items-center justify-center text-navy-900 dark:text-gray-200 hover:text-[#1a6ca8] dark:hover:text-blue-400 bg-white dark:bg-navy-800/80 hover:bg-blue-50/60 dark:hover:bg-navy-700/80 transition-colors border border-navy-700/20 dark:border-white/20 shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <Icon
+                  name="simple-icons:instagram"
+                  size={20}
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                />
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   </Container>

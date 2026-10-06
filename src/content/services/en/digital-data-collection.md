@@ -2,7 +2,7 @@
 title: 'Digital Data Collection'
 description: 'Ethical web scraping, official API extraction, and large-scale data structuring for social media and open web repositories, adhering to LGPD/GDPR.'
 translationKey: 'digital-data'
-tier: 'core'
+tier: 'research-data'
 order: 3
 icon: 'lucide:database'
 summary: 'Automated extraction, structuring, and enrichment of digital and social media data grounded in technical rigor and legal compliance.'

@@ -17,6 +17,7 @@ services:
   - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
+  - 'text-editing'
 faq:
   - q: 'Vocês emitem nota fiscal para empresas?'
     a: 'Sim. Emitimos nota fiscal eletrônica de serviços para pessoas jurídicas, com faturamento compatível com processos de compras corporativas.'

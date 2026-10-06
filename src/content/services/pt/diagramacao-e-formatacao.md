@@ -2,8 +2,8 @@
 title: 'Diagramação e Formatação'
 description: 'Formatação e diagramação profissional de teses, dissertações, anais e livros em normas ABNT, APA, Chicago e Vancouver, com LaTeX e InDesign.'
 translationKey: 'document-formatting'
-tier: 'complementary'
-order: 6
+tier: 'editorial-review'
+order: 7
 icon: 'lucide:file-text'
 summary: 'Diagramação e padronização editorial de documentos acadêmicos e técnicos, com rigor tipográfico e conformidade estrita às normas científicas.'
 audiences:

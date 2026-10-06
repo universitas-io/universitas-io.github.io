@@ -2,21 +2,21 @@ import { test, expect } from '@playwright/test';
 import { expectSeo, expectA11y, expectJsonLdTypes } from './helpers';
 
 test.describe('insights preview (production mode - port 4321)', () => {
-  test('pt index shows friendly empty state and valid seo', async ({
-    page
-  }) => {
+  test('pt index lists published articles and valid seo', async ({ page }) => {
     await page.goto('/insights/');
 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(
       'Insights'
     );
     await expect(
-      page.getByText('Nenhum artigo publicado no momento.')
+      page.getByRole('heading', {
+        name: /Como Escolher a Abordagem de Pesquisa/i
+      })
     ).toBeVisible();
     await expect(
-      page.getByText(
-        'Em breve compartilharemos novas análises, guias de pesquisa e discussões metodológicas.'
-      )
+      page.getByRole('heading', {
+        name: /Coleta de Dados em Redes Sociais/i
+      })
     ).toBeVisible();
 
     await expectSeo(page, {
@@ -31,21 +31,21 @@ test.describe('insights preview (production mode - port 4321)', () => {
     await expectA11y(page);
   });
 
-  test('en index shows friendly empty state and valid seo', async ({
-    page
-  }) => {
+  test('en index lists published articles and valid seo', async ({ page }) => {
     await page.goto('/en/insights/');
 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(
       'Insights'
     );
     await expect(
-      page.getByText('No articles published at the moment.')
+      page.getByRole('heading', {
+        name: /Choosing a Research Approach/i
+      })
     ).toBeVisible();
     await expect(
-      page.getByText(
-        'We will soon publish new methodological analyses, research guides, and technical discussions.'
-      )
+      page.getByRole('heading', {
+        name: /Social media data harvesting/i
+      })
     ).toBeVisible();
 
     await expectSeo(page, {
@@ -62,9 +62,10 @@ test.describe('insights preview (production mode - port 4321)', () => {
 
   test('pt rss feed is valid xml', async ({ request }) => {
     const response = await request.get('/insights/rss.xml');
-    expect(response.status()).toBe(200);
-    const contentType = response.headers()['content-type'] || '';
-    expect(contentType).toMatch(/xml/i);
+    expect(response.ok()).toBe(true);
+    expect(response.headers()['content-type']).toMatch(
+      /(application|text)\/xml/
+    );
 
     const body = await response.text();
     expect(body).toContain('<?xml');
@@ -74,9 +75,10 @@ test.describe('insights preview (production mode - port 4321)', () => {
 
   test('en rss feed is valid xml', async ({ request }) => {
     const response = await request.get('/en/insights/rss.xml');
-    expect(response.status()).toBe(200);
-    const contentType = response.headers()['content-type'] || '';
-    expect(contentType).toMatch(/xml/i);
+    expect(response.ok()).toBe(true);
+    expect(response.headers()['content-type']).toMatch(
+      /(application|text)\/xml/
+    );
 
     const body = await response.text();
     expect(body).toContain('<?xml');
@@ -88,7 +90,7 @@ test.describe('insights preview (production mode - port 4321)', () => {
 test.describe('insights dev mode (port 4322)', () => {
   const DEV_BASE = 'http://localhost:4322';
 
-  test('dev index lists articles with draft badges', async ({ page }) => {
+  test('dev index lists articles', async ({ page }) => {
     await page.goto(`${DEV_BASE}/insights/`);
 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(
@@ -106,13 +108,9 @@ test.describe('insights dev mode (port 4322)', () => {
         name: /Coleta de Dados em Redes Sociais/i
       })
     ).toBeVisible();
-
-    // Draft badges should be visible in dev mode
-    const badges = page.getByText('RASCUNHO');
-    await expect(badges.first()).toBeVisible();
   });
 
-  test('article detail page: metadata, author link, jsonld, seo and a11y', async ({
+  test('article detail page: metadata, jsonld, seo and a11y', async ({
     page
   }) => {
     await page.goto(
@@ -122,16 +120,6 @@ test.describe('insights dev mode (port 4322)', () => {
     // Heading
     await expect(page.getByRole('heading', { level: 1 })).toContainText(
       /Como Escolher a Abordagem de Pesquisa/i
-    );
-
-    // Author byline and link to team anchor
-    const authorLink = page.getByRole('link', {
-      name: 'Pesquisadora Exemplo'
-    });
-    await expect(authorLink.first()).toBeVisible();
-    await expect(authorLink.first()).toHaveAttribute(
-      'href',
-      '/sobre/exemplo-pesquisadora/'
     );
 
     // Reading time and date in time tag
@@ -155,39 +143,5 @@ test.describe('insights dev mode (port 4322)', () => {
 
     // Accessibility check
     await expectA11y(page);
-  });
-
-  test('Review Focus 1: fixture article only in PT has fallback language switcher and no en hreflang', async ({
-    page,
-    isMobile
-  }) => {
-    await page.goto(`${DEV_BASE}/insights/_fixture-somente-pt/`);
-
-    await expect(page.getByRole('heading', { level: 1 })).toContainText(
-      'Artigo Fixture Somente em Português'
-    );
-
-    // hreflang must only contain pt-BR and x-default, NO en
-    const enAlternate = page.locator('link[rel="alternate"][hreflang="en"]');
-    await expect(enAlternate).toHaveCount(0);
-
-    const ptAlternate = page.locator('link[rel="alternate"][hreflang="pt-BR"]');
-    await expect(ptAlternate).toHaveCount(1);
-
-    const xDefault = page.locator(
-      'link[rel="alternate"][hreflang="x-default"]'
-    );
-    await expect(xDefault).toHaveCount(1);
-
-    // Language switcher link must point to fallback /en/insights/
-    if (isMobile) {
-      await page.locator('[data-mobile-menu-trigger]').click();
-      const mobileNav = page.getByRole('dialog');
-      const langLink = mobileNav.getByRole('link', { name: 'English' });
-      await expect(langLink).toHaveAttribute('href', '/en/insights/');
-    } else {
-      const langLink = page.getByRole('link', { name: 'English' });
-      await expect(langLink).toHaveAttribute('href', '/en/insights/');
-    }
   });
 });

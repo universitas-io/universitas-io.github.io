@@ -2,7 +2,7 @@
 title: 'Quantitative Research'
 description: 'Statistical modeling, hypothesis testing, and reproducible data analysis in R and Python for universities, businesses, and government.'
 translationKey: 'quantitative'
-tier: 'core'
+tier: 'research-data'
 order: 1
 icon: 'lucide:bar-chart-3'
 summary: 'Advanced statistical modeling, predictive analysis, and structured hypothesis testing for data-informed decision-making.'

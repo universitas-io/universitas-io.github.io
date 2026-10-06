@@ -2,7 +2,7 @@
 title: 'Criação e Desenvolvimento de Sites'
 description: 'Desenvolvimento de sites modernos, rápidos e responsivos para pessoas, empresas, ONGs e academia, de currículos online (CVs) a portais completos.'
 translationKey: 'academic-websites'
-tier: 'complementary'
+tier: 'visualization-dissemination'
 order: 5
 icon: 'lucide:globe'
 summary: 'Desenvolvimento de sites modernos, acessíveis e responsivos para qualquer finalidade: portais corporativos, currículos online (sites CV), laboratórios, eventos e ONGs.'

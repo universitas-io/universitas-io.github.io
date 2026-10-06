@@ -33,7 +33,7 @@ for (const [pt, en] of audiencePairs) {
 
     // Check audiences dropdown links in header / mobile menu
     if (isMobile) {
-      await page.getByRole('button', { name: /menu/i }).click();
+      await page.locator('[data-mobile-menu-trigger]').click();
       const mobileNav = page.getByRole('dialog');
       await expect(
         mobileNav.getByRole('link', { name: 'Academia', exact: true })
@@ -65,6 +65,20 @@ for (const [pt, en] of audiencePairs) {
     await expect(page).toHaveURL(new RegExp(`/en/for/${en}/$`));
   });
 }
+
+test('audience pages display new text-editing service', async ({ page }) => {
+  await page.goto('/para/academia/');
+  await expect(
+    page.locator('a[href*="/servicos/revisao-textual/"]').first()
+  ).toBeVisible();
+
+  await page.goto('/en/for/academia/');
+  await expect(
+    page
+      .locator('a[href*="/en/services/text-editing-and-proofreading/"]')
+      .first()
+  ).toBeVisible();
+});
 
 test('audience pages a11y', async ({ page }) => {
   await page.goto('/para/academia/');

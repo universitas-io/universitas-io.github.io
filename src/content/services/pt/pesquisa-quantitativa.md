@@ -2,7 +2,7 @@
 title: 'Pesquisa Quantitativa'
 description: 'Modelagem estatística, testes de hipóteses e análise de dados em R e Python para academia, empresas e setor público com rigor e reprodutibilidade.'
 translationKey: 'quantitative'
-tier: 'core'
+tier: 'research-data'
 order: 1
 icon: 'lucide:bar-chart-3'
 summary: 'Análise estatística avançada, modelagem preditiva e testes de hipóteses estruturados para decisões fundamentadas em dados.'

@@ -12,17 +12,178 @@ export function initContactForm(): void {
   const btnSpinner =
     submitBtn?.querySelector<HTMLElement>('[data-btn-spinner]');
 
+  const emailInput = form.querySelector<HTMLInputElement>('#contact-email');
+  const emailError = form.querySelector<HTMLElement>('#contact-email-error');
+  const phoneInput = form.querySelector<HTMLInputElement>('#contact-phone');
+  const phoneError = form.querySelector<HTMLElement>('#contact-phone-error');
+
   const lang = (form.getAttribute('data-lang') || 'pt') as 'pt' | 'en';
   const whatsappNumber = form.getAttribute('data-whatsapp') || '551992400792';
   const contactEmail =
-    form.getAttribute('data-email') || 'geraldohomero+universitas@pm.me';
+    form.getAttribute('data-email') || 'universitas.contato@gmail.com';
 
   const defaultBtnText =
     btnText?.textContent ||
     (lang === 'pt' ? 'Enviar solicitação' : 'Send proposal inquiry');
 
+  function setFieldError(
+    input: HTMLInputElement,
+    errorEl: HTMLElement | null,
+    message: string
+  ): void {
+    input.classList.add(
+      'border-red-500',
+      'dark:border-red-500',
+      'focus:ring-red-500'
+    );
+    input.setAttribute('aria-invalid', 'true');
+    if (errorEl) {
+      errorEl.textContent = message;
+      errorEl.classList.remove('hidden');
+    }
+  }
+
+  function clearFieldError(
+    input: HTMLInputElement,
+    errorEl: HTMLElement | null
+  ): void {
+    input.classList.remove(
+      'border-red-500',
+      'dark:border-red-500',
+      'focus:ring-red-500'
+    );
+    input.removeAttribute('aria-invalid');
+    if (errorEl) {
+      errorEl.textContent = '';
+      errorEl.classList.add('hidden');
+    }
+  }
+
+  function validateEmail(): boolean {
+    if (!emailInput) return true;
+    const val = emailInput.value.trim();
+    if (!val) {
+      if (emailInput.required) {
+        setFieldError(
+          emailInput,
+          emailError,
+          lang === 'pt'
+            ? 'Por favor, informe seu e-mail.'
+            : 'Please enter your email.'
+        );
+        return false;
+      }
+      clearFieldError(emailInput, emailError);
+      return true;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailRegex.test(val)) {
+      setFieldError(
+        emailInput,
+        emailError,
+        lang === 'pt'
+          ? 'Informe um formato de e-mail válido (ex.: nome@instituicao.br).'
+          : 'Please enter a valid email format (e.g., name@institution.edu).'
+      );
+      return false;
+    }
+
+    clearFieldError(emailInput, emailError);
+    return true;
+  }
+
+  function validatePhone(): boolean {
+    if (!phoneInput) return true;
+    const raw = phoneInput.value.trim();
+    if (!raw) {
+      clearFieldError(phoneInput, phoneError);
+      return true;
+    }
+
+    // Only allow digits and phone characters: +, -, (, ), space
+    if (/[^\d+\-()\s]/.test(raw)) {
+      setFieldError(
+        phoneInput,
+        phoneError,
+        lang === 'pt'
+          ? 'O telefone deve conter apenas números e DDD (sem letras ou símbolos especiais).'
+          : 'Phone number should only contain numbers and area code.'
+      );
+      return false;
+    }
+
+    const digits = raw.replace(/\D/g, '');
+    if (digits.length < 10 || digits.length > 15) {
+      setFieldError(
+        phoneInput,
+        phoneError,
+        lang === 'pt'
+          ? 'Telefone incompleto. Digite o DDD e o número (mínimo de 10 dígitos numéricos).'
+          : 'Please enter a valid phone number with area code (at least 10 digits).'
+      );
+      return false;
+    }
+
+    clearFieldError(phoneInput, phoneError);
+    return true;
+  }
+
+  // Interactive phone formatting/filtering as the user types
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      // Filter out letters and invalid characters immediately
+      const filtered = phoneInput.value.replace(/[^\d+\-()\s]/g, '');
+      if (phoneInput.value !== filtered) {
+        phoneInput.value = filtered;
+      }
+
+      // If purely numbers were entered (standard Brazilian mobile/landline without country code)
+      const digits = filtered.replace(/\D/g, '');
+      if (
+        !filtered.startsWith('+') &&
+        digits.length > 0 &&
+        digits.length <= 11
+      ) {
+        if (digits.length <= 2) {
+          phoneInput.value = `(${digits}`;
+        } else if (digits.length <= 6) {
+          phoneInput.value = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+        } else if (digits.length <= 10) {
+          phoneInput.value = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+        } else {
+          phoneInput.value = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+        }
+      }
+
+      clearFieldError(phoneInput, phoneError);
+    });
+
+    phoneInput.addEventListener('blur', validatePhone);
+  }
+
+  if (emailInput) {
+    emailInput.addEventListener('input', () => {
+      clearFieldError(emailInput, emailError);
+    });
+    emailInput.addEventListener('blur', validateEmail);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const isEmailValid = validateEmail();
+    const isPhoneValid = validatePhone();
+
+    if (!isEmailValid) {
+      emailInput?.focus();
+      return;
+    }
+
+    if (!isPhoneValid) {
+      phoneInput?.focus();
+      return;
+    }
 
     if (!form.reportValidity()) {
       return;

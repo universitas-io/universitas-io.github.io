@@ -20,6 +20,24 @@ test.describe('home page pt', () => {
     await expect(heroCta).toBeVisible();
     await expect(heroCta).toHaveAttribute('href', '/contato/');
 
+    // Hero social icon links (without text, with aria-labels)
+    const heroLinkedin = page.locator(
+      '[data-section="hero"] a[aria-label="LinkedIn"]'
+    );
+    const heroInstagram = page.locator(
+      '[data-section="hero"] a[aria-label="Instagram"]'
+    );
+    await expect(heroLinkedin).toBeVisible();
+    await expect(heroLinkedin).toHaveAttribute(
+      'href',
+      'https://www.linkedin.com/company/universitas-solutions'
+    );
+    await expect(heroInstagram).toBeVisible();
+    await expect(heroInstagram).toHaveAttribute(
+      'href',
+      'https://instagram.com/universitas.solutions'
+    );
+
     // Section ordering via data-section
     const sections = page.locator('[data-section]');
     const sectionNames = await sections.evaluateAll((els) =>
@@ -43,9 +61,9 @@ test.describe('home page pt', () => {
     const audienceCards = page.locator('[data-section="audiences"] article');
     await expect(audienceCards).toHaveCount(4);
 
-    // Services: 3 core + 3 complementary (6 total cards in services section)
+    // Services: 3 research + 2 visualization + 2 editorial (7 total cards in services section)
     const serviceCards = page.locator('[data-section="services"] article');
-    await expect(serviceCards).toHaveCount(6);
+    await expect(serviceCards).toHaveCount(7);
 
     // Process section has 5 steps
     const processSteps = page.locator('[data-process-step]');
@@ -96,6 +114,16 @@ test.describe('home page en', () => {
       .getByRole('link', { name: 'Request a proposal' });
     await expect(heroCta).toBeVisible();
     await expect(heroCta).toHaveAttribute('href', '/en/contact/');
+
+    // Hero social icon links
+    const heroLinkedin = page.locator(
+      '[data-section="hero"] a[aria-label="LinkedIn"]'
+    );
+    const heroInstagram = page.locator(
+      '[data-section="hero"] a[aria-label="Instagram"]'
+    );
+    await expect(heroLinkedin).toBeVisible();
+    await expect(heroInstagram).toBeVisible();
 
     // 4 audience cards
     const audienceCards = page.locator('[data-section="audiences"] article');

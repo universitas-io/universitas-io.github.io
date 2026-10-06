@@ -71,7 +71,9 @@ if (audience.data.faq && audience.data.faq.length > 0) {
             id="pain-points-heading"
             class="text-2xl sm:text-3xl font-bold font-display text-navy-900 dark:text-white"
           >
-            {lang === 'pt' ? 'Desafios que resolvemos' : 'Challenges we address'}
+            {lang === 'pt'
+              ? 'Desafios que resolvemos'
+              : 'Challenges we address'}
           </h2>
         </div>
 
@@ -133,7 +135,6 @@ if (audience.data.faq && audience.data.faq.length > 0) {
         <ServiceGrid services={relatedServices} lang={lang} tier="all" />
       </section>
     )}
-
 
     <!-- FAQ Section -->
     {audience.data.faq && audience.data.faq.length > 0 && (

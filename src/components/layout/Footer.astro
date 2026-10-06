@@ -143,6 +143,30 @@ const institutionalLinks = [
               WhatsApp
             </a>
           </li>
+          {site.social.linkedin && (
+            <li>
+              <a
+                href={site.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-blue-500 transition-colors"
+              >
+                LinkedIn
+              </a>
+            </li>
+          )}
+          {site.social.instagram && (
+            <li>
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-blue-500 transition-colors"
+              >
+                Instagram
+              </a>
+            </li>
+          )}
           <li class="pt-2 text-xs text-ink-600 dark:text-gray-400">
             São Paulo - SP, Brasil
           </li>

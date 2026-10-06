@@ -26,6 +26,27 @@ test.describe('contact page pt - interactive js', () => {
     expect(isInvalid).toBe(true);
   });
 
+  test('client-side email and phone validation rejects invalid formats', async ({
+    page
+  }) => {
+    await page.goto('/contato/');
+    const submitBtn = page.getByRole('button', { name: /enviar solicitação/i });
+
+    await page.fill('input[name="name"]', 'Pesquisador Silva');
+    await page.fill('input[name="email"]', 'invalido-sem-arroba');
+    await page.fill('input[name="phone"]', '123');
+    await submitBtn.click();
+
+    const emailError = page.locator('#contact-email-error');
+    await expect(emailError).toBeVisible();
+
+    await page.fill('input[name="email"]', 'valido@instituicao.edu.br');
+    await submitBtn.click();
+
+    const phoneError = page.locator('#contact-phone-error');
+    await expect(phoneError).toBeVisible();
+  });
+
   test('successful submission shows aria-live confirmation message', async ({
     page
   }) => {
@@ -119,6 +140,24 @@ test.describe('contact page pt - interactive js', () => {
       document.documentElement.classList.add('dark');
     });
     await expectA11y(page);
+  });
+
+  test('social links are present in contact page and footer', async ({
+    page
+  }) => {
+    await page.goto('/contato/');
+    await expect(
+      page
+        .locator(
+          'a[href="https://www.linkedin.com/company/universitas-solutions"]'
+        )
+        .first()
+    ).toBeVisible();
+    await expect(
+      page
+        .locator('a[href="https://instagram.com/universitas.solutions"]')
+        .first()
+    ).toBeVisible();
   });
 });
 

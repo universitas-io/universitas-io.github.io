@@ -2,8 +2,8 @@
 title: 'Document Layout & Formatting'
 description: 'Professional layout and formatting for dissertations, theses, conference proceedings, and books compliant with ABNT, APA, Chicago, and Vancouver.'
 translationKey: 'document-formatting'
-tier: 'complementary'
-order: 6
+tier: 'editorial-review'
+order: 7
 icon: 'lucide:file-text'
 summary: 'Editorial layout, typographic typesetting, and strict bibliographic standardization for scholarly publications, theses, and technical reports.'
 audiences:

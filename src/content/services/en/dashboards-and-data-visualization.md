@@ -2,7 +2,7 @@
 title: 'Dashboards & Data Visualization'
 description: 'Interactive dashboards in Power BI, Tableau, and Python/D3.js connected to live databases for strategic monitoring and decisive intelligence.'
 translationKey: 'dashboards'
-tier: 'complementary'
+tier: 'visualization-dissemination'
 order: 4
 icon: 'lucide:layout-dashboard'
 summary: 'Engineering intuitive, responsive data dashboards that turn complex datasets into clear, actionable visual intelligence for decision-makers.'

@@ -17,6 +17,7 @@ services:
   - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
+  - 'text-editing'
 faq:
   - q: 'Do you ghostwrite theses, dissertations, or articles?'
     a: 'No. Universitas operates strictly as a technical and methodological advisory service. Authorship, writing, and analytical conclusions remain solely with the researcher, upholding academic integrity.'

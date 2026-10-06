@@ -2,7 +2,7 @@
 title: 'Coleta de Dados Digitais'
 description: 'Web scraping ético, consumo de APIs e estruturação de bases em grande escala para redes sociais e portais públicos, com respeito à LGPD.'
 translationKey: 'digital-data'
-tier: 'core'
+tier: 'research-data'
 order: 3
 icon: 'lucide:database'
 summary: 'Extração automatizada, estruturação e enriquecimento de dados da web e redes sociais com rigor metodológico e conformidade legal.'

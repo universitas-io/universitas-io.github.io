@@ -7,7 +7,7 @@ import { aboutPage as makeAboutPageSchema } from '../lib/seo/jsonld';
 import PageLayout from '../layouts/PageLayout.astro';
 import EthicsPledges from '../components/sections/EthicsPledges.astro';
 import ToolsByArea from '../components/sections/ToolsByArea.astro';
-import TeamGrid from '../components/sections/TeamGrid.astro';
+// import TeamGrid from '../components/sections/TeamGrid.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 
 export interface Props {
@@ -38,7 +38,8 @@ const lead =
   lang === 'pt'
     ? 'A Universitas é uma consultoria em pesquisa quantitativa e qualitativa dedicada a transformar perguntas complexas em evidências acionáveis com rigor, ética e transparência.'
     : 'Universitas is a quantitative and qualitative research consultancy dedicated to transforming complex inquiries into actionable evidence through rigor, ethics, and transparency.';
-const eyebrow = lang === 'pt' ? 'Quem somos e propósito' : 'About us and purpose';
+const eyebrow =
+  lang === 'pt' ? 'Quem somos e propósito' : 'About us and purpose';
 
 const jsonLd: Record<string, unknown>[] = [
   makeAboutPageSchema({
@@ -86,9 +87,9 @@ const jsonLd: Record<string, unknown>[] = [
         {lang === 'pt' ? (
           <>
             <p>
-              Nossa equipe reúne formação em Ciência Política, História,
-              Ciência Ambiental, Análise de Dados e Desenvolvimento Web.
-              Combinamos pesquisa em ciências humanas e sociais com ferramentas
+              Nossa equipe reúne formação em Ciência Política, História, Ciência
+              Ambiental, Análise de Dados e Desenvolvimento Web. Combinamos
+              pesquisa em ciências humanas e sociais com ferramentas
               computacionais, analisando dados no contexto de cada área.
             </p>
             <p>
@@ -108,10 +109,10 @@ const jsonLd: Record<string, unknown>[] = [
               analyses grounded in context.
             </p>
             <p>
-              We work across academia, business, and the public sector,
-              adhering to the standards of each: methodological rigor and
-              authorship integrity in universities, practical clarity in
-              business, and transparency and reproducibility in public policy.
+              We work across academia, business, and the public sector, adhering
+              to the standards of each: methodological rigor and authorship
+              integrity in universities, practical clarity in business, and
+              transparency and reproducibility in public policy.
             </p>
           </>
         )}

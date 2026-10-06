@@ -140,11 +140,16 @@ const orgTypeOptions = {
           id="contact-email"
           name="email"
           required
+          autocomplete="email"
           placeholder={
             lang === 'pt' ? 'exemplo@instituicao.br' : 'example@institution.edu'
           }
           class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-surface-alt/50 dark:bg-navy-900/80 text-navy-900 dark:text-white placeholder-ink-600/50 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1a6ca8] dark:focus:ring-blue-400 text-sm transition-all"
         />
+        <p
+          id="contact-email-error"
+          class="hidden text-xs text-red-600 dark:text-red-400 font-medium"
+        ></p>
       </div>
 
       <!-- Organization -->
@@ -182,9 +187,15 @@ const orgTypeOptions = {
           type="tel"
           id="contact-phone"
           name="phone"
+          autocomplete="tel"
+          inputmode="tel"
           placeholder="+55 (11) 99999-9999"
           class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-surface-alt/50 dark:bg-navy-900/80 text-navy-900 dark:text-white placeholder-ink-600/50 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1a6ca8] dark:focus:ring-blue-400 text-sm transition-all"
         />
+        <p
+          id="contact-phone-error"
+          class="hidden text-xs text-red-600 dark:text-red-400 font-medium"
+        ></p>
       </div>
 
       <!-- Organization Sector -->

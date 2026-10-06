@@ -52,7 +52,7 @@ test('about page pt: seo, jsonld, tools, team placeholder, and a11y', async ({
 
   // Language switcher goes to /en/about/
   if (isMobile) {
-    await page.getByRole('button', { name: /menu/i }).click();
+    await page.locator('[data-mobile-menu-trigger]').click();
     const mobileNav = page.getByRole('dialog');
     await mobileNav.getByRole('link', { name: 'English' }).click();
   } else {

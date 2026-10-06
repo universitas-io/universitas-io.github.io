@@ -2,7 +2,7 @@
 title: 'Pesquisa Qualitativa'
 description: 'Análise de conteúdo, análise de discurso, codificação sistemática em NVivo e ATLAS.ti e análise de redes qualitativas com método e ética.'
 translationKey: 'qualitative'
-tier: 'core'
+tier: 'research-data'
 order: 2
 icon: 'lucide:messages-square'
 summary: 'Investigação qualitativa aprofundada, análise temática e de discurso com suporte computacional para compreensão de significados e dinâmicas sociais.'

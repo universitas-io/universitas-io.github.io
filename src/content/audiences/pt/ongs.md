@@ -17,6 +17,7 @@ services:
   - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
+  - 'text-editing'
 faq:
   - q: 'A Universitas adapta seus desenhos metodológicos aos orçamentos de organizações sociais?'
     a: 'Sim. Estruturamos projetos escalonados e flexíveis, priorizando abordagens eficientes e o uso estratégico de dados secundários abertos para otimizar os recursos disponíveis.'

@@ -17,6 +17,7 @@ services:
   - 'dashboards'
   - 'academic-websites'
   - 'document-formatting'
+  - 'text-editing'
 faq:
   - q: 'Do you issue official corporate invoices?'
     a: 'Yes. We issue official tax invoices (nota fiscal) compliant with standard enterprise vendor management and procurement workflows.'
