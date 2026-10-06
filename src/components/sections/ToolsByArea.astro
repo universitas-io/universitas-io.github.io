@@ -25,12 +25,12 @@ const { lang } = Astro.props;
     </h2>
     <p class="text-ink-600 dark:text-gray-300 text-base max-w-3xl">
       {lang === 'pt'
-        ? 'Linguagens de programação estatística, bancos de dados e softwares para cada modalidade de pesquisa.'
-        : 'Programming languages, databases, and software used across our research projects.'}
+        ? 'Linguagens de programação, desenvolvimento web, raspagem, bancos de dados e softwares para cada modalidade de projeto.'
+        : 'Programming languages, web development, scraping, databases, and software used across our projects.'}
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
     {toolAreas.map((area) => (
       <div
         data-tool-area={area.key}

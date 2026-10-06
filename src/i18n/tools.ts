@@ -6,7 +6,7 @@ export interface ToolItem {
 }
 
 export interface ToolArea {
-  key: 'quant' | 'qual' | 'viz' | 'web';
+  key: 'quant' | 'qual' | 'scraping' | 'viz' | 'web' | 'publishing';
   label: Record<Locale, string>;
   description: Record<Locale, string>;
   tools: ToolItem[];
@@ -54,6 +54,26 @@ export const toolAreas: ToolArea[] = [
     ]
   },
   {
+    key: 'scraping',
+    label: {
+      pt: 'Coleta de dados e web scraping',
+      en: 'Data collection and web scraping'
+    },
+    description: {
+      pt: 'Extração automatizada de dados em websites, raspagem estruturada, consumo de APIs e processamento de fluxos web.',
+      en: 'Automated web data extraction, structured scraping, API integration, and web stream processing.'
+    },
+    tools: [
+      { name: 'Python', icon: 'simple-icons:python' },
+      { name: 'Scrapy', icon: 'simple-icons:scrapy' },
+      { name: 'Playwright', icon: 'simple-icons:playwright' },
+      { name: 'Selenium', icon: 'simple-icons:selenium' },
+      { name: 'Puppeteer', icon: 'simple-icons:puppeteer' },
+      { name: 'R', icon: 'simple-icons:r' },
+      { name: 'Beautiful Soup' }
+    ]
+  },
+  {
     key: 'viz',
     label: {
       pt: 'Visualização de dados e BI',
@@ -75,23 +95,44 @@ export const toolAreas: ToolArea[] = [
   {
     key: 'web',
     label: {
-      pt: 'Desenvolvimento web e editorial',
-      en: 'Web development and publishing'
+      pt: 'Desenvolvimento web',
+      en: 'Web development'
     },
     description: {
-      pt: 'Desenvolvimento de websites, portais institucionais e editoração eletrônica de publicações.',
-      en: 'Web development, institutional portals, and desktop publishing.'
+      pt: 'Aplicações web completas, sites responsivos, plataformas de software sob medida e sistemas de gerenciamento de conteúdo.',
+      en: 'Full-stack web applications, responsive websites, bespoke platforms, and content management systems.'
     },
     tools: [
+      { name: 'C#', icon: 'simple-icons:csharp' },
+      { name: '.NET', icon: 'simple-icons:dotnet' },
+      { name: 'Rust', icon: 'simple-icons:rust' },
+      { name: 'Python', icon: 'simple-icons:python' },
+      { name: 'WordPress', icon: 'simple-icons:wordpress' },
+      { name: 'Wix', icon: 'simple-icons:wix' },
       { name: 'Astro', icon: 'simple-icons:astro' },
       { name: 'Next.js', icon: 'simple-icons:nextdotjs' },
       { name: 'React', icon: 'simple-icons:react' },
       { name: 'JavaScript', icon: 'simple-icons:javascript' },
       { name: 'HTML5', icon: 'simple-icons:html5' },
-      { name: 'CSS3', icon: 'simple-icons:css3' },
-      { name: '.NET', icon: 'simple-icons:dotnet' },
+      { name: 'CSS3', icon: 'simple-icons:css3' }
+    ]
+  },
+  {
+    key: 'publishing',
+    label: {
+      pt: 'Editoração e publicação',
+      en: 'Document layout and publishing'
+    },
+    description: {
+      pt: 'Diagramação acadêmica e institucional, padronização editorial, anais eletrônicos e relatórios técnicos.',
+      en: 'Academic and institutional document layout, editorial standardization, conference proceedings, and technical reports.'
+    },
+    tools: [
       { name: 'LaTeX', icon: 'simple-icons:latex' },
-      { name: 'Markdown', icon: 'simple-icons:markdown' }
+      { name: 'Markdown', icon: 'simple-icons:markdown' },
+      { name: 'Typst' },
+      { name: 'Pandoc' },
+      { name: 'Quarto' }
     ]
   }
 ];

@@ -27,8 +27,8 @@ test('about page pt: seo, jsonld, tools, team placeholder, and a11y', async ({
 
   await expectJsonLdTypes(page, ['AboutPage', 'BreadcrumbList']);
 
-  // Check 4 tool areas
-  await expect(page.locator('[data-tool-area]')).toHaveCount(4);
+  // Check 6 tool areas
+  await expect(page.locator('[data-tool-area]')).toHaveCount(6);
 
   // Verify NO img.shields.io requests were triggered
   expect(requestedShields).toHaveLength(0);
@@ -82,7 +82,7 @@ test('about page en: seo, jsonld, tools, team placeholder, and a11y', async ({
 
   await expectJsonLdTypes(page, ['AboutPage', 'BreadcrumbList']);
 
-  await expect(page.locator('[data-tool-area]')).toHaveCount(4);
+  await expect(page.locator('[data-tool-area]')).toHaveCount(6);
 
   /*
   const geraldoEnLink = page.getByRole('link', {
