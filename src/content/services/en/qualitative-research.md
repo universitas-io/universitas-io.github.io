@@ -1,5 +1,6 @@
 ---
 title: 'Qualitative Research'
+seoTitle: 'Qualitative Research and Content Analysis Consulting'
 description: 'Content analysis, discourse analysis, systematic coding in NVivo and ATLAS.ti, and qualitative network mapping with method and ethics.'
 translationKey: 'qualitative'
 tier: 'research-data'
@@ -44,6 +45,8 @@ examples:
 Universitas qualitative research examines texts, discourse, and social practices. We apply content analysis, discourse analysis, grounded theory, and Qualitative Comparative Analysis (QCA).
 
 Using standard Computer-Assisted Qualitative Data Analysis Software (CAQDAS), including **NVivo**, **ATLAS.ti**, **MAXQDA**, and **QCAmap**, we ensure analytical claims remain transparent, grounded, and traceable to original field observations.
+
+To explore the foundations of this methodology, read our guide on [what is qualitative research](/en/insights/what-is-qualitative-research/).
 
 ## Who it is for
 

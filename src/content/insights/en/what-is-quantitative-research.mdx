@@ -1,0 +1,58 @@
+---
+title: 'What is quantitative research: methods, hypotheses, and data analysis'
+description: 'Fundamental principles of quantitative research, hypothesis testing, sampling design, statistical modeling, and analytical tools like R and Python.'
+translationKey: 'what-is-quantitative-research'
+author: ''
+pubDate: 2026-01-10
+featured: false
+draft: false
+---
+
+import Callout from '../../../components/mdx/Callout.astro';
+
+Quantitative research investigates social, economic, and scientific questions through structured measurement and mathematical analysis of variables. Its primary goal is testing hypotheses, calculating probabilities, and establishing associations or causal patterns that generalize beyond the sample.
+
+Unlike exploratory observation or discursive interviews, quantitative methodology converts theoretical concepts into measurable indicators. This process, known as operationalization, allows independent researchers to replicate data collection and verify whether findings hold under identical empirical conditions.
+
+## Foundations: variables, hypotheses, and sampling
+
+Every quantitative study builds on three basic elements:
+
+1. Variable classification: independent variables capture proposed causes or predictors; dependent variables represent the measured outcomes; control variables neutralize confounding factors that could bias the estimated relationships.
+2. Falsifiable hypotheses: hypotheses make testable claims about the expected direction and magnitude of an effect (such as "higher education increases individual income"). Statistical inference tests the null hypothesis of no relationship against the alternative hypothesis using established thresholds, such as p-values and 95% confidence intervals.
+3. Sampling architecture: in probability sampling (simple random, stratified, or cluster), every unit in the population has a known selection probability, enabling precise margin of error calculations. In non-probability sampling (convenience or quota), inferences remain confined to the surveyed group.
+
+## Common designs and statistical models
+
+The choice of research design depends on experimental control and data structure over time:
+
+- Sample surveys: standardized questionnaires with closed-ended questions administered to representative groups of citizens, consumers, or institutions.
+- Experimental and quasi-experimental studies: comparison between treatment and control groups to isolate causal effects of policies or interventions (using difference-in-differences, regression discontinuity, or matching).
+- Panel data and time-series analysis: repeated observations across time to account for unobserved unit-level heterogeneity.
+
+To estimate relationships between variables, common model families include Ordinary Least Squares (OLS) for continuous outcomes, logistic regression for binary outcomes (such as success or failure), and count models (Poisson and negative binomial).
+
+<Callout
+  type="note"
+  title="Statistical significance versus practical relevance"
+>
+  A p-value below 0.05 indicates only that an observed relationship is unlikely
+  to be pure sampling noise. It does not prove mechanical causality or practical
+  importance: in datasets with hundreds of thousands of observations, tiny
+  coefficients with negligible real-world meaning frequently achieve statistical
+  significance.
+</Callout>
+
+## Computational tools and software
+
+Modern quantitative research relies on reproducible workflows in scripting languages or dedicated statistical environments:
+
+- R: the academic benchmark for descriptive statistics, econometric modeling, and visual publication figures, supported by packages like tidyverse, fixest, and ggplot2.
+- Python: the standard choice for combining large-scale web scraping with machine learning predictive modeling, using libraries like pandas, statsmodels, and scikit-learn.
+- Stata and SPSS: long-standing packages in economics, sociology, and epidemiology departments for managing public microdata and administrative survey registries.
+
+## Technical rigor and reproducibility
+
+Credible quantitative empirical work requires complete documentation of data cleaning routines and analytical code. Publishing variable dictionaries, execution scripts, and outlier screening rules ensures transparency before dissertation committees, journal reviewers, and funding agencies.
+
+If you need support designing sampling plans, running econometric models, or auditing datasets, explore our [quantitative research consulting services](/en/services/quantitative-research/).

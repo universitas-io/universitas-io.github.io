@@ -1,5 +1,6 @@
 ---
 title: 'Document Layout & Formatting'
+seoTitle: 'Document Layout and Book Formatting in LaTeX'
 description: 'Professional layout and formatting for dissertations, theses, conference proceedings, and books compliant with ABNT, APA, Chicago, and Vancouver.'
 translationKey: 'document-formatting'
 tier: 'editorial-review'

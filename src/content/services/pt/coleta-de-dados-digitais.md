@@ -1,5 +1,6 @@
 ---
 title: 'Coleta de Dados Digitais'
+seoTitle: 'Raspagem de Dados e Web Scraping Ético para Pesquisa'
 description: 'Web scraping ético, consumo de APIs e estruturação de bases em grande escala para redes sociais e portais públicos, com respeito à LGPD.'
 translationKey: 'digital-data'
 tier: 'research-data'
@@ -16,6 +17,7 @@ tools:
   - 'Scrapy'
   - 'BeautifulSoup'
   - 'Playwright'
+  - 'Selenium'
   - 'APIs REST'
   - 'PostgreSQL'
   - 'SQLite'
@@ -43,9 +45,11 @@ examples:
 
 ## O que é
 
-A coleta de dados digitais da Universitas organiza páginas web, redes sociais e repositórios abertos em bancos de dados estruturados. Escrevemos extratores em **Python** que combinam consumo de APIs oficiais e rotinas de web scraping.
+A coleta de dados digitais da Universitas organiza páginas web, redes sociais e repositórios abertos em bancos de dados estruturados. Escrevemos extratores em **Python** que combinam consumo de APIs oficiais e rotinas de raspagem de dados (web scraping) com ferramentas como **Scrapy**, **Playwright**, **Selenium** e **BeautifulSoup**.
 
 Nossa atuação prioriza a integridade técnica e a conformidade ética: respeitamos diretrizes de rate limiting, termos de uso das plataformas, parâmetros do `robots.txt` e a Lei Geral de Proteção de Dados Pessoais (LGPD).
+
+Para conhecer os fundamentos éticos e jurídicos da extração de dados na internet, leia nosso artigo sobre [web scraping, boas práticas de transparência e conformidade com a LGPD](/insights/coleta-de-dados-redes-sociais-etica-lgpd/).
 
 ## Para quem
 

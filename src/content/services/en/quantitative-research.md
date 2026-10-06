@@ -1,5 +1,6 @@
 ---
 title: 'Quantitative Research'
+seoTitle: 'Statistical Consulting and Quantitative Research'
 description: 'Statistical modeling, hypothesis testing, and reproducible data analysis in R and Python for universities, businesses, and government.'
 translationKey: 'quantitative'
 tier: 'research-data'
@@ -16,6 +17,8 @@ tools:
   - 'Python'
   - 'RStudio'
   - 'Jupyter'
+  - 'SPSS'
+  - 'Stata'
   - 'Tidyverse'
   - 'Statsmodels'
   - 'Scikit-Learn'
@@ -51,9 +54,11 @@ examples:
 
 ## Overview
 
-Universitas quantitative research applies statistical modeling and computation to test hypotheses and analyze data patterns. From study design to regression models, our code is documented and reproducible.
+Universitas quantitative research applies statistical modeling, econometrics, and computation to test hypotheses and analyze data patterns. From study design to regression models, our code is documented and reproducible.
 
-We deliver descriptive and inferential statistics, parametric and non-parametric tests, linear and logistic regressions, clustering, and predictive modeling using standard scientific languages: **R** and **Python**.
+We deliver descriptive and inferential statistics, parametric and non-parametric tests, linear and logistic regressions, clustering, and predictive modeling using standard scientific languages: **R** and **Python**, with support for **SPSS** and **Stata** routines.
+
+For foundational methodological principles, explore our guide on [what is quantitative research](/en/insights/what-is-quantitative-research/).
 
 ## Who it is for
 

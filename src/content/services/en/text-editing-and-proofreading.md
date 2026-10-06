@@ -1,5 +1,6 @@
 ---
 title: 'Text Editing and Proofreading'
+seoTitle: 'Academic Proofreading and Editing for Papers and Theses'
 description: 'Grammar review, syntax, agreement, textual cohesion, and formatting compliance for academic papers, theses, and technical reports.'
 translationKey: 'text-editing'
 tier: 'editorial-review'

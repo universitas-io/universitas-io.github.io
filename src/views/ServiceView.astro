@@ -40,7 +40,8 @@ const jsonLd: Record<string, unknown>[] = [
     description: service.data.description,
     pathname: currentPath,
     lang,
-    audience: service.data.audiences
+    audience: service.data.audiences,
+    serviceType: service.data.seoTitle || service.data.title
   })
 ];
 
@@ -51,7 +52,7 @@ if (service.data.faq && service.data.faq.length > 0) {
 
 <PageLayout
   lang={lang}
-  title={service.data.title}
+  title={service.data.seoTitle || service.data.title}
   description={service.data.description}
   pathname={currentPath}
   alternates={alternates}

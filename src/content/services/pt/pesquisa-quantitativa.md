@@ -1,5 +1,6 @@
 ---
 title: 'Pesquisa Quantitativa'
+seoTitle: 'Consultoria Estatística e Pesquisa Quantitativa'
 description: 'Modelagem estatística, testes de hipóteses e análise de dados em R e Python para academia, empresas e setor público com rigor e reprodutibilidade.'
 translationKey: 'quantitative'
 tier: 'research-data'
@@ -16,6 +17,8 @@ tools:
   - 'Python'
   - 'RStudio'
   - 'Jupyter'
+  - 'SPSS'
+  - 'Stata'
   - 'Tidyverse'
   - 'Statsmodels'
   - 'Scikit-Learn'
@@ -51,9 +54,11 @@ examples:
 
 ## O que é
 
-A pesquisa quantitativa da Universitas aplica modelagem estatística e análise computacional para testar hipóteses e extrair padrões empíricos. Atuamos do desenho amostral à estimação de modelos, com código documentado e reproduzível.
+A pesquisa quantitativa da Universitas aplica modelagem estatística, econometria e análise computacional para testar hipóteses e extrair padrões empíricos. Atuamos desde o cálculo de tamanho amostral e plano de amostragem até a estimação de modelos complexos, com código documentado e reproduzível.
 
-Realizamos estatísticas descritivas e inferenciais, testes paramétricos e não-paramétricos, regressões lineares, logísticas e multivariadas, clusterização e modelagem preditiva, utilizando as linguagens estatísticas padrão da ciência contemporânea: **R** e **Python**.
+Realizamos estatísticas descritivas e inferenciais, testes paramétricos e não-paramétricos, regressões lineares, logísticas e multivariadas, análise fatorial, clusterização e modelagem preditiva, utilizando as linguagens estatísticas padrão da ciência contemporânea: **R** e **Python**, com suporte também para rotinas em **SPSS** e **Stata**.
+
+Para entender os fundamentos metodológicos dessa abordagem, leia nosso artigo sobre [o que é pesquisa quantitativa](/insights/o-que-e-pesquisa-quantitativa/).
 
 ## Para quem
 

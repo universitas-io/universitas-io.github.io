@@ -1,5 +1,6 @@
 ---
 title: 'Dashboards e Visualização'
+seoTitle: 'Dashboards em Power BI e Visualização de Dados'
 description: 'Painéis interativos em Power BI, Tableau e Python/D3.js integrados a bancos de dados para monitoramento estratégico e tomada de decisões.'
 translationKey: 'dashboards'
 tier: 'visualization-dissemination'

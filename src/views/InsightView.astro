@@ -26,9 +26,20 @@ const { Content } = await render(post);
 const slug = entrySlug(post.id);
 const currentPath = `${path(lang, 'insights')}${slug}/`;
 
-const author = await getEntry(post.data.author);
-const authorSlug = post.data.author.id;
-const authorUrl = `${path(lang, 'about')}${authorSlug}/`;
+const author =
+  post.data.author &&
+  typeof post.data.author === 'object' &&
+  'id' in post.data.author &&
+  post.data.author.id
+    ? await getEntry(post.data.author)
+    : null;
+const authorSlug =
+  post.data.author &&
+  typeof post.data.author === 'object' &&
+  'id' in post.data.author
+    ? post.data.author.id
+    : '';
+const authorUrl = authorSlug ? `${path(lang, 'about')}${authorSlug}/` : '';
 const estMinutes = readingTime(post.body || '');
 
 const crumbs = [
@@ -70,8 +81,8 @@ const jsonLd: Record<string, unknown>[] = [
     dateModified: post.data.updatedDate?.toISOString(),
     author: {
       name: author ? author.data.name : 'Universitas',
-      jobTitle: author?.data.role[lang],
-      url: new URL(`${path(lang, 'about')}${authorSlug}/`, site.url).href
+      jobTitle: author ? author.data.role[lang] : undefined,
+      url: authorUrl ? new URL(authorUrl, site.url).href : site.url
     }
   })
 ];

@@ -1,5 +1,6 @@
 ---
 title: 'Pesquisa Qualitativa'
+seoTitle: 'Consultoria em Pesquisa Qualitativa e Análise de Conteúdo'
 description: 'Análise de conteúdo, análise de discurso, codificação sistemática em NVivo e ATLAS.ti e análise de redes qualitativas com método e ética.'
 translationKey: 'qualitative'
 tier: 'research-data'
@@ -41,9 +42,11 @@ examples:
 
 ## O que é
 
-A pesquisa qualitativa examina textos, discursos e percepções que escapam a contagens numéricas. Usamos análise de conteúdo, análise de discurso, teoria fundamentada nos dados (grounded theory) e análise comparativa qualitativa (QCA).
+A pesquisa qualitativa examina textos, discursos e percepções que não se reduzem a contagens numéricas. Usamos análise de conteúdo (Bardin), análise de discurso, teoria fundamentada nos dados (grounded theory) e análise comparativa qualitativa (QCA).
 
 Trabalhamos com softwares de análise qualitativa assistida por computador (CAQDAS), como **NVivo**, **ATLAS.ti**, **MAXQDA** e **QCAmap**, para categorizar materiais textuais e audiovisuais com critérios explícitos.
+
+Para conhecer em detalhes as etapas e ferramentas desse método, leia nosso artigo sobre [o que é pesquisa qualitativa](/insights/o-que-e-pesquisa-qualitativa/).
 
 ## Para quem
 

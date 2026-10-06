@@ -1,0 +1,55 @@
+---
+title: 'O que é pesquisa quantitativa: métodos, hipóteses e análise de dados'
+description: 'Conceitos fundamentais da pesquisa quantitativa, estrutura de hipóteses, amostragem, modelagem estatística e ferramentas analíticas como R e Python.'
+translationKey: 'what-is-quantitative-research'
+author: ''
+pubDate: 2026-01-10
+featured: false
+draft: false
+---
+
+import Callout from '../../../components/mdx/Callout.astro';
+
+A pesquisa quantitativa investiga fenômenos sociais, econômicos e científicos por meio de medições estruturadas e tratamento numérico de variáveis. Seu objetivo central é testar hipóteses, calcular probabilidades e identificar associações ou efeitos causais que possam ser generalizados para além dos casos observados.
+
+Diferente de abordagens baseadas em observações abertas ou relatos discursivos, o método quantitativo converte conceitos teóricos em indicadores mensuráveis. Esse processo, chamado de operacionalização, permite replicar coletas e verificar se os resultados se mantêm estáveis sob as mesmas condições metodológicas.
+
+## Fundamentos: variáveis, hipóteses e amostragem
+
+A estrutura de uma pesquisa quantitativa parte de três pilares:
+
+1. Definição e classificação de variáveis: variáveis independentes representam as causas ou fatores explicativos; variáveis dependentes são os resultados medidos; variáveis de controle neutralizam fatores de confusão que poderiam distorcer a relação entre as variáveis principais.
+2. Formulação de hipóteses falseáveis: as hipóteses estabelecem afirmações precisas sobre a direção e a força esperada de uma relação (por exemplo, "o aumento da escolaridade eleva a renda individual"). A inferência estatística avalia a hipótese nula (ausência de efeito) contra a hipótese alternativa com base em limites de significância, como o p-valor e intervalos de confiança de 95%.
+3. Desenho amostral: em amostras probabilísticas (aleatória simples, estratificada ou por conglomerados), cada unidade da população tem uma probabilidade conhecida de seleção, o que autoriza o cálculo de margens de erro. Em amostras não probabilísticas (por conveniência ou cotas), as conclusões refletem apenas o grupo observado.
+
+## Principais desenhos e modelos estatísticos
+
+A escolha do desenho depende do controle experimental e da natureza temporal dos dados:
+
+- Levantamentos amostrais (surveys): questionários padronizados com perguntas fechadas aplicados a grupos representativos de consumidores, eleitores ou organizações.
+- Estudos experimentais e quase-experimentais: comparam grupos de tratamento e controle para isolar o impacto direto de intervenções ou políticas públicas (como diferenças em diferenças e regressão descontínua).
+- Análise de dados em painel e séries temporais: observam unidades repetidas ao longo do tempo para controlar heterogeneidades não observadas.
+
+Para estimar relações entre variáveis, os modelos mais frequentes incluem a regressão linear ordinária (MQO) para desfechos contínuos, a regressão logística para resultados binários (como sucesso ou fracasso) e modelos de contagem (Poisson e binomial negativa).
+
+<Callout type="note" title="Significância estatística e relevância substantiva">
+  Um p-valor inferior a 0,05 indica apenas que a relação observada dificilmente
+  decorre do acaso amostral. Ele não prova causalidade mecânica nem garante
+  relevância prática: em bases com centenas de milhares de observações,
+  coeficientes minúsculos e sem impacto real costumam atingir significância
+  estatística.
+</Callout>
+
+## Softwares e ferramentas computacionais
+
+A rotina da pesquisa quantitativa contemporânea exige fluxos reproduzíveis em ambientes de código ou interfaces estatísticas consagradas:
+
+- R: ambiente de referência na academia para estatística descritiva, modelagem econométrica e visualização, impulsionado por pacotes como tidyverse, fixest e ggplot2.
+- Python: padrão para projetos que integram raspagem de dados em grande escala e modelos preditivos de machine learning, utilizando bibliotecas como pandas, statsmodels e scikit-learn.
+- Stata e SPSS: softwares consolidados em departamentos de economia, sociologia e saúde coletiva para manipulação de microdados e análise de painéis administrativos.
+
+## Rigor técnico e reprodutibilidade
+
+Pesquisas quantitativas robustas dependem da documentação completa dos scripts de limpeza e das rotinas analíticas. Compartilhar dicionários de variáveis, cadernos de código e critérios de exclusão de outliers garante a transparência do trabalho perante bancas, pareceristas de periódicos e órgãos financiadores.
+
+Para equipes que precisam desenhar amostras, estimar modelos econométricos ou auditar bancos de dados, oferecemos consultoria especializada em [pesquisa quantitativa](/servicos/pesquisa-quantitativa).

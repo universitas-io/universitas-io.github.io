@@ -1,5 +1,6 @@
 ---
 title: 'Digital Data Collection'
+seoTitle: 'Ethical Web Scraping and Digital Data Extraction'
 description: 'Ethical web scraping, official API extraction, and large-scale data structuring for social media and open web repositories, adhering to LGPD/GDPR.'
 translationKey: 'digital-data'
 tier: 'research-data'
@@ -16,6 +17,7 @@ tools:
   - 'Scrapy'
   - 'BeautifulSoup'
   - 'Playwright'
+  - 'Selenium'
   - 'REST APIs'
   - 'PostgreSQL'
   - 'SQLite'
@@ -43,9 +45,11 @@ examples:
 
 ## Overview
 
-Universitas digital data collection turns web pages, document archives, and social media feeds into structured, clean databases. We design **Python** collectors combining official API access with resilient web scraping procedures.
+Universitas digital data collection turns web pages, document archives, and social media feeds into structured, clean databases. We design **Python** collectors combining official API access with resilient web scraping procedures using **Scrapy**, **Playwright**, **Selenium**, and **BeautifulSoup**.
 
 We follow rate limits, robots.txt directives, platform terms of service, and privacy rules under the LGPD and GDPR.
+
+To review legal frameworks and data protection practices, read our guide on [web scraping, transparency, and LGPD compliance](/en/insights/ethical-social-media-data-collection-lgpd/).
 
 ## Who it is for
 

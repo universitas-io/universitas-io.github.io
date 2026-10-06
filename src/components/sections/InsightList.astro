@@ -20,12 +20,24 @@ const displayed = typeof limit === 'number' ? posts.slice(0, limit) : posts;
 
 const postsWithAuthors = await Promise.all(
   displayed.map(async (post) => {
-    const authorEntry = await getEntry(post.data.author);
+    const authorEntry =
+      post.data.author &&
+      typeof post.data.author === 'object' &&
+      'id' in post.data.author &&
+      post.data.author.id
+        ? await getEntry(post.data.author)
+        : null;
+    const authorSlug =
+      post.data.author &&
+      typeof post.data.author === 'object' &&
+      'id' in post.data.author
+        ? post.data.author.id
+        : '';
     const estTime = readingTime(post.body || '');
     return {
       post,
       author: authorEntry,
-      authorSlug: post.data.author.id,
+      authorSlug,
       readingMinutes: estTime
     };
   })

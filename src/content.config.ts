@@ -4,6 +4,7 @@ import { glob } from 'astro/loaders';
 
 const commonSchema = z.object({
   title: z.string().min(1),
+  seoTitle: z.string().optional(),
   description: z.string().min(1).max(155),
   translationKey: z.string().regex(/^[a-z0-9-]+$/),
   draft: z.boolean().default(false)
@@ -123,7 +124,10 @@ const insights = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/insights' }),
   schema: ({ image }) =>
     commonSchema.extend({
-      author: reference('team'),
+      author: z.preprocess(
+        (val) => (val === '' ? undefined : val),
+        reference('team').optional()
+      ),
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       cover: z

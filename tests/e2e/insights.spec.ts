@@ -15,7 +15,12 @@ test.describe('insights preview (production mode - port 4321)', () => {
     ).toBeVisible();
     await expect(
       page.getByRole('heading', {
-        name: /Coleta de Dados em Redes Sociais/i
+        name: /Web scraping: boas práticas de transparência/i
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('heading', {
+        name: /O que é pesquisa quantitativa/i
       })
     ).toBeVisible();
 
@@ -44,7 +49,12 @@ test.describe('insights preview (production mode - port 4321)', () => {
     ).toBeVisible();
     await expect(
       page.getByRole('heading', {
-        name: /Social media data harvesting/i
+        name: /Web scraping: transparency best practices/i
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('heading', {
+        name: /What is quantitative research/i
       })
     ).toBeVisible();
 
@@ -97,7 +107,7 @@ test.describe('insights dev mode (port 4322)', () => {
       'Insights'
     );
 
-    // Should find the 2 main articles
+    // Should find the main articles
     await expect(
       page.getByRole('heading', {
         name: /Como Escolher a Abordagem de Pesquisa/i
@@ -105,7 +115,7 @@ test.describe('insights dev mode (port 4322)', () => {
     ).toBeVisible();
     await expect(
       page.getByRole('heading', {
-        name: /Coleta de Dados em Redes Sociais/i
+        name: /Web scraping: boas práticas de transparência/i
       })
     ).toBeVisible();
   });
@@ -126,7 +136,7 @@ test.describe('insights dev mode (port 4322)', () => {
     await expect(page.getByText(/minutos de leitura/i)).toBeVisible();
     const timeEl = page.locator('time');
     await expect(timeEl.first()).toBeVisible();
-    await expect(timeEl.first()).toHaveAttribute('datetime', /2026-03-15/);
+    await expect(timeEl.first()).toHaveAttribute('datetime', /2026-01-05/);
 
     // SEO with paired EN article
     await expectSeo(page, {

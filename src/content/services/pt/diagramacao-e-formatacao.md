@@ -1,5 +1,6 @@
 ---
 title: 'Diagramação e Formatação'
+seoTitle: 'Diagramação de Teses, Dissertações e Livros em LaTeX'
 description: 'Formatação e diagramação profissional de teses, dissertações, anais e livros em normas ABNT, APA, Chicago e Vancouver, com LaTeX e InDesign.'
 translationKey: 'document-formatting'
 tier: 'editorial-review'

@@ -1,5 +1,6 @@
 ---
 title: 'Dashboards & Data Visualization'
+seoTitle: 'Power BI Dashboards and Data Visualization Consulting'
 description: 'Interactive dashboards in Power BI, Tableau, and Python/D3.js connected to live databases for strategic monitoring and decisive intelligence.'
 translationKey: 'dashboards'
 tier: 'visualization-dissemination'

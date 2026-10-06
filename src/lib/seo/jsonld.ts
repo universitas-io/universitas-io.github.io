@@ -73,6 +73,7 @@ export function service(options: {
   pathname: string;
   lang: Locale;
   audience?: string[];
+  serviceType?: string;
 }): Record<string, unknown> {
   const res: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -91,6 +92,10 @@ export function service(options: {
       name: 'Brasil'
     }
   };
+
+  if (options.serviceType) {
+    res.serviceType = options.serviceType;
+  }
 
   if (options.audience && options.audience.length > 0) {
     res.audience = options.audience.map((a) => ({

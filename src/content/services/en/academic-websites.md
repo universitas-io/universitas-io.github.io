@@ -1,5 +1,6 @@
 ---
 title: 'Website Design & Development'
+seoTitle: 'Academic Website Design for Researchers and Labs'
 description: 'Fast, responsive, and modern website development for scholars, companies, NGOs, and institutions, from online CVs to comprehensive web portals.'
 translationKey: 'academic-websites'
 tier: 'visualization-dissemination'

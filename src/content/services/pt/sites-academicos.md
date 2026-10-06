@@ -1,5 +1,6 @@
 ---
 title: 'Criação e Desenvolvimento de Sites'
+seoTitle: 'Criação de Sites Acadêmicos para Pesquisadores e Laboratórios'
 description: 'Desenvolvimento de sites modernos, rápidos e responsivos para pessoas, empresas, ONGs e academia, de currículos online (CVs) a portais completos.'
 translationKey: 'academic-websites'
 tier: 'visualization-dissemination'

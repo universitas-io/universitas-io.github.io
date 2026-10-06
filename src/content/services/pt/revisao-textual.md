@@ -1,5 +1,6 @@
 ---
 title: 'Revisão Textual e Normalização'
+seoTitle: 'Revisão Textual de Teses, Dissertações e Artigos Científicos'
 description: 'Revisão gramatical, sintática, concordância, coesão textual e adequação a normas acadêmicas e editoriais para artigos, teses e relatórios.'
 translationKey: 'text-editing'
 tier: 'editorial-review'
