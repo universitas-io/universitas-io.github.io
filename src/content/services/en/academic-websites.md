@@ -47,6 +47,11 @@ examples:
       image:
         src: '../../../assets/images/cases/academic-sites/labiia.png'
         alt: 'Portal of the Interdisciplinary Laboratory on Artificial Intelligence (LABIIA)'
+    - title: 'Info_Guerrilla'
+      url: 'https://infoguerrilla.github.io/'
+      image: 
+        src: '../../../assets/images/cases/academic-sites/blog.png'
+        alt: 'Academic blog for research updates and insights'
     - title: 'II Graduate Student Seminar of the Unicamp Political Science Program (2025)'
       url: 'https://seminariodiscenteppgcp.wordpress.com/'
       image:
